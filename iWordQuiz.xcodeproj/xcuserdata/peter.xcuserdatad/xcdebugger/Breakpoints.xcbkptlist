@@ -28,7 +28,7 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "138"
          endingLineNumber = "138"
-         landmarkName = "-checkAnswer:"
+         landmarkName = "-atEnd"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -77,11 +77,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "Classes/DetailViewController.m"
-         timestampString = "350015239.794036"
+         timestampString = "350094722.955639"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "353"
-         endingLineNumber = "353"
+         startingLineNumber = "352"
+         endingLineNumber = "352"
          landmarkName = "-selectedMode"
          landmarkType = "5">
       </FileBreakpoint>
@@ -98,20 +98,6 @@
          endingLineNumber = "47"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Classes/DetailViewController.m"
-         timestampString = "349990840.228716"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "208"
-         endingLineNumber = "208"
-         landmarkName = "@implementation DetailViewController"
-         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"

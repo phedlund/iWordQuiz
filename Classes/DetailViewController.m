@@ -280,6 +280,7 @@ static inline BOOL isEmpty(id thing) {
 	[qavc release]; 
     
     [self setViewControllers:listOfViewControllers animated:YES];
+    [listOfViewControllers release];
     
 	UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithTitle:@"Mode" style:UIBarButtonItemStyleBordered target:self action:@selector(doMode:)]; 
 	self.navigationItem.rightBarButtonItem = button;

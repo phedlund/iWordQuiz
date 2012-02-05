@@ -37,7 +37,7 @@
 		D074FB2112249EBC00E8C175 /* qaTab.png in Resources */ = {isa = PBXBuildFile; fileRef = D074FB1A12249EBC00E8C175 /* qaTab.png */; };
 		D092B32112CD55FE000D7E87 /* Default-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = D092B32012CD55FE000D7E87 /* Default-Landscape.png */; };
 		D092B32712CD5F90000D7E87 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = D092B32612CD5F90000D7E87 /* Default-Portrait.png */; };
-		D092B32B12CD620B000D7E87 /* Icon-512.png in Resources */ = {isa = PBXBuildFile; fileRef = D092B32A12CD620B000D7E87 /* Icon-512.png */; };
+		D092B32B12CD620B000D7E87 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = D092B32A12CD620B000D7E87 /* iTunesArtwork.png */; };
 		D09A47D912C5456F000C7FE1 /* sticky_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = D09A47D512C5456E000C7FE1 /* sticky_blue.png */; };
 		D09A47DA12C5456F000C7FE1 /* sticky_green.png in Resources */ = {isa = PBXBuildFile; fileRef = D09A47D612C5456E000C7FE1 /* sticky_green.png */; };
 		D09A47DB12C5456F000C7FE1 /* sticky_red.png in Resources */ = {isa = PBXBuildFile; fileRef = D09A47D712C5456F000C7FE1 /* sticky_red.png */; };
@@ -79,7 +79,7 @@
 		D00B2AE3126E76F000F2EEFC /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/background.png; sourceTree = "<group>"; };
 		D0130A3C125AB58C0085482E /* ModePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModePickerController.h; sourceTree = "<group>"; };
 		D0130A3D125AB58C0085482E /* ModePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModePickerController.m; sourceTree = "<group>"; };
-		D01DC8FD121F4252006671A1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
+		D01DC8FD121F4252006671A1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
 		D01DC963121F57B0006671A1 /* FCView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FCView.xib; path = Resources/FCView.xib; sourceTree = SOURCE_ROOT; };
 		D01DC964121F57B0006671A1 /* MCView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MCView.xib; path = Resources/MCView.xib; sourceTree = "<group>"; };
 		D01DC965121F57B0006671A1 /* QAView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QAView.xib; path = Resources/QAView.xib; sourceTree = "<group>"; };
@@ -99,13 +99,14 @@
 		D04CF94F122F371300B446E8 /* iWQQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iWQQuiz.h; sourceTree = "<group>"; };
 		D04CF950122F371300B446E8 /* iWQQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iWQQuiz.m; sourceTree = "<group>"; };
 		D067771D12D6563800FCFFD0 /* AboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AboutView.xib; path = Resources/AboutView.xib; sourceTree = SOURCE_ROOT; };
+		D0713DB314DE15820053121A /* WordQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WordQuiz.entitlements; sourceTree = "<group>"; };
 		D074FB1512249EBC00E8C175 /* flashTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flashTab.png; path = Resources/flashTab.png; sourceTree = "<group>"; };
 		D074FB1712249EBC00E8C175 /* homeTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeTab.png; path = Resources/homeTab.png; sourceTree = "<group>"; };
 		D074FB1912249EBC00E8C175 /* multipleTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = multipleTab.png; path = Resources/multipleTab.png; sourceTree = "<group>"; };
 		D074FB1A12249EBC00E8C175 /* qaTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qaTab.png; path = Resources/qaTab.png; sourceTree = "<group>"; };
 		D092B32012CD55FE000D7E87 /* Default-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape.png"; path = "Resources/Default-Landscape.png"; sourceTree = "<group>"; };
 		D092B32612CD5F90000D7E87 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait.png"; path = "Resources/Default-Portrait.png"; sourceTree = "<group>"; };
-		D092B32A12CD620B000D7E87 /* Icon-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-512.png"; path = "Resources/Icon-512.png"; sourceTree = "<group>"; };
+		D092B32A12CD620B000D7E87 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = SOURCE_ROOT; };
 		D09A47D512C5456E000C7FE1 /* sticky_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sticky_blue.png; path = Resources/sticky_blue.png; sourceTree = "<group>"; };
 		D09A47D612C5456E000C7FE1 /* sticky_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sticky_green.png; path = Resources/sticky_green.png; sourceTree = "<group>"; };
 		D09A47D712C5456F000C7FE1 /* sticky_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sticky_red.png; path = Resources/sticky_red.png; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				D0713DB314DE15820053121A /* WordQuiz.entitlements */,
 				D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -212,7 +214,7 @@
 				D092B32012CD55FE000D7E87 /* Default-Landscape.png */,
 				D092B32612CD5F90000D7E87 /* Default-Portrait.png */,
 				D01DC8FD121F4252006671A1 /* Icon-72.png */,
-				D092B32A12CD620B000D7E87 /* Icon-512.png */,
+				D092B32A12CD620B000D7E87 /* iTunesArtwork.png */,
 				D0CA3EC112CD0F6800F7BB72 /* document-icon-64.png */,
 				D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */,
 				D09A47D512C5456E000C7FE1 /* sticky_blue.png */,
@@ -382,7 +384,7 @@
 				D0CA3EC412CD0F6800F7BB72 /* document-icon-320.png in Resources */,
 				D092B32112CD55FE000D7E87 /* Default-Landscape.png in Resources */,
 				D092B32712CD5F90000D7E87 /* Default-Portrait.png in Resources */,
-				D092B32B12CD620B000D7E87 /* Icon-512.png in Resources */,
+				D092B32B12CD620B000D7E87 /* iTunesArtwork.png in Resources */,
 				D067771F12D6563800FCFFD0 /* AboutView.xib in Resources */,
 				D04BD0B413C90DDC006A7387 /* Example.kvtml in Resources */,
 				D04BD0B513C90DDC006A7387 /* French Verbs.kvtml in Resources */,
@@ -423,6 +425,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -432,9 +437,13 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IBC_PLUGIN_SEARCH_PATHS = "/usr/include/libxml2 ";
 				INFOPLIST_FILE = "iWordQuiz-Info.plist";
+				INFOPLIST_OUTPUT_FORMAT = binary;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = WordQuiz;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -443,6 +452,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iWordQuiz_Prefix.pch;
@@ -450,9 +462,13 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IBC_PLUGIN_SEARCH_PATHS = "/usr/include/libxml2 ";
 				INFOPLIST_FILE = "iWordQuiz-Info.plist";
+				INFOPLIST_OUTPUT_FORMAT = binary;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = WordQuiz;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -462,9 +478,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Peter Hedlund (4SZPCQUAM3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peter Hedlund (4SZPCQUAM3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer: Peter Hedlund (4SZPCQUAM3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 10;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -472,9 +488,9 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-lxml2";
-				PROVISIONING_PROFILE = "518B12AB-EF15-48C5-945E-F81A55E9B697";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "518B12AB-EF15-48C5-945E-F81A55E9B697";
-				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "518B12AB-EF15-48C5-945E-F81A55E9B697";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -485,9 +501,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Peter Hedlund (4SZPCQUAM3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peter Hedlund (4SZPCQUAM3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer: Peter Hedlund (4SZPCQUAM3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = 10;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -496,9 +512,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lxml2";
-				PROVISIONING_PROFILE = "518B12AB-EF15-48C5-945E-F81A55E9B697";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "518B12AB-EF15-48C5-945E-F81A55E9B697";
-				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "518B12AB-EF15-48C5-945E-F81A55E9B697";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
