@@ -29,12 +29,13 @@
 #import <UIKit/UIKit.h>
 
 @class DetailViewController;
+@class CHDropboxSync;
 
 @interface RootViewController : UITableViewController
 {
     DetailViewController *detailViewController;
 
-	NSString *documentsDirectory;
+	NSURL *documentsDirectory;
 	NSMutableArray *vocabularies;
 }
 
@@ -42,6 +43,10 @@
 
 @property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 @property (nonatomic, retain) NSMutableArray *vocabularies;
-@property (nonatomic, retain) NSString *documentsDirectory;
+@property (nonatomic, retain) NSURL *documentsDirectory;
+
+@property(retain) CHDropboxSync* syncer;
+
+- (IBAction) doDBSync:(id)sender;
 
 @end

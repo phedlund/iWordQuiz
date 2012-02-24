@@ -32,10 +32,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "AboutViewController.h"
 
+#import <DropboxSDK/DropboxSDK.h>
+
 @implementation AboutViewController
 
 @synthesize delegate;
 @synthesize versionLabel;
+@synthesize linkButton;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 /*
@@ -48,6 +51,24 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 */
 
+- (void)didPressLink {
+    if (![[DBSession sharedSession] isLinked]) {
+		[[DBSession sharedSession] link];
+    } else {
+        [[DBSession sharedSession] unlinkAll];
+        [[[[UIAlertView alloc] 
+           initWithTitle:@"Account Unlinked!" message:@"Your dropbox account has been unlinked" 
+           delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]
+          autorelease]
+         show];
+    }
+    [self updateButtons];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self updateButtons];
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -61,6 +82,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	NSString *version = @"Version ";
     version = [version stringByAppendingString:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
 	versionLabel.text = version;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
 }
 
 - (void) dismissView:(id) sender {
@@ -83,6 +106,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void)viewDidUnload {
+    [linkButton release];
+    linkButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -90,7 +115,24 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void)dealloc {
+    [linkButton release];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super dealloc];
+}
+
+
+#pragma mark private methods
+
+- (void)updateButtons {
+    NSString* title = [[DBSession sharedSession] isLinked] ? @"Unlink Dropbox" : @"Link Dropbox";
+    [linkButton setTitle:title forState:UIControlStateNormal];
+}
+
+
+#pragma mark - Linked notification
+
+- (void)linked:(NSNotification*)n {
+    [self updateButtons];
 }
 
 @end

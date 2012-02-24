@@ -30,6 +30,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 *************************************************************************/
 
+#import "CHDropboxSync.h"
+
 #import "RootViewController.h"
 #import "DetailViewController.h"
 
@@ -38,6 +40,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @synthesize detailViewController;
 @synthesize vocabularies, documentsDirectory;
+@synthesize syncer;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -47,99 +50,40 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = NO;
     self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-	
-	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-	
+    
+    UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sync.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(doDBSync:)]; 
+    self.navigationItem.rightBarButtonItem = button;
+    self.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
+    [button release];
+        
+    NSError *err;
+    NSFileManager *df = [NSFileManager defaultManager];
+    NSArray *paths = [df URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+    self.documentsDirectory = [paths objectAtIndex:0];
+    NSLog(@"Documents Directory: %@", self.documentsDirectory);
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	// getting a BOOL
 	BOOL examplesCopied = [prefs boolForKey:@"ExamplesCopied"];
 	if (!examplesCopied) {
 		[prefs setBool:YES forKey:@"ExamplesCopied"];
 		NSBundle *appBundle = [NSBundle mainBundle];
 		NSArray *exampleFiles = [appBundle URLsForResourcesWithExtension:@"kvtml" subdirectory:nil];
-		//NSString *bundlePath = [appBundle pathForResource:@"XXXX" ofType:@"xxx"];
+		
 		NSEnumerator *enumerator = [exampleFiles objectEnumerator];
 		id aFile;
 		
-		NSArray *paths = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
-	    
-		NSError *err;
-		
 		while (aFile = [enumerator nextObject]) {
-			//NSLog(@"Example File: %@", aFile);
-			NSURL *dest = [[paths objectAtIndex:0] URLByAppendingPathComponent: [aFile lastPathComponent]];
+			NSURL *dest = [self.documentsDirectory URLByAppendingPathComponent: [aFile lastPathComponent]];
 			NSLog(@"Example File: %@", dest);
-			[[NSFileManager defaultManager] copyItemAtURL:aFile toURL:dest error:&err];
+			[df copyItemAtURL:aFile toURL:dest error:&err];
 		}
-	}
+    }
 		
 	self.vocabularies = [NSMutableArray array];
-	[self enumerateVocabularies];
+    [self enumerateVocabularies];
 }
 
-- (void) enumerateVocabularies
-{
-    // Create a local file manager instance
-    //NSFileManager *localFileManager=[[NSFileManager alloc] init];
-	
-	// Get the Documents folder
-	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	self.documentsDirectory = [paths objectAtIndex:0];
-	//NSURL *docURL = [NSURL fileURLWithPath:[paths objectAtIndex:0] isDirectory:YES];
-	//NSURL *docURL = [NSURL fileURLWithPath:@"file:///localhost/Users/peter/Documents" isDirectory:YES];
-	//wait self.vocabularies = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:docURL includingPropertiesForKeys:nil options:NSDirectoryEnumerationSkipsHiddenFiles error:nil];
-	NSLog(@"Documents Directory: %@", documentsDirectory);
-	/*
-    // Enumerate the directory (specified elsewhere in your code)
-    // Request the two properties the method uses, name and isDirectory
-	NSArray *keys = [NSArray arrayWithObjects:NSURLNameKey, NSURLIsDirectoryKey, nil];
-    // Ignore hidden files
-    // The errorHandler: parameter is set to nil. Typically you'd want to present a panel
-    NSDirectoryEnumerator *dirEnumerator = [localFileManager enumeratorAtURL:docURL
-										    includingPropertiesForKeys:keys
-											options:NSDirectoryEnumerationSkipsHiddenFiles
-											errorHandler:nil];
-	
-    // An array to store the all the enumerated file names in
-    //NSMutableArray *theArray=[NSMutableArray array];
-	
-    // Enumerate the dirEnumerator results, each value is stored in allURLs
-	NSURL *theURL;
-    while (theURL = [dirEnumerator nextObject]) {
-		
-        // Retrieve the file name. From NSURLNameKey, cached during the enumeration.
-        NSString *fileName;
-        [theURL getResourceValue:&fileName forKey:NSURLNameKey error:NULL];
-		
-        // Retrieve whether a directory. From NSURLIsDirectoryKey, also cached during the enumeration.
-        NSNumber *isDirectory;
-        [theURL getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:NULL];
-		
-        // Ignore files under the _extras directory
-        if (([fileName.pathExtension caseInsensitiveCompare:@".kvtml"]==NSOrderedSame) && ([isDirectory boolValue]==NO))
-        {
-                [self.vocabularies addObject:theURL];
-			
-        }
-    }
-	*/
-	[self.vocabularies removeAllObjects];
-	
-	NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:self.documentsDirectory];	
-	
-	for (NSString *fileName in dirEnum) {
-		if (([fileName.pathExtension caseInsensitiveCompare:@"kvtml"] == NSOrderedSame) ||
-            ([fileName.pathExtension caseInsensitiveCompare:@"csv"]   == NSOrderedSame)) {
-                [self.vocabularies addObject:[NSURL fileURLWithPath:[self.documentsDirectory stringByAppendingPathComponent:fileName] isDirectory:NO]];
-		}
-	}
-	
-    // Do something with the path URLs.
-    //NSLog(@"Vocabularies - %@", self.vocabularies);
-	
-    // Release the localFileManager.
-    //[localFileManager release];
-	
-}
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -268,6 +212,50 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)dealloc {
     [detailViewController release];
     [super dealloc];
+}
+
+
+#pragma mark private methods
+
+- (void) enumerateVocabularies
+{
+	[self.vocabularies removeAllObjects];
+    
+    //Move files out of the Inbox and remove the Inbox folder
+    NSString *inboxPath  = [[self.documentsDirectory path] stringByAppendingPathComponent:@"Inbox/"];
+    NSDirectoryEnumerator *inboxEnum = [[NSFileManager defaultManager] enumeratorAtPath: inboxPath];
+    NSString *file;
+    while (file = [inboxEnum nextObject]) {
+        NSString *origFilePath = [inboxPath stringByAppendingPathComponent:[file lastPathComponent]];
+        NSString *finalFilePath = [[self.documentsDirectory path] stringByAppendingPathComponent:[file lastPathComponent]];
+        [[NSFileManager defaultManager] moveItemAtPath:origFilePath toPath:finalFilePath error:nil];        
+    }
+    [[NSFileManager defaultManager] removeItemAtPath:inboxPath error:nil];
+    
+    NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:[self.documentsDirectory path]];
+    
+    while (file = [dirEnum nextObject]) {
+        if (([file.pathExtension caseInsensitiveCompare:@"kvtml"] == NSOrderedSame) ||
+            ([file.pathExtension caseInsensitiveCompare:@"csv"] == NSOrderedSame)) {
+            [self.vocabularies addObject:[self.documentsDirectory URLByAppendingPathComponent:file isDirectory:NO]];
+        }
+    }
+    
+    [self.tableView reloadData];
+}
+
+
+- (IBAction) doDBSync:(id)sender {
+    // Now do the sync
+    self.syncer = [[[CHDropboxSync alloc] init] autorelease];
+    self.syncer.delegate = self;
+    [self.syncer doSync];
+}
+
+// Sync has finished, so you can dealloc it now
+- (void)syncComplete {
+    self.syncer = nil;
+    [self enumerateVocabularies];
 }
 
 @end

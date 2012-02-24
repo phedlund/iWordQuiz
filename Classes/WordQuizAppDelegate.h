@@ -31,12 +31,15 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *************************************************************************/
 
 #import <UIKit/UIKit.h>
+
+#import <DropboxSDK/DropboxSDK.h>
+
 #import "AboutViewController.h"
 
 @class RootViewController;
 @class DetailViewController;
 
-@interface iWordQuizAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, AboutViewControllerDelegate> {
+@interface iWordQuizAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, AboutViewControllerDelegate, DBSessionDelegate> {
     
     UIWindow *window;
     
@@ -44,6 +47,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     RootViewController *rootViewController;
     DetailViewController *detailViewController;
+    
+    NSString *relinkUserId;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

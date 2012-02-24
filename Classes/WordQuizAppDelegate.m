@@ -30,9 +30,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 *************************************************************************/
 
+#import "CHDropboxSync.h"
+
 #import "WordQuizAppDelegate.h"
 #import "RootViewController.h"
 #import "DetailViewController.h"
+#import "DBDefines.h"
 
 @implementation iWordQuizAppDelegate
 
@@ -42,6 +45,16 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
+
+	// Dropbox
+    NSString* appKey = DB_APP_KEY;
+	NSString* appSecret = DB_APP_SECRET;
+	NSString *root = kDBRootAppFolder;
+	DBSession* session = [[DBSession alloc] initWithAppKey:appKey appSecret:appSecret root:root];
+	session.delegate = self;
+	[DBSession setSharedSession:session];
+    [session release];
+    
     // Add the split view controller's view to the window and display.
     detailViewController.delegate = self;
     [window addSubview:splitViewController.view];
@@ -50,25 +63,27 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     return YES;
 }
 
+
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
 	//Application launch with attachment
 	if ([url isFileURL]) {
 		[self.rootViewController enumerateVocabularies];
-		
-		UITableView *tableView = ((UITableViewController *)self.rootViewController).tableView;
-		[tableView reloadData];
 	}
 	else
 	{
 		// Handle custom URL scheme
+        if ([[DBSession sharedSession] handleOpenURL:url]) {
+            if ([[DBSession sharedSession] isLinked]) {
+                NSLog(@"We have Dropbox link");
+                [CHDropboxSync forgetStatus];
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"Linked" object:nil];
+            }
+            //return YES;
+        }
 	}	
 	return YES;
 }
 
-
-- (void) aboutDidFinish {
-	[splitViewController dismissModalViewControllerAnimated:YES];
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     /*
@@ -93,7 +108,24 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 #pragma mark -
-#pragma mark TabBarController management
+#pragma mark Memory management
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    /*
+     Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
+     */
+}
+
+
+- (void)dealloc {
+    [splitViewController release];
+    [window release];
+    [super dealloc];
+}
+
+
+#pragma mark -
+#pragma mark UITabBarControllerDelegate methods
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 	return YES;
@@ -117,21 +149,37 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[viewController viewWillAppear:NO];
 }
 
-
 #pragma mark -
-#pragma mark Memory management
+#pragma mark AboutViewControllerDelegate methods
 
-- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
-    /*
-     Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
-     */
+- (void) aboutDidFinish {
+	[splitViewController dismissModalViewControllerAnimated:YES];
+    rootViewController.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
 }
 
 
-- (void)dealloc {
-    [splitViewController release];
-    [window release];
-    [super dealloc];
+#pragma mark -
+#pragma mark DBSessionDelegate methods
+
+- (void)sessionDidReceiveAuthorizationFailure:(DBSession*)session userId:(NSString *)userId {
+	relinkUserId = [userId retain];
+	[[[[UIAlertView alloc] 
+	   initWithTitle:@"Dropbox Session Ended" message:@"Do you want to relink?" delegate:self 
+	   cancelButtonTitle:@"Cancel" otherButtonTitles:@"Relink", nil]
+	  autorelease]
+	 show];
+}
+
+
+#pragma mark -
+#pragma mark UIAlertViewDelegate methods
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)index {
+	if (index != alertView.cancelButtonIndex) {
+		[[DBSession sharedSession] linkUserId:relinkUserId];
+	}
+	[relinkUserId release];
+	relinkUserId = nil;
 }
 
 @end

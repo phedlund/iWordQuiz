@@ -45,8 +45,20 @@
 		D0C0B84F12823CE40020C111 /* knowButton_225.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C0B84B12823CE40020C111 /* knowButton_225.png */; };
 		D0C0B85012823CE40020C111 /* dontknowButton_225.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C0B84C12823CE40020C111 /* dontknowButton_225.png */; };
 		D0C0B85312823D3B0020C111 /* icon_238.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C0B85212823D3B0020C111 /* icon_238.png */; };
+		D0C85E7714F593FE00C2A499 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C85E7614F593FE00C2A499 /* Reachability.m */; };
+		D0C85E8514F5952400C2A499 /* ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C85E7D14F5952400C2A499 /* ConciseKit.m */; };
+		D0C85E8614F5952400C2A499 /* NSArray+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C85E7F14F5952400C2A499 /* NSArray+ConciseKit.m */; };
+		D0C85E8714F5952400C2A499 /* NSDictionary+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C85E8114F5952400C2A499 /* NSDictionary+ConciseKit.m */; };
+		D0C85E8814F5952400C2A499 /* NSString+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C85E8314F5952400C2A499 /* NSString+ConciseKit.m */; };
+		D0C85E8914F5952400C2A499 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = D0C85E8414F5952400C2A499 /* README.markdown */; };
+		D0C85E8B14F595A300C2A499 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */; };
+		D0C85E9014F5988100C2A499 /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C85E8D14F5988100C2A499 /* CHDropboxSync.m */; };
+		D0C85E9114F5988100C2A499 /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C85E8F14F5988100C2A499 /* SyncTask.m */; };
+		D0C98FEB14F44AFD00412777 /* sync.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C98FEA14F44AFD00412777 /* sync.png */; };
 		D0CA3EC312CD0F6800F7BB72 /* document-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC112CD0F6800F7BB72 /* document-icon-64.png */; };
 		D0CA3EC412CD0F6800F7BB72 /* document-icon-320.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */; };
+		D0CB156414EEF3D200FE7CC6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0CB156314EEF3D200FE7CC6 /* Security.framework */; };
+		D0CB156614EEF40800FE7CC6 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0CB156514EEF40800FE7CC6 /* DropboxSDK.framework */; };
 		D0D0EC4C14DB712700BE3A81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		D0D0EC4D14DB712F00BE3A81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		D0D0EC4E14DB713A00BE3A81 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
@@ -114,8 +126,31 @@
 		D0C0B84B12823CE40020C111 /* knowButton_225.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knowButton_225.png; path = Resources/knowButton_225.png; sourceTree = "<group>"; };
 		D0C0B84C12823CE40020C111 /* dontknowButton_225.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dontknowButton_225.png; path = Resources/dontknowButton_225.png; sourceTree = "<group>"; };
 		D0C0B85212823D3B0020C111 /* icon_238.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_238.png; path = Resources/icon_238.png; sourceTree = "<group>"; };
+		D0C791D814F6F1AE000AFF00 /* DBDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDefines.h; sourceTree = "<group>"; };
+		D0C85E7514F593FE00C2A499 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D0C85E7614F593FE00C2A499 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		D0C85E7914F5952400C2A499 /* CKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAdditions.h; sourceTree = "<group>"; };
+		D0C85E7A14F5952400C2A499 /* CKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKMacros.h; sourceTree = "<group>"; };
+		D0C85E7B14F5952400C2A499 /* CKSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSingleton.h; sourceTree = "<group>"; };
+		D0C85E7C14F5952400C2A499 /* ConciseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConciseKit.h; sourceTree = "<group>"; };
+		D0C85E7D14F5952400C2A499 /* ConciseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConciseKit.m; sourceTree = "<group>"; };
+		D0C85E7E14F5952400C2A499 /* NSArray+ConciseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ConciseKit.h"; sourceTree = "<group>"; };
+		D0C85E7F14F5952400C2A499 /* NSArray+ConciseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ConciseKit.m"; sourceTree = "<group>"; };
+		D0C85E8014F5952400C2A499 /* NSDictionary+ConciseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ConciseKit.h"; sourceTree = "<group>"; };
+		D0C85E8114F5952400C2A499 /* NSDictionary+ConciseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ConciseKit.m"; sourceTree = "<group>"; };
+		D0C85E8214F5952400C2A499 /* NSString+ConciseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ConciseKit.h"; sourceTree = "<group>"; };
+		D0C85E8314F5952400C2A499 /* NSString+ConciseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ConciseKit.m"; sourceTree = "<group>"; };
+		D0C85E8414F5952400C2A499 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D0C85E8C14F5988100C2A499 /* CHDropboxSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHDropboxSync.h; sourceTree = "<group>"; };
+		D0C85E8D14F5988100C2A499 /* CHDropboxSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHDropboxSync.m; sourceTree = "<group>"; };
+		D0C85E8E14F5988100C2A499 /* SyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SyncTask.h; sourceTree = "<group>"; };
+		D0C85E8F14F5988100C2A499 /* SyncTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SyncTask.m; sourceTree = "<group>"; };
+		D0C98FEA14F44AFD00412777 /* sync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sync.png; path = Resources/sync.png; sourceTree = "<group>"; };
 		D0CA3EC112CD0F6800F7BB72 /* document-icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-64.png"; path = "Resources/document-icon-64.png"; sourceTree = "<group>"; };
 		D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-320.png"; path = "Resources/document-icon-320.png"; sourceTree = "<group>"; };
+		D0CB156314EEF3D200FE7CC6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D0CB156514EEF40800FE7CC6 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = "../dropbox-ios-sdk-1.1/DropboxSDK.framework"; sourceTree = "<group>"; };
 		D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		D0D2B89214DD963B0049C33E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		D0D2B89314DD963B0049C33E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
@@ -138,6 +173,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0C85E8B14F595A300C2A499 /* SystemConfiguration.framework in Frameworks */,
+				D0CB156614EEF40800FE7CC6 /* DropboxSDK.framework in Frameworks */,
+				D0CB156414EEF3D200FE7CC6 /* Security.framework in Frameworks */,
 				D0D0EC5014DB719100BE3A81 /* libxml2.dylib in Frameworks */,
 				D0D0EC4C14DB712700BE3A81 /* UIKit.framework in Frameworks */,
 				D0D0EC4D14DB712F00BE3A81 /* Foundation.framework in Frameworks */,
@@ -151,7 +189,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D0C85E7814F5952400C2A499 /* ConciseKit */,
+				D0C85E7314F5929F00C2A499 /* CHDropboxSync */,
 				D0E5F6D913F4A661001FC51E /* KissXML */,
+				D0C85E7414F593FE00C2A499 /* Reachability */,
 				1D3623240D0F684500981E51 /* WordQuizAppDelegate.h */,
 				1D3623250D0F684500981E51 /* WordQuizAppDelegate.m */,
 				28042007108E984D000629CD /* RootViewController.h */,
@@ -189,6 +230,7 @@
 			children = (
 				D0713DB314DE15820053121A /* WordQuiz.entitlements */,
 				D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */,
+				D0C791D814F6F1AE000AFF00 /* DBDefines.h */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -231,6 +273,7 @@
 				D074FB1712249EBC00E8C175 /* homeTab.png */,
 				D074FB1912249EBC00E8C175 /* multipleTab.png */,
 				D074FB1A12249EBC00E8C175 /* qaTab.png */,
+				D0C98FEA14F44AFD00412777 /* sync.png */,
 				8D1107310486CEB800E47090 /* iWordQuiz-Info.plist */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				2804203B108E9BAB000629CD /* DetailView.xib */,
@@ -246,11 +289,53 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */,
+				D0CB156514EEF40800FE7CC6 /* DropboxSDK.framework */,
+				D0CB156314EEF3D200FE7CC6 /* Security.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0C85E7314F5929F00C2A499 /* CHDropboxSync */ = {
+			isa = PBXGroup;
+			children = (
+				D0C85E8C14F5988100C2A499 /* CHDropboxSync.h */,
+				D0C85E8D14F5988100C2A499 /* CHDropboxSync.m */,
+				D0C85E8E14F5988100C2A499 /* SyncTask.h */,
+				D0C85E8F14F5988100C2A499 /* SyncTask.m */,
+			);
+			name = CHDropboxSync;
+			sourceTree = "<group>";
+		};
+		D0C85E7414F593FE00C2A499 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				D0C85E7514F593FE00C2A499 /* Reachability.h */,
+				D0C85E7614F593FE00C2A499 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		D0C85E7814F5952400C2A499 /* ConciseKit */ = {
+			isa = PBXGroup;
+			children = (
+				D0C85E7914F5952400C2A499 /* CKAdditions.h */,
+				D0C85E7A14F5952400C2A499 /* CKMacros.h */,
+				D0C85E7B14F5952400C2A499 /* CKSingleton.h */,
+				D0C85E7C14F5952400C2A499 /* ConciseKit.h */,
+				D0C85E7D14F5952400C2A499 /* ConciseKit.m */,
+				D0C85E7E14F5952400C2A499 /* NSArray+ConciseKit.h */,
+				D0C85E7F14F5952400C2A499 /* NSArray+ConciseKit.m */,
+				D0C85E8014F5952400C2A499 /* NSDictionary+ConciseKit.h */,
+				D0C85E8114F5952400C2A499 /* NSDictionary+ConciseKit.m */,
+				D0C85E8214F5952400C2A499 /* NSString+ConciseKit.h */,
+				D0C85E8314F5952400C2A499 /* NSString+ConciseKit.m */,
+				D0C85E8414F5952400C2A499 /* README.markdown */,
+			);
+			path = ConciseKit;
 			sourceTree = "<group>";
 		};
 		D0D2B89514DDAC0D0049C33E /* Examples */ = {
@@ -332,7 +417,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iWordQuiz" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -389,6 +474,8 @@
 				D04BD0B413C90DDC006A7387 /* Example.kvtml in Resources */,
 				D04BD0B513C90DDC006A7387 /* French Verbs.kvtml in Resources */,
 				D04BD0B613C90DDC006A7387 /* US States and Capitals.kvtml in Resources */,
+				D0C98FEB14F44AFD00412777 /* sync.png in Resources */,
+				D0C85E8914F5952400C2A499 /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +502,13 @@
 				D0E5F6EC13F4A661001FC51E /* DDXMLElement.m in Sources */,
 				D0E5F6ED13F4A661001FC51E /* DDXMLNode.m in Sources */,
 				D0D2B89414DD963B0049C33E /* AboutViewController.m in Sources */,
+				D0C85E7714F593FE00C2A499 /* Reachability.m in Sources */,
+				D0C85E8514F5952400C2A499 /* ConciseKit.m in Sources */,
+				D0C85E8614F5952400C2A499 /* NSArray+ConciseKit.m in Sources */,
+				D0C85E8714F5952400C2A499 /* NSDictionary+ConciseKit.m in Sources */,
+				D0C85E8814F5952400C2A499 /* NSString+ConciseKit.m in Sources */,
+				D0C85E9014F5988100C2A499 /* CHDropboxSync.m in Sources */,
+				D0C85E9114F5988100C2A499 /* SyncTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,10 +519,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../dropbox-ios-sdk-1.1\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -438,13 +536,16 @@
 				IBC_PLUGIN_SEARCH_PATHS = "/usr/include/libxml2 ";
 				INFOPLIST_FILE = "iWordQuiz-Info.plist";
 				INFOPLIST_OUTPUT_FORMAT = binary;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				INFOPLIST_PREFIX_HEADER = DBDefines.h;
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = WordQuiz;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -452,10 +553,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../dropbox-ios-sdk-1.1\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iWordQuiz_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -463,13 +568,16 @@
 				IBC_PLUGIN_SEARCH_PATHS = "/usr/include/libxml2 ";
 				INFOPLIST_FILE = "iWordQuiz-Info.plist";
 				INFOPLIST_OUTPUT_FORMAT = binary;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				INFOPLIST_PREFIX_HEADER = DBDefines.h;
+				INFOPLIST_PREPROCESS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = WordQuiz;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -478,15 +586,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 10;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lxml2";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -501,15 +609,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 10;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lxml2";
 				PROVISIONING_PROFILE = "";
