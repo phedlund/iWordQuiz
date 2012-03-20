@@ -13,6 +13,8 @@
 			<array>
 				<string>document-icon-320.png</string>
 				<string>document-icon-64.png</string>
+				<string>document-icon-128</string>
+				<string>document-icon-640</string>
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>Vocabulary Document</string>
@@ -114,7 +116,5 @@
 			</dict>
 		</dict>
 	</array>
-	<key>UTImportedTypeDeclarations</key>
-	<array/>
 </dict>
 </plist>
