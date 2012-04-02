@@ -31,6 +31,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *************************************************************************/
 
 #import "FCViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "WQUtils.h"
 
 #define kCardHeight		    422.0
 #define kCardWidth			663.0
@@ -42,11 +44,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @synthesize quiz = m_quiz;
 @synthesize showFront = m_showFront;
 @synthesize flipNeeded = m_flipNeeded;
+@synthesize slideNeeded;
+@synthesize slideToTheRight;
 
 @synthesize identifierLabel, frontText;;
 @synthesize questionCountButton, answerCountButton, correctCountButton, errorCountButton;
 @synthesize knowButton, dontKnowButton;
-@synthesize containerView, line, previousView, frontView;
+@synthesize containerView, line, previousView, frontView, backView;
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -55,17 +59,29 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
 	
 	frontView.userInteractionEnabled = YES;
+    backView.hidden = true;
 	
 	UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
 	tgr.delegate = self;
 	tgr.numberOfTapsRequired = 1;
 	[frontView addGestureRecognizer:tgr];
 	[tgr release];
+    
+    UITapGestureRecognizer *tgr2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+	tgr2.delegate = self;
+	tgr2.numberOfTapsRequired = 1;
+    [backView addGestureRecognizer:tgr2];
+	[tgr2 release];
 	
 	[questionCountButton setTitle:@"" forState:UIControlStateNormal];
 	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
 	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
 	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
+    
+    questionCountButton.stickyColor = kBlue;
+    answerCountButton.stickyColor = kYellow;
+    correctCountButton.stickyColor = kGreen;
+    errorCountButton.stickyColor = kRed;
 	
 	knowButton.enabled = NO;
 	dontKnowButton.enabled = NO;
@@ -85,7 +101,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 	if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
 		self.containerView.frame = CGRectMake(20, 20, 535, 340);
-		self.previousView.frame = CGRectMake(26, 300, 535, 340);
+		self.previousView.frame = CGRectMake(41, 315, 505, 310);
 		
 		questionCountButton.frame = CGRectMake(580, 45, 104, 100);
 		answerCountButton.frame = CGRectMake(580, 175, 104, 100);
@@ -94,13 +110,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		
 	} else {
 		self.containerView.frame = CGRectMake(122, 60, 535, 340);
-		self.previousView.frame = CGRectMake(126, 353, 535, 340);
+		self.previousView.frame = CGRectMake(146, 368, 505, 310);
 		
 		questionCountButton.frame = CGRectMake(134, 760, 104, 100);
 		answerCountButton.frame = CGRectMake(266, 760, 104, 100);
 		correctCountButton.frame = CGRectMake(398, 760, 104, 100);
 		errorCountButton.frame = CGRectMake(530, 760, 104, 100);
 	}
+    
+    [WQUtils renderCardShadow:previousView];
+    [WQUtils renderCardShadow:frontView];
+    [WQUtils renderCardShadow:backView];
 }
 
 
@@ -111,6 +131,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
 	self.showFront = true;
 	self.flipNeeded = false;
+    self.slideNeeded = false;
+    self.slideToTheRight = false;
 	self.knowButton.enabled = YES;
 	self.dontKnowButton.enabled = YES;
 	self.errorCountButton.enabled = NO;
@@ -144,6 +166,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		self.flipNeeded = false;
 	}
 	self.showFront = true;
+    self.slideNeeded = true;
+    self.slideToTheRight = !keep;
 	
 	[answerCountButton setTitle:[[NSNumber numberWithInt:([self.quiz correctCount] + [self.quiz errorCount])] stringValue] forState:UIControlStateNormal];
 	[correctCountButton setTitle:[[NSNumber numberWithInt:[self.quiz correctCount]] stringValue] forState:UIControlStateNormal];
@@ -166,11 +190,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (IBAction) doKnowButton {
-	[self keepDiscardCard:false];
+    [self keepDiscardCard:false];
+    if (self.slideNeeded) {
+        [self slideCard];
+    }
 }
 
 - (IBAction) doDontKnowButton {
 	[self keepDiscardCard:true];
+    if (self.slideNeeded) {
+        [self slideCard];
+    }
 }
 
 - (IBAction) doRestart {
@@ -184,31 +214,72 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (void) handleTap:(UITapGestureRecognizer *)tapGestureRecognizer {
-	if (self.flipNeeded) {	
-		[UIView beginAnimations:nil context:NULL];
-		[UIView setAnimationDuration:kTransitionDuration];
-		[UIView setAnimationTransition:(self.showFront ? 
-										UIViewAnimationTransitionFlipFromLeft : UIViewAnimationTransitionFlipFromRight)
-							            forView:self.containerView cache:YES];
-		
-		[UIView commitAnimations];
+
+    //self.slideNeeded = (tapGestureRecognizer == nil);
+    if (self.flipNeeded) {
+        bool shouldSlide = self.slideNeeded;
+        self.slideNeeded = false;
+        [UIView transitionFromView:(self.showFront ? self.backView : self.frontView)
+                            toView:(self.showFront ? self.frontView : self.backView)
+                          duration:kTransitionDuration
+                           options:(self.showFront ? 
+                                    UIViewAnimationOptionTransitionFlipFromLeft :
+                                    UIViewAnimationOptionTransitionFlipFromRight) | UIViewAnimationOptionShowHideTransitionViews
+                        completion:^(BOOL finished) {
+                            if (finished) {
+                                if (shouldSlide) {
+                                    [self slideCard];
+                                }
+                            }
+                        }
+         ];
 	}
-	
+ 
 	if( self.showFront )
 	{
-		line.backgroundColor = [UIColor redColor]; //self.frontView.image = [UIImage imageNamed: @"front.png"];
+		line.backgroundColor = [UIColor redColor];
 		identifierLabel.text = [self.quiz langQuestion];
 		frontText.text = [self.quiz question];
+        [line removeFromSuperview];
+        [frontView addSubview:line];
+        [identifierLabel removeFromSuperview];
+        [frontView addSubview:identifierLabel];
+        [frontText removeFromSuperview];
+        [frontView addSubview:frontText];
 		self.showFront = false;
 	}
 	else
 	{
-		line.backgroundColor = [UIColor blueColor]; //self.frontView.image = [UIImage imageNamed: @"back.png"];
+		line.backgroundColor = [UIColor blueColor];
 		identifierLabel.text = [self.quiz langAnswer];
 		frontText.text = [self.quiz answer];
+        [line removeFromSuperview];
+        [backView addSubview:line];
+        [identifierLabel removeFromSuperview];
+        [backView addSubview:identifierLabel];
+        [frontText removeFromSuperview];
+        [backView addSubview:frontText];
 		self.showFront = true;
 	}
 
+}
+
+- (void) slideCard {
+    CATransition *transition = [CATransition animation];
+    transition.duration = kTransitionDuration;
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    
+    NSString *transitionTypes[4] = { kCATransitionPush, kCATransitionMoveIn, kCATransitionReveal, kCATransitionFade };
+    transition.type = transitionTypes[2];
+    
+    NSString *transitionSubtypes[4] = { kCATransitionFromRight, kCATransitionFromLeft, kCATransitionFromTop, kCATransitionFromBottom };
+    transition.subtype = (self.slideToTheRight ? transitionSubtypes[0] : transitionSubtypes[1]);
+    
+    [frontView.layer addAnimation:transition forKey:nil];
+    [identifierLabel.layer addAnimation:transition forKey:nil];
+    [frontText.layer addAnimation:transition forKey:nil];
+    [line.layer addAnimation:transition forKey:nil];
+    self.slideNeeded = false;
 }
 
 - (void)didReceiveMemoryWarning {

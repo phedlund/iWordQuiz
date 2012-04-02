@@ -32,20 +32,23 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <UIKit/UIKit.h>
 #import "iWQQuiz.h"
+#import "WQScoreButton.h"
 
 @interface FCViewController : UIViewController <UIGestureRecognizerDelegate> {
 
 	iWQQuiz * m_quiz;
 	bool m_showFront;
 	bool m_flipNeeded;
+    bool slideNeeded;
+    bool slideToTheRight;
 	
 	UILabel *identifierLabel;
 	UITextView *frontText;
 	
-	UIButton *questionCountButton;
-	UIButton *answerCountButton;
-	UIButton *correctCountButton;
-	UIButton *errorCountButton;
+	WQScoreButton *questionCountButton;
+	WQScoreButton *answerCountButton;
+	WQScoreButton *correctCountButton;
+	WQScoreButton *errorCountButton;
 	
 	UIButton *knowButton;
 	UIButton *dontKnowButton;
@@ -53,7 +56,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	UIView *containerView;
 	UIView *line;
 	UIView *previousView;
-	UIImageView *frontView;
+	UIView *frontView;
+    UIView *backView;
 }
 
 - (void) start;
@@ -62,18 +66,21 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) keepDiscardCard:(bool)keep;
 
 - (void) handleTap:(UITapGestureRecognizer *)tapGestureRecognizer;
+- (void) slideCard;
 
 @property (nonatomic, retain) iWQQuiz *quiz;
 @property (nonatomic, assign) bool showFront;
 @property (nonatomic, assign) bool flipNeeded;
+@property (nonatomic, assign) bool slideNeeded;
+@property (nonatomic, assign) bool slideToTheRight;
 
 @property (nonatomic, retain) IBOutlet UILabel *identifierLabel;
 @property (nonatomic, retain) IBOutlet UITextView *frontText;
 
-@property (nonatomic, retain) IBOutlet UIButton *questionCountButton;
-@property (nonatomic, retain) IBOutlet UIButton *answerCountButton;
-@property (nonatomic, retain) IBOutlet UIButton *correctCountButton;
-@property (nonatomic, retain) IBOutlet UIButton *errorCountButton;
+@property (nonatomic, retain) IBOutlet WQScoreButton *questionCountButton;
+@property (nonatomic, retain) IBOutlet WQScoreButton *answerCountButton;
+@property (nonatomic, retain) IBOutlet WQScoreButton *correctCountButton;
+@property (nonatomic, retain) IBOutlet WQScoreButton *errorCountButton;
 
 @property (nonatomic, retain) IBOutlet UIButton *knowButton;
 @property (nonatomic, retain) IBOutlet UIButton *dontKnowButton;
@@ -81,7 +88,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, retain) IBOutlet UIView *containerView;
 @property (nonatomic, retain) IBOutlet UIView *line;
 @property (nonatomic, retain) IBOutlet UIView *previousView;
-@property (nonatomic, retain) IBOutlet UIImageView *frontView;
+@property (nonatomic, retain) IBOutlet UIView *frontView;
+@property (nonatomic, retain) IBOutlet UIView *backView;
 
 - (IBAction) doKnowButton;
 - (IBAction) doDontKnowButton;

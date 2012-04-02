@@ -34,6 +34,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "iWQQuiz.h"
 #import "ModePickerController.h"
+#import "WQDocument.h"
 
 @interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, ModePickerDelegate> {
     
@@ -41,21 +42,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	ModePickerController *modePicker;
 	UIPopoverController *modePickerPopover;
 
+    WQDocument *doc;
 	iWQQuiz * m_quiz;
-	NSMutableArray *entries;
-	NSString *identifierFront;
-	NSString *identifierBack;
 }
-
-//@property (nonatomic, retain) IBOutlet UITabBarController *tabController;
 
 @property (nonatomic, retain) ModePickerController *modePicker;
 @property (nonatomic, retain) UIPopoverController *modePickerPopover;
 
-@property (nonatomic, retain) NSString *identifierFront;
-@property (nonatomic, retain) NSString *identifierBack;
-
-@property (nonatomic, retain) NSMutableArray *entries;
+@property (nonatomic, retain) WQDocument *doc;
 
 - (void) activateTab:(int)index;
 - (void) setDocument:(NSURL *)URL;
@@ -64,5 +58,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (BOOL) hasQuiz;
 
 - (IBAction) doMode:(id)sender;
+- (IBAction) doAbout:(id)sender;
 
 @end

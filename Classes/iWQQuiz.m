@@ -31,10 +31,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *************************************************************************/
 
 #import "iWQQuiz.h"
+#import "WQUtils.h"
 
 @implementation iWQQuiz
 
-@synthesize entries = m_quizList;
+@synthesize entries;
 @synthesize frontIdentifier;
 @synthesize backIdentifier;
 @synthesize quizMode = m_quizMode;
@@ -51,16 +52,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     frontIdentifier = @"Front";
     backIdentifier = @"Back";
     
+    entries = [[NSMutableArray alloc] init];
 	m_list = [[NSMutableArray alloc] init];
 	m_errorList = [[NSMutableArray alloc] init];
 	
 	return self;
-}
-
-
-- (bool) isOdd:(int )aNumber
-{
-	return (aNumber % 2);
 }
 
 int randomSort(id obj1, id obj2, void *context ) {
@@ -87,7 +83,7 @@ int rand_lim(int limit) {
 - (int) column:(int )aColumn
 {
 	int result = 0;
-    if ([self isOdd:self.quizMode])
+    if ([WQUtils isOdd:self.quizMode])
         result = 1;
     return result;
 }
@@ -95,7 +91,7 @@ int rand_lim(int limit) {
 - (void) activateErrorList
 {
 	[m_list removeAllObjects];
-	for (NSDictionary *entry in m_errorList) {
+	for (NSArray *entry in m_errorList) {
 		[m_list addObject:entry];
 	}
 	
@@ -112,7 +108,7 @@ int rand_lim(int limit) {
 	[m_list removeAllObjects];
 	[m_errorList removeAllObjects];
 	
-	for (NSDictionary *entry in self.entries) {
+	for (NSArray *entry in self.entries) {
 		[m_list addObject:entry];
 	}
 	
@@ -165,12 +161,12 @@ int rand_lim(int limit) {
 {
 	NSString * result;
 
-    if ([self isOdd:self.quizMode]) {
+    if ([WQUtils isOdd:self.quizMode]) {
 		
-		result = [[m_list objectAtIndex:m_currentQuestion] objectForKey:@"Front"];
+		result = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:0];
 	}
 	else {
-		result = [[m_list objectAtIndex:m_currentQuestion] objectForKey:@"Back"];
+		result = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:1];
 	}
 
     return result;
@@ -180,12 +176,12 @@ int rand_lim(int limit) {
 {
 	NSString * result;
 	
-    if ([self isOdd:self.quizMode]) {
+    if ([WQUtils isOdd:self.quizMode]) {
 		
-		result = [[m_list objectAtIndex:m_currentQuestion] objectForKey:@"Back"];
+		result = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:1];
 	}
 	else {
-		result = [[m_list objectAtIndex:m_currentQuestion] objectForKey:@"Front"];
+		result = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:0];
 	}
 	
     return result;
@@ -206,14 +202,14 @@ int rand_lim(int limit) {
 - (NSString*) langQuestion
 {
 	NSString * result;
-	NSLog(@"langQuestion %@", [self backIdentifier]);
-	if ([self isOdd:self.quizMode]) {
+	//NSLog(@"langQuestion %@", [self backIdentifier]);
+	if ([WQUtils isOdd:self.quizMode]) {
 		result = [self frontIdentifier];
 	}
 	else {
 		result = [self backIdentifier];
 	}
-	NSLog(@"langQuestion %@", result);
+	//NSLog(@"langQuestion %@", result);
 	
 	return result;
 }
@@ -222,14 +218,14 @@ int rand_lim(int limit) {
 - (NSString*) langAnswer
 {
 	NSString * result;
-	NSLog(@"langAnswer %@", [self frontIdentifier]);
-	if ([self isOdd:self.quizMode]) {
+	//NSLog(@"langAnswer %@", [self frontIdentifier]);
+	if ([WQUtils isOdd:self.quizMode]) {
 		result = [self backIdentifier];
 	}
 	else {
 		result = [self frontIdentifier];
 	}
-	NSLog(@"langAnswer %@", result);
+	//NSLog(@"langAnswer %@", result);
 
 	return result;
 }
@@ -263,25 +259,25 @@ int rand_lim(int limit) {
 		b = rand_lim(m_questionCount - 1);
 	while(b == m_currentQuestion || b == a);
 	
-    if ([self isOdd:self.quizMode]) {
-		mo1 = [[m_list objectAtIndex:m_currentQuestion] objectForKey:@"Back"];
-		mo2 = [[m_list objectAtIndex:a] objectForKey:@"Back"];
-		mo3 = [[m_list objectAtIndex:b] objectForKey:@"Back"];
+    if ([WQUtils isOdd:self.quizMode]) {
+		mo1 = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:1];
+		mo2 = [[m_list objectAtIndex:a] objectAtIndex:1];
+		mo3 = [[m_list objectAtIndex:b] objectAtIndex:1];
 	}
 	else {
-		mo1 = [[m_list objectAtIndex:m_currentQuestion] objectForKey:@"Front"];
-		mo2 = [[m_list objectAtIndex:a] objectForKey:@"Front"];
-		mo3 = [[m_list objectAtIndex:b] objectForKey:@"Front"];
+		mo1 = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:0];
+		mo2 = [[m_list objectAtIndex:a] objectAtIndex:0];
+		mo3 = [[m_list objectAtIndex:b] objectAtIndex:0];
 	}
 	
 	result = [NSArray arrayWithObjects:mo1, mo2, mo3, nil];
-	//[result sortUsingFunction:randomSort context:nil];
 	
 	return [result sortedArrayUsingFunction:randomSort context:nil];
-	//return result;
 }
 
 - (void)dealloc {
+    [entries removeAllObjects];
+    [entries release];
     [m_list release];
 	[m_errorList release];
     [frontIdentifier release];

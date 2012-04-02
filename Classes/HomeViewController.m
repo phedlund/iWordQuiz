@@ -32,12 +32,31 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "HomeViewController.h"
 #import "WordQuizAppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation HomeViewController
 
-@synthesize quiz = m_quiz;
-@synthesize identifierLabel, frontText;
-@synthesize containerView, previousView, frontView, backView, scoreView;
+@synthesize doc;
+@synthesize containerView;
+@synthesize spreadView;
+
+- (CGPathRef)renderShadow:(UIView*)aView {
+	CGSize size = aView.bounds.size;
+	CGFloat curlFactor = 15.0f;
+	CGFloat shadowDepth = 5.0f;
+    
+	UIBezierPath *path = [UIBezierPath bezierPath];
+	[path moveToPoint:CGPointMake(0.0f, 0.0f)];
+	[path addLineToPoint:CGPointMake(size.width + shadowDepth, 0.0f)];
+	[path addCurveToPoint:CGPointMake(size.width, size.height + shadowDepth)
+			controlPoint1:CGPointMake(size.width - curlFactor, shadowDepth + curlFactor)
+			controlPoint2:CGPointMake(size.width +shadowDepth, size.height - curlFactor)];
+	[path addCurveToPoint:CGPointMake(0.0f, size.height + shadowDepth)
+			controlPoint1:CGPointMake(size.width - curlFactor, size.height + shadowDepth - curlFactor)
+			controlPoint2:CGPointMake(curlFactor, size.height + shadowDepth - curlFactor)];
+    
+	return path.CGPath;
+}
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -54,12 +73,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
-	
-	UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-	tgr.delegate = self;
-	tgr.numberOfTapsRequired = 1;
-	[scoreView addGestureRecognizer:tgr];
-	[tgr release];
+    
+    [spreadView reloadData];
 }
 
 
@@ -70,54 +85,40 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	
-	if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-		self.containerView.frame = CGRectMake(92, 40, 535, 340);
-		self.previousView.frame = CGRectMake(96, 46, 535, 340);
-		self.scoreView.frame = CGRectMake(235, 410, 238, 200);
+    if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+		self.containerView.frame = CGRectMake(20, 20, 665, 615);
+		self.spreadView.frame = CGRectMake(0, 0, 665, 615);
+
 		
 	} else {
-		self.containerView.frame = CGRectMake(122, 65, 535, 340);
-		self.previousView.frame = CGRectMake(126, 71, 535, 340);
-		self.scoreView.frame = CGRectMake(260, 610, 238, 200);
+		self.containerView.frame = CGRectMake(20, 20, 665, 864);
+		self.spreadView.frame = CGRectMake(0, 0, 665, 864);
+
 	}
+    
+    containerView.layer.borderWidth = 1.0;
+    containerView.layer.borderColor = [[UIColor grayColor] CGColor];
+    containerView.layer.shadowColor = [UIColor blackColor].CGColor;
+	containerView.layer.shadowOpacity = 0.5f;
+	containerView.layer.shadowOffset = CGSizeMake(0, 4);
+	containerView.layer.shadowRadius = 6.0f;
+	containerView.layer.masksToBounds = NO;
+    
+	containerView.layer.shadowPath = [self renderShadow:containerView];
 }
 
 - (void) start {
-	identifierLabel.text = self.quiz.fileName;
-	NSNumber *number = [NSNumber numberWithInt:[self.quiz.entries count]];
-	frontText.text = [NSString stringWithFormat:@"Front:\t%1@\nBack:\t%2@\nEntries:\t%3@", self.quiz.frontIdentifier, self.quiz.backIdentifier, number];
+    [spreadView reloadData];
 	[self slotCheck];
 }
 
 - (void) restart {
-	[self.quiz activateBaseList];
 	[self start];
 }
 
 - (void) slotCheck {
 	//Do nothing
 }
-
-- (void) handleTap:(UITapGestureRecognizer *)tapGestureRecognizer {
-	// Create the modal view controller
-	AboutViewController *aboutController = [[AboutViewController alloc] initWithNibName:@"AboutView" bundle:nil];
-	
-	// We are the delegate responsible for dismissing the modal view
-	aboutController.delegate = ((iWordQuizAppDelegate *)[[UIApplication sharedApplication] delegate]);
-	
-	// Create a Navigation controller
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:aboutController];
-	navController.modalPresentationStyle = UIModalPresentationFormSheet;
-	
-	// show the navigation controller modally
-	[((iWordQuizAppDelegate *)[[UIApplication sharedApplication] delegate]).splitViewController presentModalViewController:navController animated:YES];
-	
-	// Clean up resources
-	[navController release];
-	[aboutController release];
-}
-
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -128,6 +129,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void)viewDidUnload {
+    [self setSpreadView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -135,7 +137,114 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void)dealloc {
+    [spreadView release];
     [super dealloc];
+}
+
+
+#pragma mark - Spread View Datasource
+
+- (NSInteger)spreadView:(MDSpreadView *)aSpreadView numberOfColumnsInSection:(NSInteger)section
+{
+    return 2;
+}
+
+- (NSInteger)spreadView:(MDSpreadView *)aSpreadView numberOfRowsInSection:(NSInteger)section
+{
+    if ([self.doc.entries count] == 0)
+        return 30;
+    else
+        return [self.doc.entries count];
+}
+
+- (NSInteger)numberOfColumnSectionsInSpreadView:(MDSpreadView *)aSpreadView
+{
+    return 1;
+}
+
+- (NSInteger)numberOfRowSectionsInSpreadView:(MDSpreadView *)aSpreadView
+{
+    return 1;
+}
+
+#pragma Cells
+- (MDSpreadViewCell *)spreadView:(MDSpreadView *)aSpreadView cellForRowAtIndexPath:(NSIndexPath *)rowPath forColumnAtIndexPath:(NSIndexPath *)columnPath
+{
+    static NSString *cellIdentifier = @"Cell";
+    
+    MDSpreadViewCell *cell = [aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[[MDSpreadViewCell alloc] initWithStyle:MDSpreadViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+    }
+    
+    cell.textLabel.text = [[self.doc.entries objectAtIndex:rowPath.row ] objectAtIndex:columnPath.row];
+    return cell;
+}
+
+- (MDSpreadViewCell *)spreadView:(MDSpreadView *)aSpreadView cellForHeaderInRowSection:(NSInteger)rowSection forColumnSection:(NSInteger)columnSection
+{
+    static NSString *cellIdentifier = @"CornerHeaderCell";
+    
+    MDSpreadViewHeaderCell *cell = (MDSpreadViewHeaderCell *)[aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleCorner reuseIdentifier:cellIdentifier] autorelease];
+    }
+    
+    return cell;
+}
+
+- (MDSpreadViewCell *)spreadView:(MDSpreadView *)aSpreadView cellForHeaderInRowSection:(NSInteger)section forColumnAtIndexPath:(NSIndexPath *)columnPath
+{
+    static NSString *cellIdentifier = @"RowHeaderCell";
+    
+    MDSpreadViewHeaderCell *cell = (MDSpreadViewHeaderCell *)[aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleRow reuseIdentifier:cellIdentifier] autorelease];
+    }
+    
+    if (columnPath.row == 0) {
+        cell.textLabel.text = [self.doc frontIdentifier];
+    } else {
+        cell.textLabel.text = [self.doc backIdentifier];
+    }
+    
+    return cell;
+}
+
+- (MDSpreadViewCell *)spreadView:(MDSpreadView *)aSpreadView cellForHeaderInColumnSection:(NSInteger)section forRowAtIndexPath:(NSIndexPath *)rowPath
+{
+    static NSString *cellIdentifier = @"ColumnHeaderCell";
+    
+    MDSpreadViewHeaderCell *cell = (MDSpreadViewHeaderCell *)[aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleColumn reuseIdentifier:cellIdentifier] autorelease];
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%d", rowPath.row + 1];
+    
+    return cell;
+}
+
+#pragma mark Heights
+// Comment these out to use normal values (see MDSpreadView.h)
+- (CGFloat)spreadView:(MDSpreadView *)aSpreadView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 35;
+}
+
+- (CGFloat)spreadView:(MDSpreadView *)aSpreadView heightForRowHeaderInSection:(NSInteger)rowSection
+{
+    return 35;
+}
+
+- (CGFloat)spreadView:(MDSpreadView *)aSpreadView widthForColumnAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 302;
+}
+
+- (CGFloat)spreadView:(MDSpreadView *)aSpreadView widthForColumnHeaderInSection:(NSInteger)columnSection
+{
+    return 60;
 }
 
 @end

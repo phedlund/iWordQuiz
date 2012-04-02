@@ -36,7 +36,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
     NSMutableArray * m_list;
     NSMutableArray * m_errorList;
-    NSMutableArray * m_quizList;
+    NSMutableArray * entries;
 	
     int m_quizMode;
     int m_currentQuestion;
@@ -52,9 +52,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	NSString * fileName;
 }
 
-- (bool) isOdd:(int )aNumber;
 - (int) column:(int )aColumn;
-
 
 - (void) activateErrorList;
 - (void) activateBaseList;

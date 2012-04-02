@@ -37,6 +37,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "FCViewController.h"
 #import "MCViewController.h"
 #import "QAViewController.h"
+#import "AboutViewController.h"
+#import "WordQuizAppDelegate.h"
 
 @interface DetailViewController ()
 @property (nonatomic, retain) UIPopoverController *popoverController;
@@ -46,16 +48,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @implementation DetailViewController
 
 @synthesize popoverController;
-@synthesize modePicker, modePickerPopover/*, tabController*/;
-@synthesize entries, identifierFront, identifierBack;
+@synthesize modePicker, modePickerPopover;
+@synthesize doc;
 
-static inline BOOL isEmpty(id thing) {
-	return thing == nil
-	|| ([thing respondsToSelector:@selector(length)]
-		&& [(NSData *)thing length] == 0)
-	|| ([thing respondsToSelector:@selector(count)]
-		&& [(NSArray *)thing count] == 0);
-}
 
 - (void) setDocument:(NSURL *)URL
 {
@@ -63,111 +58,18 @@ static inline BOOL isEmpty(id thing) {
         [popoverController dismissPopoverAnimated:YES];
     }
 
-	[self.entries removeAllObjects];
-    NSString *f = @"";
-    NSString *b = @"";
-	
-    if ([[URL pathExtension] caseInsensitiveCompare:@"kvtml"] == NSOrderedSame) {
-        //kvtml start
-        NSString *fileString = [NSString stringWithContentsOfURL:URL encoding:NSUTF8StringEncoding error:NULL];
-        
-        DDXMLDocument *xmlDoc = [[DDXMLDocument alloc] initWithXMLString:fileString options:0 error:nil];
-        NSArray *identifierNodes = [xmlDoc nodesForXPath:@"/kvtml/identifiers/identifier/name" error:nil];
-        
-        self.identifierFront = [[identifierNodes objectAtIndex:0] stringValue];
-        self.identifierBack  = [[identifierNodes objectAtIndex:1] stringValue];
-        
-        NSArray *textNodes = [xmlDoc nodesForXPath:@"/kvtml/entries/entry/translation/text" error:nil];
-        int colCount = [identifierNodes count];
-        int i = 0;
-
-        int emptyCellCount = 0;
-        for (DDXMLNode *textNode in textNodes){
-            emptyCellCount = 0;
-
-            if (i == 0) {
-                if (isEmpty([textNode stringValue])) {
-                    emptyCellCount++;
-                }
-                f = [textNode stringValue];
-            }
-
-            if (i == 1) {
-                if (isEmpty([textNode stringValue])) {
-                    emptyCellCount++;
-                }
-                b = [textNode stringValue];
-            }
-            
-            if ((i == (colCount - 1)) && (!(emptyCellCount > 0))) {
-                [self.entries addObject:[NSDictionary dictionaryWithObjectsAndKeys: f, @"Front", b, @"Back", nil]];
-            }
-            
-            if (i == (colCount - 1)) {
-                i = 0;
-            } else {
-                ++i;
-            }      
-        }
-        [xmlDoc release];
-    }
- 
-    if ([[URL pathExtension] caseInsensitiveCompare:@"csv"] == NSOrderedSame) {
+    [self.doc setUrl:URL];
+    [self.doc load];
     
-        NSString *fileString = [NSString stringWithContentsOfURL:URL encoding:NSUTF8StringEncoding error:NULL];
-        
-        unsigned length = [fileString length];
-        unsigned paraStart = 0, paraEnd = 0, contentsEnd = 0;
-        NSMutableArray *lines = [[[NSMutableArray alloc] init] autorelease];
-        NSRange currentRange;
-        while (paraEnd < length) {
-            [fileString getParagraphStart:&paraStart end:&paraEnd contentsEnd:&contentsEnd forRange:NSMakeRange(paraEnd, 0)];
-            currentRange = NSMakeRange(paraStart, contentsEnd - paraStart);
-            [lines addObject:[fileString substringWithRange:currentRange]];
-        }
-        self.identifierFront = @"Front";
-        self.identifierBack  = @"Back";
-        
-        int emptyCellCount = 0;
-
-        for (NSString *theLine in lines) {
-
-            if (!(isEmpty(theLine)) && ![theLine hasPrefix:@"!"] && ![theLine hasPrefix:@"Title:"] && ![theLine hasPrefix:@"Author:"]) {   
-                //ignore empty lines and lines that start with ! (old kvtml?), Title:, and Author:
-                //NSLog(@"csv theLine %@", theLine);
-                NSArray *values  = [theLine componentsSeparatedByString:@"\t"];
-                int valueCount = [values count];
-                
-                if (valueCount > 1) {
-                    emptyCellCount = 0;
-                    if (isEmpty([values objectAtIndex:0])) {
-                        emptyCellCount++;
-                    }
-                    //NSLog(@"csv Front %@", [values objectAtIndex:0]);
-                    f = [values objectAtIndex:0];
-                    if (isEmpty([values objectAtIndex:1])) {
-                        emptyCellCount++;
-                    }
-                    //NSLog(@"csv Back %@", [values objectAtIndex:1]);
-                    b = [values objectAtIndex:1];
-                }
-                
-                if (!(emptyCellCount > 0)) {
-                    [self.entries addObject:[NSDictionary dictionaryWithObjectsAndKeys: f, @"Front", b, @"Back", nil]];
-                }
-            }
-        }       
-    }
-    
-	if (m_quiz != nil) {
-		[m_quiz release];
+    if (m_quiz != nil) {
+        [m_quiz release];
 		m_quiz = nil;
 	}
 	
     m_quiz = [[iWQQuiz alloc] init];
-	[m_quiz setEntries:self.entries];
-	[m_quiz setFrontIdentifier:self.identifierFront];
-	[m_quiz setBackIdentifier:self.identifierBack];
+	[m_quiz setEntries:[doc quizEntries]];
+	[m_quiz setFrontIdentifier:[doc frontIdentifier]];
+	[m_quiz setBackIdentifier:[doc backIdentifier]];
 	[m_quiz setFileName:[[URL lastPathComponent] stringByDeletingPathExtension]];
 	
 	[self activateTab:self.selectedIndex];
@@ -247,7 +149,7 @@ static inline BOOL isEmpty(id thing) {
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    entries = [[NSMutableArray alloc] init];
+    doc = [[WQDocument alloc] init];
 
     NSMutableArray *listOfViewControllers = [[NSMutableArray alloc] init];
 	HomeViewController *hvc;
@@ -282,9 +184,16 @@ static inline BOOL isEmpty(id thing) {
     [self setViewControllers:listOfViewControllers animated:YES];
     [listOfViewControllers release];
     
-	UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithTitle:@"Mode" style:UIBarButtonItemStyleBordered target:self action:@selector(doMode:)]; 
-	self.navigationItem.rightBarButtonItem = button;
+    UIBarButtonItem* button1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(doAbout:)]; 
+	//self.navigationItem.rightBarButtonItem = button;
+    
+    UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithTitle:@"Mode" style:UIBarButtonItemStyleBordered target:self action:@selector(doMode:)]; 
+	//self.navigationItem.rightBarButtonItem = button;
+    NSArray *buttons = [NSArray arrayWithObjects:button1, button, nil];
+    self.navigationItem.rightBarButtonItems = buttons;
 	[button release];
+    [button1 release];
+    //[buttons release];
 
 	[self activateTab:1];
 }
@@ -329,8 +238,14 @@ static inline BOOL isEmpty(id thing) {
 	}
 	if (m_quiz != nil) {
 		m_quiz.quizMode = myMode;
-		[self.selectedViewController setQuiz:m_quiz];
-		[self.selectedViewController restart];
+        if (index == 0) {
+            [self.selectedViewController setDoc:self.doc];
+		    [self.selectedViewController restart];
+        } else {
+            [self.selectedViewController setQuiz:m_quiz];
+		    [self.selectedViewController restart];
+        }
+		
 	}
 }
 
@@ -367,7 +282,24 @@ static inline BOOL isEmpty(id thing) {
     [self.modePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
-
+- (IBAction) doAbout:(id)sender {
+    // Create the modal view controller
+	AboutViewController *aboutController = [[AboutViewController alloc] initWithNibName:@"AboutView" bundle:nil];
+	
+	// We are the delegate responsible for dismissing the modal view
+	aboutController.delegate = ((iWordQuizAppDelegate *)[[UIApplication sharedApplication] delegate]);
+	
+	// Create a Navigation controller
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:aboutController];
+	navController.modalPresentationStyle = UIModalPresentationFormSheet;
+	
+	// show the navigation controller modally
+	[((iWordQuizAppDelegate *)[[UIApplication sharedApplication] delegate]).splitViewController presentModalViewController:navController animated:YES];
+	
+	// Clean up resources
+	[navController release];
+	[aboutController release];
+}
 - (void) quizDidFinish {
 	//self.repeatErrors.enabled = [m_quiz hasErrors];
 }
@@ -394,7 +326,7 @@ static inline BOOL isEmpty(id thing) {
 	[modePickerPopover release];
 	
 	[m_quiz release];
-    [entries release];
+    [doc release];
 	
     [super dealloc];
 }

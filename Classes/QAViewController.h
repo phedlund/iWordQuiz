@@ -33,6 +33,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import <UIKit/UIKit.h>
 
 #import "iWQQuiz.h"
+#import "WQScoreButton.h"
 
 @interface QAViewController : UIViewController <UITextFieldDelegate> {
 	iWQQuiz * m_quiz;
@@ -43,10 +44,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	UITextField *answerTextField;
 	
-	UIButton *questionCountButton;
-	UIButton *answerCountButton;
-	UIButton *correctCountButton;
-	UIButton *errorCountButton;
+	WQScoreButton *questionCountButton;
+	WQScoreButton *answerCountButton;
+	WQScoreButton *correctCountButton;
+	WQScoreButton *errorCountButton;
 	
 	UILabel *previousQuestionHeaderLabel;
 	UILabel *previousQuestionLabel;
@@ -78,10 +79,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @property (nonatomic, retain) IBOutlet UITextField *answerTextField;
 
-@property (nonatomic, retain) IBOutlet UIButton *questionCountButton;
-@property (nonatomic, retain) IBOutlet UIButton *answerCountButton;
-@property (nonatomic, retain) IBOutlet UIButton *correctCountButton;
-@property (nonatomic, retain) IBOutlet UIButton *errorCountButton;
+@property (nonatomic, retain) IBOutlet WQScoreButton *questionCountButton;
+@property (nonatomic, retain) IBOutlet WQScoreButton *answerCountButton;
+@property (nonatomic, retain) IBOutlet WQScoreButton *correctCountButton;
+@property (nonatomic, retain) IBOutlet WQScoreButton *errorCountButton;
 
 @property (nonatomic, retain) IBOutlet UILabel *previousQuestionHeaderLabel;
 @property (nonatomic, retain) IBOutlet UILabel *previousQuestionLabel;

@@ -31,6 +31,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *************************************************************************/
 
 #import "QAViewController.h"
+#import "WQUtils.h"
 
 @implementation QAViewController
 
@@ -64,7 +65,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
 	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
 	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
-	
+
+    questionCountButton.stickyColor = kBlue;
+    answerCountButton.stickyColor = kYellow;
+    correctCountButton.stickyColor = kGreen;
+    errorCountButton.stickyColor = kRed;
+    
 	previousQuestionHeaderLabel.text = @"";
 	previousQuestionLabel.text = @"";
 	yourAnswerHeaderLabel.text = @"";
@@ -91,8 +97,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
 	if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-		self.questionView.frame = CGRectMake(20, 20, 535, 340);
-		self.previousView.frame = CGRectMake(26, 300, 535, 340);
+		self.questionView.frame = CGRectMake(35, 35, 505, 310);
+		self.previousView.frame = CGRectMake(41, 315, 505, 310);
 		
 		questionCountButton.frame = CGRectMake(580, 45, 104, 100);
 		answerCountButton.frame = CGRectMake(580, 175, 104, 100);
@@ -100,13 +106,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		errorCountButton.frame = CGRectMake(580, 440, 104, 100);
 		
 	} else {
-		self.questionView.frame = CGRectMake(50, 60, 535, 340);
-		self.previousView.frame = CGRectMake(54, 353, 535, 340);
+		self.questionView.frame = CGRectMake(65, 75, 505, 310);
+		self.previousView.frame = CGRectMake(69, 368, 505, 310);
+
 		questionCountButton.frame = CGRectMake(620, 85, 104, 100);
 		answerCountButton.frame = CGRectMake(620, 215, 104, 100);
 		correctCountButton.frame = CGRectMake(620, 345, 104, 100);
 		errorCountButton.frame = CGRectMake(620, 480, 104, 100);
 	}
+    
+    [WQUtils renderCardShadow:previousView];
+    [WQUtils renderCardShadow:questionView];
 }
 
 - (void) start {

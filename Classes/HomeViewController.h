@@ -32,34 +32,21 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <UIKit/UIKit.h>
 
-#import "iWQQuiz.h"
+#import "WQDocument.h"
+#import "MDSpreadViewClasses.h"
 
-@interface HomeViewController : UIViewController <UIGestureRecognizerDelegate> {
+@interface HomeViewController : UIViewController <MDSpreadViewDataSource, MDSpreadViewDelegate> {
 
-	iWQQuiz * m_quiz;
-	UILabel *identifierLabel;
-	UITextView *frontText;
-	
-	UIView *containerView;
-	UIImageView *frontView;
-	UIImageView *backView;
-	UIImageView *scoreView;
-
+	WQDocument *doc;
+    UIView *containerView;
+    MDSpreadView *spreadView;
 }
 - (void) start;
 - (void) restart;
 - (void) slotCheck;
 
-- (void) handleTap:(UITapGestureRecognizer *)tapGestureRecognizer;
-
-@property (nonatomic, retain) iWQQuiz *quiz;
-
-@property (nonatomic, retain) IBOutlet UILabel *identifierLabel;
-@property (nonatomic, retain) IBOutlet UITextView *frontText;
+@property (nonatomic, retain) WQDocument *doc;
 @property (nonatomic, retain) IBOutlet UIView *containerView;
-@property (nonatomic, retain) IBOutlet UIView *previousView;
-@property (nonatomic, retain) IBOutlet UIImageView *frontView;
-@property (nonatomic, retain) IBOutlet UIImageView *backView;
-@property (nonatomic, retain) IBOutlet UIImageView *scoreView;
+@property (nonatomic, retain) IBOutlet MDSpreadView *spreadView;
 
 @end
