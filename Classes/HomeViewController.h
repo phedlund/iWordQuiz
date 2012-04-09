@@ -35,9 +35,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQDocument.h"
 #import "MDSpreadViewClasses.h"
 
-@interface HomeViewController : UIViewController <MDSpreadViewDataSource, MDSpreadViewDelegate> {
-
-	WQDocument *doc;
+@interface HomeViewController : UIViewController {
     UIView *containerView;
     MDSpreadView *spreadView;
 }
@@ -45,7 +43,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) restart;
 - (void) slotCheck;
 
-@property (nonatomic, retain) WQDocument *doc;
 @property (nonatomic, retain) IBOutlet UIView *containerView;
 @property (nonatomic, retain) IBOutlet MDSpreadView *spreadView;
 

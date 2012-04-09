@@ -39,7 +39,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @implementation iWordQuizAppDelegate
 
-@synthesize window, splitViewController, rootViewController, detailViewController;
+@synthesize window = _window;
+//@synthesize splitViewController, rootViewController, detailViewController;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -55,10 +56,15 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[DBSession setSharedSession:session];
     [session release];
     
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+        splitViewController.delegate = (id)navigationController.topViewController;
+    }
     // Add the split view controller's view to the window and display.
-    detailViewController.delegate = self;
-    [window addSubview:splitViewController.view];
-    [window makeKeyAndVisible];
+    //detailViewController.delegate = self;
+    //[window addSubview:splitViewController.view];
+    //[window makeKeyAndVisible];
     
     return YES;
 }
@@ -67,7 +73,16 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
 	//Application launch with attachment
 	if ([url isFileURL]) {
-		[self.rootViewController enumerateVocabularies];
+		//todo test this code[self.rootViewController enumerateVocabularies];
+        RootViewController *rootController;
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+            UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+            rootController = [splitViewController.viewControllers objectAtIndex:0];
+        } else {
+            rootController = (RootViewController *)self.window.rootViewController;
+        }
+        [rootController enumerateVocabularies];
+        
 	}
 	else
 	{
@@ -118,43 +133,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void)dealloc {
-    [splitViewController release];
-    [window release];
+    //[splitViewController release];
+    //[window release];
     [super dealloc];
-}
-
-
-#pragma mark -
-#pragma mark UITabBarControllerDelegate methods
-
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	return YES;
-}
-
-- (void)tabBarController:(UITabBarController *)tabBarController willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-	[detailViewController willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	
-	for (UIViewController *myView in tabBarController.viewControllers) {
-		[myView willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	}
-}
-
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-	return [detailViewController hasQuiz]; //(m_quiz != nil); //YES
-}
-
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-	NSLog(@"didSelectViewController: %d", tabBarController.selectedIndex);
-	[detailViewController activateTab:tabBarController.selectedIndex];
-	[viewController viewWillAppear:NO];
-}
-
-#pragma mark -
-#pragma mark AboutViewControllerDelegate methods
-
-- (void) aboutDidFinish {
-	[splitViewController dismissModalViewControllerAnimated:YES];
-    rootViewController.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
 }
 
 

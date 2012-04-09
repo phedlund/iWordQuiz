@@ -39,22 +39,20 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @class RootViewController;
 @class DetailViewController;
 
-@interface iWordQuizAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, AboutViewControllerDelegate, DBSessionDelegate> {
+@interface iWordQuizAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, DBSessionDelegate> {
     
-    UIWindow *window;
+    //UISplitViewController *splitViewController;
     
-    UISplitViewController *splitViewController;
-    
-    RootViewController *rootViewController;
-    DetailViewController *detailViewController;
+    //RootViewController *rootViewController;
+    //DetailViewController *detailViewController;
     
     NSString *relinkUserId;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (strong, nonatomic) UIWindow *window;
 
-@property (nonatomic, retain) IBOutlet UISplitViewController *splitViewController;
-@property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
-@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+//@property (nonatomic, retain) IBOutlet UISplitViewController *splitViewController;
+//@property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
+//@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 
 @end

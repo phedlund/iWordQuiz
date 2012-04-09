@@ -35,19 +35,21 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "iWQQuiz.h"
 #import "ModePickerController.h"
 #import "WQDocument.h"
+#import "MDSpreadViewClasses.h"
+#import "WEPopoverController.h"
 
-@interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, ModePickerDelegate> {
+@interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, ModePickerDelegate,MDSpreadViewDataSource, MDSpreadViewDelegate> {
     
-    UIPopoverController *popoverController;
+    //UIPopoverController *popoverController;
 	ModePickerController *modePicker;
-	UIPopoverController *modePickerPopover;
+	WEPopoverController *modePickerPopover;
 
     WQDocument *doc;
 	iWQQuiz * m_quiz;
 }
 
 @property (nonatomic, retain) ModePickerController *modePicker;
-@property (nonatomic, retain) UIPopoverController *modePickerPopover;
+@property (nonatomic, retain) WEPopoverController *modePickerPopover;
 
 @property (nonatomic, retain) WQDocument *doc;
 

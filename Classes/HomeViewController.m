@@ -36,7 +36,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @implementation HomeViewController
 
-@synthesize doc;
 @synthesize containerView;
 @synthesize spreadView;
 
@@ -73,7 +72,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
-    
+    spreadView.dataSource = (id)self.tabBarController;
+    spreadView.delegate = (id) self.tabBarController;
     [spreadView reloadData];
 }
 
@@ -85,26 +85,38 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-		self.containerView.frame = CGRectMake(20, 20, 665, 615);
-		self.spreadView.frame = CGRectMake(0, 0, 665, 615);
 
-		
-	} else {
-		self.containerView.frame = CGRectMake(20, 20, 665, 864);
-		self.spreadView.frame = CGRectMake(0, 0, 665, 864);
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+            self.containerView.frame = CGRectMake(20, 20, 665, 615);
+            self.spreadView.frame = CGRectMake(0, 0, 665, 615);
 
-	}
-    
-    containerView.layer.borderWidth = 1.0;
-    containerView.layer.borderColor = [[UIColor grayColor] CGColor];
-    containerView.layer.shadowColor = [UIColor blackColor].CGColor;
-	containerView.layer.shadowOpacity = 0.5f;
-	containerView.layer.shadowOffset = CGSizeMake(0, 4);
-	containerView.layer.shadowRadius = 6.0f;
-	containerView.layer.masksToBounds = NO;
-    
-	containerView.layer.shadowPath = [self renderShadow:containerView];
+            
+        } else {
+            self.containerView.frame = CGRectMake(20, 20, 665, 864);
+            self.spreadView.frame = CGRectMake(0, 0, 665, 864);
+
+        }
+        
+        containerView.layer.borderWidth = 1.0;
+        containerView.layer.borderColor = [[UIColor grayColor] CGColor];
+        containerView.layer.shadowColor = [UIColor blackColor].CGColor;
+        containerView.layer.shadowOpacity = 0.5f;
+        containerView.layer.shadowOffset = CGSizeMake(0, 4);
+        containerView.layer.shadowRadius = 6.0f;
+        containerView.layer.masksToBounds = NO;
+        
+        containerView.layer.shadowPath = [self renderShadow:containerView];
+    }
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+            self.spreadView.frame = CGRectMake(0, 0, 480, 219);
+        } else {
+            self.spreadView.frame = CGRectMake(0, 0, 320, 367);
+            
+        }
+        [spreadView reloadData];
+    }
 }
 
 - (void) start {
@@ -139,112 +151,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)dealloc {
     [spreadView release];
     [super dealloc];
-}
-
-
-#pragma mark - Spread View Datasource
-
-- (NSInteger)spreadView:(MDSpreadView *)aSpreadView numberOfColumnsInSection:(NSInteger)section
-{
-    return 2;
-}
-
-- (NSInteger)spreadView:(MDSpreadView *)aSpreadView numberOfRowsInSection:(NSInteger)section
-{
-    if ([self.doc.entries count] == 0)
-        return 30;
-    else
-        return [self.doc.entries count];
-}
-
-- (NSInteger)numberOfColumnSectionsInSpreadView:(MDSpreadView *)aSpreadView
-{
-    return 1;
-}
-
-- (NSInteger)numberOfRowSectionsInSpreadView:(MDSpreadView *)aSpreadView
-{
-    return 1;
-}
-
-#pragma Cells
-- (MDSpreadViewCell *)spreadView:(MDSpreadView *)aSpreadView cellForRowAtIndexPath:(NSIndexPath *)rowPath forColumnAtIndexPath:(NSIndexPath *)columnPath
-{
-    static NSString *cellIdentifier = @"Cell";
-    
-    MDSpreadViewCell *cell = [aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[[MDSpreadViewCell alloc] initWithStyle:MDSpreadViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
-    }
-    
-    cell.textLabel.text = [[self.doc.entries objectAtIndex:rowPath.row ] objectAtIndex:columnPath.row];
-    return cell;
-}
-
-- (MDSpreadViewCell *)spreadView:(MDSpreadView *)aSpreadView cellForHeaderInRowSection:(NSInteger)rowSection forColumnSection:(NSInteger)columnSection
-{
-    static NSString *cellIdentifier = @"CornerHeaderCell";
-    
-    MDSpreadViewHeaderCell *cell = (MDSpreadViewHeaderCell *)[aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleCorner reuseIdentifier:cellIdentifier] autorelease];
-    }
-    
-    return cell;
-}
-
-- (MDSpreadViewCell *)spreadView:(MDSpreadView *)aSpreadView cellForHeaderInRowSection:(NSInteger)section forColumnAtIndexPath:(NSIndexPath *)columnPath
-{
-    static NSString *cellIdentifier = @"RowHeaderCell";
-    
-    MDSpreadViewHeaderCell *cell = (MDSpreadViewHeaderCell *)[aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleRow reuseIdentifier:cellIdentifier] autorelease];
-    }
-    
-    if (columnPath.row == 0) {
-        cell.textLabel.text = [self.doc frontIdentifier];
-    } else {
-        cell.textLabel.text = [self.doc backIdentifier];
-    }
-    
-    return cell;
-}
-
-- (MDSpreadViewCell *)spreadView:(MDSpreadView *)aSpreadView cellForHeaderInColumnSection:(NSInteger)section forRowAtIndexPath:(NSIndexPath *)rowPath
-{
-    static NSString *cellIdentifier = @"ColumnHeaderCell";
-    
-    MDSpreadViewHeaderCell *cell = (MDSpreadViewHeaderCell *)[aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil) {
-        cell = [[[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleColumn reuseIdentifier:cellIdentifier] autorelease];
-    }
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", rowPath.row + 1];
-    
-    return cell;
-}
-
-#pragma mark Heights
-// Comment these out to use normal values (see MDSpreadView.h)
-- (CGFloat)spreadView:(MDSpreadView *)aSpreadView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 35;
-}
-
-- (CGFloat)spreadView:(MDSpreadView *)aSpreadView heightForRowHeaderInSection:(NSInteger)rowSection
-{
-    return 35;
-}
-
-- (CGFloat)spreadView:(MDSpreadView *)aSpreadView widthForColumnAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 302;
-}
-
-- (CGFloat)spreadView:(MDSpreadView *)aSpreadView widthForColumnHeaderInSection:(NSInteger)columnSection
-{
-    return 60;
 }
 
 @end

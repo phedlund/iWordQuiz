@@ -27,13 +27,14 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "AboutViewController.h"
 
 @class DetailViewController;
 @class CHDropboxSync;
 
-@interface RootViewController : UITableViewController
+@interface RootViewController : UITableViewController <UITabBarControllerDelegate, UIActionSheetDelegate>
 {
-    DetailViewController *detailViewController;
+//    DetailViewController *detailViewController;
 
 	NSURL *documentsDirectory;
 	NSMutableArray *vocabularies;
@@ -41,12 +42,14 @@
 
 - (void) enumerateVocabularies;
 
-@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (strong, nonatomic) DetailViewController *detailViewController;
+//@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 @property (nonatomic, retain) NSMutableArray *vocabularies;
 @property (nonatomic, retain) NSURL *documentsDirectory;
 
 @property(retain) CHDropboxSync* syncer;
 
 - (IBAction) doDBSync:(id)sender;
+- (IBAction) doActions:(id)sender;
 
 @end

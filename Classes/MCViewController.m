@@ -32,6 +32,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "MCViewController.h"
 #import "WQUtils.h"
+#import "JMWhenTapped.h"
 
 @implementation MCViewController
 
@@ -42,6 +43,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @synthesize previousQuestionHeaderLabel, previousQuestionLabel, yourAnswerHeaderLabel, yourAnswerLabel, correctAnswerHeaderLabel, correactAnswerLabel;
 @synthesize questionLine, answerLine, previousQuestionLine, yourAnswerLine, correctAnswerLine;
 @synthesize questionView, previousView;
+@synthesize badgeQuestionCount;
+@synthesize badgeAnswerCount;
+@synthesize badgeCorrectCount;
+@synthesize badgeErrorCount;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -62,6 +67,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     correctCountButton.stickyColor = kGreen;
     errorCountButton.stickyColor = kRed;
     
+    badgeQuestionCount.fillColor = [UIColor blueColor];
+    badgeAnswerCount.fillColor = [UIColor yellowColor];
+    badgeCorrectCount.fillColor = [UIColor greenColor];
+    badgeErrorCount.fillColor = [UIColor redColor];
+    [badgeQuestionCount whenTapped:^{
+		[self doRestart];
+	}];
+    [badgeErrorCount whenTapped:^{
+		[self doRepeat];
+	}];
+    
 	previousQuestionHeaderLabel.text = @"";
 	previousQuestionLabel.text = @"";
 	yourAnswerHeaderLabel.text = @"";
@@ -73,6 +89,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	correctAnswerLine.hidden = YES;
 	
 	self.errorCountButton.enabled = NO;
+    self.badgeErrorCount.userInteractionEnabled = NO;
     [self willRotateToInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation duration:0];
 }
 
@@ -86,24 +103,45 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	 [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
-	 if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-		 self.questionView.frame = CGRectMake(35, 35, 505, 310);
-         self.previousView.frame = CGRectMake(41, 315, 505, 310);
+	 if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+         if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+             self.questionView.frame = CGRectMake(35, 35, 505, 310);
+             self.previousView.frame = CGRectMake(41, 315, 505, 310);
+             
+             questionCountButton.frame = CGRectMake(580, 45, 104, 100);
+             answerCountButton.frame = CGRectMake(580, 175, 104, 100);
+             correctCountButton.frame = CGRectMake(580, 305, 104, 100);
+             errorCountButton.frame = CGRectMake(580, 440, 104, 100);
+             
+         } else {
+             self.questionView.frame = CGRectMake(137, 75, 505, 310);
+             self.previousView.frame = CGRectMake(146, 368, 505, 310);
+             
+             questionCountButton.frame = CGRectMake(134, 760, 104, 100);
+             answerCountButton.frame = CGRectMake(266, 760, 104, 100);
+             correctCountButton.frame = CGRectMake(398, 760, 104, 100);
+             errorCountButton.frame = CGRectMake(530, 760, 104, 100);
+         }
+     }
+     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+         if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+             self.questionView.frame = CGRectMake(15, 15, 290, 190 );
+     
+             badgeQuestionCount.frame = CGRectMake(365, 5, 50, 50);
+             badgeAnswerCount.frame = CGRectMake(365, 60, 50, 50);
+             badgeCorrectCount.frame = CGRectMake(365, 115, 50, 50);
+             badgeErrorCount.frame = CGRectMake(365, 170, 50, 50);
 
-		 questionCountButton.frame = CGRectMake(580, 45, 104, 100);
-		 answerCountButton.frame = CGRectMake(580, 175, 104, 100);
-		 correctCountButton.frame = CGRectMake(580, 305, 104, 100);
-		 errorCountButton.frame = CGRectMake(580, 440, 104, 100);
- 
-	 } else {
-		 self.questionView.frame = CGRectMake(137, 75, 505, 310);
-         self.previousView.frame = CGRectMake(146, 368, 505, 310);
+         } else {
+             self.questionView.frame = CGRectMake(15, 15, 290, 190);
+        
+             badgeQuestionCount.frame = CGRectMake(20, 300, 50, 50);
+             badgeAnswerCount.frame = CGRectMake(90, 300, 50, 50);
+             badgeCorrectCount.frame = CGRectMake(170, 300, 50, 50);
+             badgeErrorCount.frame = CGRectMake(240, 300, 50, 50);
 
-		 questionCountButton.frame = CGRectMake(134, 760, 104, 100);
-		 answerCountButton.frame = CGRectMake(266, 760, 104, 100);
-		 correctCountButton.frame = CGRectMake(398, 760, 104, 100);
-		 errorCountButton.frame = CGRectMake(530, 760, 104, 100);
-	 }
+         }
+     }
      
      [WQUtils renderCardShadow:previousView];
      [WQUtils renderCardShadow:questionView];
@@ -115,6 +153,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
 	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
 	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
+    badgeQuestionCount.value = self.quiz.questionCount;
+    badgeAnswerCount.value = 0;
+    badgeCorrectCount.value = 0;
+    badgeErrorCount.value = 0;
 	previousQuestionHeaderLabel.text = @"";
 	previousQuestionLabel.text = @"";
 	yourAnswerHeaderLabel.text = @"";
@@ -124,6 +166,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	previousQuestionLine.hidden =YES;
 	yourAnswerLine.hidden = YES;
 	correctAnswerLine.hidden = YES;
+    errorCountButton.enabled = NO;
+    badgeErrorCount.userInteractionEnabled = NO;
 	[self showQuestion];
 }
 
@@ -191,6 +235,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[answerCountButton setTitle:[[NSNumber numberWithInt:([self.quiz correctCount] + [self.quiz errorCount])] stringValue] forState:UIControlStateNormal];
 	[correctCountButton setTitle:[[NSNumber numberWithInt:[self.quiz correctCount]] stringValue] forState:UIControlStateNormal];
 	[errorCountButton setTitle:[[NSNumber numberWithInt:[self.quiz errorCount]] stringValue] forState:UIControlStateNormal];
+	badgeAnswerCount.value = [self.quiz correctCount] + [self.quiz errorCount];
+    badgeCorrectCount.value = [self.quiz correctCount];
+    badgeErrorCount.value = [self.quiz errorCount];
 	
 	[m_quiz toNext];
 	if (![m_quiz atEnd]) {
@@ -198,6 +245,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	} else {
 		[m_quiz finish];
 		self.errorCountButton.enabled = [self.quiz hasErrors];
+        [badgeErrorCount setUserInteractionEnabled:[self.quiz hasErrors]];
 		questionIdentifierLabel.text = @"Summary";
 		questionLabel.text = @"";
 		answerIdentifierLabel.text = @"";
@@ -215,6 +263,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (IBAction) doRepeat {
 	self.errorCountButton.enabled = NO;
+    [badgeErrorCount setUserInteractionEnabled:NO];
 	[self.quiz activateErrorList];
 	[self start];
 }

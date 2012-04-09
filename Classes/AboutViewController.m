@@ -36,7 +36,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @implementation AboutViewController
 
-@synthesize delegate;
 @synthesize versionLabel;
 @synthesize linkButton;
 
@@ -61,6 +60,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
            delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]
           autorelease]
          show];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Linked" object:nil];
     }
     [self updateButtons];
 }
@@ -74,10 +74,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
-	self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc]											   
-											   initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-											   target:self
-											   action:@selector(dismissView:)] autorelease];
 	
 	NSString *version = @"Version ";
     version = [version stringByAppendingString:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
@@ -86,8 +82,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
 }
 
-- (void) dismissView:(id) sender {
-	[delegate aboutDidFinish];
+- (IBAction) dismissView {
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

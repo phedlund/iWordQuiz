@@ -33,27 +33,18 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import <UIKit/UIKit.h>
 
 @class DBRestClient;
-@protocol AboutViewControllerDelegate;
 
 @interface AboutViewController : UIViewController {
-	id <AboutViewControllerDelegate> delegate;
 	UILabel *versionLabel;
     UIButton *linkButton;
 	DBRestClient* restClient;
 }
 
-- (void) dismissView:(id)sender;
+- (IBAction) dismissView;
 - (void) updateButtons;
 - (IBAction) didPressLink;
 
 @property (nonatomic, retain) IBOutlet UIButton* linkButton;
-@property (nonatomic, assign) id <AboutViewControllerDelegate> delegate;
 @property (nonatomic, retain) IBOutlet UILabel *versionLabel;
-
-@end
-
-@protocol AboutViewControllerDelegate <NSObject>
-
-- (void) aboutDidFinish;
 
 @end

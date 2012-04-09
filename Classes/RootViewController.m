@@ -35,27 +35,34 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "RootViewController.h"
 #import "DetailViewController.h"
 
-
 @implementation RootViewController
 
-@synthesize detailViewController;
+@synthesize detailViewController = _detailViewController;
+//@synthesize detailViewController;
 @synthesize vocabularies, documentsDirectory;
 @synthesize syncer;
 
 #pragma mark -
 #pragma mark View lifecycle
 
+- (void)awakeFromNib
+{
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        self.clearsSelectionOnViewWillAppear = NO;
+        self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+    }
+    [super awakeFromNib];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.clearsSelectionOnViewWillAppear = NO;
-    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    
-    UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"sync.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(doDBSync:)]; 
-    self.navigationItem.rightBarButtonItem = button;
-    self.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
-    [button release];
-        
+    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.detailViewController.delegate = self;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        self.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
+    }
     NSError *err;
     NSFileManager *df = [NSFileManager defaultManager];
     NSArray *paths = [df URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
@@ -190,7 +197,43 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	[detailViewController setDocument:[self.vocabularies objectAtIndex: indexPath.row]];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        [self.detailViewController setDocument:[self.vocabularies objectAtIndex: indexPath.row]];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        [[segue destinationViewController] setDocument:[self.vocabularies objectAtIndex: indexPath.row]];
+        [[segue destinationViewController] setDelegate:self];
+    }
+}
+
+#pragma mark -
+#pragma mark UITabBarControllerDelegate methods
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	return YES;
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+	[tabBarController willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+	
+	for (UIViewController *myView in tabBarController.viewControllers) {
+		[myView willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+	}
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+	return [(DetailViewController *) tabBarController hasQuiz]; //(m_quiz != nil); //YES
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+	NSLog(@"didSelectViewController: %d", tabBarController.selectedIndex);
+	[(DetailViewController *) tabBarController activateTab:tabBarController.selectedIndex];
+	[viewController viewWillAppear:NO];
 }
 
 #pragma mark -
@@ -210,7 +253,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void)dealloc {
-    [detailViewController release];
+    [self.detailViewController release];
     [super dealloc];
 }
 
@@ -256,6 +299,49 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)syncComplete {
     self.syncer = nil;
     [self enumerateVocabularies];
+}
+#pragma mark - Linked notification
+
+- (void)linked:(NSNotification*)n {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        self.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
+    }
+}
+
+- (IBAction) doActions:(id)sender {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
+                                        delegate:self
+                               cancelButtonTitle:nil
+                          destructiveButtonTitle:nil
+                               otherButtonTitles:@"About", nil];
+    if ([[DBSession sharedSession] isLinked]) {
+        [sheet addButtonWithTitle:@"Dropbox Sync"];
+    }
+    sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Cancel"];
+    // Show the sheet
+    [sheet showInView:self.view];
+    [sheet release];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"Button %d", buttonIndex);
+    
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
+        UINavigationController *navController;
+        
+        switch (buttonIndex) {
+            case 0:
+                navController =  [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
+                [self presentModalViewController:navController animated:YES];
+                break;
+            case 1:
+                [self doDBSync:nil];
+                break;            
+            default:
+                break;
+        }
+    }
 }
 
 @end
