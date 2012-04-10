@@ -38,6 +38,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @interface MCViewController : UIViewController {
 	iWQQuiz * m_quiz;
+    NSArray *m_optionButtons;
 	
 	UILabel *questionIdentifierLabel;
 	UILabel *answerIdentifierLabel;
@@ -73,6 +74,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) restart;
 - (void) slotCheck;
 - (void) showQuestion;
+- (void) animate:(UILabel *)aLabel error:(BOOL) flag;
 
 @property (nonatomic, retain) iWQQuiz *quiz;
 

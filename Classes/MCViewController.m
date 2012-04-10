@@ -33,6 +33,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "MCViewController.h"
 #import "WQUtils.h"
 #import "JMWhenTapped.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation MCViewController
 
@@ -56,7 +57,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	opt1Button.hidden = YES;
 	opt2Button.hidden = YES;
 	opt3Button.hidden = YES;
-
+    m_optionButtons = [[NSArray arrayWithObjects:opt1Button, opt2Button, opt3Button, nil] retain];
+    
 	[questionCountButton setTitle:@"" forState:UIControlStateNormal];
 	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
 	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
@@ -197,20 +199,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (IBAction) doChoice:(id)sender {
 	NSString *ans = @"";
-	
-	if (sender == opt1Button) {
-		NSLog(@"First button");
-		ans = opt1Button.currentTitle;
-	}
-	else if (sender == opt2Button) {
-		NSLog(@"Second button");
-		ans = opt2Button.currentTitle;
-	}
-	else if (sender == opt3Button) {
-		NSLog(@"Third button");
-		ans = opt3Button.currentTitle;
-	}
-	
+    int selectedButtonIndex = [m_optionButtons indexOfObject:sender];
+	UIButton *selectedButton = [m_optionButtons objectAtIndex:selectedButtonIndex];
+    ans = selectedButton.currentTitle;
+
 	bool fIsCorrect = [m_quiz checkAnswer:ans];
 	
 	if (fIsCorrect)	{
@@ -230,7 +222,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	yourAnswerLabel.text = ans;
 	previousQuestionLine.hidden =NO;
 	yourAnswerLine.hidden = NO;
-
 	
 	[answerCountButton setTitle:[[NSNumber numberWithInt:([self.quiz correctCount] + [self.quiz errorCount])] stringValue] forState:UIControlStateNormal];
 	[correctCountButton setTitle:[[NSNumber numberWithInt:[self.quiz correctCount]] stringValue] forState:UIControlStateNormal];
@@ -238,23 +229,42 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	badgeAnswerCount.value = [self.quiz correctCount] + [self.quiz errorCount];
     badgeCorrectCount.value = [self.quiz correctCount];
     badgeErrorCount.value = [self.quiz errorCount];
-	
-	[m_quiz toNext];
-	if (![m_quiz atEnd]) {
-		[self showQuestion];
-	} else {
-		[m_quiz finish];
-		self.errorCountButton.enabled = [self.quiz hasErrors];
-        [badgeErrorCount setUserInteractionEnabled:[self.quiz hasErrors]];
-		questionIdentifierLabel.text = @"Summary";
-		questionLabel.text = @"";
-		answerIdentifierLabel.text = @"";
-		opt1Button.hidden = YES;
-		opt2Button.hidden = YES;
-		opt3Button.hidden = YES;
-		answerLine.hidden = YES;
+    
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        UIButton *btn = (UIButton*)sender;
+        [self animate:btn.titleLabel error:!fIsCorrect];
+        if (!fIsCorrect) {
+            BOOL correct = false;
+            int currentIndex = 0;
+            UIButton *currentButton;
+            while (!correct) {
+                currentButton = [m_optionButtons objectAtIndex:currentIndex];
+                if ([currentButton.currentTitle isEqualToString:[m_quiz answer]]) {
+                    [self animate:currentButton.titleLabel error:false];
+                    correct = true;
+                }
+                ++currentIndex;
+            }
+        }
+    }
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        
+        [m_quiz toNext];
+        if (![m_quiz atEnd]) {
+            [self showQuestion];
+        } else {
+            [m_quiz finish];
+            self.errorCountButton.enabled = [self.quiz hasErrors];
+            [badgeErrorCount setUserInteractionEnabled:[self.quiz hasErrors]];
+            questionIdentifierLabel.text = @"Summary";
+            questionLabel.text = @"";
+            answerIdentifierLabel.text = @"";
+            opt1Button.hidden = YES;
+            opt2Button.hidden = YES;
+            opt3Button.hidden = YES;
+            answerLine.hidden = YES;
+        }
 	}
-	
 }
 
 - (IBAction) doRestart {
@@ -283,6 +293,124 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)dealloc {
     [super dealloc];
+}
+
+
+- (void) animate:(UILabel *)aLabel error:(BOOL) flag {
+    
+    UIColor *clear;
+    UIColor *opaque;
+    
+    if (flag) {
+        clear = [UIColor colorWithRed:1.0 green:0.39 blue:0.39 alpha:0.0];
+        opaque = [UIColor colorWithRed:1.0 green:0.39 blue:0.39 alpha:1.0]; 
+    } else {
+        clear = [UIColor colorWithRed:0.39 green:1.0 blue:0.39 alpha:0.0];
+        opaque = [UIColor colorWithRed:0.39 green:1.0 blue:0.39 alpha:1.0];
+    }
+    
+    
+    
+    // Rounded corners.
+    aLabel.layer.cornerRadius = 6;
+
+    // Drop shadow.
+    aLabel.layer.shadowColor = [UIColor blackColor].CGColor;
+    aLabel.layer.shadowOpacity = 0.0;
+    aLabel.layer.shadowRadius = 1.0;
+    aLabel.layer.shadowOffset = CGSizeMake(0, 1);
+	aLabel.layer.masksToBounds = NO;
+    aLabel.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:aLabel.bounds cornerRadius:6].CGPath;   
+    
+    CGFloat duration = 0.3;
+    CGFloat totalDuration = 0.0;
+    CGFloat pause = 0.01;
+    CGFloat start = 0;
+    
+    CABasicAnimation *bcolor = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    bcolor.duration = duration / 2;
+    bcolor.fromValue = (id)clear.CGColor;
+    bcolor.toValue = (id)opaque.CGColor;
+    bcolor.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    bcolor.removedOnCompletion = NO;
+    bcolor.beginTime = start;
+    bcolor.fillMode = kCAFillModeForwards;
+    
+    CABasicAnimation *sopacity = [CABasicAnimation animationWithKeyPath:@"shadowOpacity"];
+    sopacity.duration = duration / 4;
+    sopacity.fromValue = [NSNumber numberWithFloat: 0.0];
+    sopacity.toValue = [NSNumber numberWithFloat: 0.8];
+    sopacity.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
+    sopacity.removedOnCompletion = NO;
+    sopacity.beginTime = start + (duration / 2);
+    sopacity.fillMode = kCAFillModeForwards;
+    
+    start = start + (duration / 2) + .1;
+    
+    CABasicAnimation *pAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    pAnimation.duration = duration;
+    pAnimation.toValue = [NSNumber numberWithFloat:1.2];
+    pAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    pAnimation.autoreverses = YES;
+    pAnimation.removedOnCompletion = NO;
+    pAnimation.beginTime = start;
+    pAnimation.fillMode = kCAFillModeForwards;
+    
+    start = start + duration + 0.1;
+    
+    CABasicAnimation *bcolor2 = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    bcolor2.duration = duration / 2;
+    bcolor2.fromValue = (id)opaque.CGColor;
+    bcolor2.toValue = (id)clear.CGColor;
+    bcolor2.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    bcolor2.removedOnCompletion = NO;
+    bcolor2.beginTime = start;
+    bcolor2.fillMode = kCAFillModeForwards;
+    
+    CABasicAnimation *sopacity2 = [CABasicAnimation animationWithKeyPath:@"shadowOpacity"];
+    sopacity2.duration = duration / 4;
+    sopacity2.fromValue = [NSNumber numberWithFloat: 0.8];
+    sopacity2.toValue = [NSNumber numberWithFloat: 0.0];
+    sopacity2.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+    sopacity2.removedOnCompletion = NO;
+    sopacity2.beginTime = start;
+    sopacity2.fillMode = kCAFillModeForwards;
+    
+    totalDuration = start + (duration / 2) + pause;
+    //Put all the animations into a group.
+    CAAnimationGroup* group = [CAAnimationGroup animation];
+    [group setDuration: totalDuration];  //Set the duration of the group to the time for all animations
+    group.removedOnCompletion = FALSE;
+    group.fillMode = kCAFillModeForwards;
+    group.removedOnCompletion = YES;
+    if (!flag) {
+        group.delegate = self;
+    }
+    //group.delegate = self;
+    [group setAnimations: [NSArray arrayWithObjects: bcolor, sopacity, pAnimation, bcolor2, sopacity2, nil]];
+    [aLabel.layer addAnimation: group forKey:  nil];
+}
+
+
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
+    [opt1Button.titleLabel.layer removeAllAnimations];
+    [opt2Button.titleLabel.layer removeAllAnimations];
+    [opt3Button.titleLabel.layer removeAllAnimations];
+    [m_quiz toNext];
+    if (![m_quiz atEnd]) {
+        [self showQuestion];
+    } else {
+        [m_quiz finish];
+        self.errorCountButton.enabled = [self.quiz hasErrors];
+        [badgeErrorCount setUserInteractionEnabled:[self.quiz hasErrors]];
+        questionIdentifierLabel.text = @"Summary";
+        questionLabel.text = @"";
+        answerIdentifierLabel.text = @"";
+        opt1Button.hidden = YES;
+        opt2Button.hidden = YES;
+        opt3Button.hidden = YES;
+        answerLine.hidden = YES;
+    }
 }
 
 @end
