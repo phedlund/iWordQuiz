@@ -14,9 +14,6 @@
 		D00B2AE4126E76F000F2EEFC /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = D00B2AE3126E76F000F2EEFC /* background.png */; };
 		D0130A3E125AB58C0085482E /* ModePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0130A3D125AB58C0085482E /* ModePickerController.m */; };
 		D01DC8FE121F4252006671A1 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D01DC8FD121F4252006671A1 /* Icon-72.png */; };
-		D01DC966121F57B0006671A1 /* FCView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01DC963121F57B0006671A1 /* FCView.xib */; };
-		D01DC967121F57B0006671A1 /* MCView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01DC964121F57B0006671A1 /* MCView.xib */; };
-		D01DC968121F57B0006671A1 /* QAView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D01DC965121F57B0006671A1 /* QAView.xib */; };
 		D01DC970121F57F2006671A1 /* FCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC96B121F57F2006671A1 /* FCViewController.m */; };
 		D01DC971121F57F2006671A1 /* MCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC96D121F57F2006671A1 /* MCViewController.m */; };
 		D01DC972121F57F2006671A1 /* QAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC96F121F57F2006671A1 /* QAViewController.m */; };
@@ -84,7 +81,6 @@
 		D0549FBF151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F8F151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected.png */; };
 		D0549FC0151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F90151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png */; };
 		D0549FC2151BCADB00BDE78C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0549FC1151BCADB00BDE78C /* QuartzCore.framework */; };
-		D067771F12D6563800FCFFD0 /* AboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D067771D12D6563800FCFFD0 /* AboutView.xib */; };
 		D074FB1C12249EBC00E8C175 /* flashTab.png in Resources */ = {isa = PBXBuildFile; fileRef = D074FB1512249EBC00E8C175 /* flashTab.png */; };
 		D074FB1E12249EBC00E8C175 /* homeTab.png in Resources */ = {isa = PBXBuildFile; fileRef = D074FB1712249EBC00E8C175 /* homeTab.png */; };
 		D074FB2012249EBC00E8C175 /* multipleTab.png in Resources */ = {isa = PBXBuildFile; fileRef = D074FB1912249EBC00E8C175 /* multipleTab.png */; };
@@ -169,9 +165,6 @@
 		D0130A3C125AB58C0085482E /* ModePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModePickerController.h; sourceTree = "<group>"; };
 		D0130A3D125AB58C0085482E /* ModePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModePickerController.m; sourceTree = "<group>"; };
 		D01DC8FD121F4252006671A1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = SOURCE_ROOT; };
-		D01DC963121F57B0006671A1 /* FCView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FCView.xib; path = Resources/FCView.xib; sourceTree = SOURCE_ROOT; };
-		D01DC964121F57B0006671A1 /* MCView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MCView.xib; path = Resources/MCView.xib; sourceTree = "<group>"; };
-		D01DC965121F57B0006671A1 /* QAView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = QAView.xib; path = Resources/QAView.xib; sourceTree = "<group>"; };
 		D01DC96A121F57F2006671A1 /* FCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCViewController.h; sourceTree = "<group>"; };
 		D01DC96B121F57F2006671A1 /* FCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCViewController.m; sourceTree = "<group>"; };
 		D01DC96C121F57F2006671A1 /* MCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCViewController.h; sourceTree = "<group>"; };
@@ -257,7 +250,6 @@
 		D0549F8F151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MDSpreadViewRowHeaderTopSelected.png; sourceTree = "<group>"; };
 		D0549F90151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MDSpreadViewRowHeaderTopSelected@2x.png"; sourceTree = "<group>"; };
 		D0549FC1151BCADB00BDE78C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		D067771D12D6563800FCFFD0 /* AboutView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AboutView.xib; path = Resources/AboutView.xib; sourceTree = SOURCE_ROOT; };
 		D0713DB314DE15820053121A /* WordQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WordQuiz.entitlements; sourceTree = "<group>"; };
 		D074FB1512249EBC00E8C175 /* flashTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flashTab.png; path = Resources/flashTab.png; sourceTree = "<group>"; };
 		D074FB1712249EBC00E8C175 /* homeTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeTab.png; path = Resources/homeTab.png; sourceTree = "<group>"; };
@@ -477,10 +469,6 @@
 				D0C98FEA14F44AFD00412777 /* sync.png */,
 				D0C9B16615179ACA004AC04B /* sync@2x.png */,
 				8D1107310486CEB800E47090 /* iWordQuiz-Info.plist */,
-				D01DC963121F57B0006671A1 /* FCView.xib */,
-				D01DC964121F57B0006671A1 /* MCView.xib */,
-				D01DC965121F57B0006671A1 /* QAView.xib */,
-				D067771D12D6563800FCFFD0 /* AboutView.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -806,9 +794,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01DC8FE121F4252006671A1 /* Icon-72.png in Resources */,
-				D01DC966121F57B0006671A1 /* FCView.xib in Resources */,
-				D01DC967121F57B0006671A1 /* MCView.xib in Resources */,
-				D01DC968121F57B0006671A1 /* QAView.xib in Resources */,
 				D074FB1C12249EBC00E8C175 /* flashTab.png in Resources */,
 				D074FB1E12249EBC00E8C175 /* homeTab.png in Resources */,
 				D074FB2012249EBC00E8C175 /* multipleTab.png in Resources */,
@@ -821,7 +806,6 @@
 				D092B32112CD55FE000D7E87 /* Default-Landscape.png in Resources */,
 				D092B32712CD5F90000D7E87 /* Default-Portrait.png in Resources */,
 				D092B32B12CD620B000D7E87 /* iTunesArtwork.png in Resources */,
-				D067771F12D6563800FCFFD0 /* AboutView.xib in Resources */,
 				D04BD0B413C90DDC006A7387 /* Example.kvtml in Resources */,
 				D04BD0B513C90DDC006A7387 /* French Verbs.kvtml in Resources */,
 				D04BD0B613C90DDC006A7387 /* US States and Capitals.kvtml in Resources */,
