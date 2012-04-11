@@ -7,6 +7,102 @@
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
+        <scene sceneID="3n0-7x-hNv">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1v7-Uo-1IK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="about" definesPresentationContext="YES" id="5SH-ti-uw6" sceneMemberID="viewController">
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ia5-bO-0K0">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DGs-Xz-3fw" kind="relationship" relationship="rootViewController" id="wpF-rf-FS3"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-687" y="-1490"/>
+        </scene>
+        <!--About View Controller - About WordQuiz-->
+        <scene sceneID="Z8b-Rm-BO7">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FIm-qS-Aa3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="DGs-Xz-3fw" customClass="AboutViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="GqC-0X-viN">
+                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="WordQuiz" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="NRa-gR-ANP">
+                                <rect key="frame" x="120" y="110" width="300" height="27"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="JRv-cV-Fbe">
+                                <rect key="frame" x="198" y="159" width="143" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Copyright © 2012 Peter B. Hedlund" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="FRK-Md-g5X">
+                                <rect key="frame" x="129" y="211" width="282" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="icon_about.png" id="1XY-5Q-FCy">
+                                <rect key="frame" x="234" y="30" width="72" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="http://peterandlinda.com" textAlignment="center" id="wxV-X9-JG9">
+                                <rect key="frame" x="149" y="269" width="240" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" link="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GVv-91-MMK">
+                                <rect key="frame" x="198" y="386" width="145" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Link Dropbox">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressLink" destination="DGs-Xz-3fw" eventType="touchUpInside" id="gps-QY-6Hk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About WordQuiz" id="aUt-mo-Iay">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="shh-qO-UPn">
+                            <connections>
+                                <action selector="dismissView" destination="DGs-Xz-3fw" id="CHZ-nO-a1R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="linkButton" destination="GVv-91-MMK" id="xF7-ta-mu5"/>
+                        <outlet property="versionLabel" destination="JRv-cV-Fbe" id="3Wq-4E-X82"/>
+                        <outlet property="view" destination="GqC-0X-viN" id="bjc-v0-LOs"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="31" y="-1490"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="14">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13" sceneMemberID="firstResponder"/>
@@ -37,11 +133,11 @@
             </objects>
             <point key="canvasLocation" x="-687" y="-630"/>
         </scene>
-        <!--Master View Controller - Master-->
+        <!--Root View Controller - Vocabularies-->
         <scene sceneID="24">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
-                <tableViewController storyboardIdentifier="" title="Master" clearsSelectionOnViewWillAppear="NO" id="19" customClass="WQMasterViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="" title="Vocabularies" clearsSelectionOnViewWillAppear="NO" id="19" customClass="RootViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="20">
                         <rect key="frame" x="0.0" y="64" width="320" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +170,13 @@
                             <outlet property="delegate" destination="19" id="21"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="40"/>
+                    <navigationItem key="navigationItem" title="Vocabularies" id="40">
+                        <barButtonItem key="rightBarButtonItem" image="sync.png" id="5Vh-Af-lqc">
+                            <connections>
+                                <action selector="doDBSync:" destination="19" id="ELD-NX-2Zu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="859" y="-631"/>
@@ -98,7 +200,7 @@
         <scene sceneID="yoU-ep-w6h">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdD-eA-VFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController id="d2J-Zu-9To" customClass="WQDetailViewController" sceneMemberID="viewController">
+                <tabBarController id="d2J-Zu-9To" customClass="DetailViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="VbN-Ct-a05"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -115,83 +217,856 @@
             </objects>
             <point key="canvasLocation" x="476" y="254"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--View Controller - Flashcard-->
         <scene sceneID="vMK-FW-Dgc">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiQ-KQ-aDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="EVf-I6-MsD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="f9F-G1-ksl">
+                <viewController id="EVf-I6-MsD" customClass="FCViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="f9F-G1-ksl">
                         <rect key="frame" x="0.0" y="64" width="703" height="655"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" id="WjB-eK-h8g">
+                                <rect key="frame" x="141" y="368" width="505" height="310"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FHt-cL-Zeu" userLabel="KnowButton">
+                                        <rect key="frame" x="19" y="110" width="225" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                        <state key="normal" image="knowButton_225.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doKnowButton" destination="EVf-I6-MsD" eventType="touchUpInside" id="G6m-By-Ifo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="94t-1q-sDZ" userLabel="DoNotKnowButton">
+                                        <rect key="frame" x="266" y="110" width="225" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                        <state key="normal" image="dontknowButton_225.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doDontKnowButton" destination="EVf-I6-MsD" eventType="touchUpInside" id="7hP-5k-KM0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="RZ5-Tp-efA" customClass="WQScoreButton">
+                                <rect key="frame" x="105" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doRestart" destination="EVf-I6-MsD" eventType="touchUpInside" id="kYd-Ym-S8n"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="IE0-as-WL7" customClass="WQScoreButton">
+                                <rect key="frame" x="237" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.52156865600000002" green="0.44709280239999999" blue="0.028491707379999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="VfK-hY-Q2r" customClass="WQScoreButton">
+                                <rect key="frame" x="369" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="GEU-Om-fsx" customClass="WQScoreButton">
+                                <rect key="frame" x="501" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doRepeat" destination="EVf-I6-MsD" eventType="touchUpInside" id="gHt-t8-l8K"/>
+                                </connections>
+                            </button>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" id="E4y-EK-3gj">
+                                <rect key="frame" x="122" y="60" width="535" height="340"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="bUN-vK-TDe">
+                                        <rect key="frame" x="15" y="15" width="505" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="aHh-6R-zwQ">
+                                                <rect key="frame" x="47" y="24" width="435" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="XB9-wk-1oy">
+                                                <rect key="frame" x="42" y="57" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" id="5Fj-lD-RnA">
+                                                <rect key="frame" x="35" y="88" width="435" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="qOw-PT-3iF">
+                                        <rect key="frame" x="15" y="15" width="505" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="X75-DP-sLt">
+                                                <rect key="frame" x="47" y="24" width="435" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="SUt-P3-8ZM">
+                                                <rect key="frame" x="47" y="57" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" id="Ixf-oP-vev">
+                                                <rect key="frame" x="35" y="88" width="435" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="6r2-Mu-HYx"/>
+                    <tabBarItem key="tabBarItem" title="Flashcard" image="flashTab.png" id="6r2-Mu-HYx"/>
+                    <connections>
+                        <outlet property="answerCountButton" destination="IE0-as-WL7" id="3Ox-RP-STE"/>
+                        <outlet property="backIdentifierLabel" destination="aHh-6R-zwQ" id="7ba-67-Q39"/>
+                        <outlet property="backText" destination="5Fj-lD-RnA" id="6uP-0W-5Lt"/>
+                        <outlet property="backView" destination="bUN-vK-TDe" id="NTL-jL-x2A"/>
+                        <outlet property="containerView" destination="E4y-EK-3gj" id="QKB-NF-Nf9"/>
+                        <outlet property="correctCountButton" destination="VfK-hY-Q2r" id="SeZ-si-kD6"/>
+                        <outlet property="dontKnowButton" destination="94t-1q-sDZ" id="Bw1-la-pEc"/>
+                        <outlet property="errorCountButton" destination="GEU-Om-fsx" id="8pn-cC-qDc"/>
+                        <outlet property="frontIdentifierLabel" destination="X75-DP-sLt" id="R8b-RI-GT8"/>
+                        <outlet property="frontText" destination="Ixf-oP-vev" id="3zw-mP-0dw"/>
+                        <outlet property="frontView" destination="qOw-PT-3iF" id="PO7-zS-h0N"/>
+                        <outlet property="knowButton" destination="FHt-cL-Zeu" id="64a-gB-ZGJ"/>
+                        <outlet property="previousView" destination="WjB-eK-h8g" id="Qh7-2i-9MP"/>
+                        <outlet property="questionCountButton" destination="RZ5-Tp-efA" id="fDi-UK-vXL"/>
+                        <outlet property="view" destination="f9F-G1-ksl" id="9tz-lX-MTB"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1437" y="-631"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--View Controller - Question & Answer-->
         <scene sceneID="1Ue-pP-EdJ">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRY-Yl-DxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="Epe-N4-cJI" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="m4h-ue-v0F">
+                <viewController id="Epe-N4-cJI" customClass="QAViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="F2H-gE-CJE">
                         <rect key="frame" x="0.0" y="64" width="703" height="655"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" id="IGn-Ae-RMk">
+                                <rect key="frame" x="111" y="338" width="505" height="310"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Previous Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="IFX-MG-skW">
+                                        <rect key="frame" x="47" y="37" width="420" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="qJG-Fn-jTJ">
+                                        <rect key="frame" x="47" y="70" width="420" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="The previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="XVr-8B-gQ1">
+                                        <rect key="frame" x="75" y="67" width="392" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Your Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="sfV-3x-wnw">
+                                        <rect key="frame" x="47" y="120" width="420" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="66k-St-G6j">
+                                        <rect key="frame" x="47" y="153" width="420" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Your answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="2JK-dF-Hej">
+                                        <rect key="frame" x="75" y="151" width="392" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Correct Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="RH9-bk-Kt8">
+                                        <rect key="frame" x="47" y="203" width="420" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="iBp-9q-c2o">
+                                        <rect key="frame" x="47" y="236" width="420" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="The correct answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="j9f-zs-h06">
+                                        <rect key="frame" x="75" y="234" width="392" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" id="Nid-FU-tlG">
+                                <rect key="frame" x="107" y="45" width="505" height="310"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="YwO-3k-2l5">
+                                        <rect key="frame" x="47" y="24" width="420" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" id="hmm-Ad-rGK">
+                                        <rect key="frame" x="47" y="57" width="420" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Select a vocabulary." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8Zu-nE-sSL">
+                                        <rect key="frame" x="75" y="55" width="392" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="h0D-oT-6cV">
+                                        <rect key="frame" x="47" y="107" width="420" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" id="F5Y-wh-xU2">
+                                        <rect key="frame" x="47" y="140" width="420" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Pcp-dI-eMI">
+                                        <rect key="frame" x="75" y="153" width="392" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Epe-N4-cJI" id="gJj-2g-0ja"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="eyb-30-EHL" customClass="WQScoreButton">
+                                <rect key="frame" x="134" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doRestart" destination="Epe-N4-cJI" eventType="touchUpInside" id="j7b-ka-Tpv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Kpv-9o-Rnr" customClass="WQScoreButton">
+                                <rect key="frame" x="266" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.52156865600000002" green="0.44709280239999999" blue="0.028491707379999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="zNO-3J-BuK" customClass="WQScoreButton">
+                                <rect key="frame" x="398" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="fEB-yg-gJk" customClass="WQScoreButton">
+                                <rect key="frame" x="530" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doRepeat" destination="Epe-N4-cJI" eventType="touchUpInside" id="ow9-F9-elp"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="bSN-DV-Ouc"/>
+                    <tabBarItem key="tabBarItem" title="Question &amp; Answer" image="qaTab.png" id="bSN-DV-Ouc"/>
+                    <connections>
+                        <outlet property="answerCountButton" destination="Kpv-9o-Rnr" id="bIE-Tg-wSn"/>
+                        <outlet property="answerIdentifierLabel" destination="h0D-oT-6cV" id="lBY-pg-N3z"/>
+                        <outlet property="answerLine" destination="F5Y-wh-xU2" id="Nrc-bf-Ge6"/>
+                        <outlet property="answerTextField" destination="Pcp-dI-eMI" id="RKl-6Y-uqD"/>
+                        <outlet property="correctAnswerHeaderLabel" destination="RH9-bk-Kt8" id="drr-BW-SHc"/>
+                        <outlet property="correctAnswerLabel" destination="j9f-zs-h06" id="paJ-xc-6sD"/>
+                        <outlet property="correctAnswerLine" destination="iBp-9q-c2o" id="mOE-oh-fAf"/>
+                        <outlet property="correctCountButton" destination="zNO-3J-BuK" id="911-22-8yA"/>
+                        <outlet property="errorCountButton" destination="fEB-yg-gJk" id="Hl9-fO-hDW"/>
+                        <outlet property="previousQuestionHeaderLabel" destination="IFX-MG-skW" id="ngm-zi-3IA"/>
+                        <outlet property="previousQuestionLabel" destination="XVr-8B-gQ1" id="JyH-MP-Aoo"/>
+                        <outlet property="previousQuestionLine" destination="qJG-Fn-jTJ" id="Kdi-Pt-RdL"/>
+                        <outlet property="previousView" destination="IGn-Ae-RMk" id="NNE-uk-FGj"/>
+                        <outlet property="questionCountButton" destination="eyb-30-EHL" id="wSP-fy-oyl"/>
+                        <outlet property="questionIdentifierLabel" destination="YwO-3k-2l5" id="M2r-Sh-Tc8"/>
+                        <outlet property="questionLabel" destination="8Zu-nE-sSL" id="XLr-wq-Pkp"/>
+                        <outlet property="questionLine" destination="hmm-Ad-rGK" id="6u9-BE-o1f"/>
+                        <outlet property="questionView" destination="Nid-FU-tlG" id="aua-3g-UWv"/>
+                        <outlet property="view" destination="F2H-gE-CJE" id="rSy-a3-0IQ"/>
+                        <outlet property="yourAnswerHeaderLabel" destination="sfV-3x-wnw" id="xuZ-ra-4k1"/>
+                        <outlet property="yourAnswerLabel" destination="2JK-dF-Hej" id="ng6-h2-4le"/>
+                        <outlet property="yourAnswerLine" destination="66k-St-G6j" id="Non-9s-4Zj"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1437" y="1167"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--View Controller - Multiple Choice-->
         <scene sceneID="Pk5-Nc-GAB">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKq-DT-1ID" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="mKi-xZ-BpX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="l78-h2-UjA">
+                <viewController id="mKi-xZ-BpX" customClass="MCViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="zlk-8o-dPx">
                         <rect key="frame" x="0.0" y="64" width="703" height="655"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" id="fzt-XH-yGr">
+                                <rect key="frame" x="141" y="368" width="505" height="310"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Previous Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="rjC-gL-Kie">
+                                        <rect key="frame" x="47" y="37" width="420" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="B0f-ul-IwZ">
+                                        <rect key="frame" x="47" y="70" width="420" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="The previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="4Gk-nn-eR0">
+                                        <rect key="frame" x="75" y="67" width="392" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Your Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="lAp-w0-3FD">
+                                        <rect key="frame" x="47" y="120" width="420" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="e8q-sl-D9E">
+                                        <rect key="frame" x="47" y="153" width="420" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Your answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="scf-Hr-MYz">
+                                        <rect key="frame" x="75" y="151" width="392" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Correct Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="iyk-lW-TKL">
+                                        <rect key="frame" x="47" y="203" width="420" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="F8B-Dp-Shh">
+                                        <rect key="frame" x="47" y="236" width="420" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="The correct answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="EDw-qq-Zj1">
+                                        <rect key="frame" x="75" y="234" width="392" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" id="RX8-Iz-lHX">
+                                <rect key="frame" x="137" y="75" width="505" height="310"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="MP8-5U-pDe">
+                                        <rect key="frame" x="47" y="24" width="420" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Select a vocabulary." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="bTI-nd-DZl">
+                                        <rect key="frame" x="75" y="55" width="392" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DnE-9B-D6l">
+                                        <rect key="frame" x="47" y="107" width="420" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" id="pcJ-Mj-NFn">
+                                        <rect key="frame" x="70" y="153" width="400" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="This is the first option">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doChoice:" destination="mKi-xZ-BpX" eventType="touchUpInside" id="DN6-F2-bSD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" id="2iQ-8y-Ehk">
+                                        <rect key="frame" x="70" y="203" width="400" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="This is the second option">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doChoice:" destination="mKi-xZ-BpX" eventType="touchUpInside" id="Dpd-QC-t1R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" id="iic-Tz-WPz">
+                                        <rect key="frame" x="70" y="255" width="400" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="This is the third option">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doChoice:" destination="mKi-xZ-BpX" eventType="touchUpInside" id="NC7-3H-Pn5"/>
+                                        </connections>
+                                    </button>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="fof-V0-TQH">
+                                        <rect key="frame" x="47" y="57" width="420" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="Aa8-u2-8fA">
+                                        <rect key="frame" x="47" y="140" width="420" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="zan-BM-Z6P" customClass="WQScoreButton">
+                                <rect key="frame" x="134" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doRestart" destination="mKi-xZ-BpX" eventType="touchUpInside" id="ePG-vB-dUl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="uUK-Ef-o6w" customClass="WQScoreButton">
+                                <rect key="frame" x="266" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.52156865600000002" green="0.44709280239999999" blue="0.028491707379999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="taR-Ot-D8n" customClass="WQScoreButton">
+                                <rect key="frame" x="398" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="NXC-nA-F7g" customClass="WQScoreButton">
+                                <rect key="frame" x="530" y="760" width="104" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                <state key="normal" title="00">
+                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="doRepeat" destination="mKi-xZ-BpX" eventType="touchUpInside" id="7O2-qg-hnY"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="o54-qe-bJx"/>
+                    <tabBarItem key="tabBarItem" title="Multiple Choice" image="multipleTab.png" id="o54-qe-bJx"/>
+                    <connections>
+                        <outlet property="answerCountButton" destination="uUK-Ef-o6w" id="hGQ-d7-WxX"/>
+                        <outlet property="answerIdentifierLabel" destination="DnE-9B-D6l" id="Fjq-dK-vYb"/>
+                        <outlet property="answerLine" destination="Aa8-u2-8fA" id="DcZ-4N-IZi"/>
+                        <outlet property="correactAnswerLabel" destination="EDw-qq-Zj1" id="hxX-ca-Vnf"/>
+                        <outlet property="correctAnswerHeaderLabel" destination="iyk-lW-TKL" id="6hV-xL-j4J"/>
+                        <outlet property="correctAnswerLine" destination="F8B-Dp-Shh" id="uOl-E2-4Ed"/>
+                        <outlet property="correctCountButton" destination="taR-Ot-D8n" id="lzS-Ch-pri"/>
+                        <outlet property="errorCountButton" destination="NXC-nA-F7g" id="aTU-Wz-HYE"/>
+                        <outlet property="opt1Button" destination="pcJ-Mj-NFn" id="hnB-5Y-jpi"/>
+                        <outlet property="opt2Button" destination="2iQ-8y-Ehk" id="ikI-gr-jxm"/>
+                        <outlet property="opt3Button" destination="iic-Tz-WPz" id="fcK-dv-uRe"/>
+                        <outlet property="previousQuestionHeaderLabel" destination="rjC-gL-Kie" id="GY2-GX-hpb"/>
+                        <outlet property="previousQuestionLabel" destination="4Gk-nn-eR0" id="Km7-qa-7Eq"/>
+                        <outlet property="previousQuestionLine" destination="B0f-ul-IwZ" id="fqC-Tb-DTs"/>
+                        <outlet property="previousView" destination="fzt-XH-yGr" id="ZaN-Uf-kCc"/>
+                        <outlet property="questionCountButton" destination="zan-BM-Z6P" id="FVx-OJ-xPH"/>
+                        <outlet property="questionIdentifierLabel" destination="MP8-5U-pDe" id="cTc-gR-fZE"/>
+                        <outlet property="questionLabel" destination="bTI-nd-DZl" id="8Vr-pc-Wfh"/>
+                        <outlet property="questionLine" destination="fof-V0-TQH" id="IWv-WJ-c0E"/>
+                        <outlet property="questionView" destination="RX8-Iz-lHX" id="w6m-vi-nfs"/>
+                        <outlet property="view" destination="zlk-8o-dPx" id="lay-7y-ZrF"/>
+                        <outlet property="yourAnswerHeaderLabel" destination="lAp-w0-3FD" id="k4U-Zt-Gtn"/>
+                        <outlet property="yourAnswerLabel" destination="scf-Hr-MYz" id="dU6-KQ-ZMp"/>
+                        <outlet property="yourAnswerLine" destination="e8q-sl-D9E" id="To8-ut-RnQ"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1437" y="254"/>
         </scene>
-        <!--Home View Controller - Item-->
+        <!--Home View Controller - Home-->
         <scene sceneID="vCY-ih-qCP">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9g-8e-lrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="ThK-OU-gjs" customClass="WQHomeViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9FB-cj-sVZ">
+                <viewController id="ThK-OU-gjs" customClass="HomeViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="9FB-cj-sVZ">
                         <rect key="frame" x="0.0" y="64" width="703" height="655"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" id="czG-5D-AGW">
+                                <rect key="frame" x="20" y="20" width="665" height="864"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" id="H7D-Dx-wFb" customClass="MDSpreadView">
+                                        <rect key="frame" x="0.0" y="0.0" width="665" height="864"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Wru-OY-yQd"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeTab.png" id="Wru-OY-yQd"/>
+                    <connections>
+                        <outlet property="containerView" destination="czG-5D-AGW" id="SUq-C5-TO4"/>
+                        <outlet property="spreadView" destination="H7D-Dx-wFb" id="x2u-Hx-qzr"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1429" y="-1536"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dontknowButton_225.png" width="225" height="100"/>
+        <image name="flashTab.png" width="30" height="30"/>
+        <image name="homeTab.png" width="27" height="27"/>
+        <image name="icon_about.png" width="72" height="72"/>
+        <image name="knowButton_225.png" width="225" height="100"/>
+        <image name="multipleTab.png" width="30" height="30"/>
+        <image name="qaTab.png" width="30" height="30"/>
+        <image name="sync.png" width="23" height="20"/>
+    </resources>
     <classes>
-        <class className="WQDetailViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WQDetailViewController.h"/>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="action" name="didPressLink"/>
+                <relationship kind="action" name="dismissView"/>
+                <relationship kind="outlet" name="linkButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="versionLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="WQHomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WQHomeViewController.h"/>
+        <class className="DetailViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doAbout:"/>
+                <relationship kind="action" name="doMode:"/>
+            </relationships>
         </class>
-        <class className="WQMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WQMasterViewController.h"/>
+        <class className="FCViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FCViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doDontKnowButton"/>
+                <relationship kind="action" name="doKnowButton"/>
+                <relationship kind="action" name="doRepeat"/>
+                <relationship kind="action" name="doRestart"/>
+                <relationship kind="outlet" name="answerCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="backIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="backText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="backView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="badgeAnswerCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeCorrectCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeErrorCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeQuestionCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="correctCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="dontKnowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="errorCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="frontIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="frontText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="frontView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="knowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="previousView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="questionCountButton" candidateClass="WQScoreButton"/>
+            </relationships>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="spreadView" candidateClass="MDSpreadView"/>
+            </relationships>
+        </class>
+        <class className="MCViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doChoice:"/>
+                <relationship kind="action" name="doRepeat"/>
+                <relationship kind="action" name="doRestart"/>
+                <relationship kind="outlet" name="answerCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="answerIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="answerLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="badgeAnswerCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeCorrectCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeErrorCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeQuestionCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="correactAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="correctAnswerHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="correctAnswerLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="correctCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="errorCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="opt1Button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="opt2Button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="opt3Button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="previousQuestionHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="previousQuestionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="previousQuestionLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="previousView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="questionCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="questionIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="questionLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="questionView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="yourAnswerHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yourAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yourAnswerLine" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="MDSpreadView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDSpreadView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dataSource"/>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+        <class className="MKNumberBadgeView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MKNumberBadgeView.h"/>
+        </class>
+        <class className="QAViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QAViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doRepeat"/>
+                <relationship kind="action" name="doRestart"/>
+                <relationship kind="outlet" name="answerCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="answerIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="answerLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="answerTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="badgeAnswerCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeCorrectCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeErrorCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeQuestionCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="correctAnswerHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="correctAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="correctAnswerLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="correctCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="errorCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="previousQuestionHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="previousQuestionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="previousQuestionLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="previousView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="questionCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="questionIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="questionLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="questionView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="yourAnswerHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yourAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yourAnswerLine" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="RootViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doActions:"/>
+                <relationship kind="action" name="doDBSync:"/>
+            </relationships>
+        </class>
+        <class className="WQScoreButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WQScoreButton.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -34,6 +34,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "iWQQuiz.h"
 #import "WQScoreButton.h"
+#import "MKNumberBadgeView.h"
 
 @interface QAViewController : UIViewController <UITextFieldDelegate> {
 	iWQQuiz * m_quiz;
@@ -54,7 +55,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	UILabel *yourAnswerHeaderLabel;
 	UILabel *yourAnswerLabel;
 	UILabel *correctAnswerHeaderLabel;
-	UILabel *correactAnswerLabel;
+	UILabel *correctAnswerLabel;
 	
 	UIView * questionLine;
     UIView * answerLine;
@@ -70,6 +71,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) restart;
 - (void) slotCheck;
 - (void) showQuestion;
+- (void) animate:(UIView *)aLabel error:(BOOL) flag;
 
 @property (nonatomic, retain) iWQQuiz *quiz;
 
@@ -84,12 +86,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, retain) IBOutlet WQScoreButton *correctCountButton;
 @property (nonatomic, retain) IBOutlet WQScoreButton *errorCountButton;
 
+@property (retain) IBOutlet MKNumberBadgeView* badgeQuestionCount;
+@property (retain) IBOutlet MKNumberBadgeView* badgeAnswerCount;
+@property (retain) IBOutlet MKNumberBadgeView* badgeCorrectCount;
+@property (retain) IBOutlet MKNumberBadgeView* badgeErrorCount;
+
 @property (nonatomic, retain) IBOutlet UILabel *previousQuestionHeaderLabel;
 @property (nonatomic, retain) IBOutlet UILabel *previousQuestionLabel;
 @property (nonatomic, retain) IBOutlet UILabel *yourAnswerHeaderLabel;
 @property (nonatomic, retain) IBOutlet UILabel *yourAnswerLabel;
 @property (nonatomic, retain) IBOutlet UILabel *correctAnswerHeaderLabel;
-@property (nonatomic, retain) IBOutlet UILabel *correactAnswerLabel;
+@property (nonatomic, retain) IBOutlet UILabel *correctAnswerLabel;
 
 @property (nonatomic, retain) IBOutlet UIView * questionLine;
 @property (nonatomic, retain) IBOutlet UIView * answerLine;

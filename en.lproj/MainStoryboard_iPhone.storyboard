@@ -21,17 +21,111 @@
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
         </scene>
-        <!--Master View Controller - Master-->
+        <!--Navigation Controller-->
+        <scene sceneID="lLG-8h-mYB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nya-nS-X68" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="about" definesPresentationContext="YES" id="IvU-Bg-UQA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ldp-vX-xiD">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="qkM-ys-0SR" kind="relationship" relationship="rootViewController" id="x5c-bx-ctb"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1" y="-552"/>
+        </scene>
+        <!--About View Controller - About WordQuiz-->
+        <scene sceneID="Yc3-tw-lvA">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQ9-8Q-uHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="qkM-ys-0SR" customClass="AboutViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YAo-XU-wRW">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="WordQuiz" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="QZL-dw-wF7">
+                                <rect key="frame" x="118" y="85" width="85" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="I1f-ZL-9bM">
+                                <rect key="frame" x="117" y="110" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Copyright © 2012 Peter B. Hedlund" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="CYt-9K-FoT">
+                                <rect key="frame" x="25" y="135" width="271" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="icon_about.png" id="lRT-43-w5r">
+                                <rect key="frame" x="124" y="5" width="72" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="http://peterandlinda.com" textAlignment="center" id="CiT-i0-IVH">
+                                <rect key="frame" x="39" y="170" width="240" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" link="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="S7k-Ku-gjb">
+                                <rect key="frame" x="88" y="225" width="145" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" title="Link Dropbox">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressLink" destination="qkM-ys-0SR" eventType="touchUpInside" id="XGQ-Zp-XJo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About WordQuiz" id="Dfh-ag-HoN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="xOa-jT-WEP">
+                            <connections>
+                                <action selector="dismissView" destination="qkM-ys-0SR" id="U9i-Yk-IpT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="linkButton" destination="S7k-Ku-gjb" id="v2m-Bd-cSW"/>
+                        <outlet property="versionLabel" destination="I1f-ZL-9bM" id="Pbg-ul-gPu"/>
+                        <outlet property="view" destination="YAo-XU-wRW" id="ns6-kF-Flg"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="459" y="-552"/>
+        </scene>
+        <!--Root View Controller - Master-->
         <scene sceneID="18">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
-                <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="WQMasterViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="RootViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="phq-AM-6qj" style="IBUITableViewCellStyleDefault" id="lJ0-d7-vTF">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellIdentifier" textLabel="phq-AM-6qj" style="IBUITableViewCellStyleDefault" id="lJ0-d7-vTF">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -60,78 +154,448 @@
                             <outlet property="delegate" destination="12" id="15"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="36"/>
+                    <navigationItem key="navigationItem" title="Vocabularies" id="36">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="hA5-YN-deN">
+                            <connections>
+                                <action selector="doActions:" destination="12" id="7Ii-jX-d5A"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
-        <!--View Controller - Item 2-->
+        <!--View Controller - Flashcard-->
         <scene sceneID="boH-uT-LHK">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7v-gz-sub" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="4fW-El-8z2" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="i8Z-cV-zaL">
+                <viewController id="4fW-El-8z2" customClass="FCViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="i8Z-cV-zaL">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ode-zn-beR" userLabel="KnowButton">
+                                <rect key="frame" x="20" y="225" width="125" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" image="knowButton.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doKnowButton" destination="4fW-El-8z2" eventType="touchUpInside" id="2DY-FF-Owo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mXb-Bu-hhj" userLabel="DoNotKnowButton">
+                                <rect key="frame" x="175" y="225" width="125" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <state key="normal" image="dontknowButton.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doDontKnowButton" destination="4fW-El-8z2" eventType="touchUpInside" id="SQF-nJ-Z5A"/>
+                                </connections>
+                            </button>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" id="QL4-1V-3cN">
+                                <rect key="frame" x="5" y="5" width="310" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="gYD-iD-1oa">
+                                        <rect key="frame" x="10" y="10" width="290" height="165"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="tyO-Hz-ELV">
+                                                <rect key="frame" x="10" y="10" width="270" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="Soq-Us-fjh">
+                                                <rect key="frame" x="10" y="26" width="270" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" id="f9c-Ux-jqq">
+                                                <rect key="frame" x="10" y="40" width="270" height="120"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" id="CXK-kS-8Gd">
+                                        <rect key="frame" x="10" y="10" width="290" height="165"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="0La-sT-wTP">
+                                                <rect key="frame" x="10" y="10" width="270" height="15"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="22e-iT-r8f">
+                                                <rect key="frame" x="10" y="26" width="270" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" id="uvG-s0-Ig5">
+                                                <rect key="frame" x="10" y="40" width="270" height="120"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="KkO-0K-eea" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="20" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="30F-R1-QRy" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="90" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="VWT-sW-noQ" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="170" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="nR9-d4-WA7" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="240" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="PlT-aK-sCm"/>
+                    <tabBarItem key="tabBarItem" title="Flashcard" image="flashTab.png" id="PlT-aK-sCm"/>
+                    <connections>
+                        <outlet property="backIdentifierLabel" destination="tyO-Hz-ELV" id="I2s-tq-069"/>
+                        <outlet property="backText" destination="f9c-Ux-jqq" id="b1l-hg-AAX"/>
+                        <outlet property="backView" destination="gYD-iD-1oa" id="gPa-bP-W2a"/>
+                        <outlet property="badgeAnswerCount" destination="30F-R1-QRy" id="2IZ-ls-i6c"/>
+                        <outlet property="badgeCorrectCount" destination="VWT-sW-noQ" id="SIY-uT-pjd"/>
+                        <outlet property="badgeErrorCount" destination="nR9-d4-WA7" id="N31-dk-XgP"/>
+                        <outlet property="badgeQuestionCount" destination="KkO-0K-eea" id="ojx-qg-qhb"/>
+                        <outlet property="containerView" destination="QL4-1V-3cN" id="soz-Oz-SOH"/>
+                        <outlet property="dontKnowButton" destination="mXb-Bu-hhj" id="9N2-fh-m1I"/>
+                        <outlet property="frontIdentifierLabel" destination="0La-sT-wTP" id="aSA-3G-ioS"/>
+                        <outlet property="frontText" destination="uvG-s0-Ig5" id="IJ2-MI-8QT"/>
+                        <outlet property="frontView" destination="CXK-kS-8Gd" id="EQs-9k-5Qw"/>
+                        <outlet property="knowButton" destination="ode-zn-beR" id="SD6-Kf-hdA"/>
+                        <outlet property="view" destination="i8Z-cV-zaL" id="Boi-MQ-gVj"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2425" y="-149"/>
+            <point key="canvasLocation" x="1465" y="-141"/>
         </scene>
-        <!--View Controller - Item-->
+        <!--View Controller - Question & Answer-->
         <scene sceneID="0GN-ba-aYh">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNj-gc-hb9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="nUB-1S-5cD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YbU-Dz-FyT">
+                <viewController id="nUB-1S-5cD" customClass="QAViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="loY-p9-Uql">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="23a-Cd-7eB" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="20" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="9VQ-i4-5ds" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="90" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="CiM-BC-3lL" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="160" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="82G-BI-qRX" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="230" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" id="eKG-Kw-rd4">
+                                <rect key="frame" x="15" y="15" width="290" height="165"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="82m-0x-DOt">
+                                        <rect key="frame" x="10" y="10" width="270" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="AtI-9U-WFr">
+                                        <rect key="frame" x="10" y="26" width="270" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Select a vocabulary." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="HXS-LN-rhO">
+                                        <rect key="frame" x="15" y="30" width="265" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="T0V-6E-7YM">
+                                        <rect key="frame" x="10" y="65" width="270" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="are-NC-DIf">
+                                        <rect key="frame" x="10" y="81" width="270" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="14" id="RUQ-nm-WVN">
+                                        <rect key="frame" x="15" y="85" width="265" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="nUB-1S-5cD" id="1gC-PF-7Rx"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="fel-jK-gpf">
+                                        <rect key="frame" x="15" y="125" width="265" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="fPQ-7l-Mz4"/>
+                    <tabBarItem key="tabBarItem" title="Question &amp; Answer" image="qaTab.png" id="fPQ-7l-Mz4"/>
+                    <connections>
+                        <outlet property="answerIdentifierLabel" destination="T0V-6E-7YM" id="jFE-kj-mNb"/>
+                        <outlet property="answerLine" destination="are-NC-DIf" id="KqY-tl-jKa"/>
+                        <outlet property="answerTextField" destination="RUQ-nm-WVN" id="nWH-wo-Nxq"/>
+                        <outlet property="badgeAnswerCount" destination="9VQ-i4-5ds" id="TDK-Dr-4pE"/>
+                        <outlet property="badgeCorrectCount" destination="CiM-BC-3lL" id="VvU-uP-VW1"/>
+                        <outlet property="badgeErrorCount" destination="82G-BI-qRX" id="bly-xY-9pt"/>
+                        <outlet property="badgeQuestionCount" destination="23a-Cd-7eB" id="RiL-ey-81d"/>
+                        <outlet property="correctAnswerLabel" destination="fel-jK-gpf" id="bIN-YS-dZt"/>
+                        <outlet property="questionIdentifierLabel" destination="82m-0x-DOt" id="T46-dF-kh0"/>
+                        <outlet property="questionLabel" destination="HXS-LN-rhO" id="y1R-fr-Cdx"/>
+                        <outlet property="questionLine" destination="AtI-9U-WFr" id="oik-ly-Oa1"/>
+                        <outlet property="questionView" destination="eKG-Kw-rd4" id="YLB-n9-c9x"/>
+                        <outlet property="view" destination="loY-p9-Uql" id="bdg-Sj-XoC"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2115" y="1033"/>
+            <point key="canvasLocation" x="1475" y="1081"/>
         </scene>
-        <!--View Controller - Item 3-->
+        <!--View Controller - Multiple Choice-->
         <scene sceneID="AYy-9G-GHi">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gk-Mj-G8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="6hP-JD-549" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yio-F9-SvB">
+                <viewController id="6hP-JD-549" customClass="MCViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="yio-F9-SvB">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="X8I-oz-83g" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="20" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="Ost-61-2oE" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="90" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="27H-hg-8pW" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="160" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="EgY-xy-fYG" customClass="MKNumberBadgeView">
+                                <rect key="frame" x="230" y="298" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" id="rI7-uN-emd">
+                                <rect key="frame" x="15" y="15" width="290" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="6l6-DJ-yGp">
+                                        <rect key="frame" x="10" y="10" width="270" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Select a vocabulary." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="XsM-gE-teg">
+                                        <rect key="frame" x="15" y="30" width="265" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="UXA-AB-F15">
+                                        <rect key="frame" x="10" y="65" width="270" height="15"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" id="hhc-e7-1s6">
+                                        <rect key="frame" x="15" y="85" width="265" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="This is the first option">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doChoice:" destination="6hP-JD-549" eventType="touchUpInside" id="MW2-cm-RJU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" id="xGL-sh-F7o">
+                                        <rect key="frame" x="15" y="120" width="265" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="This is the second option">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doChoice:" destination="6hP-JD-549" eventType="touchUpInside" id="jGb-Ke-jgl"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" id="XDz-wk-0kT">
+                                        <rect key="frame" x="15" y="155" width="265" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="This is the third option">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="doChoice:" destination="6hP-JD-549" eventType="touchUpInside" id="aLW-Pv-1JW"/>
+                                        </connections>
+                                    </button>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="rwb-KC-p6p">
+                                        <rect key="frame" x="10" y="26" width="270" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" id="Lry-0h-AGC">
+                                        <rect key="frame" x="10" y="81" width="270" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 3" id="OUk-Cx-jXT"/>
+                    <tabBarItem key="tabBarItem" title="Multiple Choice" image="multipleTab.png" id="OUk-Cx-jXT"/>
+                    <connections>
+                        <outlet property="answerIdentifierLabel" destination="UXA-AB-F15" id="1au-K1-h8U"/>
+                        <outlet property="answerLine" destination="Lry-0h-AGC" id="udQ-wd-V2B"/>
+                        <outlet property="badgeAnswerCount" destination="Ost-61-2oE" id="yw9-7O-ajS"/>
+                        <outlet property="badgeCorrectCount" destination="27H-hg-8pW" id="zLe-eg-GcJ"/>
+                        <outlet property="badgeErrorCount" destination="EgY-xy-fYG" id="hTq-xs-eYP"/>
+                        <outlet property="badgeQuestionCount" destination="X8I-oz-83g" id="A8s-Ll-oIz"/>
+                        <outlet property="opt1Button" destination="hhc-e7-1s6" id="TJW-f9-F9c"/>
+                        <outlet property="opt2Button" destination="xGL-sh-F7o" id="I1n-gU-giM"/>
+                        <outlet property="opt3Button" destination="XDz-wk-0kT" id="TIa-M7-EdL"/>
+                        <outlet property="questionIdentifierLabel" destination="6l6-DJ-yGp" id="qko-gg-xzN"/>
+                        <outlet property="questionLabel" destination="XsM-gE-teg" id="yet-kE-6nh"/>
+                        <outlet property="questionLine" destination="rwb-KC-p6p" id="zPE-Vs-nB1"/>
+                        <outlet property="questionView" destination="rI7-uN-emd" id="lOR-7n-2a3"/>
+                        <outlet property="view" destination="yio-F9-SvB" id="81A-5c-djC"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2123" y="427"/>
+            <point key="canvasLocation" x="1465" y="483"/>
         </scene>
-        <!--View Controller - Item 1-->
+        <!--Home View Controller - Home-->
         <scene sceneID="xiV-q0-gua">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFJ-hf-I0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="gKe-bg-pnD" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mn1-gl-YPW">
+                <viewController autoresizesArchivedViewToFullSize="NO" id="gKe-bg-pnD" customClass="HomeViewController" sceneMemberID="viewController">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="mn1-gl-YPW">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9J6-ra-Nfr" customClass="MDSpreadView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="y1z-es-zmr"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeTab.png" id="y1z-es-zmr"/>
+                    <connections>
+                        <outlet property="spreadView" destination="9J6-ra-Nfr" id="cp6-ml-jC7"/>
+                        <outlet property="view" destination="mn1-gl-YPW" id="J8J-lF-7Td"/>
+                    </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2353" y="-797"/>
+            <point key="canvasLocation" x="1465" y="-781"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Iuc-ao-b8S">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5y4-Ih-kQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController definesPresentationContext="YES" id="2Es-mn-NwG" customClass="WQDetailViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="0t0-nB-bGr"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                <tabBarController definesPresentationContext="YES" id="2Es-mn-NwG" customClass="DetailViewController" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0t0-nB-bGr">
+                        <barButtonItem key="rightBarButtonItem" title="Mode" id="L1N-9c-DVm">
+                            <connections>
+                                <action selector="doMode:" destination="2Es-mn-NwG" id="4pn-DZ-V2U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="k8S-sp-zxo">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -148,15 +612,152 @@
             <point key="canvasLocation" x="901" y="64"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dontknowButton.png" width="125" height="56"/>
+        <image name="flashTab.png" width="30" height="30"/>
+        <image name="homeTab.png" width="27" height="27"/>
+        <image name="icon_about.png" width="72" height="72"/>
+        <image name="knowButton.png" width="125" height="56"/>
+        <image name="multipleTab.png" width="30" height="30"/>
+        <image name="qaTab.png" width="30" height="30"/>
+    </resources>
     <classes>
-        <class className="WQDetailViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WQDetailViewController.h"/>
+        <class className="AboutViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AboutViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
+                <relationship kind="action" name="didPressLink"/>
+                <relationship kind="action" name="dismissView"/>
+                <relationship kind="outlet" name="linkButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="versionLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="WQMasterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WQMasterViewController.h"/>
+        <class className="DetailViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doAbout:"/>
+                <relationship kind="action" name="doMode:"/>
+            </relationships>
+        </class>
+        <class className="FCViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FCViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doDontKnowButton"/>
+                <relationship kind="action" name="doKnowButton"/>
+                <relationship kind="action" name="doRepeat"/>
+                <relationship kind="action" name="doRestart"/>
+                <relationship kind="outlet" name="answerCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="backIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="backText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="backView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="badgeAnswerCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeCorrectCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeErrorCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeQuestionCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="correctCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="dontKnowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="errorCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="frontIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="frontText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="frontView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="knowButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="previousView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="questionCountButton" candidateClass="WQScoreButton"/>
+            </relationships>
+        </class>
+        <class className="HomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="containerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="spreadView" candidateClass="MDSpreadView"/>
+            </relationships>
+        </class>
+        <class className="MCViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MCViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doChoice:"/>
+                <relationship kind="action" name="doRepeat"/>
+                <relationship kind="action" name="doRestart"/>
+                <relationship kind="outlet" name="answerCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="answerIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="answerLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="badgeAnswerCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeCorrectCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeErrorCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeQuestionCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="correactAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="correctAnswerHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="correctAnswerLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="correctCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="errorCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="opt1Button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="opt2Button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="opt3Button" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="previousQuestionHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="previousQuestionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="previousQuestionLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="previousView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="questionCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="questionIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="questionLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="questionView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="yourAnswerHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yourAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yourAnswerLine" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="MDSpreadView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MDSpreadView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="dataSource"/>
+                <relationship kind="outlet" name="delegate"/>
+            </relationships>
+        </class>
+        <class className="MKNumberBadgeView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MKNumberBadgeView.h"/>
+        </class>
+        <class className="QAViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QAViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doRepeat"/>
+                <relationship kind="action" name="doRestart"/>
+                <relationship kind="outlet" name="answerCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="answerIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="answerLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="answerTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="badgeAnswerCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeCorrectCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeErrorCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="badgeQuestionCount" candidateClass="MKNumberBadgeView"/>
+                <relationship kind="outlet" name="correctAnswerHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="correctAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="correctAnswerLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="correctCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="errorCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="previousQuestionHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="previousQuestionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="previousQuestionLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="previousView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="questionCountButton" candidateClass="WQScoreButton"/>
+                <relationship kind="outlet" name="questionIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="questionLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="questionLine" candidateClass="UIView"/>
+                <relationship kind="outlet" name="questionView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="yourAnswerHeaderLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yourAnswerLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="yourAnswerLine" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="RootViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="doActions:"/>
+                <relationship kind="action" name="doDBSync:"/>
+            </relationships>
+        </class>
+        <class className="WQScoreButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WQScoreButton.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

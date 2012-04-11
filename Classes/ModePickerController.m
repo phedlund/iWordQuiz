@@ -218,8 +218,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)dealloc {
     [super dealloc];
-	self.modes = nil;
-	self.delegate = nil;
+	//self.modes = nil;
+	//self.delegate = nil;
 }
 
 @end

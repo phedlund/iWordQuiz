@@ -77,9 +77,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         RootViewController *rootController;
         if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
             UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-            rootController = [splitViewController.viewControllers objectAtIndex:0];
+            UINavigationController *navController = [splitViewController.viewControllers objectAtIndex:0];
+            rootController = (RootViewController*)navController.topViewController;
         } else {
-            rootController = (RootViewController *)self.window.rootViewController;
+            UINavigationController *navController = (UINavigationController*)self.window.rootViewController;
+            rootController = (RootViewController*)navController.topViewController;
         }
         [rootController enumerateVocabularies];
         
