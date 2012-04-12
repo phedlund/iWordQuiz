@@ -15,6 +15,8 @@
 				<string>document-icon-64.png</string>
 				<string>document-icon-128</string>
 				<string>document-icon-640</string>
+				<string>document-icon-22x29</string>
+				<string>document-icon-44x58</string>
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>Vocabulary Document</string>
@@ -41,6 +43,10 @@
 	<array>
 		<string>Icon-72.png</string>
 		<string>Icon-144.png</string>
+		<string>Icon-57.png</string>
+		<string>Icon-114.png</string>
+		<string>Default.png</string>
+		<string>Default@2x.png</string>
 	</array>
 	<key>CFBundleIcons</key>
 	<dict>
@@ -50,6 +56,10 @@
 			<array>
 				<string>Icon-72.png</string>
 				<string>Icon-144.png</string>
+				<string>Icon-57.png</string>
+				<string>Icon-114.png</string>
+				<string>Default.png</string>
+				<string>Default@2x.png</string>
 			</array>
 		</dict>
 	</dict>
