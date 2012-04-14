@@ -291,7 +291,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 - (void)dealloc {
-    [self.masterPopoverController release];
 	[modePicker release];
 	[modePickerPopover release];
 	

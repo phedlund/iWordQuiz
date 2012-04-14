@@ -70,7 +70,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     errorCountButton.stickyColor = kRed;
     
     badgeQuestionCount.fillColor = [UIColor blueColor];
-    badgeAnswerCount.fillColor = [UIColor yellowColor];
+    badgeAnswerCount.fillColor = [UIColor colorWithRed:0.95 green:0.76 blue:0.21 alpha:1.0];
     badgeCorrectCount.fillColor = [UIColor greenColor];
     badgeErrorCount.fillColor = [UIColor redColor];
     [badgeQuestionCount whenTapped:^{

@@ -87,11 +87,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/DetailViewController.m"
-         timestampString = "355629227.416518"
+         timestampString = "356119215.933363"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "449"
-         endingLineNumber = "449"
+         startingLineNumber = "448"
+         endingLineNumber = "448"
          landmarkName = "-improvedContainerViewProperties"
          landmarkType = "5">
       </FileBreakpoint>
@@ -100,11 +100,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/RootViewController.m"
-         timestampString = "355870862.680123"
+         timestampString = "356119215.933363"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "265"
-         endingLineNumber = "265"
+         startingLineNumber = "264"
+         endingLineNumber = "264"
          landmarkName = "-enumerateVocabularies"
          landmarkType = "5">
       </FileBreakpoint>

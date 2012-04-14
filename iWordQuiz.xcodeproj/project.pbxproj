@@ -1035,9 +1035,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Peter Hedlund";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Hedlund";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Distribution: Peter Hedlund";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1054,9 +1054,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = WordQuiz;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
+				PROVISIONING_PROFILE = "5B7BF5C8-AB8F-43FA-9142-4DE9DC7F767C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5B7BF5C8-AB8F-43FA-9142-4DE9DC7F767C";
+				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "5B7BF5C8-AB8F-43FA-9142-4DE9DC7F767C";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1090,9 +1090,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Peter Hedlund";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Hedlund";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Distribution: Peter Hedlund";
 				CURRENT_PROJECT_VERSION = 10;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1101,9 +1101,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lxml2";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
+				PROVISIONING_PROFILE = "5B7BF5C8-AB8F-43FA-9142-4DE9DC7F767C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5B7BF5C8-AB8F-43FA-9142-4DE9DC7F767C";
+				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "5B7BF5C8-AB8F-43FA-9142-4DE9DC7F767C";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				VERSIONING_SYSTEM = "apple-generic";
