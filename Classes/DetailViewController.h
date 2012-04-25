@@ -37,29 +37,30 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQDocument.h"
 #import "MDSpreadViewClasses.h"
 #import "WEPopoverController.h"
+#import "WQEditViewController.h"
 
-@interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, ModePickerDelegate,MDSpreadViewDataSource, MDSpreadViewDelegate> {
-    
-    //UIPopoverController *popoverController;
+@interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, ModePickerDelegate,MDSpreadViewDataSource, MDSpreadViewDelegate, WQDocumentDelegate, WQEditViewControllerDelegate> {
+
 	ModePickerController *modePicker;
 	WEPopoverController *modePickerPopover;
 
-    WQDocument *doc;
 	iWQQuiz * m_quiz;
+    int m_currentRow;
 }
 
+@property (strong, nonatomic) NSURL *detailItem;
 @property (nonatomic, retain) ModePickerController *modePicker;
 @property (nonatomic, retain) WEPopoverController *modePickerPopover;
 
-@property (nonatomic, retain) WQDocument *doc;
+@property (nonatomic, strong) WQDocument *doc;
 
 - (void) activateTab:(int)index;
-- (void) setDocument:(NSURL *)URL;
 
 - (void) quizDidFinish;
-- (BOOL) hasQuiz;
+- (BOOL) hasEnoughEntries:(int)index;
 
 - (IBAction) doMode:(id)sender;
 - (IBAction) doAbout:(id)sender;
+- (IBAction) doEdit:(id)sender;
 
 @end

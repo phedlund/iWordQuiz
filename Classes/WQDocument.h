@@ -30,12 +30,14 @@
  
  *************************************************************************/
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface WQDocument : NSObject {
+@protocol WQDocumentDelegate;
+
+@interface WQDocument : UIDocument {
+
     NSString * frontIdentifier;
-    NSString * backIdentifier;	
-	NSURL * url;
+    NSString * backIdentifier;
 
     NSMutableArray *entries;
 }
@@ -44,11 +46,20 @@
 - (void) loadKvtml;
 - (void) loadCvs;
 - (NSMutableArray *) quizEntries;
+- (NSString *) xmlText;
 
+@property (copy, nonatomic) NSString* documentText;
 @property (nonatomic, retain) NSString *frontIdentifier;
 @property (nonatomic, retain) NSString *backIdentifier;
-@property (nonatomic, retain) NSURL *url;
 
 @property (nonatomic, retain) NSMutableArray *entries;
 
+@property (retain, nonatomic) id<WQDocumentDelegate> delegate;
+
+@end
+
+
+@protocol WQDocumentDelegate <NSObject>
+@optional
+- (void)documentContentsDidChange:(WQDocument*)document;
 @end

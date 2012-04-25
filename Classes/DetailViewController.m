@@ -49,65 +49,82 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @synthesize masterPopoverController = _masterPopoverController;
 @synthesize modePicker, modePickerPopover;
-@synthesize doc;
+@synthesize doc = _doc;
+@synthesize detailItem = _detailItem;
 
-
-- (void) setDocument:(NSURL *)URL
-{
-	if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }
- 
-    if (self.doc == nil) {
-        self.doc = [[WQDocument alloc] init];
-    }
-    
-    [self.doc setUrl:URL];
-    [self.doc load];
-    
-    if (m_quiz != nil) {
-        [m_quiz release];
-		m_quiz = nil;
-	}
-	
-    m_quiz = [[iWQQuiz alloc] init];
-	[m_quiz setEntries:[doc quizEntries]];
-	[m_quiz setFrontIdentifier:[doc frontIdentifier]];
-	[m_quiz setBackIdentifier:[doc backIdentifier]];
-	[m_quiz setFileName:[[URL lastPathComponent] stringByDeletingPathExtension]];
-	
-	[self activateTab:self.selectedIndex];
-	self.navigationItem.title = [[URL lastPathComponent] stringByDeletingPathExtension];
-	//[URL release];
+- (void)documentContentsDidChange:(WQDocument *)document {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        if (m_quiz != nil) {
+            [m_quiz release];
+            m_quiz = nil;
+        }
+        
+        m_quiz = [[iWQQuiz alloc] init];
+        [m_quiz setEntries:[document quizEntries]];
+        [m_quiz setFrontIdentifier:[document frontIdentifier]];
+        [m_quiz setBackIdentifier:[document backIdentifier]];
+        [m_quiz setFileName:[[document.fileURL lastPathComponent] stringByDeletingPathExtension]];
+        
+        [self activateTab:self.selectedIndex];
+        self.navigationItem.title = [[document.fileURL lastPathComponent] stringByDeletingPathExtension];
+    });
 }
 
 #pragma mark -
 #pragma mark Managing the detail item
 
-/*
- When setting the detail item, update the view and dismiss the popover controller if it's showing.
 
-- (void)setDetailItem:(id)newDetailItem {
-    if (detailItem != newDetailItem) {
-        [detailItem release];
-        detailItem = [newDetailItem retain];
+// When setting the detail item, update the view and dismiss the popover controller if it's showing.
+
+- (void)setDetailItem:(NSURL*)newDetailItem {
+    //if (_detailItem != newDetailItem) {
+        [_detailItem release];
+        
+        _detailItem = [newDetailItem retain];
         
         // Update the view.
-        [self configureView];
-    }
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            [self configureView];
+        }
+    //}
 
-    if (popoverController != nil) {
-        [popoverController dismissPopoverAnimated:YES];
+	if (self.masterPopoverController != nil) {
+        [self.masterPopoverController dismissPopoverAnimated:YES];
     }        
 }
- */
+
 
 - (void)configureView {
-    // Update the user interface for the detail item.
-    //detailDescriptionLabel.text = [detailItem description];   
-	//if (currentViewController == flashViewController) {
-		//flashViewController.identifierLabel.text =  [detailItem description];
-	//}
+    if (_doc != nil) {
+        [_doc closeWithCompletionHandler:nil];
+        [_doc release];
+        _doc = nil;
+    }
+
+    _doc = [[WQDocument alloc] initWithFileURL:_detailItem];
+    _doc.delegate = self;
+
+    [_doc openWithCompletionHandler:^(BOOL success) {
+        
+        if (m_quiz != nil) {
+            [m_quiz release];
+            m_quiz = nil;
+        }
+        
+        m_quiz = [[iWQQuiz alloc] init];
+        [m_quiz setEntries:[_doc quizEntries]];
+        [m_quiz setFrontIdentifier:[_doc frontIdentifier]];
+        [m_quiz setBackIdentifier:[_doc backIdentifier]];
+        [m_quiz setFileName:[[_detailItem lastPathComponent] stringByDeletingPathExtension]];
+        
+        if (![self hasEnoughEntries:self.selectedIndex]) {
+            [self setSelectedIndex:0];
+            [self activateTab:0];
+        }
+        //[self activateTab:self.selectedIndex];
+        self.navigationItem.title = [[_detailItem lastPathComponent] stringByDeletingPathExtension];
+     }];
 }
 
 
@@ -154,14 +171,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)viewDidLoad {
     [super viewDidLoad];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {    
-        UIBarButtonItem* button1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(doAbout:)]; 
+        UIBarButtonItem* button1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(doAbout:)];
+        UIBarButtonItem *barButtonEdit = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(doEdit:)];
         UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithTitle:@"Mode" style:UIBarButtonItemStyleBordered target:self action:@selector(doMode:)]; 
-        NSArray *buttons = [NSArray arrayWithObjects:button1, button, nil];
+        NSArray *buttons = [NSArray arrayWithObjects:button1, barButtonEdit, button, nil];
         self.navigationItem.rightBarButtonItems = buttons;
         [button release];
+        [barButtonEdit release];
         [button1 release];
         //[buttons release];
     }
+    m_currentRow = 0;
 	[self activateTab:1];
 }
 
@@ -170,6 +190,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.selectedViewController willRotateToInterfaceOrientation:[[UIDevice currentDevice] orientation ] duration:0];
+    // Update the view.
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [self configureView];
+    }
 }
 
 /*
@@ -177,11 +201,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [super viewDidAppear:animated];
 }
 */
-/*
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    
 }
-*/
+
 /*
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
@@ -192,6 +217,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.masterPopoverController = nil;
+    [_doc closeWithCompletionHandler:nil];
 }
 
 
@@ -205,9 +231,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	}
 	if (m_quiz != nil) {
 		m_quiz.quizMode = myMode;
+        HomeViewController *homeViewController;
         switch (index) {
             case 0:
-                [(HomeViewController *) self.selectedViewController restart];
+                homeViewController = (HomeViewController*)[self.viewControllers objectAtIndex:0];
+                [homeViewController restart];
                 break;
             case 1:
                 [(FCViewController *) self.selectedViewController setQuiz:m_quiz];
@@ -270,12 +298,44 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [self presentViewController:navController animated:YES completion:nil];
 }
 
+- (void) doEdit:(id)sender {
+    UINavigationController *navController =  [self.storyboard instantiateViewControllerWithIdentifier:@"edit"];
+
+    WQEditViewController *editViewController = (WQEditViewController*)navController.topViewController;
+    [self presentViewController:navController animated:YES completion:nil];
+    editViewController.delegate = self;
+    editViewController.nextButton.enabled = (m_currentRow < (_doc.entries.count - 1));
+    editViewController.previousButton.enabled = (m_currentRow > 0);
+    editViewController.frontIdentifierLabel.text = _doc.frontIdentifier;
+    editViewController.backIdentifierLabel.text = _doc.backIdentifier;
+    editViewController.frontTextField.text = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:0];
+    editViewController.backTextField.text = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:1];
+}
+
 - (void) quizDidFinish {
 	//self.repeatErrors.enabled = [m_quiz hasErrors];
 }
 
-- (BOOL) hasQuiz {
-    return m_quiz != nil;
+- (BOOL) hasEnoughEntries:(int)index {
+    BOOL result = true;
+    switch (index) {
+        case 0:
+            result = true;
+            break;
+        case 1:
+            result = ((m_quiz != nil) && (m_quiz.entries.count > 0));
+            break;
+        case 2:
+            result = ((m_quiz != nil) && (m_quiz.entries.count > 2));
+            break;
+        case 3:
+            result = ((m_quiz != nil) && (m_quiz.entries.count > 0));
+            break;
+        default:
+            result = true;
+            break;
+    }
+    return result;
 }
 
 #pragma mark -
@@ -295,7 +355,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[modePickerPopover release];
 	
 	[m_quiz release];
-    [doc release];
+    //[doc release];
 	
     [super dealloc];
 }
@@ -440,6 +500,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
 }
 
+- (void)spreadView:(MDSpreadView *)aSpreadView didSelectRowAtIndexPath:(NSIndexPath *)indexPath forColumnIndex:(NSIndexPath *)columnPath {
+    m_currentRow = indexPath.row;
+}
+
+
+#pragma mark WEPopover
 /**
  Thanks to Paul Solt for supplying these background images and container view properties
  */
@@ -478,4 +544,62 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	return props;	
 }
 
+#pragma mark WQEditViewControllerDelegate
+
+- (void)currentEntryDidChange:(WQEditViewController*)aEditViewController reason:(EditReason)aReason {
+    NSString *newFront = aEditViewController.frontTextField.text;
+    NSString *newBack = aEditViewController.backTextField.text;
+    NSString *oldFront = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:0];
+    NSString *oldBack = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:1];
+    int valueChanges = 0;
+    if (![newFront isEqualToString:oldFront])
+        ++valueChanges;
+    if (![newBack isEqualToString:oldBack])
+        ++valueChanges;
+    
+    if (valueChanges > 0) {
+        [_doc.entries removeObjectAtIndex:m_currentRow];
+        [_doc.entries insertObject:[NSArray arrayWithObjects:newFront, newBack, nil] atIndex:m_currentRow];
+        [_doc updateChangeCount:UIDocumentChangeDone];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
+    }
+    
+    
+    switch (aReason) {
+        case kNext:
+            ++m_currentRow;
+            break;
+        case kPrevious:
+            --m_currentRow;
+            break;
+        case kAdd:
+            [_doc.entries insertObject:[NSArray arrayWithObjects:@"", @"", nil] atIndex:++m_currentRow];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
+            break;
+            case kRemove:
+            [_doc.entries removeObjectAtIndex:m_currentRow];
+            while (m_currentRow > (_doc.entries.count - 1)) {
+                --m_currentRow;
+            }
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
+            break;
+        case kDone:
+            [_doc saveToURL:_doc.fileURL forSaveOperation:UIDocumentSaveForOverwriting 
+                                        completionHandler:^(BOOL success) {
+                                                                if (success) {
+                                                                    [self setDetailItem:_doc.fileURL];
+                                                                    //[self activateTab:self.selectedIndex];
+                                                                }
+                                        }];
+            
+            break;
+        default:
+            break;
+    }
+
+    aEditViewController.nextButton.enabled = (m_currentRow < (_doc.entries.count - 1));
+    aEditViewController.previousButton.enabled = (m_currentRow > 0);
+    aEditViewController.frontTextField.text = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:0];
+    aEditViewController.backTextField.text = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:1];
+}
 @end

@@ -37,31 +37,66 @@
 
 @implementation WQDocument
 
+@synthesize documentText = _documentText;
+@synthesize delegate = _delegate;
 @synthesize frontIdentifier;
 @synthesize backIdentifier;
-@synthesize url;
 @synthesize entries;
 
-- init {
-	if(![super init]){
-		return nil;
-	}
-	
-    frontIdentifier = @"Front";
-    backIdentifier = @"Back";
+- (void)setDocumentText:(NSString *)newText {
+    //NSString* oldText = _documentText;
+    _documentText = [newText copy];
     
-	entries = [[NSMutableArray alloc] init];
-	return self;
+    // Register the undo operation.
+    //[self.undoManager setActionName:@"Text Change"];
+    //[self.undoManager registerUndoWithTarget:self selector:@selector(setDocumentText:) object:oldText];
+}
+
+- (id)contentsForType:(NSString *)typeName error:(NSError *__autoreleasing *)outError {
+    if (!self.documentText)
+        self.documentText = @"";
+    if (self.hasUnsavedChanges) {
+        self.documentText = [self xmlText];
+    }
+    NSData *docData = [self.documentText dataUsingEncoding:NSUTF8StringEncoding];
+    
+    return docData;
+}
+
+- (BOOL)loadFromContents:(id)contents ofType:(NSString *)typeName error:(NSError *__autoreleasing *)outError {
+    if ([contents length] > 0) {
+        self.documentText = [[NSString alloc] initWithData:contents encoding:NSUTF8StringEncoding];
+        [self load];
+    }
+    else
+        self.documentText = @"";
+    
+    // Tell the delegate that the document contents changed.
+    if (self.delegate && [self.delegate respondsToSelector:@selector(documentContentsDidChange:)])
+        [self.delegate documentContentsDidChange:self];
+    
+    return YES;
+}
+
+- (id) initWithFileURL:(NSURL*)url {
+    self = [super initWithFileURL:url];
+    if (self) {
+        frontIdentifier = @"Front";
+        backIdentifier = @"Back";
+    
+        entries = [[NSMutableArray alloc] init];
+    }
+    return self;
 }
 
 - (void) load {
 	[self.entries removeAllObjects];
 	
-    if ([[url pathExtension] caseInsensitiveCompare:@"kvtml"] == NSOrderedSame) {
+    if ([[self.fileURL pathExtension] caseInsensitiveCompare:@"kvtml"] == NSOrderedSame) {
         [self loadKvtml];
     }
     
-    if ([[url pathExtension] caseInsensitiveCompare:@"csv"] == NSOrderedSame) {
+    if ([[self.fileURL pathExtension] caseInsensitiveCompare:@"csv"] == NSOrderedSame) {
         [self loadCvs];
     }
 }
@@ -71,9 +106,9 @@
     NSString *f = @"";
     NSString *b = @"";
     
-    NSString *fileString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
+    //NSString *fileString = [NSString stringWithContentsOfURL:self.fileURL encoding:NSUTF8StringEncoding error:NULL];
     
-    DDXMLDocument *xmlDoc = [[DDXMLDocument alloc] initWithXMLString:fileString options:0 error:nil];
+    DDXMLDocument *xmlDoc = [[DDXMLDocument alloc] initWithXMLString:self.documentText options:0 error:nil];
     NSArray *identifierNodes = [xmlDoc nodesForXPath:@"/kvtml/identifiers/identifier/name" error:nil];
     
     self.frontIdentifier = [[identifierNodes objectAtIndex:0] stringValue];
@@ -108,7 +143,7 @@
 
 - (void) loadCvs {
     
-    NSString *fileString = [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:NULL];
+    NSString *fileString = [NSString stringWithContentsOfURL:self.fileURL encoding:NSUTF8StringEncoding error:NULL];
     
     unsigned length = [fileString length];
     unsigned paraStart = 0, paraEnd = 0, contentsEnd = 0;
@@ -132,6 +167,47 @@
             }
         }
     }
+}
+
+- (NSString *)xmlText {
+	NSMutableString *xmlStr = [NSMutableString stringWithCapacity:100];
+    [xmlStr appendString:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"];
+    [xmlStr appendString:@"<!DOCTYPE kvtml PUBLIC \"kvtml2.dtd\" \"http://edu.kde.org/kanagram/kvtml2.dtd\">"];
+    [xmlStr appendString:@"<kvtml version=\"2.0\">"];
+    [xmlStr appendString:@"<information>"];
+    [xmlStr appendFormat:@"<generator>wordquiz-for-ios %@</generator>", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
+    [xmlStr appendFormat:@"<title>%@</title>", self.fileURL.lastPathComponent];
+    [xmlStr appendString:@"</information>"];
+    
+    [xmlStr appendString:@"<identifiers>"];
+    [xmlStr appendString:@"<identifier id=\"0\" >"];
+    [xmlStr appendFormat:@"<name>%@</name>", frontIdentifier];
+    [xmlStr appendFormat:@"<locale>%@</locale>", frontIdentifier];
+    [xmlStr appendString:@"</identifier>"];
+    [xmlStr appendString:@"<identifier id=\"1\" >"];
+    [xmlStr appendFormat:@"<name>%@</name>", backIdentifier];
+    [xmlStr appendFormat:@"<locale>%@</locale>", backIdentifier];
+    [xmlStr appendString:@"</identifier>"];
+    [xmlStr appendString:@"</identifiers>"];
+    
+    [xmlStr appendString:@"<entries>"];
+    int i = 0;
+    for (NSArray *entry in self.entries) {
+		[xmlStr appendFormat:@"<entry id=\"%@\">", [NSNumber numberWithInt:i]];
+        [xmlStr appendString:@"<translation id=\"0\" >"];
+        [xmlStr appendFormat:@"<text>%@</text>", [entry objectAtIndex:0]];
+        [xmlStr appendString:@"</translation>"];
+        [xmlStr appendString:@"<translation id=\"1\" >"];
+        [xmlStr appendFormat:@"<text>%@</text>", [entry objectAtIndex:1]];
+        [xmlStr appendString:@"</translation>"];
+        [xmlStr appendString:@"</entry>"];
+        ++i;
+	}
+   
+    [xmlStr appendString:@"</entries>"];
+    [xmlStr appendString:@"</kvtml>"];
+    
+    return xmlStr;
 }
 
 - (NSMutableArray *) quizEntries {

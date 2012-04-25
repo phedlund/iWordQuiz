@@ -72,6 +72,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(edited:) name:@"Edited" object:nil];
     spreadView.dataSource = (id)self.tabBarController;
     spreadView.delegate = (id) self.tabBarController;
     [spreadView reloadData];
@@ -151,6 +152,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)dealloc {
     [spreadView release];
     [super dealloc];
+}
+
+- (void)edited:(NSNotification*)n {
+    [spreadView reloadData];
 }
 
 @end

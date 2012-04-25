@@ -33,20 +33,6 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         isPathRelative = "1"
-         filePath = "Classes/DetailViewController.m"
-         timestampString = "355629227.416518"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "246"
-         endingLineNumber = "246"
-         landmarkName = "-selectedMode"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "Classes/WordQuizAppDelegate.m"
          timestampString = "355177615.632549"
          startingColumnNumber = "9223372036854775807"
@@ -83,16 +69,68 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Classes/DetailViewController.m"
+         timestampString = "357082470.767374"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "572"
+         endingLineNumber = "572"
+         landmarkName = "-currentEntryDidChange:reason:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Classes/RootViewController.m"
+         timestampString = "356996701.107347"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "213"
+         endingLineNumber = "213"
+         landmarkName = "-prepareForSegue:sender:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/DetailViewController.m"
-         timestampString = "356119215.933363"
+         timestampString = "357082470.767374"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "448"
-         endingLineNumber = "448"
-         landmarkName = "-improvedContainerViewProperties"
+         startingLineNumber = "588"
+         endingLineNumber = "588"
+         landmarkName = "-currentEntryDidChange:reason:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Classes/DetailViewController.m"
+         timestampString = "357078324.64089"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
+         landmarkName = "-setDetailItem:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Classes/HomeViewController.m"
+         timestampString = "357078735.110997"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "129"
+         endingLineNumber = "129"
+         landmarkName = "-restart"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -100,12 +138,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/RootViewController.m"
-         timestampString = "356119215.933363"
+         timestampString = "357086752.877592"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "264"
-         endingLineNumber = "264"
-         landmarkName = "-enumerateVocabularies"
+         startingLineNumber = "403"
+         endingLineNumber = "403"
+         landmarkName = "-createNewDocument:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

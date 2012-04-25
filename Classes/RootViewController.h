@@ -28,28 +28,29 @@
 
 #import <UIKit/UIKit.h>
 #import "AboutViewController.h"
+#import "WQNewFileViewController.h"
 
 @class DetailViewController;
 @class CHDropboxSync;
 
-@interface RootViewController : UITableViewController <UITabBarControllerDelegate, UIActionSheetDelegate>
+@interface RootViewController : UITableViewController <UITabBarControllerDelegate, UIActionSheetDelegate, WQNewFileViewControllerDelegate>
 {
-//    DetailViewController *detailViewController;
-
 	NSURL *documentsDirectory;
 	NSMutableArray *vocabularies;
 }
 
 - (void) enumerateVocabularies;
+- (NSString*)newUntitledDocumentName;
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
-//@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
 @property (nonatomic, retain) NSMutableArray *vocabularies;
 @property (nonatomic, retain) NSURL *documentsDirectory;
+@property (retain, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @property(retain) CHDropboxSync* syncer;
 
 - (IBAction) doDBSync:(id)sender;
 - (IBAction) doActions:(id)sender;
+- (IBAction) addDocument:(id)sender;
 
 @end
