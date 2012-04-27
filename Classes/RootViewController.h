@@ -37,10 +37,10 @@
 {
 	NSURL *documentsDirectory;
 	NSMutableArray *vocabularies;
+    int m_currentRow;
 }
 
 - (void) enumerateVocabularies;
-- (NSString*)newUntitledDocumentName;
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (nonatomic, retain) NSMutableArray *vocabularies;
@@ -51,6 +51,5 @@
 
 - (IBAction) doDBSync:(id)sender;
 - (IBAction) doActions:(id)sender;
-- (IBAction) addDocument:(id)sender;
 
 @end

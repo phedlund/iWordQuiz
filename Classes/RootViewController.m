@@ -44,8 +44,8 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 @implementation RootViewController
 
 @synthesize detailViewController = _detailViewController;
-//@synthesize detailViewController;
-@synthesize vocabularies, documentsDirectory;
+@synthesize vocabularies;
+@synthesize documentsDirectory;
 @synthesize addButton;
 @synthesize syncer;
 
@@ -54,6 +54,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 
 - (void)awakeFromNib
 {
+    m_currentRow = 0;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         self.clearsSelectionOnViewWillAppear = NO;
         self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
@@ -173,9 +174,13 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+        BOOL deletingCurrentRow = (indexPath.row == m_currentRow);
 		[[NSFileManager defaultManager] removeItemAtURL:[self.vocabularies objectAtIndex:indexPath.row] error:nil];
 		[self.vocabularies removeObjectAtIndex:indexPath.row];
 		[tableView reloadData];
+        if (deletingCurrentRow) {
+            [self.detailViewController setDetailItem:nil];
+        }
     }   
     /*else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -204,8 +209,9 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    m_currentRow = indexPath.row;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        [self.detailViewController setDetailItem:[self.vocabularies objectAtIndex: indexPath.row]];
+        [self.detailViewController setDetailItem:[self.vocabularies objectAtIndex: m_currentRow]];
     }
 }
 
@@ -425,30 +431,34 @@ NSString* WQDocumentsDirectoryName = @"Documents";
             }
             
             [document updateChangeCount:UIDocumentChangeDone];
-            [document saveToURL:newDocumentURL forSaveOperation:UIDocumentSaveForCreating completionHandler:nil];
+            [document saveToURL:newDocumentURL forSaveOperation:UIDocumentSaveForCreating completionHandler: ^(BOOL success) {
+                if (success) {
+                    
+                    // Update the table.
+                    NSIndexPath* newCellIndexPath =
+                    [NSIndexPath indexPathForRow:([vocabularies count] - 1) inSection:0];
+                    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newCellIndexPath]
+                                          withRowAnimation:UITableViewRowAnimationAutomatic];
+                    
+                    [self.tableView selectRowAtIndexPath:newCellIndexPath
+                                                animated:YES
+                                          scrollPosition:UITableViewScrollPositionMiddle];
+                    
+                    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+                        [self.detailViewController setSelectedIndex:0];
+                        [self.detailViewController setDetailItem:newDocumentURL];
+                    }
+                    // Segue to the detail view controller to begin editing.
+                    //UITableViewCell* selectedCell = [self.tableView
+                    //                                 cellForRowAtIndexPath:newCellIndexPath];
+                    //[self performSegueWithIdentifier:DisplayDetailSegue sender:selectedCell];
+                    
+                    // Reenable the Add button.
+                    //self.addButton.enabled = YES;
+                }
 
-            // Update the table.
-            NSIndexPath* newCellIndexPath =
-            [NSIndexPath indexPathForRow:([vocabularies count] - 1) inSection:0];
-            [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newCellIndexPath]
-                                  withRowAnimation:UITableViewRowAnimationAutomatic];
-            
-            [self.tableView selectRowAtIndexPath:newCellIndexPath
-                                        animated:YES
-                                  scrollPosition:UITableViewScrollPositionMiddle];
-            
-            if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-                [self.detailViewController setSelectedIndex:0];
-                [self.detailViewController setDetailItem:newDocumentURL];
-                //[self.detailViewController activateTab:0];
-            }
-            // Segue to the detail view controller to begin editing.
-            //UITableViewCell* selectedCell = [self.tableView
-            //                                 cellForRowAtIndexPath:newCellIndexPath];
-            //[self performSegueWithIdentifier:DisplayDetailSegue sender:selectedCell];
-            
-            // Reenable the Add button.
-            //self.addButton.enabled = YES;
+            }];
+
         });
     });
     

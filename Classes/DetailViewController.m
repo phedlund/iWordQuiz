@@ -85,7 +85,22 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         
         // Update the view.
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            [self configureView];
+            if (_detailItem == nil) {
+                if (_doc != nil) {
+                    [_doc closeWithCompletionHandler:nil];
+                    [_doc release];
+                    _doc = nil;
+                }
+                if (m_quiz != nil) {
+                    [m_quiz release];
+                    m_quiz = nil;
+                }
+                [self setSelectedIndex:0];
+                [self activateTab:0];
+                [[(HomeViewController*)[self.viewControllers objectAtIndex:0] spreadView] reloadData];
+            } else {
+                [self configureView];
+            }
         }
     //}
 
