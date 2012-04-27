@@ -42,7 +42,6 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSMutableArray *vocabularies;
-@property (strong, nonatomic) NSURL *documentsDirectory;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @property(retain) CHDropboxSync* syncer;

@@ -45,7 +45,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 
 @synthesize detailViewController = _detailViewController;
 @synthesize vocabularies = _vocabularies;
-@synthesize documentsDirectory = _documentsDirectory;
 @synthesize addButton;
 @synthesize syncer;
 
@@ -72,11 +71,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
     }
     NSError *err;
-    NSFileManager *df = [NSFileManager defaultManager];
-    NSArray *paths = [df URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
-    _documentsDirectory = [paths objectAtIndex:0];
-    NSLog(@"Documents Directory: %@", _documentsDirectory);
-    
+     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	// getting a BOOL
 	BOOL examplesCopied = [prefs boolForKey:@"ExamplesCopied"];
@@ -87,11 +82,13 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 		
 		NSEnumerator *enumerator = [exampleFiles objectEnumerator];
 		id aFile;
-		
+		NSFileManager *fm = [NSFileManager defaultManager];
+        NSArray *paths = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+        NSURL *docDir = [paths objectAtIndex:0];
 		while (aFile = [enumerator nextObject]) {
-			NSURL *dest = [self.documentsDirectory URLByAppendingPathComponent: [aFile lastPathComponent]];
+			NSURL *dest = [docDir URLByAppendingPathComponent: [aFile lastPathComponent]];
 			NSLog(@"Example File: %@", dest);
-			[df copyItemAtURL:aFile toURL:dest error:&err];
+			[fm copyItemAtURL:aFile toURL:dest error:&err];
 		}
     }
 		
@@ -284,24 +281,27 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 - (void) enumerateVocabularies
 {
 	[self.vocabularies removeAllObjects];
-    
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray *paths = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+    NSURL *docDir = [paths objectAtIndex:0];
+
     //Move files out of the Inbox and remove the Inbox folder
-    NSString *inboxPath  = [[self.documentsDirectory path] stringByAppendingPathComponent:@"Inbox/"];
+    NSString *inboxPath  = [[docDir path] stringByAppendingPathComponent:@"Inbox/"];
     NSDirectoryEnumerator *inboxEnum = [[NSFileManager defaultManager] enumeratorAtPath: inboxPath];
     NSString *file;
     while (file = [inboxEnum nextObject]) {
         NSString *origFilePath = [inboxPath stringByAppendingPathComponent:[file lastPathComponent]];
-        NSString *finalFilePath = [[self.documentsDirectory path] stringByAppendingPathComponent:[file lastPathComponent]];
+        NSString *finalFilePath = [[docDir path] stringByAppendingPathComponent:[file lastPathComponent]];
         [[NSFileManager defaultManager] moveItemAtPath:origFilePath toPath:finalFilePath error:nil];        
     }
     [[NSFileManager defaultManager] removeItemAtPath:inboxPath error:nil];
     
-    NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:[self.documentsDirectory path]];
+    NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:[docDir path]];
     
     while (file = [dirEnum nextObject]) {
         if (([file.pathExtension caseInsensitiveCompare:@"kvtml"] == NSOrderedSame) ||
             ([file.pathExtension caseInsensitiveCompare:@"csv"] == NSOrderedSame)) {
-            [self.vocabularies addObject:[self.documentsDirectory URLByAppendingPathComponent:file isDirectory:NO]];
+            [self.vocabularies addObject:[docDir URLByAppendingPathComponent:file isDirectory:NO]];
         }
     }
     
@@ -400,9 +400,9 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // Create the new URL object on a background queue.
-        //NSFileManager *fm = [NSFileManager defaultManager];
-        NSURL *newDocumentURL = self.documentsDirectory; //[fm URLForUbiquityContainerIdentifier:nil];
-        
+        NSFileManager *fm = [NSFileManager defaultManager];
+        NSArray *paths = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+        NSURL *newDocumentURL = [paths objectAtIndex:0]; //[fm URLForUbiquityContainerIdentifier:nil];
         //newDocumentURL = [newDocumentURL
         //URLByAppendingPathComponent:STEDocumentsDirectoryName
         //isDirectory:YES];
