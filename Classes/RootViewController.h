@@ -35,16 +35,14 @@
 
 @interface RootViewController : UITableViewController <UITabBarControllerDelegate, UIActionSheetDelegate, WQNewFileViewControllerDelegate>
 {
-	NSURL *documentsDirectory;
-	NSMutableArray *vocabularies;
     int m_currentRow;
 }
 
 - (void) enumerateVocabularies;
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
-@property (nonatomic, retain) NSMutableArray *vocabularies;
-@property (nonatomic, retain) NSURL *documentsDirectory;
+@property (strong, nonatomic) NSMutableArray *vocabularies;
+@property (strong, nonatomic) NSURL *documentsDirectory;
 @property (retain, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @property(retain) CHDropboxSync* syncer;

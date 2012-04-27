@@ -44,8 +44,8 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 @implementation RootViewController
 
 @synthesize detailViewController = _detailViewController;
-@synthesize vocabularies;
-@synthesize documentsDirectory;
+@synthesize vocabularies = _vocabularies;
+@synthesize documentsDirectory = _documentsDirectory;
 @synthesize addButton;
 @synthesize syncer;
 
@@ -74,8 +74,8 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     NSError *err;
     NSFileManager *df = [NSFileManager defaultManager];
     NSArray *paths = [df URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
-    self.documentsDirectory = [paths objectAtIndex:0];
-    NSLog(@"Documents Directory: %@", self.documentsDirectory);
+    _documentsDirectory = [paths objectAtIndex:0];
+    NSLog(@"Documents Directory: %@", _documentsDirectory);
     
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	// getting a BOOL
@@ -95,7 +95,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 		}
     }
 		
-	self.vocabularies = [NSMutableArray array];
+	_vocabularies = [NSMutableArray arrayWithCapacity:3];
     [self enumerateVocabularies];
 }
 
@@ -383,7 +383,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
         // Look for an existing document with the same name. If one is
         // found, increment the docCount value and try again.
         BOOL nameExists = NO;
-        for (NSURL* aURL in vocabularies) {
+        for (NSURL* aURL in _vocabularies) {
             if ([[aURL lastPathComponent] isEqualToString:newDocName]) {
                 nameExists = YES;
                 break;
@@ -411,7 +411,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
         // Perform the remaining tasks on the main queue.
         dispatch_async(dispatch_get_main_queue(), ^{
             // Update the data structures and table.
-            [vocabularies addObject:newDocumentURL];
+            [_vocabularies addObject:newDocumentURL];
             
             WQDocument *document = [[WQDocument alloc] initWithFileURL:newDocumentURL];
             NSString *frontId = aWQNewFileViewController.frontTextField.text;
@@ -436,7 +436,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
                     
                     // Update the table.
                     NSIndexPath* newCellIndexPath =
-                    [NSIndexPath indexPathForRow:([vocabularies count] - 1) inSection:0];
+                    [NSIndexPath indexPathForRow:([_vocabularies count] - 1) inSection:0];
                     [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newCellIndexPath]
                                           withRowAnimation:UITableViewRowAnimationAutomatic];
                     
