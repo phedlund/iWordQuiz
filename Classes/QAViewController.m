@@ -112,7 +112,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
             self.questionView.frame = CGRectMake(35, 35, 505, 310);
             self.previousView.frame = CGRectMake(41, 315, 505, 310);
@@ -132,7 +132,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             errorCountButton.frame = CGRectMake(620, 480, 104, 100);
         }
     }
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
             self.questionView.frame = CGRectMake(15, 3, 290, 160 );
             
@@ -224,7 +224,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     badgeCorrectCount.value = [self.quiz correctCount];
     badgeErrorCount.value = [self.quiz errorCount];
 
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         //UIButton *btn = (UIButton*)sender;
         answerTextField.borderStyle = UITextBorderStyleNone;
         [self animate:answerTextField error:!fIsCorrect];
@@ -232,7 +232,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             [self animate:correctAnswerLabel error:false];
         }
     }
-	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 
         [m_quiz toNext];
         if (![m_quiz atEnd]) {

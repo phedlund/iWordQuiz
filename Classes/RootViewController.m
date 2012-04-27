@@ -55,7 +55,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 - (void)awakeFromNib
 {
     m_currentRow = 0;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.clearsSelectionOnViewWillAppear = NO;
         self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     }
@@ -67,7 +67,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     [super viewDidLoad];
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     self.detailViewController.delegate = self;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
     }
@@ -95,7 +95,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 		}
     }
 		
-	_vocabularies = [NSMutableArray arrayWithCapacity:3];
+	_vocabularies = [[NSMutableArray alloc] init];
     [self enumerateVocabularies];
 }
 
@@ -210,7 +210,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     m_currentRow = indexPath.row;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self.detailViewController setDetailItem:[self.vocabularies objectAtIndex: m_currentRow]];
     }
 }
@@ -324,7 +324,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 #pragma mark - Linked notification
 
 - (void)linked:(NSNotification*)n {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
     }
 }
@@ -444,7 +444,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
                                                 animated:YES
                                           scrollPosition:UITableViewScrollPositionMiddle];
                     
-                    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
                         [self.detailViewController setSelectedIndex:0];
                         [self.detailViewController setDetailItem:newDocumentURL];
                     }

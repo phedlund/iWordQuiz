@@ -105,7 +105,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	 [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
-	 if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+	 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
          if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
              self.questionView.frame = CGRectMake(35, 35, 505, 310);
              self.previousView.frame = CGRectMake(41, 315, 505, 310);
@@ -125,7 +125,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
              errorCountButton.frame = CGRectMake(530, 760, 104, 100);
          }
      }
-     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
          if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
              self.questionView.frame = CGRectMake(15, 15, 290, 190 );
      
@@ -230,7 +230,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     badgeCorrectCount.value = [self.quiz correctCount];
     badgeErrorCount.value = [self.quiz errorCount];
     
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         UIButton *btn = (UIButton*)sender;
         [self animate:btn.titleLabel error:!fIsCorrect];
         if (!fIsCorrect) {
@@ -247,7 +247,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             }
         }
     }
-	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
         [m_quiz toNext];
         if (![m_quiz atEnd]) {
