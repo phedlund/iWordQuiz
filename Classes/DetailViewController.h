@@ -46,6 +46,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 	iWQQuiz * m_quiz;
     int m_currentRow;
+    int m_currentColumn;
 }
 
 @property (strong, nonatomic) NSURL *detailItem;
