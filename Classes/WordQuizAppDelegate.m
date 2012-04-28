@@ -40,7 +40,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @implementation iWordQuizAppDelegate
 
 @synthesize window = _window;
-//@synthesize splitViewController, rootViewController, detailViewController;
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -61,10 +60,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
-    // Add the split view controller's view to the window and display.
-    //detailViewController.delegate = self;
-    //[window addSubview:splitViewController.view];
-    //[window makeKeyAndVisible];
     
     return YES;
 }
@@ -135,8 +130,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void)dealloc {
-    //[splitViewController release];
-    //[window release];
     [super dealloc];
 }
 
