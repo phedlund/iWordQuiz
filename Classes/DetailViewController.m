@@ -48,7 +48,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @implementation DetailViewController
 
 @synthesize masterPopoverController = _masterPopoverController;
-@synthesize modePicker, modePickerPopover;
+@synthesize modePicker = _modePicker;
+@synthesize modePickerPopover = _modePickerPopover;
 @synthesize doc = _doc;
 @synthesize detailItem = _detailItem;
 
@@ -295,16 +296,15 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (IBAction) doMode:(id)sender {
-    if (modePicker == nil) {
-        self.modePicker = [[[ModePickerController alloc] initWithStyle:UITableViewStylePlain] autorelease];
-        modePicker.delegate = self;
-        self.modePickerPopover = [[[WEPopoverController alloc] initWithContentViewController:modePicker] autorelease];  
-        if ([self.modePickerPopover respondsToSelector:@selector(setContainerViewProperties:)]) {
-			[self.modePickerPopover setContainerViewProperties:[self improvedContainerViewProperties]];
+    if (_modePicker == nil) {
+        _modePicker = [[[ModePickerController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+        _modePicker.delegate = self;
+        _modePickerPopover = [[WEPopoverController alloc] initWithContentViewController:_modePicker];  
+        if ([_modePickerPopover respondsToSelector:@selector(setContainerViewProperties:)]) {
+			[_modePickerPopover setContainerViewProperties:[self improvedContainerViewProperties]];
 		}
-		
     }
-    [self.modePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:(UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown) animated:YES];
+    [_modePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:(UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown) animated:YES];
 }
 
 - (IBAction) doAbout:(id)sender {
@@ -366,8 +366,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
 - (void)dealloc {
-	[modePicker release];
-	[modePickerPopover release];
+	[_modePicker release];
+	[_modePickerPopover release];
 	
 	[m_quiz release];
     //[doc release];

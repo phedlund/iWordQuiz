@@ -41,19 +41,15 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, ModePickerDelegate,MDSpreadViewDataSource, MDSpreadViewDelegate, WQDocumentDelegate, WQEditViewControllerDelegate> {
 
-	ModePickerController *modePicker;
-	WEPopoverController *modePickerPopover;
-
 	iWQQuiz * m_quiz;
     int m_currentRow;
     int m_currentColumn;
 }
 
 @property (strong, nonatomic) NSURL *detailItem;
-@property (nonatomic, retain) ModePickerController *modePicker;
-@property (nonatomic, retain) WEPopoverController *modePickerPopover;
-
-@property (nonatomic, strong) WQDocument *doc;
+@property (strong, nonatomic) ModePickerController *modePicker;
+@property (strong, nonatomic) WEPopoverController *modePickerPopover;
+@property (strong, nonatomic) WQDocument *doc;
 
 - (void) activateTab:(int)index;
 
