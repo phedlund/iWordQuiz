@@ -89,13 +89,17 @@
     return self;
 }
 
+- (NSString *) savingFileType {
+   return @"com.peterandlinda.vocabulary.kvtml";    
+}
+
 - (void) load {
 	[self.entries removeAllObjects];
-	
+
     if ([[self.fileURL pathExtension] caseInsensitiveCompare:@"kvtml"] == NSOrderedSame) {
         [self loadKvtml];
     }
-    
+  
     if ([[self.fileURL pathExtension] caseInsensitiveCompare:@"csv"] == NSOrderedSame) {
         [self loadCvs];
     }
@@ -176,7 +180,7 @@
     [xmlStr appendString:@"<kvtml version=\"2.0\">"];
     [xmlStr appendString:@"<information>"];
     [xmlStr appendFormat:@"<generator>wordquiz-for-ios %@</generator>", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-    [xmlStr appendFormat:@"<title>%@</title>", self.fileURL.lastPathComponent];
+    [xmlStr appendFormat:@"<title>%@</title>", [self.fileURL.lastPathComponent stringByDeletingPathExtension]];
     [xmlStr appendString:@"</information>"];
     
     [xmlStr appendString:@"<identifiers>"];

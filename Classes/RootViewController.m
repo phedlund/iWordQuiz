@@ -207,6 +207,11 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     m_currentRow = indexPath.row;
+    NSFileManager *fm = [NSFileManager defaultManager];
+    if (![fm fileExistsAtPath:[[self.vocabularies objectAtIndex: m_currentRow] path]]) {
+        [self enumerateVocabularies];
+        [aTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
+    }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self.detailViewController setDetailItem:[self.vocabularies objectAtIndex: m_currentRow]];
     }
