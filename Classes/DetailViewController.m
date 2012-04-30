@@ -31,14 +31,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *************************************************************************/
 
 #import "DetailViewController.h"
-#import "RootViewController.h"
-#import "DDXML.h"
 #import "HomeViewController.h"
 #import "FCViewController.h"
 #import "MCViewController.h"
 #import "QAViewController.h"
 #import "AboutViewController.h"
-#import "WordQuizAppDelegate.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;

@@ -31,7 +31,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *************************************************************************/
 
 #import "HomeViewController.h"
-#import "WordQuizAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation HomeViewController

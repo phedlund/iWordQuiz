@@ -30,12 +30,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 *************************************************************************/
 
-#import "CHDropboxSync.h"
-
 #import "RootViewController.h"
 #import "DetailViewController.h"
 #import "WQDocument.h"
 #import "WQUtils.h"
+#import "CHDropboxSync.h"
 
 NSString* WQDocmentFileExtension = @"kvtml";
 NSString* DisplayDetailSegue = @"DisplayDetailSegue";
