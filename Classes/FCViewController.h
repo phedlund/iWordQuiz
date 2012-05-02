@@ -31,7 +31,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *************************************************************************/
 
 #import <UIKit/UIKit.h>
-#import "iWQQuiz.h"
+#import "WQQuiz.h"
 #import "WQScoreButton.h"
 #import "MKNumberBadgeView.h"
 

@@ -1,5 +1,5 @@
 //
-//  iWQQuiz.h
+//  WQQuiz.h
 //  iWordQuiz
 //
 

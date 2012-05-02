@@ -1,5 +1,5 @@
 //
-//  iWQQuiz.m
+//  WQQuiz.m
 //  iWordQuiz
 //
 
@@ -30,7 +30,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 *************************************************************************/
 
-#import "iWQQuiz.h"
+#import "WQQuiz.h"
 #import "WQUtils.h"
 
 @implementation iWQQuiz

@@ -39,7 +39,7 @@
 		D04BD0B413C90DDC006A7387 /* Example.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B113C90DDC006A7387 /* Example.kvtml */; };
 		D04BD0B513C90DDC006A7387 /* French Verbs.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B213C90DDC006A7387 /* French Verbs.kvtml */; };
 		D04BD0B613C90DDC006A7387 /* US States and Capitals.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B313C90DDC006A7387 /* US States and Capitals.kvtml */; };
-		D04CF951122F371300B446E8 /* iWQQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CF950122F371300B446E8 /* iWQQuiz.m */; };
+		D04CF951122F371300B446E8 /* WQQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CF950122F371300B446E8 /* WQQuiz.m */; };
 		D0549F91151BC37900BDE78C /* MDSpreadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F54151BC37900BDE78C /* MDSpreadView.m */; };
 		D0549F92151BC37900BDE78C /* MDSpreadViewAxisDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F56151BC37900BDE78C /* MDSpreadViewAxisDescriptor.m */; };
 		D0549F93151BC37900BDE78C /* MDSpreadViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F58151BC37900BDE78C /* MDSpreadViewCell.m */; };
@@ -204,8 +204,8 @@
 		D04BD0B113C90DDC006A7387 /* Example.kvtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Example.kvtml; path = Resources/Examples/Example.kvtml; sourceTree = "<group>"; };
 		D04BD0B213C90DDC006A7387 /* French Verbs.kvtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "French Verbs.kvtml"; path = "Resources/Examples/French Verbs.kvtml"; sourceTree = "<group>"; };
 		D04BD0B313C90DDC006A7387 /* US States and Capitals.kvtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "US States and Capitals.kvtml"; path = "Resources/Examples/US States and Capitals.kvtml"; sourceTree = "<group>"; };
-		D04CF94F122F371300B446E8 /* iWQQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iWQQuiz.h; sourceTree = "<group>"; };
-		D04CF950122F371300B446E8 /* iWQQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iWQQuiz.m; sourceTree = "<group>"; };
+		D04CF94F122F371300B446E8 /* WQQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQQuiz.h; sourceTree = "<group>"; };
+		D04CF950122F371300B446E8 /* WQQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQQuiz.m; sourceTree = "<group>"; };
 		D0549F53151BC37900BDE78C /* MDSpreadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSpreadView.h; sourceTree = "<group>"; };
 		D0549F54151BC37900BDE78C /* MDSpreadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSpreadView.m; sourceTree = "<group>"; };
 		D0549F55151BC37900BDE78C /* MDSpreadViewAxisDescriptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSpreadViewAxisDescriptor.h; sourceTree = "<group>"; };
@@ -414,8 +414,8 @@
 				D0D2B89314DD963B0049C33E /* AboutViewController.m */,
 				D0130A3C125AB58C0085482E /* ModePickerController.h */,
 				D0130A3D125AB58C0085482E /* ModePickerController.m */,
-				D04CF94F122F371300B446E8 /* iWQQuiz.h */,
-				D04CF950122F371300B446E8 /* iWQQuiz.m */,
+				D04CF94F122F371300B446E8 /* WQQuiz.h */,
+				D04CF950122F371300B446E8 /* WQQuiz.m */,
 				D0CC0BEC151D27A00084ACB0 /* WQDocument.h */,
 				D0CC0BED151D27A00084ACB0 /* WQDocument.m */,
 				D0CC0BEF151E38D90084ACB0 /* WQUtils.h */,
@@ -939,7 +939,7 @@
 				D01DC971121F57F2006671A1 /* MCViewController.m in Sources */,
 				D01DC972121F57F2006671A1 /* QAViewController.m in Sources */,
 				D01DC97B121F5981006671A1 /* HomeViewController.m in Sources */,
-				D04CF951122F371300B446E8 /* iWQQuiz.m in Sources */,
+				D04CF951122F371300B446E8 /* WQQuiz.m in Sources */,
 				D0130A3E125AB58C0085482E /* ModePickerController.m in Sources */,
 				D0E5F6E913F4A661001FC51E /* DDXMLElementAdditions.m in Sources */,
 				D0E5F6EA13F4A661001FC51E /* NSString+DDXML.m in Sources */,
