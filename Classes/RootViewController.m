@@ -225,8 +225,12 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     }
     
     if ([[segue identifier] isEqualToString:@"NewDocument"]) {
-        UINavigationController *navController = [segue destinationViewController];
-        [(WQNewFileViewController*)navController.topViewController setDelegate:self];
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            UINavigationController *navController = [segue destinationViewController];
+            [(WQNewFileViewController*)navController.topViewController setDelegate:self];
+        } else {
+            [[segue destinationViewController] setDelegate:self];
+        }
     }
 }
 

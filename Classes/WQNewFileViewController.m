@@ -122,7 +122,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Row: %d", indexPath.section);
+    //iPad
     BOOL success = false;
     if (indexPath.section == 2) {
         if (self.delegate) {
@@ -146,6 +146,18 @@
 
 - (IBAction)doDismissView:(id)sender {
     [self dismissModalViewControllerAnimated:true];
+}
+
+- (IBAction)doCreateNew:(id)sender {
+    //iPhone
+    BOOL success = false;
+    if (self.delegate) {
+        success = [self.delegate createNewDocument:self];
+    }
+    
+    if (success) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

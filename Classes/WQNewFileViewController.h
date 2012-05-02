@@ -18,6 +18,7 @@
 @property (retain, nonatomic) id<WQNewFileViewControllerDelegate> delegate;
 
 - (IBAction)doDismissView:(id)sender;
+- (IBAction)doCreateNew:(id)sender;
 
 @end
 
