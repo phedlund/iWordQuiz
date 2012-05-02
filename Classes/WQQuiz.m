@@ -33,7 +33,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQQuiz.h"
 #import "WQUtils.h"
 
-@implementation iWQQuiz
+@implementation WQQuiz
 
 @synthesize entries;
 @synthesize frontIdentifier;

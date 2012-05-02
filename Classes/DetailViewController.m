@@ -58,7 +58,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             m_quiz = nil;
         }
         
-        m_quiz = [[iWQQuiz alloc] init];
+        m_quiz = [[WQQuiz alloc] init];
         [m_quiz setEntries:[document quizEntries]];
         [m_quiz setFrontIdentifier:[document frontIdentifier]];
         [m_quiz setBackIdentifier:[document backIdentifier]];
@@ -125,7 +125,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             m_quiz = nil;
         }
         
-        m_quiz = [[iWQQuiz alloc] init];
+        m_quiz = [[WQQuiz alloc] init];
         [m_quiz setEntries:[_doc quizEntries]];
         [m_quiz setFrontIdentifier:[_doc frontIdentifier]];
         [m_quiz setBackIdentifier:[_doc backIdentifier]];

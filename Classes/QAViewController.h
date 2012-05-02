@@ -37,7 +37,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "MKNumberBadgeView.h"
 
 @interface QAViewController : UIViewController <UITextFieldDelegate> {
-	iWQQuiz * m_quiz;
+	WQQuiz * m_quiz;
 	
 	UILabel *questionIdentifierLabel;
 	UILabel *answerIdentifierLabel;
@@ -73,7 +73,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) showQuestion;
 - (void) animate:(UIView *)aLabel error:(BOOL) flag;
 
-@property (nonatomic, retain) iWQQuiz *quiz;
+@property (nonatomic, retain) WQQuiz *quiz;
 
 @property (nonatomic, retain) IBOutlet UILabel *questionIdentifierLabel;
 @property (nonatomic, retain) IBOutlet UILabel *answerIdentifierLabel;

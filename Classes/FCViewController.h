@@ -37,7 +37,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @interface FCViewController : UIViewController <UIGestureRecognizerDelegate> {
 
-	iWQQuiz * m_quiz;
+	WQQuiz * m_quiz;
     bool slideToTheRight;
 	
 	UILabel *frontIdentifierLabel;
@@ -71,7 +71,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) updateCard;
 - (void) slideCard;
 
-@property (nonatomic, retain) iWQQuiz *quiz;
+@property (nonatomic, retain) WQQuiz *quiz;
 @property (nonatomic, assign) bool slideToTheRight;
 
 @property (nonatomic, retain) IBOutlet UILabel *frontIdentifierLabel;

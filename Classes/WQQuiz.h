@@ -32,7 +32,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Foundation/Foundation.h>
 
-@interface iWQQuiz : NSObject {
+@interface WQQuiz : NSObject {
 	
     NSMutableArray * m_list;
     NSMutableArray * m_errorList;
