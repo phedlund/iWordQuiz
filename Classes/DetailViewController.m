@@ -183,17 +183,22 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {    
-        UIBarButtonItem* button1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(doAbout:)];
-        UIBarButtonItem *barButtonEdit = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(doEdit:)];
-        UIBarButtonItem* button = [[UIBarButtonItem alloc] initWithTitle:@"Mode" style:UIBarButtonItemStyleBordered target:self action:@selector(doMode:)]; 
-        NSArray *buttons = [NSArray arrayWithObjects:button1, barButtonEdit, button, nil];
-        self.navigationItem.rightBarButtonItems = buttons;
-        [button release];
-        [barButtonEdit release];
-        [button1 release];
-        //[buttons release];
+    
+    UIBarButtonItem* barButtonAbout = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(doAbout:)];
+    UIBarButtonItem *barButtonEdit = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(doEdit:)];
+    UIBarButtonItem* barButtonMode = [[UIBarButtonItem alloc] initWithTitle:@"Mode" style:UIBarButtonItemStyleBordered target:self action:@selector(doMode:)]; 
+    NSArray *buttons;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { 
+        buttons = [NSArray arrayWithObjects:barButtonAbout, barButtonEdit, barButtonMode, nil];
     }
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) { 
+        buttons = [NSArray arrayWithObjects:barButtonEdit, barButtonMode, nil];
+    }    
+    self.navigationItem.rightBarButtonItems = buttons;
+    [barButtonAbout release];
+    [barButtonEdit release];
+    [barButtonMode release];
+    
     m_currentRow = 0;
 	[self activateTab:1];
 }
@@ -588,21 +593,28 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             break;
         case kAdd:
             [_doc.entries insertObject:[NSArray arrayWithObjects:@"", @"", nil] atIndex:++m_currentRow];
+            [_doc updateChangeCount:UIDocumentChangeDone];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
             break;
-            case kRemove:
+        case kRemove:
             [_doc.entries removeObjectAtIndex:m_currentRow];
             while (m_currentRow > (_doc.entries.count - 1)) {
                 --m_currentRow;
             }
+            [_doc updateChangeCount:UIDocumentChangeDone];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
             break;
         case kDone:
             [_doc saveToURL:_doc.fileURL forSaveOperation:UIDocumentSaveForOverwriting 
                                         completionHandler:^(BOOL success) {
                                                                 if (success) {
-                                                                    [self setDetailItem:_doc.fileURL];
-                                                                    //[self activateTab:self.selectedIndex];
+                                                                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                                                                        [self setDetailItem:_doc.fileURL];
+                                                                    }
+                                                                    
+                                                                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+                                                                        [self configureView];
+                                                                    }
                                                                 }
                                         }];
             

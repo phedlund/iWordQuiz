@@ -284,6 +284,127 @@
             </objects>
             <point key="canvasLocation" x="459" y="674"/>
         </scene>
+        <!--Edit View Controller - Edit Entry-->
+        <scene sceneID="P22-ZO-vDD">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KIQ-h4-YKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="" id="HOm-sJ-Hvl" customClass="WQEditViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ngm-zO-fdR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Front" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="DtF-iC-tcj">
+                                <rect key="frame" x="20" y="10" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="4Ch-cB-gNA">
+                                <rect key="frame" x="20" y="39" width="280" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Back" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="Cy0-QU-P6c">
+                                <rect key="frame" x="20" y="80" width="279" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Rns-5K-3J2">
+                                <rect key="frame" x="20" y="109" width="280" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yue-td-zhA">
+                                <rect key="frame" x="20" y="155" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="&lt;&lt;">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doPrevious" destination="HOm-sJ-Hvl" eventType="touchUpInside" id="gcK-dS-BsD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qHk-DB-QfX">
+                                <rect key="frame" x="245" y="155" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title=">>">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doNext" destination="HOm-sJ-Hvl" eventType="touchUpInside" id="Qxc-aU-3HF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Xyy-eO-ozi">
+                                <rect key="frame" x="95" y="155" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doAdd" destination="HOm-sJ-Hvl" eventType="touchUpInside" id="suG-sZ-QVJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dMK-E1-bUa">
+                                <rect key="frame" x="170" y="155" width="55" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Del">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doRemove" destination="HOm-sJ-Hvl" eventType="touchUpInside" id="F9j-dm-XtX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Entry" id="fn5-Me-cGh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="1sH-jk-E9X">
+                            <connections>
+                                <action selector="dismissView" destination="HOm-sJ-Hvl" id="I0Y-76-sXw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="addButton" destination="Xyy-eO-ozi" id="U0D-Jo-n4b"/>
+                        <outlet property="backIdentifierLabel" destination="Cy0-QU-P6c" id="3SC-a8-JvF"/>
+                        <outlet property="backTextField" destination="Rns-5K-3J2" id="dfj-ra-QVT"/>
+                        <outlet property="frontIdentifierLabel" destination="DtF-iC-tcj" id="DF3-Oy-bUl"/>
+                        <outlet property="frontTextField" destination="4Ch-cB-gNA" id="way-Tb-2cR"/>
+                        <outlet property="nextButton" destination="qHk-DB-QfX" id="2nj-MT-frd"/>
+                        <outlet property="previousButton" destination="yue-td-zhA" id="Vw8-3V-NyM"/>
+                        <outlet property="removeButton" destination="dMK-E1-bUa" id="vbd-Dk-rvy"/>
+                        <outlet property="view" destination="Ngm-zO-fdR" id="diW-7V-le5"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="901" y="1238"/>
+        </scene>
         <!--View Controller - Flashcard-->
         <scene sceneID="boH-uT-LHK">
             <objects>
@@ -425,6 +546,21 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1465" y="-141"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7fQ-t5-dWk">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bt9-gl-zYV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController storyboardIdentifier="edit" definesPresentationContext="YES" id="czV-Aa-yeF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="qvX-jx-9HZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HOm-sJ-Hvl" kind="relationship" relationship="rootViewController" id="4pM-7O-WYb"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="459" y="1238"/>
         </scene>
         <!--View Controller - Question & Answer-->
         <scene sceneID="0GN-ba-aYh">
@@ -707,13 +843,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5y4-Ih-kQy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController definesPresentationContext="YES" id="2Es-mn-NwG" customClass="DetailViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="0t0-nB-bGr">
-                        <barButtonItem key="rightBarButtonItem" title="Mode" id="L1N-9c-DVm">
-                            <connections>
-                                <action selector="doMode:" destination="2Es-mn-NwG" id="4pn-DZ-V2U"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="0t0-nB-bGr"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="k8S-sp-zxo">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -875,6 +1005,24 @@
                 <relationship kind="action" name="doActions:"/>
                 <relationship kind="action" name="doDBSync:"/>
                 <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="WQEditViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WQEditViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismissView"/>
+                <relationship kind="action" name="doAdd"/>
+                <relationship kind="action" name="doNext"/>
+                <relationship kind="action" name="doPrevious"/>
+                <relationship kind="action" name="doRemove"/>
+                <relationship kind="outlet" name="addButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="backIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="backTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="frontIdentifierLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="frontTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="previousButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="removeButton" candidateClass="UIButton"/>
             </relationships>
         </class>
         <class className="WQNewFileViewController" superclassName="UITableViewController">
