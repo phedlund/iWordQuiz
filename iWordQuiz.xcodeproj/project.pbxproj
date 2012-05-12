@@ -22,10 +22,8 @@
 		D03A5B8215363EC500BEA27B /* Icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B8115363EC500BEA27B /* Icon-114.png */; };
 		D03A5B851536422F00BEA27B /* document-icon-22x29.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B831536422F00BEA27B /* document-icon-22x29.png */; };
 		D03A5B861536422F00BEA27B /* document-icon-44x58.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B841536422F00BEA27B /* document-icon-44x58.png */; };
-		D03A5B881536493E00BEA27B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B871536493E00BEA27B /* Default.png */; };
-		D03A5B8A1536494400BEA27B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B891536494400BEA27B /* Default@2x.png */; };
-		D03A5B8D1536496400BEA27B /* Default-Portrait@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B8B1536496400BEA27B /* Default-Portrait@2x~iphone.png */; };
-		D03A5B8E1536496400BEA27B /* Default-Portrait~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B8C1536496400BEA27B /* Default-Portrait~iphone.png */; };
+		D03A5B8D1536496400BEA27B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B8B1536496400BEA27B /* Default@2x.png */; };
+		D03A5B8E1536496400BEA27B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B8C1536496400BEA27B /* Default.png */; };
 		D043038615155575002374F3 /* Icon-144.png in Resources */ = {isa = PBXBuildFile; fileRef = D043038515155575002374F3 /* Icon-144.png */; };
 		D043038815165A6E002374F3 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D043038715165A6E002374F3 /* background@2x.png */; };
 		D043039215165F03002374F3 /* knowButton_225@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D043039115165F03002374F3 /* knowButton_225@2x.png */; };
@@ -117,7 +115,6 @@
 		D0CA3EC312CD0F6800F7BB72 /* document-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC112CD0F6800F7BB72 /* document-icon-64.png */; };
 		D0CA3EC412CD0F6800F7BB72 /* document-icon-320.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */; };
 		D0CB156414EEF3D200FE7CC6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0CB156314EEF3D200FE7CC6 /* Security.framework */; };
-		D0CB156614EEF40800FE7CC6 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0CB156514EEF40800FE7CC6 /* DropboxSDK.framework */; };
 		D0CC0BEE151D27A00084ACB0 /* WQDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0BED151D27A00084ACB0 /* WQDocument.m */; };
 		D0CC0BF1151E38DA0084ACB0 /* WQUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0BF0151E38D90084ACB0 /* WQUtils.m */; };
 		D0CC677815252F2B000D067C /* WQScoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC677715252F2B000D067C /* WQScoreButton.m */; };
@@ -149,6 +146,7 @@
 		D0D0EC5014DB719100BE3A81 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */; };
 		D0D11E0E1541CCE800B8ECBD /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
 		D0D2B89414DD963B0049C33E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D2B89314DD963B0049C33E /* AboutViewController.m */; };
+		D0DB6644155DDE3500BA29D5 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0DB6643155DDE3500BA29D5 /* DropboxSDK.framework */; };
 		D0E5F6E913F4A661001FC51E /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E5F6DC13F4A661001FC51E /* DDXMLElementAdditions.m */; };
 		D0E5F6EA13F4A661001FC51E /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E5F6DF13F4A661001FC51E /* NSString+DDXML.m */; };
 		D0E5F6EB13F4A661001FC51E /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E5F6E213F4A661001FC51E /* DDXMLDocument.m */; };
@@ -187,10 +185,8 @@
 		D03A5B8115363EC500BEA27B /* Icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-114.png"; sourceTree = "<group>"; };
 		D03A5B831536422F00BEA27B /* document-icon-22x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-22x29.png"; path = "Resources/document-icon-22x29.png"; sourceTree = "<group>"; };
 		D03A5B841536422F00BEA27B /* document-icon-44x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-44x58.png"; path = "Resources/document-icon-44x58.png"; sourceTree = "<group>"; };
-		D03A5B871536493E00BEA27B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		D03A5B891536494400BEA27B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		D03A5B8B1536496400BEA27B /* Default-Portrait@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait@2x~iphone.png"; path = "Resources/Default-Portrait@2x~iphone.png"; sourceTree = "<group>"; };
-		D03A5B8C1536496400BEA27B /* Default-Portrait~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~iphone.png"; path = "Resources/Default-Portrait~iphone.png"; sourceTree = "<group>"; };
+		D03A5B8B1536496400BEA27B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/Default@2x.png"; sourceTree = "<group>"; };
+		D03A5B8C1536496400BEA27B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		D043038515155575002374F3 /* Icon-144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-144.png"; sourceTree = "<group>"; };
 		D043038715165A6E002374F3 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background@2x.png"; path = "Resources/background@2x.png"; sourceTree = "<group>"; };
 		D043039115165F03002374F3 /* knowButton_225@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "knowButton_225@2x.png"; path = "Resources/knowButton_225@2x.png"; sourceTree = "<group>"; };
@@ -310,7 +306,6 @@
 		D0CA3EC112CD0F6800F7BB72 /* document-icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-64.png"; path = "Resources/document-icon-64.png"; sourceTree = "<group>"; };
 		D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-320.png"; path = "Resources/document-icon-320.png"; sourceTree = "<group>"; };
 		D0CB156314EEF3D200FE7CC6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		D0CB156514EEF40800FE7CC6 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = "../dropbox-ios-sdk-1.1/DropboxSDK.framework"; sourceTree = "<group>"; };
 		D0CC0BEC151D27A00084ACB0 /* WQDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQDocument.h; sourceTree = "<group>"; };
 		D0CC0BED151D27A00084ACB0 /* WQDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQDocument.m; sourceTree = "<group>"; };
 		D0CC0BEF151E38D90084ACB0 /* WQUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQUtils.h; sourceTree = "<group>"; };
@@ -350,6 +345,7 @@
 		D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQEditViewController.m; sourceTree = "<group>"; };
 		D0D2B89214DD963B0049C33E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		D0D2B89314DD963B0049C33E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		D0DB6643155DDE3500BA29D5 /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropboxSDK.framework; path = "../dropbox-ios-sdk-1.2.2-b4/DropboxSDK.framework"; sourceTree = "<group>"; };
 		D0E5F6DB13F4A661001FC51E /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
 		D0E5F6DC13F4A661001FC51E /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
 		D0E5F6DE13F4A661001FC51E /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
@@ -371,9 +367,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0DB6644155DDE3500BA29D5 /* DropboxSDK.framework in Frameworks */,
 				D0549FC2151BCADB00BDE78C /* QuartzCore.framework in Frameworks */,
 				D0C85E8B14F595A300C2A499 /* SystemConfiguration.framework in Frameworks */,
-				D0CB156614EEF40800FE7CC6 /* DropboxSDK.framework in Frameworks */,
 				D0CB156414EEF3D200FE7CC6 /* Security.framework in Frameworks */,
 				D0D0EC5014DB719100BE3A81 /* libxml2.dylib in Frameworks */,
 				D0D0EC4C14DB712700BE3A81 /* UIKit.framework in Frameworks */,
@@ -473,10 +469,8 @@
 				D0C9B16E1517B35A004AC04B /* Default-Landscape@2x.png */,
 				D092B32612CD5F90000D7E87 /* Default-Portrait.png */,
 				D0C9B16C1517B348004AC04B /* Default-Portrait@2x.png */,
-				D03A5B891536494400BEA27B /* Default@2x.png */,
-				D03A5B871536493E00BEA27B /* Default.png */,
-				D03A5B8C1536496400BEA27B /* Default-Portrait~iphone.png */,
-				D03A5B8B1536496400BEA27B /* Default-Portrait@2x~iphone.png */,
+				D03A5B8C1536496400BEA27B /* Default.png */,
+				D03A5B8B1536496400BEA27B /* Default@2x.png */,
 				D03A5B7F15363EBC00BEA27B /* Icon-57.png */,
 				D03A5B8115363EC500BEA27B /* Icon-114.png */,
 				D01DC8FD121F4252006671A1 /* Icon-72.png */,
@@ -510,9 +504,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0DB6643155DDE3500BA29D5 /* DropboxSDK.framework */,
 				D0549FC1151BCADB00BDE78C /* QuartzCore.framework */,
 				D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */,
-				D0CB156514EEF40800FE7CC6 /* DropboxSDK.framework */,
 				D0CB156314EEF3D200FE7CC6 /* Security.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -917,10 +911,8 @@
 				D03A5B8215363EC500BEA27B /* Icon-114.png in Resources */,
 				D03A5B851536422F00BEA27B /* document-icon-22x29.png in Resources */,
 				D03A5B861536422F00BEA27B /* document-icon-44x58.png in Resources */,
-				D03A5B881536493E00BEA27B /* Default.png in Resources */,
-				D03A5B8A1536494400BEA27B /* Default@2x.png in Resources */,
-				D03A5B8D1536496400BEA27B /* Default-Portrait@2x~iphone.png in Resources */,
-				D03A5B8E1536496400BEA27B /* Default-Portrait~iphone.png in Resources */,
+				D03A5B8D1536496400BEA27B /* Default@2x.png in Resources */,
+				D03A5B8E1536496400BEA27B /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1020,7 +1012,7 @@
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../dropbox-ios-sdk-1.1\"",
+					"\"$(SRCROOT)/../dropbox-ios-sdk-1.2.2-b4\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1053,7 +1045,7 @@
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../dropbox-ios-sdk-1.1\"",
+					"\"$(SRCROOT)/../dropbox-ios-sdk-1.2.2-b4\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iWordQuiz_Prefix.pch;

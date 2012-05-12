@@ -187,7 +187,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     UIBarButtonItem* barButtonAbout = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(doAbout:)];
     UIBarButtonItem *barButtonEdit = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(doEdit:)];
     UIBarButtonItem* barButtonMode = [[UIBarButtonItem alloc] initWithTitle:@"Mode" style:UIBarButtonItemStyleBordered target:self action:@selector(doMode:)]; 
-    NSArray *buttons;
+    NSArray *buttons = nil;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { 
         buttons = [NSArray arrayWithObjects:barButtonAbout, barButtonEdit, barButtonMode, nil];
     }

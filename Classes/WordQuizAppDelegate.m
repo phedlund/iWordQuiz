@@ -152,7 +152,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)index {
 	if (index != alertView.cancelButtonIndex) {
-		[[DBSession sharedSession] linkUserId:relinkUserId];
+		[[DBSession sharedSession] linkUserId:relinkUserId fromController:self.window.rootViewController];
 	}
 	[relinkUserId release];
 	relinkUserId = nil;

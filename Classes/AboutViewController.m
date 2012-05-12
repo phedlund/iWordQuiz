@@ -52,7 +52,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)didPressLink {
     if (![[DBSession sharedSession] isLinked]) {
-		[[DBSession sharedSession] link];
+		[[DBSession sharedSession] linkFromController:self];
     } else {
         [[DBSession sharedSession] unlinkAll];
         [[[[UIAlertView alloc] 
