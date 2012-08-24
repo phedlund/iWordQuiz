@@ -76,42 +76,42 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) showQuestion;
 - (void) animate:(UILabel *)aLabel error:(BOOL) flag;
 
-@property (nonatomic, retain) WQQuiz *quiz;
+@property (nonatomic, strong) WQQuiz *quiz;
 
-@property (nonatomic, retain) IBOutlet UILabel *questionIdentifierLabel;
-@property (nonatomic, retain) IBOutlet UILabel *answerIdentifierLabel;
-@property (nonatomic, retain) IBOutlet UILabel *questionLabel;
+@property (nonatomic, strong) IBOutlet UILabel *questionIdentifierLabel;
+@property (nonatomic, strong) IBOutlet UILabel *answerIdentifierLabel;
+@property (nonatomic, strong) IBOutlet UILabel *questionLabel;
 
-@property (nonatomic, retain) IBOutlet UIButton *opt1Button;
-@property (nonatomic, retain) IBOutlet UIButton *opt2Button;
-@property (nonatomic, retain) IBOutlet UIButton *opt3Button;
+@property (nonatomic, strong) IBOutlet UIButton *opt1Button;
+@property (nonatomic, strong) IBOutlet UIButton *opt2Button;
+@property (nonatomic, strong) IBOutlet UIButton *opt3Button;
 
-@property (nonatomic, retain) IBOutlet WQScoreButton *questionCountButton;
-@property (nonatomic, retain) IBOutlet WQScoreButton *answerCountButton;
-@property (nonatomic, retain) IBOutlet WQScoreButton *correctCountButton;
-@property (nonatomic, retain) IBOutlet WQScoreButton *errorCountButton;
+@property (nonatomic, strong) IBOutlet WQScoreButton *questionCountButton;
+@property (nonatomic, strong) IBOutlet WQScoreButton *answerCountButton;
+@property (nonatomic, strong) IBOutlet WQScoreButton *correctCountButton;
+@property (nonatomic, strong) IBOutlet WQScoreButton *errorCountButton;
 
 
-@property (retain) IBOutlet MKNumberBadgeView* badgeQuestionCount;
-@property (retain) IBOutlet MKNumberBadgeView* badgeAnswerCount;
-@property (retain) IBOutlet MKNumberBadgeView* badgeCorrectCount;
-@property (retain) IBOutlet MKNumberBadgeView* badgeErrorCount;
+@property (strong) IBOutlet MKNumberBadgeView* badgeQuestionCount;
+@property (strong) IBOutlet MKNumberBadgeView* badgeAnswerCount;
+@property (strong) IBOutlet MKNumberBadgeView* badgeCorrectCount;
+@property (strong) IBOutlet MKNumberBadgeView* badgeErrorCount;
 
-@property (nonatomic, retain) IBOutlet UILabel *previousQuestionHeaderLabel;
-@property (nonatomic, retain) IBOutlet UILabel *previousQuestionLabel;
-@property (nonatomic, retain) IBOutlet UILabel *yourAnswerHeaderLabel;
-@property (nonatomic, retain) IBOutlet UILabel *yourAnswerLabel;
-@property (nonatomic, retain) IBOutlet UILabel *correctAnswerHeaderLabel;
-@property (nonatomic, retain) IBOutlet UILabel *correactAnswerLabel;
+@property (nonatomic, strong) IBOutlet UILabel *previousQuestionHeaderLabel;
+@property (nonatomic, strong) IBOutlet UILabel *previousQuestionLabel;
+@property (nonatomic, strong) IBOutlet UILabel *yourAnswerHeaderLabel;
+@property (nonatomic, strong) IBOutlet UILabel *yourAnswerLabel;
+@property (nonatomic, strong) IBOutlet UILabel *correctAnswerHeaderLabel;
+@property (nonatomic, strong) IBOutlet UILabel *correactAnswerLabel;
 
-@property (nonatomic, retain) IBOutlet UIView * questionLine;
-@property (nonatomic, retain) IBOutlet UIView * answerLine;
-@property (nonatomic, retain) IBOutlet UIView * previousQuestionLine;
-@property (nonatomic, retain) IBOutlet UIView * yourAnswerLine;
-@property (nonatomic, retain) IBOutlet UIView * correctAnswerLine;
+@property (nonatomic, strong) IBOutlet UIView * questionLine;
+@property (nonatomic, strong) IBOutlet UIView * answerLine;
+@property (nonatomic, strong) IBOutlet UIView * previousQuestionLine;
+@property (nonatomic, strong) IBOutlet UIView * yourAnswerLine;
+@property (nonatomic, strong) IBOutlet UIView * correctAnswerLine;
 
-@property (nonatomic, retain) IBOutlet UIView *questionView;
-@property (nonatomic, retain) IBOutlet UIView *previousView;
+@property (nonatomic, strong) IBOutlet UIView *questionView;
+@property (nonatomic, strong) IBOutlet UIView *previousView;
 
 - (IBAction) doChoice:(id)sender;
 - (IBAction) doRestart;

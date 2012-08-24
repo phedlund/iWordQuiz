@@ -73,11 +73,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (NSString*) langQuestion;
 - (NSString*) langAnswer;
 
-@property (nonatomic, retain) NSMutableArray *entries;
-@property (nonatomic, retain) NSString *frontIdentifier;
-@property (nonatomic, retain) NSString *backIdentifier;
+@property (nonatomic, strong) NSMutableArray *entries;
+@property (nonatomic, strong) NSString *frontIdentifier;
+@property (nonatomic, strong) NSString *backIdentifier;
 
-@property (nonatomic, retain) NSString *fileName;
+@property (nonatomic, strong) NSString *fileName;
 
 @property (nonatomic, assign) int quizMode;
 @property (nonatomic, assign) int correctCount;

@@ -40,11 +40,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @interface ModePickerController : UITableViewController {
     NSMutableString * m_currentMode;
 	NSMutableArray * m_modes;
-    id<ModePickerDelegate> m_delegate;
+    id<ModePickerDelegate> __unsafe_unretained m_delegate;
 }
 
-@property (nonatomic, retain) NSMutableString *currentMode;
-@property (nonatomic, retain) NSMutableArray *modes;
-@property (nonatomic, assign) id<ModePickerDelegate> delegate;
+@property (nonatomic, strong) NSMutableString *currentMode;
+@property (nonatomic, strong) NSMutableArray *modes;
+@property (nonatomic, unsafe_unretained) id<ModePickerDelegate> delegate;
 
 @end

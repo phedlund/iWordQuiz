@@ -142,7 +142,6 @@
             ++i;
         }      
     }
-    [xmlDoc release];
 }
 
 - (void) loadCvs {
@@ -151,7 +150,7 @@
     
     unsigned length = [fileString length];
     unsigned paraStart = 0, paraEnd = 0, contentsEnd = 0;
-    NSMutableArray *lines = [[[NSMutableArray alloc] init] autorelease];
+    NSMutableArray *lines = [[NSMutableArray alloc] init];
     NSRange currentRange;
     while (paraEnd < length) {
         [fileString getParagraphStart:&paraStart end:&paraEnd contentsEnd:&contentsEnd forRange:NSMakeRange(paraEnd, 0)];
@@ -229,11 +228,7 @@
 
 - (void)dealloc {
     [entries removeAllObjects];
-    [entries release];
-    [frontIdentifier release];
-    [backIdentifier release];
     
-    [super dealloc];
 }
 
 @end

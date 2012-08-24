@@ -112,11 +112,11 @@
             break;
     }
     
-    NSArray *colors = [NSArray arrayWithObjects:(id)startColor, (id)endColor, nil];
+    NSArray *colors = [NSArray arrayWithObjects:(__bridge id)startColor, (__bridge id)endColor, nil];
 
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     colorSpace = CGColorSpaceCreateDeviceRGB();
-    gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef) colors, locations);
+    gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef) colors, locations);
     CGContextAddPath(ctx, path.CGPath);
     CGContextClip(ctx);
     CGContextDrawLinearGradient (ctx, gradient, CGPointMake(7, 100-85), CGPointMake(11, 100-78), kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);

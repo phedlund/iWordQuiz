@@ -43,7 +43,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) restart;
 - (void) slotCheck;
 
-@property (nonatomic, retain) IBOutlet UIView *containerView;
-@property (nonatomic, retain) IBOutlet MDSpreadView *spreadView;
+@property (nonatomic, strong) IBOutlet UIView *containerView;
+@property (nonatomic, strong) IBOutlet MDSpreadView *spreadView;
 
 @end

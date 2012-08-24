@@ -44,7 +44,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) updateButtons;
 - (IBAction) didPressLink;
 
-@property (nonatomic, retain) IBOutlet UIButton* linkButton;
-@property (nonatomic, retain) IBOutlet UILabel *versionLabel;
+@property (nonatomic, strong) IBOutlet UIButton* linkButton;
+@property (nonatomic, strong) IBOutlet UILabel *versionLabel;
 
 @end

@@ -54,7 +54,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     dispatch_async(dispatch_get_main_queue(), ^{
         
         if (m_quiz != nil) {
-            [m_quiz release];
             m_quiz = nil;
         }
         
@@ -77,20 +76,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)setDetailItem:(NSURL*)newDetailItem {
     //if (_detailItem != newDetailItem) {
-        [_detailItem release];
         
-        _detailItem = [newDetailItem retain];
+        _detailItem = newDetailItem;
         
         // Update the view.
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             if (_detailItem == nil) {
                 if (_doc != nil) {
                     [_doc closeWithCompletionHandler:nil];
-                    [_doc release];
                     _doc = nil;
                 }
                 if (m_quiz != nil) {
-                    [m_quiz release];
                     m_quiz = nil;
                 }
                 [self setSelectedIndex:0];
@@ -111,7 +107,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)configureView {
     if (_doc != nil) {
         [_doc closeWithCompletionHandler:nil];
-        [_doc release];
         _doc = nil;
     }
 
@@ -121,7 +116,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [_doc openWithCompletionHandler:^(BOOL success) {
         
         if (m_quiz != nil) {
-            [m_quiz release];
             m_quiz = nil;
         }
         
@@ -195,9 +189,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         buttons = [NSArray arrayWithObjects:barButtonEdit, barButtonMode, nil];
     }    
     self.navigationItem.rightBarButtonItems = buttons;
-    [barButtonAbout release];
-    [barButtonEdit release];
-    [barButtonMode release];
     
     m_currentRow = 0;
 	[self activateTab:1];
@@ -299,7 +290,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (IBAction) doMode:(id)sender {
     if (_modePicker == nil) {
-        _modePicker = [[[ModePickerController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+        _modePicker = [[ModePickerController alloc] initWithStyle:UITableViewStylePlain];
         _modePicker.delegate = self;
         _modePickerPopover = [[WEPopoverController alloc] initWithContentViewController:_modePicker];  
         if ([_modePickerPopover respondsToSelector:@selector(setContainerViewProperties:)]) {
@@ -367,15 +358,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 */
 
-- (void)dealloc {
-	[_modePicker release];
-	[_modePickerPopover release];
-	
-	[m_quiz release];
-    //[doc release];
-	
-    [super dealloc];
-}
 
 
 
@@ -411,7 +393,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     MDSpreadViewCell *cell = [aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[MDSpreadViewCell alloc] initWithStyle:MDSpreadViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[MDSpreadViewCell alloc] initWithStyle:MDSpreadViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     
     cell.textLabel.text = [[self.doc.entries objectAtIndex:rowPath.row ] objectAtIndex:columnPath.row];
@@ -428,7 +410,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     MDSpreadViewHeaderCell *cell = (MDSpreadViewHeaderCell *)[aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleCorner reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleCorner reuseIdentifier:cellIdentifier];
     }
     
     return cell;
@@ -440,7 +422,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     MDSpreadViewHeaderCell *cell = (MDSpreadViewHeaderCell *)[aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleRow reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleRow reuseIdentifier:cellIdentifier];
     }
     
     if (columnPath.row == 0) {
@@ -460,7 +442,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     MDSpreadViewHeaderCell *cell = (MDSpreadViewHeaderCell *)[aSpreadView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleColumn reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleColumn reuseIdentifier:cellIdentifier];
     }
     
     cell.textLabel.text = [NSString stringWithFormat:@"%d", rowPath.row + 1];
@@ -530,7 +512,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 - (WEPopoverContainerViewProperties *)improvedContainerViewProperties {
 	
-	WEPopoverContainerViewProperties *props = [[WEPopoverContainerViewProperties alloc] autorelease];
+	WEPopoverContainerViewProperties *props = [WEPopoverContainerViewProperties alloc];
 	NSString *bgImageName = nil;
 	CGFloat bgMargin = 0.0;
 	CGFloat bgCapSize = 0.0;
@@ -585,26 +567,30 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     
     switch (aReason) {
-        case kNext:
+        case kNext: {
             ++m_currentRow;
+        }
             break;
-        case kPrevious:
+        case kPrevious: {
             --m_currentRow;
+        }
             break;
-        case kAdd:
+        case kAdd: {
             [_doc.entries insertObject:[NSArray arrayWithObjects:@"", @"", nil] atIndex:++m_currentRow];
             [_doc updateChangeCount:UIDocumentChangeDone];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
+        }
             break;
-        case kRemove:
+        case kRemove: {
             [_doc.entries removeObjectAtIndex:m_currentRow];
             while (m_currentRow > (_doc.entries.count - 1)) {
                 --m_currentRow;
             }
             [_doc updateChangeCount:UIDocumentChangeDone];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
+        }
             break;
-        case kDone:
+        case kDone: {
             [_doc saveToURL:_doc.fileURL forSaveOperation:UIDocumentSaveForOverwriting 
                                         completionHandler:^(BOOL success) {
                                                                 if (success) {
@@ -617,7 +603,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                                                                     }
                                                                 }
                                         }];
-            
+        }
             break;
         default:
             break;

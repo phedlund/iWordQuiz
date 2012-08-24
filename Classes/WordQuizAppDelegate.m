@@ -53,7 +53,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	DBSession* session = [[DBSession alloc] initWithAppKey:appKey appSecret:appSecret root:root];
 	session.delegate = self;
 	[DBSession setSharedSession:session];
-    [session release];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -129,20 +128,16 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 #pragma mark -
 #pragma mark DBSessionDelegate methods
 
 - (void)sessionDidReceiveAuthorizationFailure:(DBSession*)session userId:(NSString *)userId {
-	relinkUserId = [userId retain];
-	[[[[UIAlertView alloc] 
+	relinkUserId = userId;
+	[[[UIAlertView alloc] 
 	   initWithTitle:@"Dropbox Session Ended" message:@"Do you want to relink?" delegate:self 
 	   cancelButtonTitle:@"Cancel" otherButtonTitles:@"Relink", nil]
-	  autorelease]
 	 show];
 }
 
@@ -154,7 +149,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	if (index != alertView.cancelButtonIndex) {
 		[[DBSession sharedSession] linkUserId:relinkUserId fromController:self.window.rootViewController];
 	}
-	[relinkUserId release];
 	relinkUserId = nil;
 }
 

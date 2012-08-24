@@ -42,9 +42,9 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSMutableArray *vocabularies;
-@property (retain, nonatomic) IBOutlet UIBarButtonItem *addButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
-@property(retain) CHDropboxSync* syncer;
+@property(strong) CHDropboxSync* syncer;
 
 - (IBAction) doDBSync:(id)sender;
 - (IBAction) doActions:(id)sender;

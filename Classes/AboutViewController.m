@@ -55,10 +55,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		[[DBSession sharedSession] linkFromController:self];
     } else {
         [[DBSession sharedSession] unlinkAll];
-        [[[[UIAlertView alloc] 
+        [[[UIAlertView alloc] 
            initWithTitle:@"Account Unlinked!" message:@"Your dropbox account has been unlinked" 
            delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil]
-          autorelease]
          show];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Linked" object:nil];
     }
@@ -102,7 +101,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void)viewDidUnload {
-    [linkButton release];
     linkButton = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -111,9 +109,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void)dealloc {
-    [linkButton release];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [super dealloc];
 }
 
 

@@ -57,7 +57,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	opt1Button.hidden = YES;
 	opt2Button.hidden = YES;
 	opt3Button.hidden = YES;
-    m_optionButtons = [[NSArray arrayWithObjects:opt1Button, opt2Button, opt3Button, nil] retain];
+    m_optionButtons = [NSArray arrayWithObjects:opt1Button, opt2Button, opt3Button, nil];
     
 	[questionCountButton setTitle:@"" forState:UIControlStateNormal];
 	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
@@ -291,9 +291,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 
 - (void) animate:(UILabel *)aLabel error:(BOOL) flag {

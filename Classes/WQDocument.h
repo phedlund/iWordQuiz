@@ -49,12 +49,12 @@
 - (NSString *) xmlText;
 
 @property (copy, nonatomic) NSString* documentText;
-@property (nonatomic, retain) NSString *frontIdentifier;
-@property (nonatomic, retain) NSString *backIdentifier;
+@property (nonatomic, strong) NSString *frontIdentifier;
+@property (nonatomic, strong) NSString *backIdentifier;
 
-@property (nonatomic, retain) NSMutableArray *entries;
+@property (nonatomic, strong) NSMutableArray *entries;
 
-@property (retain, nonatomic) id<WQDocumentDelegate> delegate;
+@property (strong, nonatomic) id<WQDocumentDelegate> delegate;
 
 @end
 

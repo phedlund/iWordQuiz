@@ -148,10 +148,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 
-- (void)dealloc {
-    [spreadView release];
-    [super dealloc];
-}
 
 - (void)edited:(NSNotification*)n {
     [spreadView reloadData];

@@ -145,7 +145,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     // Dequeue or create a cell of the appropriate type.
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
@@ -278,10 +278,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 }
 
 
-- (void)dealloc {
-    [addButton release];
-    [super dealloc];
-}
 
 
 #pragma mark private methods
@@ -318,7 +314,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 
 - (IBAction) doDBSync:(id)sender {
     // Now do the sync
-    self.syncer = [[[CHDropboxSync alloc] init] autorelease];
+    self.syncer = [[CHDropboxSync alloc] init];
     self.syncer.delegate = self;
     [self.syncer doSync];
 }
@@ -349,7 +345,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Cancel"];
     // Show the sheet
     [sheet showInView:self.view];
-    [sheet release];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex

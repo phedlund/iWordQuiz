@@ -50,17 +50,17 @@ typedef enum {
 - (IBAction) doRemove;
 - (IBAction) dismissView;
 
-@property (nonatomic, retain) IBOutlet UIButton *nextButton;
-@property (nonatomic, retain) IBOutlet UIButton *previousButton;
-@property (nonatomic, retain) IBOutlet UIButton *addButton;
-@property (nonatomic, retain) IBOutlet UIButton *removeButton;
+@property (nonatomic, strong) IBOutlet UIButton *nextButton;
+@property (nonatomic, strong) IBOutlet UIButton *previousButton;
+@property (nonatomic, strong) IBOutlet UIButton *addButton;
+@property (nonatomic, strong) IBOutlet UIButton *removeButton;
 @property (nonatomic, strong) IBOutlet UILabel *frontIdentifierLabel;
 @property (nonatomic, strong) IBOutlet UILabel *backIdentifierLabel;
 
-@property (nonatomic, retain) IBOutlet UITextField *frontTextField;
-@property (nonatomic, retain) IBOutlet UITextField *backTextField;
+@property (nonatomic, strong) IBOutlet UITextField *frontTextField;
+@property (nonatomic, strong) IBOutlet UITextField *backTextField;
 
-@property (retain, nonatomic) id<WQEditViewControllerDelegate> delegate;
+@property (strong, nonatomic) id<WQEditViewControllerDelegate> delegate;
 
 @end
 

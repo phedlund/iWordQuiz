@@ -161,12 +161,6 @@
     }
 }
 
-- (void)dealloc {
-    [fileNameTextField release];
-    [frontTextField release];
-    [backTextField release];
-    [super dealloc];
-}
 
 - (IBAction)doDismissView:(id)sender {
     [self dismissModalViewControllerAnimated:true];

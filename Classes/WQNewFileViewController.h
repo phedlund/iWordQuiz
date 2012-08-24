@@ -36,10 +36,10 @@
 
 @interface WQNewFileViewController : UITableViewController
 
-@property (retain, nonatomic) IBOutlet UITextField *fileNameTextField;
-@property (retain, nonatomic) IBOutlet UITextField *frontTextField;
-@property (retain, nonatomic) IBOutlet UITextField *backTextField;
-@property (retain, nonatomic) id<WQNewFileViewControllerDelegate> delegate;
+@property (strong, nonatomic) IBOutlet UITextField *fileNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *frontTextField;
+@property (strong, nonatomic) IBOutlet UITextField *backTextField;
+@property (strong, nonatomic) id<WQNewFileViewControllerDelegate> delegate;
 
 - (IBAction)doDismissView:(id)sender;
 - (IBAction)doCreateNew:(id)sender;

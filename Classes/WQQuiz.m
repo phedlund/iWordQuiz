@@ -277,14 +277,7 @@ int rand_lim(int limit) {
 
 - (void)dealloc {
     [entries removeAllObjects];
-    [entries release];
-    [m_list release];
-	[m_errorList release];
-    [frontIdentifier release];
-    [backIdentifier release];
-    [fileName release];
     
-    [super dealloc];
 }
 
 @end

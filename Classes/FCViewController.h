@@ -71,33 +71,33 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) updateCard;
 - (void) slideCard;
 
-@property (nonatomic, retain) WQQuiz *quiz;
+@property (nonatomic, strong) WQQuiz *quiz;
 @property (nonatomic, assign) bool slideToTheRight;
 
-@property (nonatomic, retain) IBOutlet UILabel *frontIdentifierLabel;
-@property (nonatomic, retain) IBOutlet UILabel *backIdentifierLabel;
-@property (nonatomic, retain) IBOutlet UITextView *frontText;
-@property (nonatomic, retain) IBOutlet UITextView *backText;
+@property (nonatomic, strong) IBOutlet UILabel *frontIdentifierLabel;
+@property (nonatomic, strong) IBOutlet UILabel *backIdentifierLabel;
+@property (nonatomic, strong) IBOutlet UITextView *frontText;
+@property (nonatomic, strong) IBOutlet UITextView *backText;
 
-@property (nonatomic, retain) IBOutlet WQScoreButton *questionCountButton;
-@property (nonatomic, retain) IBOutlet WQScoreButton *answerCountButton;
-@property (nonatomic, retain) IBOutlet WQScoreButton *correctCountButton;
-@property (nonatomic, retain) IBOutlet WQScoreButton *errorCountButton;
+@property (nonatomic, strong) IBOutlet WQScoreButton *questionCountButton;
+@property (nonatomic, strong) IBOutlet WQScoreButton *answerCountButton;
+@property (nonatomic, strong) IBOutlet WQScoreButton *correctCountButton;
+@property (nonatomic, strong) IBOutlet WQScoreButton *errorCountButton;
 
-@property (retain) IBOutlet MKNumberBadgeView* badgeQuestionCount;
-@property (retain) IBOutlet MKNumberBadgeView* badgeAnswerCount;
-@property (retain) IBOutlet MKNumberBadgeView* badgeCorrectCount;
-@property (retain) IBOutlet MKNumberBadgeView* badgeErrorCount;
+@property (strong) IBOutlet MKNumberBadgeView* badgeQuestionCount;
+@property (strong) IBOutlet MKNumberBadgeView* badgeAnswerCount;
+@property (strong) IBOutlet MKNumberBadgeView* badgeCorrectCount;
+@property (strong) IBOutlet MKNumberBadgeView* badgeErrorCount;
 
-@property (nonatomic, retain) IBOutlet UIButton *knowButton;
-@property (nonatomic, retain) IBOutlet UIButton *dontKnowButton;
+@property (nonatomic, strong) IBOutlet UIButton *knowButton;
+@property (nonatomic, strong) IBOutlet UIButton *dontKnowButton;
 
-@property (nonatomic, retain) IBOutlet UIView *containerView;
-@property (nonatomic, retain) IBOutlet UIView *previousView;
-@property (nonatomic, retain) IBOutlet UIView *frontView;
-@property (nonatomic, retain) IBOutlet UIView *backView;
+@property (nonatomic, strong) IBOutlet UIView *containerView;
+@property (nonatomic, strong) IBOutlet UIView *previousView;
+@property (nonatomic, strong) IBOutlet UIView *frontView;
+@property (nonatomic, strong) IBOutlet UIView *backView;
 
-@property (nonatomic, retain) UIImage *animationImage;
+@property (nonatomic, strong) UIImage *animationImage;
 
 - (IBAction) doKnowButton;
 - (IBAction) doDontKnowButton;
