@@ -415,7 +415,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
     
     cell.textLabel.text = [[self.doc.entries objectAtIndex:rowPath.row ] objectAtIndex:columnPath.row];
-    cell.highlighted = ((rowPath.row == m_currentRow) && (columnPath.column == m_currentColumn));
+    cell.highlighted = ((rowPath.row == m_currentRow) && (columnPath.row == m_currentColumn));
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         cell.textLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
     }
@@ -519,7 +519,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)spreadView:(MDSpreadView *)aSpreadView didSelectRowAtIndexPath:(NSIndexPath *)indexPath forColumnIndex:(NSIndexPath *)columnPath {
     m_currentRow = indexPath.row;
-    m_currentColumn = columnPath.column;
+    m_currentColumn = columnPath.row;
     [aSpreadView reloadData];
 }
 

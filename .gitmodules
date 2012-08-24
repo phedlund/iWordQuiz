@@ -1,3 +1,24 @@
 [submodule "Classes/MDSpreadView"]
 	path = Classes/MDSpreadView
 	url = git://github.com/mochidev/MDSpreadView.git
+[submodule "Classes/WEPopover"]
+	path = Classes/WEPopover
+	url = git://github.com/werner77/WEPopover.git
+[submodule "Classes/JMWhenTapped"]
+	path = Classes/JMWhenTapped
+	url = git://github.com/jakemarsh/JMWhenTapped.git
+[submodule "Classes/iPhoneMK"]
+	path = Classes/iPhoneMK
+	url = git://github.com/michaelkamprath/iPhoneMK.git
+[submodule "Classes/CHDropboxSync"]
+	path = Classes/CHDropboxSync
+	url = git://github.com/chrishulbert/CHDropboxSync.git
+[submodule "Classes/ConciseKit"]
+	path = Classes/ConciseKit
+	url = git://github.com/petejkim/ConciseKit.git
+[submodule "Classes/KissXML"]
+	path = Classes/KissXML
+	url = git://github.com/robbiehanson/KissXML.git
+[submodule "Classes/Reachability"]
+	path = Classes/Reachability
+	url = git://github.com/tonymillion/Reachability.git

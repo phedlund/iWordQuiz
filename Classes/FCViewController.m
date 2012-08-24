@@ -333,7 +333,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     CGPoint point = CGPointMake(containerView.layer.position.x - containerView.frame.origin.x, containerView.layer.position.y - containerView.frame.origin.y);
     m_animationLayer.position =  point;
     m_animationLayer.contentsScale = self.view.layer.contentsScale; // for retina compat. Make sure you've set you view's main layer
-    m_animationLayer.contents = (__bridge id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
+    m_animationLayer.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
     m_animationLayer.opacity = 1.0;
     UIGraphicsEndImageContext();
     
