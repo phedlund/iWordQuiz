@@ -42,6 +42,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @synthesize correctCount = m_correctCount;
 @synthesize errorCount = m_errorCount;
 @synthesize fileName;
+@synthesize quizType = _quizType;
 
 - init {
 	if(![super init]){
@@ -153,7 +154,22 @@ int rand_lim(int limit) {
 
 - (bool) hasErrors
 {
-	return ([m_errorList count] > 0);
+	bool result = false;
+    switch (_quizType) {
+        case WQQuizTypeFC:
+            result = ([m_errorList count] > 0);
+            break;
+        case WQQuizTypeMC:
+            result = ([m_errorList count] > 2);
+            break;
+        case WQQuizTypeQA:
+            result = ([m_errorList count] > 0);
+            break;
+        default:
+            result = false;
+            break;
+    }
+    return result;
 }
 
 
@@ -186,12 +202,6 @@ int rand_lim(int limit) {
 	
     return result;
 
-}
-
-
-- (void) setQuizType:(int )aQuizType
-{
-	m_quizType = aQuizType;
 }
 
 - (int) questionCount

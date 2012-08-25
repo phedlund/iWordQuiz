@@ -247,14 +247,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 [homeViewController restart];
                 break;
             case 1:
+                m_quiz.quizType = WQQuizTypeFC;
                 [(FCViewController *) self.selectedViewController setQuiz:m_quiz];
                 [(FCViewController *) self.selectedViewController restart];
                 break;
             case 2:
+                m_quiz.quizType = WQQuizTypeMC;
                 [(MCViewController *) self.selectedViewController setQuiz:m_quiz];
                 [(MCViewController *) self.selectedViewController restart];
                 break;
             case 3:
+                m_quiz.quizType = WQQuizTypeQA;
                 [(QAViewController *) self.selectedViewController setQuiz:m_quiz];
                 [(QAViewController *) self.selectedViewController restart];
                 break;

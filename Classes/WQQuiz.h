@@ -32,6 +32,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    WQQuizTypeFC,
+    WQQuizTypeMC,
+    WQQuizTypeQA
+} WQQuizType;
+
 @interface WQQuiz : NSObject {
 	
     NSMutableArray * m_list;
@@ -44,7 +50,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	int m_correctCount;
 	int m_errorCount;
 
-    int m_quizType;
     NSString * m_correctBlank;
     NSString * m_answerBlank;
 	NSString * frontIdentifier;
@@ -64,7 +69,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (bool) hasErrors;
 
 - (NSArray *) multiOptions;
-- (void) setQuizType:(int )aQuizType;
 - (int) questionCount;
 - (void) countIncrement:(int )aValue;
 
@@ -82,5 +86,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, assign) int quizMode;
 @property (nonatomic, assign) int correctCount;
 @property (nonatomic, assign) int errorCount;
+
+@property (nonatomic) WQQuizType quizType;
 
 @end
