@@ -156,7 +156,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (void) start {
-	[questionCountButton setTitle:[[NSNumber numberWithInt:[self.quiz questionCount]] stringValue] forState:UIControlStateNormal];
+	[questionCountButton setTitle:[@([self.quiz questionCount]) stringValue] forState:UIControlStateNormal];
 	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
 	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
 	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
@@ -217,9 +217,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	previousQuestionLine.hidden =NO;
 	yourAnswerLine.hidden = NO;	
 	
-	[answerCountButton setTitle:[[NSNumber numberWithInt:([self.quiz correctCount] + [self.quiz errorCount])] stringValue] forState:UIControlStateNormal];
-	[correctCountButton setTitle:[[NSNumber numberWithInt:[self.quiz correctCount]] stringValue] forState:UIControlStateNormal];
-	[errorCountButton setTitle:[[NSNumber numberWithInt:[self.quiz errorCount]] stringValue] forState:UIControlStateNormal];
+	[answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
+	[correctCountButton setTitle:[@([self.quiz correctCount]) stringValue] forState:UIControlStateNormal];
+	[errorCountButton setTitle:[@([self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
 	badgeAnswerCount.value = [self.quiz correctCount] + [self.quiz errorCount];
     badgeCorrectCount.value = [self.quiz correctCount];
     badgeErrorCount.value = [self.quiz errorCount];
@@ -340,8 +340,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     CABasicAnimation *sopacity = [CABasicAnimation animationWithKeyPath:@"shadowOpacity"];
     sopacity.duration = duration / 4;
-    sopacity.fromValue = [NSNumber numberWithFloat: 0.0];
-    sopacity.toValue = [NSNumber numberWithFloat: 0.8];
+    sopacity.fromValue = @0.0f;
+    sopacity.toValue = @0.8f;
     sopacity.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
     sopacity.removedOnCompletion = NO;
     sopacity.beginTime = start + (duration / 2);
@@ -351,7 +351,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     CABasicAnimation *pAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
     pAnimation.duration = duration;
-    pAnimation.toValue = [NSNumber numberWithFloat:1.2];
+    pAnimation.toValue = @1.2f;
     pAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     pAnimation.autoreverses = YES;
     pAnimation.removedOnCompletion = NO;
@@ -371,8 +371,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     CABasicAnimation *sopacity2 = [CABasicAnimation animationWithKeyPath:@"shadowOpacity"];
     sopacity2.duration = duration / 4;
-    sopacity2.fromValue = [NSNumber numberWithFloat: 0.8];
-    sopacity2.toValue = [NSNumber numberWithFloat: 0.0];
+    sopacity2.fromValue = @0.8f;
+    sopacity2.toValue = @0.0f;
     sopacity2.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     sopacity2.removedOnCompletion = NO;
     sopacity2.beginTime = start;
@@ -389,7 +389,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         group.delegate = self;
     }
     //group.delegate = self;
-    [group setAnimations: [NSArray arrayWithObjects: bcolor, sopacity, pAnimation, bcolor2, sopacity2, nil]];
+    [group setAnimations: @[bcolor, sopacity, pAnimation, bcolor2, sopacity2]];
     [aLabel.layer addAnimation: group forKey:  nil];
 }
 

@@ -430,7 +430,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
             document.backIdentifier = backId;
             
             for (int i = 0; i < 10; ++i) {
-                [document.entries addObject:[NSArray arrayWithObjects:@"", @"", nil]];
+                [document.entries addObject:@[@"", @""]];
             }
             
             [document updateChangeCount:UIDocumentChangeDone];
@@ -440,7 +440,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
                     // Update the table.
                     NSIndexPath* newCellIndexPath =
                     [NSIndexPath indexPathForRow:([_vocabularies count] - 1) inSection:0];
-                    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:newCellIndexPath]
+                    [self.tableView insertRowsAtIndexPaths:@[newCellIndexPath]
                                           withRowAnimation:UITableViewRowAnimationAutomatic];
                     
                     [self.tableView selectRowAtIndexPath:newCellIndexPath

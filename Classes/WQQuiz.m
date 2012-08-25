@@ -270,7 +270,7 @@ int rand_lim(int limit) {
 		mo3 = [[m_list objectAtIndex:b] objectAtIndex:0];
 	}
 	
-	result = [NSArray arrayWithObjects:mo1, mo2, mo3, nil];
+	result = @[mo1, mo2, mo3];
 	
 	return [result sortedArrayUsingFunction:randomSort context:nil];
 }

@@ -183,10 +183,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     UIBarButtonItem* barButtonMode = [[UIBarButtonItem alloc] initWithTitle:@"Mode" style:UIBarButtonItemStyleBordered target:self action:@selector(doMode:)]; 
     NSArray *buttons = nil;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { 
-        buttons = [NSArray arrayWithObjects:barButtonAbout, barButtonEdit, barButtonMode, nil];
+        buttons = @[barButtonAbout, barButtonEdit, barButtonMode];
     }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) { 
-        buttons = [NSArray arrayWithObjects:barButtonEdit, barButtonMode, nil];
+        buttons = @[barButtonEdit, barButtonMode];
     }    
     self.navigationItem.rightBarButtonItems = buttons;
     
@@ -549,7 +549,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     if (valueChanges > 0) {
         [_doc.entries removeObjectAtIndex:m_currentRow];
-        [_doc.entries insertObject:[NSArray arrayWithObjects:newFront, newBack, nil] atIndex:m_currentRow];
+        [_doc.entries insertObject:@[newFront, newBack] atIndex:m_currentRow];
         [_doc updateChangeCount:UIDocumentChangeDone];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
     }
@@ -565,7 +565,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         }
             break;
         case kAdd: {
-            [_doc.entries insertObject:[NSArray arrayWithObjects:@"", @"", nil] atIndex:++m_currentRow];
+            [_doc.entries insertObject:@[@"", @""] atIndex:++m_currentRow];
             [_doc updateChangeCount:UIDocumentChangeDone];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
         }

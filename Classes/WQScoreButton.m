@@ -112,7 +112,7 @@
             break;
     }
     
-    NSArray *colors = [NSArray arrayWithObjects:(__bridge id)startColor, (__bridge id)endColor, nil];
+    NSArray *colors = @[(__bridge id)startColor, (__bridge id)endColor];
 
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     colorSpace = CGColorSpaceCreateDeviceRGB();

@@ -177,7 +177,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void) start {
-	[questionCountButton setTitle:[[NSNumber numberWithInt:[self.quiz questionCount]] stringValue] forState:UIControlStateNormal];
+	[questionCountButton setTitle:[@([self.quiz questionCount]) stringValue] forState:UIControlStateNormal];
 	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
 	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
 	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
@@ -225,9 +225,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     self.slideToTheRight = !keep;
     [self flipCard:true];
     
-	[answerCountButton setTitle:[[NSNumber numberWithInt:([self.quiz correctCount] + [self.quiz errorCount])] stringValue] forState:UIControlStateNormal];
-	[correctCountButton setTitle:[[NSNumber numberWithInt:[self.quiz correctCount]] stringValue] forState:UIControlStateNormal];
-	[errorCountButton setTitle:[[NSNumber numberWithInt:[self.quiz errorCount]] stringValue] forState:UIControlStateNormal];
+	[answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
+	[correctCountButton setTitle:[@([self.quiz correctCount]) stringValue] forState:UIControlStateNormal];
+	[errorCountButton setTitle:[@([self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
 	badgeAnswerCount.value = [self.quiz correctCount] + [self.quiz errorCount];
     badgeCorrectCount.value = [self.quiz correctCount];
     badgeErrorCount.value = [self.quiz errorCount];

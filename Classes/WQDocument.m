@@ -133,7 +133,7 @@
         }
         
         if (i == (colCount - 1)) {
-            [self.entries addObject:[NSArray arrayWithObjects:f, b, nil]];
+            [self.entries addObject:@[f, b]];
         }
         
         if (i == (colCount - 1)) {
@@ -166,7 +166,7 @@
             NSArray *values  = [theLine componentsSeparatedByString:@"\t"];
             
             if ([values count] > 1) {
-                [self.entries addObject:[NSArray arrayWithObjects:[values objectAtIndex:0], [values objectAtIndex:1], nil]];
+                [self.entries addObject:@[[values objectAtIndex:0], [values objectAtIndex:1]]];
             }
         }
     }
@@ -196,7 +196,7 @@
     [xmlStr appendString:@"<entries>"];
     int i = 0;
     for (NSArray *entry in self.entries) {
-		[xmlStr appendFormat:@"<entry id=\"%@\">", [NSNumber numberWithInt:i]];
+		[xmlStr appendFormat:@"<entry id=\"%@\">", @(i)];
         [xmlStr appendString:@"<translation id=\"0\" >"];
         [xmlStr appendFormat:@"<text>%@</text>", [entry objectAtIndex:0]];
         [xmlStr appendString:@"</translation>"];
