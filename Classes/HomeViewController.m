@@ -74,6 +74,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(edited:) name:@"Edited" object:nil];
     spreadView.dataSource = (id)self.tabBarController;
     spreadView.delegate = (id) self.tabBarController;
+    spreadView.selectionMode = MDSpreadViewSelectionModeCell;
     [spreadView reloadData];
 }
 
