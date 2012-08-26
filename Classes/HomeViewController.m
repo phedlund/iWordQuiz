@@ -38,24 +38,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @synthesize containerView;
 @synthesize spreadView;
 
-- (CGPathRef)renderShadow:(UIView*)aView {
-	CGSize size = aView.bounds.size;
-	CGFloat curlFactor = 15.0f;
-	CGFloat shadowDepth = 5.0f;
-    
-	UIBezierPath *path = [UIBezierPath bezierPath];
-	[path moveToPoint:CGPointMake(0.0f, 0.0f)];
-	[path addLineToPoint:CGPointMake(size.width + shadowDepth, 0.0f)];
-	[path addCurveToPoint:CGPointMake(size.width, size.height + shadowDepth)
-			controlPoint1:CGPointMake(size.width - curlFactor, shadowDepth + curlFactor)
-			controlPoint2:CGPointMake(size.width +shadowDepth, size.height - curlFactor)];
-	[path addCurveToPoint:CGPointMake(0.0f, size.height + shadowDepth)
-			controlPoint1:CGPointMake(size.width - curlFactor, size.height + shadowDepth - curlFactor)
-			controlPoint2:CGPointMake(curlFactor, size.height + shadowDepth - curlFactor)];
-    
-	return path.CGPath;
-}
-
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -101,13 +83,28 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         
         containerView.layer.borderWidth = 1.0;
         containerView.layer.borderColor = [[UIColor grayColor] CGColor];
-        containerView.layer.shadowColor = [UIColor blackColor].CGColor;
+        containerView.layer.shadowColor = [[UIColor blackColor] CGColor];
         containerView.layer.shadowOpacity = 0.5f;
         containerView.layer.shadowOffset = CGSizeMake(0, 4);
         containerView.layer.shadowRadius = 6.0f;
         containerView.layer.masksToBounds = NO;
         
-        containerView.layer.shadowPath = [self renderShadow:containerView];
+        CGSize size = containerView.bounds.size;
+        CGFloat curlFactor = 15.0f;
+        CGFloat shadowDepth = 5.0f;
+        
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        [path moveToPoint:CGPointMake(0.0f, 0.0f)];
+        [path addLineToPoint:CGPointMake(size.width + shadowDepth, 0.0f)];
+        [path addCurveToPoint:CGPointMake(size.width, size.height + shadowDepth)
+                controlPoint1:CGPointMake(size.width - curlFactor, shadowDepth + curlFactor)
+                controlPoint2:CGPointMake(size.width +shadowDepth, size.height - curlFactor)];
+        [path addCurveToPoint:CGPointMake(0.0f, size.height + shadowDepth)
+                controlPoint1:CGPointMake(size.width - curlFactor, size.height + shadowDepth - curlFactor)
+                controlPoint2:CGPointMake(curlFactor, size.height + shadowDepth - curlFactor)];
+        
+        containerView.layer.shadowPath = path.CGPath;
+
     }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
