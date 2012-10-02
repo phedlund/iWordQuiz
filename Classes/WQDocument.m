@@ -173,44 +173,60 @@
 }
 
 - (NSString *)xmlText {
-	NSMutableString *xmlStr = [NSMutableString stringWithCapacity:100];
-    [xmlStr appendString:@"<?xml version=\"1.0\" encoding=\"UTF-8\"?>"];
-    [xmlStr appendString:@"<!DOCTYPE kvtml PUBLIC \"kvtml2.dtd\" \"http://edu.kde.org/kanagram/kvtml2.dtd\">"];
-    [xmlStr appendString:@"<kvtml version=\"2.0\">"];
-    [xmlStr appendString:@"<information>"];
-    [xmlStr appendFormat:@"<generator>wordquiz-for-ios %@</generator>", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
-    [xmlStr appendFormat:@"<title>%@</title>", [self.fileURL.lastPathComponent stringByDeletingPathExtension]];
-    [xmlStr appendString:@"</information>"];
+    DDXMLDocument* xmlDoc = [[DDXMLDocument alloc] initWithXMLString:@"<!DOCTYPE kvtml PUBLIC \"kvtml2.dtd\" \"http://edu.kde.org/kvtml/kvtml2.dtd\"><kvtml/>" options:0 error:nil];
+    DDXMLElement* root = [xmlDoc rootElement];
+    [root addAttribute:[DDXMLNode attributeWithName:@"version" stringValue:@"2.0"]];
     
-    [xmlStr appendString:@"<identifiers>"];
-    [xmlStr appendString:@"<identifier id=\"0\" >"];
-    [xmlStr appendFormat:@"<name>%@</name>", frontIdentifier];
-    [xmlStr appendFormat:@"<locale>%@</locale>", frontIdentifier];
-    [xmlStr appendString:@"</identifier>"];
-    [xmlStr appendString:@"<identifier id=\"1\" >"];
-    [xmlStr appendFormat:@"<name>%@</name>", backIdentifier];
-    [xmlStr appendFormat:@"<locale>%@</locale>", backIdentifier];
-    [xmlStr appendString:@"</identifier>"];
-    [xmlStr appendString:@"</identifiers>"];
+    DDXMLElement* information =[DDXMLNode elementWithName:@"information"];
+    DDXMLElement* identifiers =[DDXMLNode elementWithName:@"identifiers"];
+    DDXMLElement* listEntries =[DDXMLNode elementWithName:@"entries"];
+
+    [root addChild:information];
+    [root addChild:identifiers];
+    [root addChild:listEntries];
     
-    [xmlStr appendString:@"<entries>"];
-    int i = 0;
-    for (NSArray *entry in self.entries) {
-		[xmlStr appendFormat:@"<entry id=\"%@\">", @(i)];
-        [xmlStr appendString:@"<translation id=\"0\" >"];
-        [xmlStr appendFormat:@"<text>%@</text>", [entry objectAtIndex:0]];
-        [xmlStr appendString:@"</translation>"];
-        [xmlStr appendString:@"<translation id=\"1\" >"];
-        [xmlStr appendFormat:@"<text>%@</text>", [entry objectAtIndex:1]];
-        [xmlStr appendString:@"</translation>"];
-        [xmlStr appendString:@"</entry>"];
-        ++i;
-	}
-   
-    [xmlStr appendString:@"</entries>"];
-    [xmlStr appendString:@"</kvtml>"];
+    DDXMLElement* generator =[DDXMLNode elementWithName:@"generator" stringValue:[NSString stringWithFormat:@"wordquiz-for-ios %@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]]];
+    DDXMLElement* title =[DDXMLNode elementWithName:@"title" stringValue:[self.fileURL.lastPathComponent stringByDeletingPathExtension]];
     
-    return xmlStr;
+    [information addChild:generator];
+    [information addChild:title];
+    
+    DDXMLElement* identifier1 =[DDXMLNode elementWithName:@"identifier"];
+    [identifier1 addAttribute:[DDXMLNode attributeWithName:@"id" stringValue:@"0"]];
+    [identifier1 addChild:[DDXMLNode elementWithName:@"name" stringValue:frontIdentifier]];
+    [identifier1 addChild:[DDXMLNode elementWithName:@"locale" stringValue:frontIdentifier]];
+    
+    DDXMLElement* identifier2 =[DDXMLNode elementWithName:@"identifier"];
+    [identifier2 addAttribute:[DDXMLNode attributeWithName:@"id" stringValue:@"1"]];
+    [identifier2 addChild:[DDXMLNode elementWithName:@"name" stringValue:backIdentifier]];
+    [identifier2 addChild:[DDXMLNode elementWithName:@"locale" stringValue:backIdentifier]];
+    
+    [identifiers addChild:identifier1];
+    [identifiers addChild:identifier2];
+    
+    __block NSArray *listEntry;
+    [self.entries enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        listEntry = (NSArray*)obj;
+        DDXMLElement* xmlListEntry =[DDXMLNode elementWithName:@"entry"];
+        [xmlListEntry addAttribute:[DDXMLNode attributeWithName:@"id" stringValue:[NSString stringWithFormat:@"%d", idx]]];
+        
+        DDXMLElement* translation1 =[DDXMLNode elementWithName:@"translation"];
+        [translation1 addAttribute:[DDXMLNode attributeWithName:@"id" stringValue:@"0"]];
+        [translation1 addChild:[DDXMLNode elementWithName:@"text" stringValue:[listEntry objectAtIndex:0]]];
+        
+        DDXMLElement* translation2 =[DDXMLNode elementWithName:@"translation"];
+        [translation2 addAttribute:[DDXMLNode attributeWithName:@"id" stringValue:@"1"]];
+        [translation2 addChild:[DDXMLNode elementWithName:@"text" stringValue:[listEntry objectAtIndex:1]]];
+        
+        [xmlListEntry addChild:translation1];
+        [xmlListEntry addChild:translation2];
+        
+        [listEntries addChild:xmlListEntry];
+
+    }];
+    
+    //NSLog(@"xml: %@", [[NSString alloc] initWithData:[xmlDoc XMLData] encoding:NSUTF8StringEncoding]);
+    return [[NSString alloc] initWithData:[xmlDoc XMLData] encoding:NSUTF8StringEncoding];
 }
 
 - (NSMutableArray *) quizEntries {
