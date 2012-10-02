@@ -160,6 +160,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     return YES;
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 	
@@ -398,8 +406,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     if (cell == nil) {
         cell = [[MDSpreadViewCell alloc] initWithStyle:MDSpreadViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
-    
-    cell.textLabel.text = [[self.doc.entries objectAtIndex:rowPath.row ] objectAtIndex:columnPath.column];
+    if (self.doc.entries.count > 0) {
+        cell.textLabel.text = [[self.doc.entries objectAtIndex:rowPath.row ] objectAtIndex:columnPath.column];
+    }
 
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         cell.textLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
@@ -471,7 +480,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         if (([[UIDevice currentDevice] orientation ] == UIDeviceOrientationLandscapeLeft) ||
             ([[UIDevice currentDevice] orientation ] == UIDeviceOrientationLandscapeRight)) {
             
-            return 214;
+            return (CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 54) / 2; // 214;
         } else {
             return 138;
         }

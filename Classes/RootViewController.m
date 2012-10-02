@@ -122,6 +122,13 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     return YES;
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
 
 #pragma mark -
 #pragma mark Table view data source

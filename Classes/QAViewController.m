@@ -142,13 +142,20 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             badgeErrorCount.frame = CGRectMake(400, 60, 50, 50);
             
         } else {
-            self.questionView.frame = CGRectMake(15, 15, 290, 152);
-            
-            badgeQuestionCount.frame = CGRectMake(20, 160, 50, 50);
-            badgeAnswerCount.frame = CGRectMake(90, 160, 50, 50);
-            badgeCorrectCount.frame = CGRectMake(170, 160, 50, 50);
-            badgeErrorCount.frame = CGRectMake(240, 160, 50, 50);
-            
+            int height = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
+            if (height > 500) {
+                self.questionView.frame = CGRectMake(15, 15, 290, 165);
+                badgeQuestionCount.frame = CGRectMake(20, 200, 50, 50);
+                badgeAnswerCount.frame = CGRectMake(90, 200, 50, 50);
+                badgeCorrectCount.frame = CGRectMake(170, 200, 50, 50);
+                badgeErrorCount.frame = CGRectMake(240, 200, 50, 50);
+            } else {
+                self.questionView.frame = CGRectMake(15, 15, 290, 152);
+                badgeQuestionCount.frame = CGRectMake(20, 160, 50, 50);
+                badgeAnswerCount.frame = CGRectMake(90, 160, 50, 50);
+                badgeCorrectCount.frame = CGRectMake(170, 160, 50, 50);
+                badgeErrorCount.frame = CGRectMake(240, 160, 50, 50);
+            }
         }
     }
     [WQUtils renderCardShadow:previousView];

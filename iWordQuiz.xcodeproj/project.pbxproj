@@ -123,7 +123,8 @@
 		D0D0EC5014DB719100BE3A81 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */; };
 		D0D11E0E1541CCE800B8ECBD /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
 		D0D2B89414DD963B0049C33E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D2B89314DD963B0049C33E /* AboutViewController.m */; };
-		D0EE380515E8586E00540DCB /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0EE380415E8586E00540DCB /* DropboxSDK.framework */; };
+		D0ED46AF161A0F7000BF31BD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ED46AE161A0F7000BF31BD /* Default-568h@2x.png */; };
+		D0ED46B1161A6A6300BF31BD /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */; };
 		D0FC074615E6DAAA00811921 /* MKNumberBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074515E6DAAA00811921 /* MKNumberBadgeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0FC075215E7059800811921 /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074F15E7059800811921 /* CHDropboxSync.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0FC075315E7059800811921 /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075115E7059800811921 /* SyncTask.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -306,7 +307,8 @@
 		D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQEditViewController.m; sourceTree = "<group>"; };
 		D0D2B89214DD963B0049C33E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		D0D2B89314DD963B0049C33E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		D0EE380415E8586E00540DCB /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		D0ED46AE161A0F7000BF31BD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
+		D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		D0FC074415E6DAAA00811921 /* MKNumberBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKNumberBadgeView.h; path = Classes/iPhoneMK/Views/MKNumberBadgeView/MKNumberBadgeView.h; sourceTree = SOURCE_ROOT; };
 		D0FC074515E6DAAA00811921 /* MKNumberBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKNumberBadgeView.m; path = Classes/iPhoneMK/Views/MKNumberBadgeView/MKNumberBadgeView.m; sourceTree = SOURCE_ROOT; };
 		D0FC074E15E7059800811921 /* CHDropboxSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHDropboxSync.h; path = Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/CHDropboxSync.h; sourceTree = SOURCE_ROOT; };
@@ -367,7 +369,7 @@
 				D0D0EC4C14DB712700BE3A81 /* UIKit.framework in Frameworks */,
 				D0D0EC4D14DB712F00BE3A81 /* Foundation.framework in Frameworks */,
 				D0D0EC4E14DB713A00BE3A81 /* CoreGraphics.framework in Frameworks */,
-				D0EE380515E8586E00540DCB /* DropboxSDK.framework in Frameworks */,
+				D0ED46B1161A6A6300BF31BD /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +466,7 @@
 				D0C9B16C1517B348004AC04B /* Default-Portrait@2x.png */,
 				D03A5B8C1536496400BEA27B /* Default.png */,
 				D03A5B8B1536496400BEA27B /* Default@2x.png */,
+				D0ED46AE161A0F7000BF31BD /* Default-568h@2x.png */,
 				D03A5B7F15363EBC00BEA27B /* Icon-57.png */,
 				D03A5B8115363EC500BEA27B /* Icon-114.png */,
 				D01DC8FD121F4252006671A1 /* Icon-72.png */,
@@ -497,7 +500,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0EE380415E8586E00540DCB /* DropboxSDK.framework */,
+				D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */,
 				D0549FC1151BCADB00BDE78C /* QuartzCore.framework */,
 				D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */,
 				D0CB156314EEF3D200FE7CC6 /* Security.framework */,
@@ -906,6 +909,7 @@
 				D0FC079815E7F78200811921 /* popoverBg.png in Resources */,
 				D0FC079915E7F78200811921 /* popoverBg@2x.png in Resources */,
 				D0FC079A15E7F78200811921 /* popoverBgSimple.png in Resources */,
+				D0ED46AF161A0F7000BF31BD /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

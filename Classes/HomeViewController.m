@@ -52,7 +52,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+    }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(edited:) name:@"Edited" object:nil];
     spreadView.dataSource = (id)self.tabBarController;
     spreadView.delegate = (id) self.tabBarController;
@@ -63,6 +65,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Overriden to allow any orientation.
+    return YES;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (BOOL)shouldAutorotate {
     return YES;
 }
 
@@ -106,13 +116,24 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         containerView.layer.shadowPath = path.CGPath;
 
     }
+}
+
+- (void) viewWillLayoutSubviews {
+    NSLog(@"Frame: %@", NSStringFromCGRect([UIScreen mainScreen].applicationFrame));
+    [super viewWillLayoutSubviews];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-            self.spreadView.frame = CGRectMake(0, 0, 480, 219);
+        int width;
+        int height;
+        if (([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeLeft) ||
+            ([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeRight)) {
+            width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
+            height = CGRectGetWidth([UIScreen mainScreen].applicationFrame) - 44 - 49 + 20;
         } else {
-            self.spreadView.frame = CGRectMake(0, 0, 320, 367);
-            
+            width = CGRectGetWidth([UIScreen mainScreen].applicationFrame);
+            height = CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 44 - 49 + 20;
         }
+        NSLog(@"Width: %d, Height: %d", width, height);
+        self.spreadView.frame = CGRectMake(0, 0, width, height);
         [spreadView reloadData];
     }
 }

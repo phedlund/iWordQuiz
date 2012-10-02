@@ -127,12 +127,21 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
      }
      if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
          if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+             int width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
              self.questionView.frame = CGRectMake(15, 15, 290, 190 );
      
-             badgeQuestionCount.frame = CGRectMake(365, 5, 50, 50);
-             badgeAnswerCount.frame = CGRectMake(365, 60, 50, 50);
-             badgeCorrectCount.frame = CGRectMake(365, 115, 50, 50);
-             badgeErrorCount.frame = CGRectMake(365, 170, 50, 50);
+             if (width > 500) {
+                 badgeQuestionCount.frame = CGRectMake(410, 5, 50, 50);
+                 badgeAnswerCount.frame = CGRectMake(410, 60, 50, 50);
+                 badgeCorrectCount.frame = CGRectMake(410, 115, 50, 50);
+                 badgeErrorCount.frame = CGRectMake(410, 170, 50, 50);
+
+             } else {
+                 badgeQuestionCount.frame = CGRectMake(365, 5, 50, 50);
+                 badgeAnswerCount.frame = CGRectMake(365, 60, 50, 50);
+                 badgeCorrectCount.frame = CGRectMake(365, 115, 50, 50);
+                 badgeErrorCount.frame = CGRectMake(365, 170, 50, 50);
+             }
 
          } else {
              self.questionView.frame = CGRectMake(15, 15, 290, 190);

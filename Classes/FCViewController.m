@@ -119,9 +119,16 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return NO;
+    return YES;
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskAll;
+}
+
+- (BOOL)shouldAutorotate {
+    return YES;
+}
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
@@ -147,27 +154,44 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         }
     }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        int width;
+        int height;
         if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+            width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
             self.containerView.frame = CGRectMake(5, 15, 310, 185);
-            
             knowButton.frame = CGRectMake(330, 25, 125, 56);
             dontKnowButton.frame = CGRectMake(330, 80, 125, 56);
             
-            badgeQuestionCount.frame = CGRectMake(330, 130, 50, 50);
-            badgeAnswerCount.frame = CGRectMake(400, 130, 50, 50);
-            badgeCorrectCount.frame = CGRectMake(330, 170, 50, 50);
-            badgeErrorCount.frame = CGRectMake(400, 170, 50, 50);
+            if (width > 500) {
+                badgeQuestionCount.frame = CGRectMake(480, 5, 50, 50);
+                badgeAnswerCount.frame = CGRectMake(480, 60, 50, 50);
+                badgeCorrectCount.frame = CGRectMake(480, 115, 50, 50);
+                badgeErrorCount.frame = CGRectMake(480, 170, 50, 50);
+                
+            } else {
+                badgeQuestionCount.frame = CGRectMake(330, 130, 50, 50);
+                badgeAnswerCount.frame = CGRectMake(400, 130, 50, 50);
+                badgeCorrectCount.frame = CGRectMake(330, 170, 50, 50);
+                badgeErrorCount.frame = CGRectMake(400, 170, 50, 50);
+            }
             
         } else {
+            height = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
             self.containerView.frame = CGRectMake(5, 5, 310, 185);
-            
             knowButton.frame = CGRectMake(20, 225, 125, 56);
             dontKnowButton.frame = CGRectMake(175, 225, 125, 56);
             
-            badgeQuestionCount.frame = CGRectMake(20, 300, 50, 50);
-            badgeAnswerCount.frame = CGRectMake(90, 300, 50, 50);
-            badgeCorrectCount.frame = CGRectMake(170, 300, 50, 50);
-            badgeErrorCount.frame = CGRectMake(240, 300, 50, 50);
+            if (height > 500) {
+                badgeQuestionCount.frame = CGRectMake(20, 340, 50, 50);
+                badgeAnswerCount.frame = CGRectMake(90, 340, 50, 50);
+                badgeCorrectCount.frame = CGRectMake(170, 340, 50, 50);
+                badgeErrorCount.frame = CGRectMake(240, 340, 50, 50);
+            } else {
+                badgeQuestionCount.frame = CGRectMake(20, 300, 50, 50);
+                badgeAnswerCount.frame = CGRectMake(90, 300, 50, 50);
+                badgeCorrectCount.frame = CGRectMake(170, 300, 50, 50);
+                badgeErrorCount.frame = CGRectMake(240, 300, 50, 50);
+            }
         }
     }
     [WQUtils renderCardShadow:previousView];
