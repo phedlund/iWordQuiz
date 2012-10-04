@@ -14,7 +14,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.0"
    inkscape:output_extension="org.inkscape.output.svg.inkscape"
-   sodipodi:docname="background.svg"
+   sodipodi:docname="icon.svg"
    inkscape:version="0.48.2 r9819"
    sodipodi:version="0.32"
    id="svg2"
@@ -18133,13 +18133,22 @@
     <g
        inkscape:label="fill text"
        id="g3232"
-       transform="translate(850.25872,1268.5997)" />
+       transform="translate(850.25872,1268.5997)"
+       inkscape:export-filename="/Users/peter/Projects/iWordQuiz/Resources/Icon-128.png"
+       inkscape:export-xdpi="11.25"
+       inkscape:export-ydpi="11.25" />
     <g
        inkscape:label="fill text"
        id="g4591"
-       transform="translate(850.25872,1268.5997)" />
+       transform="translate(850.25872,1268.5997)"
+       inkscape:export-filename="/Users/peter/Projects/iWordQuiz/Resources/Icon-128.png"
+       inkscape:export-xdpi="11.25"
+       inkscape:export-ydpi="11.25" />
     <g
-       id="g14705">
+       id="g14705"
+       inkscape:export-filename="/Users/peter/Projects/iWordQuiz/Resources/Icon-128.png"
+       inkscape:export-xdpi="11.25"
+       inkscape:export-ydpi="11.25">
       <g
          clip-path="url(#clipPath14701)"
          transform="matrix(1.996489,0,0,1.0002784,-165.5827,-1229.9491)"
@@ -18484,14 +18493,23 @@
     <g
        inkscape:label="fill text"
        id="g3232-0"
-       transform="translate(223.83299,1031.8225)" />
+       transform="translate(223.83299,1031.8225)"
+       inkscape:export-filename="/Users/peter/Projects/iWordQuiz/Resources/Icon-128.png"
+       inkscape:export-xdpi="11.25"
+       inkscape:export-ydpi="11.25" />
     <g
        inkscape:label="fill text"
        id="g4591-7"
-       transform="translate(223.83299,1031.8225)" />
+       transform="translate(223.83299,1031.8225)"
+       inkscape:export-filename="/Users/peter/Projects/iWordQuiz/Resources/Icon-128.png"
+       inkscape:export-xdpi="11.25"
+       inkscape:export-ydpi="11.25" />
     <g
        id="g14603"
-       transform="matrix(14.286208,0,0,14.286208,1797.7163,8001.1138)">
+       transform="matrix(14.286208,0,0,14.286208,1797.7163,8001.1138)"
+       inkscape:export-filename="/Users/peter/Projects/iWordQuiz/Resources/Icon-128.png"
+       inkscape:export-xdpi="11.25"
+       inkscape:export-ydpi="11.25">
       <g
          inkscape:export-ydpi="180"
          inkscape:export-xdpi="180"
