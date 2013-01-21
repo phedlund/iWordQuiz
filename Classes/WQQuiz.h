@@ -57,8 +57,6 @@ typedef enum {
 	NSString * fileName;
 }
 
-- (int) column:(int )aColumn;
-
 - (void) activateErrorList;
 - (void) activateBaseList;
 

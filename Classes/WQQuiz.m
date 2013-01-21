@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -31,6 +31,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *************************************************************************/
 
 #import "WQQuiz.h"
+#import "WQQuizItem.h"
 #import "WQUtils.h"
 
 @implementation WQQuiz
@@ -47,7 +48,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - init {
 	if(![super init]){
 		return nil;
-
 	}
 	
     frontIdentifier = @"Front";
@@ -80,15 +80,6 @@ int rand_lim(int limit) {
     return retval;
 }
 
-
-- (int) column:(int )aColumn
-{
-	int result = 0;
-    if ([WQUtils isOdd:self.quizMode])
-        result = 1;
-    return result;
-}
-
 - (void) activateErrorList
 {
 	[m_list removeAllObjects];
@@ -110,9 +101,30 @@ int rand_lim(int limit) {
 	[m_errorList removeAllObjects];
 	
 	for (NSArray *entry in self.entries) {
-		[m_list addObject:entry];
+        WQQuizItem *item = [[WQQuizItem alloc] init];
+        if ([WQUtils isOdd:self.quizMode]) {
+            item.frontIdentifier = [self frontIdentifier];
+            item.backIdentifier = [self backIdentifier];
+            item.front = [entry objectAtIndex:0];
+            item.back = [entry objectAtIndex:1];
+            if (self.quizMode == 5) {
+                WQQuizItem *itemReverse = [[WQQuizItem alloc] init];
+                itemReverse.frontIdentifier = [self backIdentifier];
+                itemReverse.backIdentifier = [self frontIdentifier];
+                itemReverse.front = [entry objectAtIndex:1];
+                itemReverse.back = [entry objectAtIndex:0];
+                [m_list addObject:itemReverse];
+            }
+        }
+        else {
+            item.frontIdentifier = [self backIdentifier];
+            item.backIdentifier = [self frontIdentifier];
+            item.front = [entry objectAtIndex:1];
+            item.back = [entry objectAtIndex:0];
+        }
+        [m_list addObject:item];
 	}
-	
+    
 	if (self.quizMode > 2) {
 		[m_list sortUsingFunction:randomSort context:nil];
 	}
@@ -138,12 +150,8 @@ int rand_lim(int limit) {
 
 - (bool) checkAnswer:(NSString *)anAnswer
 {
-
 	bool result = false;
-	NSString * ans = anAnswer;
-	NSString *correctAnswer = [self answer];
-	
-	result = [ans isEqualToString:correctAnswer];
+	result = [anAnswer isEqualToString:[self answer]];
  
 	if (!result) {
 		[m_errorList addObject:[m_list objectAtIndex:m_currentQuestion]];
@@ -175,33 +183,14 @@ int rand_lim(int limit) {
 
 - (NSString*) question
 {
-	NSString * result;
-
-    if ([WQUtils isOdd:self.quizMode]) {
-		
-		result = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:0];
-	}
-	else {
-		result = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:1];
-	}
-
-    return result;
+    WQQuizItem *item = (WQQuizItem*)[m_list objectAtIndex:m_currentQuestion];
+    return item.front;
 }
 
 - (NSString*) answer
 {
-	NSString * result;
-	
-    if ([WQUtils isOdd:self.quizMode]) {
-		
-		result = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:1];
-	}
-	else {
-		result = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:0];
-	}
-	
-    return result;
-
+    WQQuizItem *item = (WQQuizItem*)[m_list objectAtIndex:m_currentQuestion];
+    return item.back;
 }
 
 - (int) questionCount
@@ -211,33 +200,15 @@ int rand_lim(int limit) {
 
 - (NSString*) langQuestion
 {
-	NSString * result;
-	//NSLog(@"langQuestion %@", [self backIdentifier]);
-	if ([WQUtils isOdd:self.quizMode]) {
-		result = [self frontIdentifier];
-	}
-	else {
-		result = [self backIdentifier];
-	}
-	//NSLog(@"langQuestion %@", result);
-	
-	return result;
+    WQQuizItem *item = (WQQuizItem*)[m_list objectAtIndex:m_currentQuestion];
+	return item.frontIdentifier;
 }
 
 
 - (NSString*) langAnswer
 {
-	NSString * result;
-	//NSLog(@"langAnswer %@", [self frontIdentifier]);
-	if ([WQUtils isOdd:self.quizMode]) {
-		result = [self backIdentifier];
-	}
-	else {
-		result = [self frontIdentifier];
-	}
-	//NSLog(@"langAnswer %@", result);
-
-	return result;
+    WQQuizItem *item = (WQQuizItem*)[m_list objectAtIndex:m_currentQuestion];
+	return item.backIdentifier;
 }
 
 - (void) countIncrement:(int )aValue {
@@ -248,8 +219,6 @@ int rand_lim(int limit) {
 		m_errorCount++;
 	}
 }
-
-
 
 - (NSArray *) multiOptions {
 	
@@ -268,18 +237,13 @@ int rand_lim(int limit) {
 	do
 		b = rand_lim(m_questionCount - 1);
 	while(b == m_currentQuestion || b == a);
-	
-    if ([WQUtils isOdd:self.quizMode]) {
-		mo1 = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:1];
-		mo2 = [[m_list objectAtIndex:a] objectAtIndex:1];
-		mo3 = [[m_list objectAtIndex:b] objectAtIndex:1];
-	}
-	else {
-		mo1 = [[m_list objectAtIndex:m_currentQuestion] objectAtIndex:0];
-		mo2 = [[m_list objectAtIndex:a] objectAtIndex:0];
-		mo3 = [[m_list objectAtIndex:b] objectAtIndex:0];
-	}
-	
+
+    WQQuizItem *item = (WQQuizItem*)[m_list objectAtIndex:m_currentQuestion];
+    mo1 = item.back;
+    item = (WQQuizItem*)[m_list objectAtIndex:a];
+    mo2 = item.back;
+    item = (WQQuizItem*)[m_list objectAtIndex:b];
+    mo3 = item.back;
 	result = @[mo1, mo2, mo3];
 	
 	return [result sortedArrayUsingFunction:randomSort context:nil];
@@ -287,7 +251,6 @@ int rand_lim(int limit) {
 
 - (void)dealloc {
     [entries removeAllObjects];
-    
 }
 
 @end

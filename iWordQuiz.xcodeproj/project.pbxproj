@@ -102,6 +102,7 @@
 		D0CA3EC312CD0F6800F7BB72 /* document-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC112CD0F6800F7BB72 /* document-icon-64.png */; };
 		D0CA3EC412CD0F6800F7BB72 /* document-icon-320.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */; };
 		D0CB156414EEF3D200FE7CC6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0CB156314EEF3D200FE7CC6 /* Security.framework */; };
+		D0CBB7F116A9FD0000FDAC8C /* WQQuizItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBB7F016A9FD0000FDAC8C /* WQQuizItem.m */; };
 		D0CC0BEE151D27A00084ACB0 /* WQDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0BED151D27A00084ACB0 /* WQDocument.m */; };
 		D0CC0BF1151E38DA0084ACB0 /* WQUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0BF0151E38D90084ACB0 /* WQUtils.m */; };
 		D0CC677815252F2B000D067C /* WQScoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC677715252F2B000D067C /* WQScoreButton.m */; };
@@ -278,6 +279,8 @@
 		D0CA3EC112CD0F6800F7BB72 /* document-icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-64.png"; path = "Resources/document-icon-64.png"; sourceTree = "<group>"; };
 		D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-320.png"; path = "Resources/document-icon-320.png"; sourceTree = "<group>"; };
 		D0CB156314EEF3D200FE7CC6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D0CBB7EF16A9FD0000FDAC8C /* WQQuizItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQQuizItem.h; sourceTree = "<group>"; };
+		D0CBB7F016A9FD0000FDAC8C /* WQQuizItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQQuizItem.m; sourceTree = "<group>"; };
 		D0CC0BEC151D27A00084ACB0 /* WQDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQDocument.h; sourceTree = "<group>"; };
 		D0CC0BED151D27A00084ACB0 /* WQDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQDocument.m; sourceTree = "<group>"; };
 		D0CC0BEF151E38D90084ACB0 /* WQUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQUtils.h; sourceTree = "<group>"; };
@@ -407,6 +410,8 @@
 				D0130A3D125AB58C0085482E /* ModePickerController.m */,
 				D04CF94F122F371300B446E8 /* WQQuiz.h */,
 				D04CF950122F371300B446E8 /* WQQuiz.m */,
+				D0CBB7EF16A9FD0000FDAC8C /* WQQuizItem.h */,
+				D0CBB7F016A9FD0000FDAC8C /* WQQuizItem.m */,
 				D0CC0BEC151D27A00084ACB0 /* WQDocument.h */,
 				D0CC0BED151D27A00084ACB0 /* WQDocument.m */,
 				D0CC0BEF151E38D90084ACB0 /* WQUtils.h */,
@@ -961,6 +966,7 @@
 				D0FC077715E7EAAF00811921 /* DDXMLElement.m in Sources */,
 				D0FC077815E7EAAF00811921 /* DDXMLNode.m in Sources */,
 				D0FC077B15E7ED7E00811921 /* Reachability.m in Sources */,
+				D0CBB7F116A9FD0000FDAC8C /* WQQuizItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11D50" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="5">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
-        <development defaultVersion="4200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="3n0-7x-hNv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1v7-Uo-1IK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="about" definesPresentationContext="YES" id="5SH-ti-uw6" sceneMemberID="viewController">
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ia5-bO-0K0">
@@ -19,13 +17,13 @@
                         <segue destination="DGs-Xz-3fw" kind="relationship" relationship="rootViewController" id="wpF-rf-FS3"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1v7-Uo-1IK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-687" y="-1490"/>
         </scene>
         <!--About View Controller - About WordQuiz-->
         <scene sceneID="Z8b-Rm-BO7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FIm-qS-Aa3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="DGs-Xz-3fw" customClass="AboutViewController" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="GqC-0X-viN">
                         <rect key="frame" x="0.0" y="64" width="540" height="556"/>
@@ -99,13 +97,13 @@
                         <outlet property="view" destination="GqC-0X-viN" id="bjc-v0-LOs"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FIm-qS-Aa3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31" y="-1490"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="14">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="13" sceneMemberID="firstResponder"/>
                 <navigationController id="3" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="6">
                         <autoresizingMask key="autoresizingMask"/>
@@ -114,13 +112,13 @@
                         <segue destination="19" kind="relationship" relationship="rootViewController" id="25"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="13" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="448" y="-630"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="18">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
                 <splitViewController id="5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
@@ -130,13 +128,13 @@
                         <segue destination="42" kind="relationship" relationship="detailViewController" id="51"/>
                     </connections>
                 </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-687" y="-630"/>
         </scene>
         <!--Root View Controller - Vocabularies-->
         <scene sceneID="24">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="" title="Vocabularies" clearsSelectionOnViewWillAppear="NO" id="19" customClass="RootViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="20">
                         <rect key="frame" x="0.0" y="64" width="320" height="704"/>
@@ -187,13 +185,13 @@
                         <outlet property="addButton" destination="gEk-pd-guS" id="WGT-PQ-Kb6"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="859" y="-631"/>
         </scene>
         <!--Navigation Controller - Edit Entry-->
         <scene sceneID="rQ1-4G-zU7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BG8-Eh-CmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController storyboardIdentifier="edit" title="Edit Entry" definesPresentationContext="YES" modalPresentationStyle="formSheet" id="i2f-06-heM" sceneMemberID="viewController">
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iiH-Te-t8U">
@@ -203,13 +201,13 @@
                         <segue destination="Hqg-py-mob" kind="relationship" relationship="rootViewController" id="zYt-oB-HH2"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BG8-Eh-CmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-693" y="1252"/>
         </scene>
         <!--Edit View Controller - Edit Entry-->
         <scene sceneID="3mL-PC-kja">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uea-W7-BZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Edit Entry" modalPresentationStyle="formSheet" id="Hqg-py-mob" customClass="WQEditViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E5U-Pt-0Ly">
                         <rect key="frame" x="0.0" y="64" width="540" height="556"/>
@@ -324,13 +322,13 @@
                         <outlet property="view" destination="E5U-Pt-0Ly" id="7DB-rC-LNl"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uea-W7-BZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-46" y="1252"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="50">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="49" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="42" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="43">
                         <autoresizingMask key="autoresizingMask"/>
@@ -339,13 +337,13 @@
                         <segue destination="d2J-Zu-9To" kind="relationship" relationship="rootViewController" id="tMZ-mP-och"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="49" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-366" y="248"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="yoU-ep-w6h">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zdD-eA-VFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="d2J-Zu-9To" customClass="DetailViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="VbN-Ct-a05"/>
@@ -360,13 +358,13 @@
                         <segue destination="Epe-N4-cJI" kind="relationship" relationship="viewControllers" id="yNZ-Zx-Fbo"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zdD-eA-VFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="254"/>
         </scene>
         <!--View Controller - Flashcard-->
         <scene sceneID="vMK-FW-Dgc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iiQ-KQ-aDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="EVf-I6-MsD" customClass="FCViewController" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="f9F-G1-ksl">
                         <rect key="frame" x="0.0" y="64" width="703" height="655"/>
@@ -548,13 +546,13 @@
                         <outlet property="view" destination="f9F-G1-ksl" id="9tz-lX-MTB"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iiQ-KQ-aDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1437" y="-631"/>
         </scene>
         <!--View Controller - Question & Answer-->
         <scene sceneID="1Ue-pP-EdJ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RRY-Yl-DxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Epe-N4-cJI" customClass="QAViewController" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="F2H-gE-CJE">
                         <rect key="frame" x="0.0" y="64" width="703" height="655"/>
@@ -768,13 +766,13 @@
                         <outlet property="yourAnswerLine" destination="66k-St-G6j" id="Non-9s-4Zj"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RRY-Yl-DxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1437" y="1167"/>
         </scene>
         <!--View Controller - Multiple Choice-->
         <scene sceneID="Pk5-Nc-GAB">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SKq-DT-1ID" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="mKi-xZ-BpX" customClass="MCViewController" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="zlk-8o-dPx">
                         <rect key="frame" x="0.0" y="64" width="703" height="655"/>
@@ -1029,16 +1027,16 @@
                         <outlet property="yourAnswerLine" destination="e8q-sl-D9E" id="To8-ut-RnQ"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKq-DT-1ID" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1437" y="254"/>
         </scene>
         <!--New File View Controller - New Vocabulary-->
         <scene sceneID="YRM-uR-iRi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m0B-gn-DUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController title="New Vocabulary" modalPresentationStyle="formSheet" id="LdF-eC-gfZ" customClass="WQNewFileViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="RDT-x8-RAO">
-                        <rect key="frame" x="0.0" y="44" width="540" height="576"/>
+                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
@@ -1165,13 +1163,13 @@
                         <outlet property="frontTextField" destination="lQO-s3-1ZG" id="8Sn-tw-YPK"/>
                     </connections>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m0B-gn-DUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1225" y="-2367"/>
         </scene>
         <!--Home View Controller - Home-->
         <scene sceneID="vCY-ih-qCP">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o9g-8e-lrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ThK-OU-gjs" customClass="HomeViewController" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="9FB-cj-sVZ">
                         <rect key="frame" x="0.0" y="64" width="703" height="655"/>
@@ -1198,6 +1196,7 @@
                         <outlet property="spreadView" destination="H7D-Dx-wFb" id="x2u-Hx-qzr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o9g-8e-lrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Z1O-Hc-XRh">
                     <rect key="frame" x="0.0" y="0.0" width="500" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1210,7 +1209,6 @@
         <!--Navigation Controller-->
         <scene sceneID="ns4-eB-tYb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Emc-El-Y1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="HxX-hT-fED" sceneMemberID="viewController">
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="65p-Iv-Zno">
@@ -1220,6 +1218,7 @@
                         <segue destination="LdF-eC-gfZ" kind="relationship" relationship="rootViewController" id="Vxn-WX-f4Y"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Emc-El-Y1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="523" y="-2367"/>
         </scene>
@@ -1366,7 +1365,6 @@
         <class className="RootViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RootViewController.h"/>
             <relationships>
-                <relationship kind="action" name="addDocument:"/>
                 <relationship kind="action" name="doActions:"/>
                 <relationship kind="action" name="doDBSync:"/>
                 <relationship kind="outlet" name="addButton" candidateClass="UIBarButtonItem"/>
@@ -1393,6 +1391,7 @@
         <class className="WQNewFileViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WQNewFileViewController.h"/>
             <relationships>
+                <relationship kind="action" name="doCreateNew:"/>
                 <relationship kind="action" name="doDismissView:"/>
                 <relationship kind="outlet" name="backTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="fileNameTextField" candidateClass="UITextField"/>

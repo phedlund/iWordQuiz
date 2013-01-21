@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -32,11 +32,27 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "ModePickerController.h"
 
+@interface ModePickerController () {
+    int _currentMode;
+}
+
+@end
+
 @implementation ModePickerController
 
-@synthesize modes = m_modes;
-@synthesize currentMode = m_currentMode;
+@synthesize modes;
 @synthesize delegate = m_delegate;
+
+- (NSArray *)modes {
+    if (!modes) {
+        modes = [NSArray arrayWithObjects:@"Front to Back In Order",
+                  @"Back To Front In Order",
+                  @"Front To Back Randomly",
+                  @"Back To Front Randomly",
+                  @"Back <-> Front Randomly", nil];
+    }
+    return modes;
+}
 
 #pragma mark -
 #pragma mark Initialization
@@ -57,12 +73,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = YES;
-    self.contentSizeForViewInPopover = CGSizeMake(280.0, 176.0);
-    self.modes = [NSMutableArray array];
-    [m_modes addObject:@"Front to Back In Order"];
-    [m_modes addObject:@"Back To Front In Order"];
-    [m_modes addObject:@"Front To Back Randomly"];
-	[m_modes addObject:@"Back To Front Randomly"];
+    self.contentSizeForViewInPopover = CGSizeMake(290.0, 220.0);
+    self.tableView.scrollEnabled = NO;
 }
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -101,7 +113,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-	return [m_modes count];
+	return [self.modes count];
 }
 
 // Customize the appearance of table view cells.
@@ -115,15 +127,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
     
     // Configure the cell...
-	NSString *mode = [m_modes objectAtIndex:indexPath.row];
-	cell.textLabel.text = mode;
-	
+	cell.textLabel.text = [self.modes objectAtIndex:indexPath.row];;
+	[cell setAccessoryType:UITableViewCellAccessoryNone];
 	int r = [m_delegate selectedMode] - 1;
 	if (r == indexPath.row) {
 		cell.accessoryType = UITableViewCellAccessoryCheckmark;
-		self.currentMode = [self.modes objectAtIndex:r];
-	} else {
-		cell.accessoryType = UITableViewCellAccessoryNone;
+        _currentMode = r;
 	}
     return cell;
 }
@@ -173,30 +182,15 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	if (m_delegate != nil) {
-		NSUInteger mode = indexPath.row;
-		[m_delegate modeSelected:mode];
-	}
-	
-	
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    NSInteger modeIndex = [self.modes indexOfObject:self.currentMode];
-    if (modeIndex == indexPath.row) {
+    if (_currentMode == indexPath.row) {
         return;
     }
-    NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:modeIndex inSection:0];
-	
-    UITableViewCell *newCell = [tableView cellForRowAtIndexPath:indexPath];
-    if (newCell.accessoryType == UITableViewCellAccessoryNone) {
-        newCell.accessoryType = UITableViewCellAccessoryCheckmark;
-        self.currentMode = [self.modes objectAtIndex:indexPath.row];
-    }
-	
-    UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:oldIndexPath];
-    if (oldCell.accessoryType == UITableViewCellAccessoryCheckmark) {
-        oldCell.accessoryType = UITableViewCellAccessoryNone;
-    }
-	
+    _currentMode = indexPath.row;
+    [self.tableView reloadData];
+    if (m_delegate != nil) {
+		[m_delegate modeSelected:_currentMode];
+	}
 }
 
 
@@ -214,7 +208,5 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 }
-
-
 
 @end
