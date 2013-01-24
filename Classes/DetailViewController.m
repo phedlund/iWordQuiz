@@ -36,6 +36,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "MCViewController.h"
 #import "QAViewController.h"
 #import "AboutViewController.h"
+#import "TransparentToolbar.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -49,6 +50,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @synthesize modePickerPopover = _modePickerPopover;
 @synthesize doc = _doc;
 @synthesize detailItem = _detailItem;
+@synthesize modeBarButtonItem, editBarButtonItem, infoBarButtonItem;
 
 - (void)documentContentsDidChange:(WQDocument *)document {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -97,7 +99,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             }
         }
     //}
-
+    [self updateToolbar];
 	if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
     }        
@@ -185,19 +187,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    UIBarButtonItem* barButtonAbout = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(doAbout:)];
-    UIBarButtonItem *barButtonEdit = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(doEdit:)];
-    UIBarButtonItem* barButtonMode = [[UIBarButtonItem alloc] initWithTitle:@"Mode" style:UIBarButtonItemStyleBordered target:self action:@selector(doMode:)]; 
-    NSArray *buttons = nil;
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) { 
-        buttons = @[barButtonAbout, barButtonEdit, barButtonMode];
-    }
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) { 
-        buttons = @[barButtonEdit, barButtonMode];
-    }    
-    self.navigationItem.rightBarButtonItems = buttons;
-    
+    [self updateToolbar];
     m_currentRow = 0;
 	[self activateTab:1];
 }
@@ -615,4 +605,71 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     aEditViewController.frontTextField.text = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:0];
     aEditViewController.backTextField.text = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:1];
 }
+
+#pragma mark - Toolbar buttons
+
+- (UIBarButtonItem *)modeBarButtonItem {
+    if (!modeBarButtonItem) {
+        modeBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mode"] style:UIBarButtonItemStylePlain target:self action:@selector(doMode:)];
+        modeBarButtonItem.imageInsets = UIEdgeInsetsMake(2.0f, 0.0f, -2.0f, 0.0f);
+    }
+    return modeBarButtonItem;
+}
+
+- (UIBarButtonItem *)editBarButtonItem {
+    if (!editBarButtonItem) {
+        editBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(doEdit:)];
+    }
+    return editBarButtonItem;
+}
+
+- (UIBarButtonItem *)infoBarButtonItem {
+    if (!infoBarButtonItem) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoDark];
+        [button addTarget:self action:@selector(doAbout:) forControlEvents:UIControlEventTouchUpInside];
+        infoBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    }
+    return infoBarButtonItem;
+}
+
+#pragma mark - Toolbar
+
+- (void)updateToolbar {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.editBarButtonItem.enabled = (_doc != nil);
+    }
+    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedSpace.width = 5.0f;
+
+    NSArray *itemsRight;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        itemsRight = [NSArray arrayWithObjects:
+                               fixedSpace,
+                               self.modeBarButtonItem,
+                               fixedSpace,
+                               self.editBarButtonItem,
+                               fixedSpace,
+                               self.infoBarButtonItem,
+                               fixedSpace,
+                               nil];
+        UIToolbar *toolbarRight = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 125.0f, 44.0f)];
+        toolbarRight.items = itemsRight;
+        toolbarRight.tintColor = self.navigationController.navigationBar.tintColor;
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolbarRight];
+    }
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        itemsRight = [NSArray arrayWithObjects:
+                               fixedSpace,
+                               self.modeBarButtonItem,
+                               fixedSpace,
+                               self.editBarButtonItem,
+                               //fixedSpace,
+                               nil];
+        TransparentToolbar *toolbarRight = [[TransparentToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 85.0f, 44.0f)];
+        toolbarRight.items = itemsRight;
+        toolbarRight.tintColor = self.navigationController.navigationBar.tintColor;
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolbarRight];
+    }
+}
+
 @end

@@ -103,6 +103,9 @@
 		D0CA3EC412CD0F6800F7BB72 /* document-icon-320.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */; };
 		D0CB156414EEF3D200FE7CC6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0CB156314EEF3D200FE7CC6 /* Security.framework */; };
 		D0CBB7F116A9FD0000FDAC8C /* WQQuizItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBB7F016A9FD0000FDAC8C /* WQQuizItem.m */; };
+		D0CBB7F416B088B100FDAC8C /* mode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CBB7F216B088B100FDAC8C /* mode@2x.png */; };
+		D0CBB7F516B088B100FDAC8C /* mode.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CBB7F316B088B100FDAC8C /* mode.png */; };
+		D0CBB7F816B099C300FDAC8C /* TransparentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBB7F716B099C300FDAC8C /* TransparentToolbar.m */; };
 		D0CC0BEE151D27A00084ACB0 /* WQDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0BED151D27A00084ACB0 /* WQDocument.m */; };
 		D0CC0BF1151E38DA0084ACB0 /* WQUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0BF0151E38D90084ACB0 /* WQUtils.m */; };
 		D0CC677815252F2B000D067C /* WQScoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC677715252F2B000D067C /* WQScoreButton.m */; };
@@ -281,6 +284,10 @@
 		D0CB156314EEF3D200FE7CC6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D0CBB7EF16A9FD0000FDAC8C /* WQQuizItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQQuizItem.h; sourceTree = "<group>"; };
 		D0CBB7F016A9FD0000FDAC8C /* WQQuizItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQQuizItem.m; sourceTree = "<group>"; };
+		D0CBB7F216B088B100FDAC8C /* mode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mode@2x.png"; path = "Resources/mode@2x.png"; sourceTree = "<group>"; };
+		D0CBB7F316B088B100FDAC8C /* mode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mode.png; path = Resources/mode.png; sourceTree = "<group>"; };
+		D0CBB7F616B099C300FDAC8C /* TransparentToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransparentToolbar.h; sourceTree = "<group>"; };
+		D0CBB7F716B099C300FDAC8C /* TransparentToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransparentToolbar.m; sourceTree = "<group>"; };
 		D0CC0BEC151D27A00084ACB0 /* WQDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQDocument.h; sourceTree = "<group>"; };
 		D0CC0BED151D27A00084ACB0 /* WQDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQDocument.m; sourceTree = "<group>"; };
 		D0CC0BEF151E38D90084ACB0 /* WQUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQUtils.h; sourceTree = "<group>"; };
@@ -422,6 +429,8 @@
 				D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */,
 				D0CE841A154737C10097D67A /* WQNewFileViewController.h */,
 				D0CE841B154737C10097D67A /* WQNewFileViewController.m */,
+				D0CBB7F616B099C300FDAC8C /* TransparentToolbar.h */,
+				D0CBB7F716B099C300FDAC8C /* TransparentToolbar.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -497,6 +506,8 @@
 				D04303A31516893B002374F3 /* qaTab@2x.png */,
 				D0C98FEA14F44AFD00412777 /* sync.png */,
 				D0C9B16615179ACA004AC04B /* sync@2x.png */,
+				D0CBB7F216B088B100FDAC8C /* mode@2x.png */,
+				D0CBB7F316B088B100FDAC8C /* mode.png */,
 				8D1107310486CEB800E47090 /* iWordQuiz-Info.plist */,
 			);
 			name = Resources;
@@ -915,6 +926,8 @@
 				D0FC079915E7F78200811921 /* popoverBg@2x.png in Resources */,
 				D0FC079A15E7F78200811921 /* popoverBgSimple.png in Resources */,
 				D0ED46AF161A0F7000BF31BD /* Default-568h@2x.png in Resources */,
+				D0CBB7F416B088B100FDAC8C /* mode@2x.png in Resources */,
+				D0CBB7F516B088B100FDAC8C /* mode.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -967,6 +980,7 @@
 				D0FC077815E7EAAF00811921 /* DDXMLNode.m in Sources */,
 				D0FC077B15E7ED7E00811921 /* Reachability.m in Sources */,
 				D0CBB7F116A9FD0000FDAC8C /* WQQuizItem.m in Sources */,
+				D0CBB7F816B099C300FDAC8C /* TransparentToolbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

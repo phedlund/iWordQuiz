@@ -51,6 +51,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (strong, nonatomic) WEPopoverController *modePickerPopover;
 @property (strong, nonatomic) WQDocument *doc;
 
+@property (nonatomic, strong, readonly) UIBarButtonItem *modeBarButtonItem;
+@property (nonatomic, strong, readonly) UIBarButtonItem *editBarButtonItem;
+@property (nonatomic, strong, readonly) UIBarButtonItem *infoBarButtonItem;
+
 - (void) activateTab:(int)index;
 
 - (void) quizDidFinish;
