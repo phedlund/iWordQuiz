@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -78,17 +78,34 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+}
 
+- (void) viewWillLayoutSubviews {
+    NSLog(@"Frame for layout: %@", NSStringFromCGRect([UIScreen mainScreen].applicationFrame));
+    [super viewWillLayoutSubviews];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        int width;
+        int height;
+        if (([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeLeft) ||
+            ([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeRight)) {
+            width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
+            height = CGRectGetWidth([UIScreen mainScreen].applicationFrame) - 44 - 49 + 20;
+        } else {
+            width = CGRectGetWidth([UIScreen mainScreen].applicationFrame);
+            height = CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 44 - 49 + 20;
+        }
+        NSLog(@"Width: %d, Height: %d", width, height);
+        self.spreadView.frame = CGRectMake(0, 0, width, height);
+        [spreadView reloadData];
+    }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+        if (([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeLeft) ||
+            ([UIApplication sharedApplication].statusBarOrientation == UIInterfaceOrientationLandscapeRight)) {
             self.containerView.frame = CGRectMake(20, 20, 665, 615);
             self.spreadView.frame = CGRectMake(0, 0, 665, 615);
-
-            
         } else {
             self.containerView.frame = CGRectMake(20, 20, 665, 864);
             self.spreadView.frame = CGRectMake(0, 0, 665, 864);
-
         }
         
         containerView.layer.borderWidth = 1.0;
@@ -114,27 +131,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 controlPoint2:CGPointMake(curlFactor, size.height + shadowDepth - curlFactor)];
         
         containerView.layer.shadowPath = path.CGPath;
-
-    }
-}
-
-- (void) viewWillLayoutSubviews {
-    NSLog(@"Frame: %@", NSStringFromCGRect([UIScreen mainScreen].applicationFrame));
-    [super viewWillLayoutSubviews];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        int width;
-        int height;
-        if (([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeLeft) ||
-            ([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeRight)) {
-            width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
-            height = CGRectGetWidth([UIScreen mainScreen].applicationFrame) - 44 - 49 + 20;
-        } else {
-            width = CGRectGetWidth([UIScreen mainScreen].applicationFrame);
-            height = CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 44 - 49 + 20;
-        }
-        NSLog(@"Width: %d, Height: %d", width, height);
-        self.spreadView.frame = CGRectMake(0, 0, width, height);
-        [spreadView reloadData];
     }
 }
 
