@@ -5,7 +5,7 @@
 
 /************************************************************************
  
- Copyright 2012 Peter Hedlund peter.hedlund@me.com
+ Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
@@ -31,8 +31,13 @@
  *************************************************************************/
 
 #import "WQEditViewController.h"
+#import "WQNewFileViewController.h"
 
-@interface WQEditViewController ()
+@interface WQEditViewController () {
+    NSString *_newFileName;
+}
+
+- (void) vocabSettings:(NSNotification *)n;
 
 @end
 
@@ -53,6 +58,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        _newFileName = nil;
     }
     return self;
 }
@@ -77,29 +83,66 @@
 
 
 - (IBAction) doNext {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason:)])
-        [self.delegate currentEntryDidChange:self reason:kNext];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
+        [self.delegate currentEntryDidChange:self reason:kNext value:nil];
 }
 
 - (IBAction) doPrevious {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason:)])
-        [self.delegate currentEntryDidChange:self reason:kPrevious];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
+        [self.delegate currentEntryDidChange:self reason:kPrevious value:nil];
 }
 
 - (IBAction) doAdd {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason:)])
-        [self.delegate currentEntryDidChange:self reason:kAdd];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
+        [self.delegate currentEntryDidChange:self reason:kAdd value:nil];
 }
 
 - (IBAction) doRemove {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason:)])
-        [self.delegate currentEntryDidChange:self reason:kRemove];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
+        [self.delegate currentEntryDidChange:self reason:kRemove value:nil];
 }
 
 - (IBAction) dismissView {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason:)])
-        [self.delegate currentEntryDidChange:self reason:kDone];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
+        [self.delegate currentEntryDidChange:self reason:kDone value:_newFileName];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"editVocabulary"]) {
+        WQNewFileViewController * nfController = (WQNewFileViewController*)[segue destinationViewController];
+        nfController.navigationItem.title = @"Edit Vocabulary";
+        nfController.navigationItem.rightBarButtonItem = nil;
+        nfController.isEditingVocabulary = YES;
+        [[NSNotificationCenter defaultCenter] addObserver:nfController selector:@selector(vocabInfo:) name:@"VocabInfo" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(vocabSettings:) name:UITextFieldTextDidChangeNotification object:nil];
+    
+        if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
+            [self.delegate currentEntryDidChange:self reason:kGetVocabInfo value:nil];
+
+    }
+}
+
+- (void) vocabSettings:(NSNotification *)n {
+    UITextField *tf = (UITextField*)n.object;
+    if (tf) {
+        switch (tf.tag) {
+        case 201:
+                _newFileName = tf.text;
+            break;
+        case 202:
+                if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
+                    [self.delegate currentEntryDidChange:self reason:kSetVocabFrontIdentifier value:tf.text];
+                break;
+        case 203:
+                if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
+                    [self.delegate currentEntryDidChange:self reason:kSetVocabBackIdentifier value:tf.text];
+                break;
+        default:
+            break;
+        }
+    }
+
 }
 
 @end

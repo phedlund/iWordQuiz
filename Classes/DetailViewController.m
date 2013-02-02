@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -538,7 +538,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma mark WQEditViewControllerDelegate
 
-- (void)currentEntryDidChange:(WQEditViewController*)aEditViewController reason:(EditReason)aReason {
+- (void)currentEntryDidChange:(WQEditViewController*)aEditViewController reason:(EditReason)aReason value:(NSString *)aValue {
     NSString *newFront = aEditViewController.frontTextField.text;
     NSString *newBack = aEditViewController.backTextField.text;
     NSString *oldFront = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:0];
@@ -581,8 +581,41 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
         }
             break;
+        case kGetVocabInfo: {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"VocabInfo" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:_doc.frontIdentifier, @"FrontIdentifier", _doc.backIdentifier, @"BackIdentifier", _doc.fileURL, @"URL", nil]];
+        }
+            break;
+        case kSetVocabFrontIdentifier: {
+            _doc.frontIdentifier = aValue;
+            [_doc updateChangeCount:UIDocumentChangeDone];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
+        }
+            break;
+        case kSetVocabBackIdentifier: {
+            _doc.backIdentifier = aValue;
+            [_doc updateChangeCount:UIDocumentChangeDone];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
+        }
+            break;
         case kDone: {
-            [_doc saveToURL:_doc.fileURL forSaveOperation:UIDocumentSaveForOverwriting 
+            if ((aValue != nil) && (aValue.length > 0)) {
+                NSString *oldFilename = [_doc.fileURL lastPathComponent];
+                NSString* fileNameWithExtension = [NSString stringWithFormat:@"%@.kvtml", aValue];
+                if (![oldFilename isEqualToString:fileNameWithExtension]) {
+                    NSURL* parentDirectory = [_doc.fileURL URLByDeletingLastPathComponent];
+                    NSURL* newURL = [parentDirectory URLByAppendingPathComponent:fileNameWithExtension];
+                    NSFileManager *fm = [NSFileManager defaultManager];
+                    if (![fm fileExistsAtPath:[newURL path]]) {
+                        [fm moveItemAtURL:_doc.fileURL toURL:newURL error:nil];
+                        [_doc presentedItemDidMoveToURL:newURL];
+                        [_doc updateChangeCount:UIDocumentChangeDone];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"FileURL" object:self userInfo:[NSDictionary dictionaryWithObjectsAndKeys:newURL, @"URL", nil]];
+                    } 
+                }
+            } 
+            
+            [_doc saveToURL:_doc.fileURL forSaveOperation:UIDocumentSaveForOverwriting
                                         completionHandler:^(BOOL success) {
                                                                 if (success) {
                                                                     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {

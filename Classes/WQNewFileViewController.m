@@ -5,7 +5,7 @@
 
 /************************************************************************
  
- Copyright 2012 Peter Hedlund peter.hedlund@me.com
+ Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
@@ -32,8 +32,13 @@
 
 #import "WQNewFileViewController.h"
 
-@interface WQNewFileViewController ()
+@interface WQNewFileViewController () {
+    NSString *_frontIdentifier;
+    NSString *_backIdentifier;
+    NSString *_fileName;
+}
 
+- (void) vocabInfo:(NSNotification *)n;
 @end
 
 @implementation WQNewFileViewController
@@ -41,12 +46,17 @@
 @synthesize frontTextField;
 @synthesize backTextField;
 @synthesize delegate = _delegate;
+@synthesize isEditingVocabulary;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        self.isEditingVocabulary = NO;
+        _frontIdentifier = nil;
+        _backIdentifier = nil;
+        _fileName = nil;
     }
     return self;
 }
@@ -60,6 +70,9 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.frontTextField.text = _frontIdentifier;
+    self.backTextField.text = _backIdentifier;
+    self.fileNameTextField.text = _fileName;
 }
 
 - (void)viewDidUnload
@@ -85,14 +98,29 @@
     // Return the number of sections.
     return 0;
 }
-
+*/
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    NSInteger result = 0;
+    switch (section) {
+        case 0:
+            result = 1;
+            break;
+        case 1:
+            result = 2;
+            break;
+        case 2:
+            if (!self.isEditingVocabulary) {
+                result = 1;
+            }
+            break;
+        default:
+            break;
+    }
+    return result;
 }
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -176,6 +204,13 @@
     if (success) {
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+- (void) vocabInfo:(NSNotification *)n {
+    NSDictionary *dict = n.userInfo;
+    _frontIdentifier = [dict valueForKey:@"FrontIdentifier"];
+    _backIdentifier = (NSString*)[dict valueForKey:@"BackIdentifier"];
+    _fileName = [[(NSURL*)[dict valueForKey:@"URL"] lastPathComponent] stringByDeletingPathExtension];
 }
 
 @end

@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -69,6 +69,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
         self.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
     }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newFileURL:) name:@"FileURL" object:nil];
     NSError *err;
      
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
@@ -332,13 +333,20 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     [self enumerateVocabularies];
 }
 
-#pragma mark - Linked notification
+#pragma mark - Notifications
 
 - (void)linked:(NSNotification*)n {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
     }
 }
+
+- (void)newFileURL:(NSNotification*)n {
+    NSURL *newURL = (NSURL*)[n.userInfo valueForKey:@"URL"];
+    [self.vocabularies replaceObjectAtIndex:m_currentRow withObject:newURL];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:m_currentRow inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
 
 - (IBAction) doActions:(id)sender {
     UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil

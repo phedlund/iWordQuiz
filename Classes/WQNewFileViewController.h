@@ -5,7 +5,7 @@
 
 /************************************************************************
  
- Copyright 2012 Peter Hedlund peter.hedlund@me.com
+ Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
@@ -40,6 +40,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *frontTextField;
 @property (strong, nonatomic) IBOutlet UITextField *backTextField;
 @property (strong, nonatomic) id<WQNewFileViewControllerDelegate> delegate;
+@property (nonatomic, assign) BOOL isEditingVocabulary;
 
 - (IBAction)doDismissView:(id)sender;
 - (IBAction)doCreateNew:(id)sender;
