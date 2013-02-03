@@ -37,6 +37,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "QAViewController.h"
 #import "AboutViewController.h"
 #import "TransparentToolbar.h"
+#import "WQUtils.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -598,7 +599,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         }
             break;
         case kDone: {
-            if ((aValue != nil) && (aValue.length > 0)) {
+            if (![WQUtils isEmpty:aValue]) {
                 NSString *oldFilename = [_doc.fileURL lastPathComponent];
                 NSString* fileNameWithExtension = [NSString stringWithFormat:@"%@.kvtml", aValue];
                 if (![oldFilename isEqualToString:fileNameWithExtension]) {
