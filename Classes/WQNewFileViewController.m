@@ -64,7 +64,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background.png"]];
+    [tempImageView setFrame:self.tableView.frame];
+    
+    self.tableView.backgroundView = tempImageView;
+    //[tempImageView release];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -169,6 +173,43 @@
     return YES;
 }
 */
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	// create the parent view that will hold header Label
+	UIView* customView = [[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 300.0, 44.0)];
+	
+	// create the button object
+	UILabel * headerLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+	headerLabel.backgroundColor = [UIColor clearColor];
+	headerLabel.opaque = NO;
+	headerLabel.textColor = [UIColor blackColor];
+	headerLabel.highlightedTextColor = [UIColor whiteColor];
+	headerLabel.font = [UIFont systemFontOfSize:17];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        headerLabel.frame = CGRectMake(20.0, 0.0, 300.0, 44.0);
+    } else {
+        headerLabel.frame = CGRectMake(40.0, 0.0, 300.0, 44.0);
+    }
+
+    headerLabel.text = @"";
+    if (section == 0) {
+        headerLabel.text = @"File";
+    }
+    if (section == 1) {
+        headerLabel.text = @"Column Titles";
+    }
+	[customView addSubview:headerLabel];
+    
+	return customView;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	if (section < 2) {
+        return 44.0f;
+    }
+    return 0.0f;
+}
 
 #pragma mark - Table view delegate
 
