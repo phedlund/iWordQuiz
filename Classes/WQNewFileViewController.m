@@ -191,7 +191,7 @@
 
 
 - (IBAction)doDismissView:(id)sender {
-    [self dismissModalViewControllerAnimated:true];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)doCreateNew:(id)sender {

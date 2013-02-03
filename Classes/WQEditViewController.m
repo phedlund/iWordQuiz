@@ -130,13 +130,23 @@
         case 201:
                 _newFileName = tf.text;
             break;
-        case 202:
-                if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
-                    [self.delegate currentEntryDidChange:self reason:kSetVocabFrontIdentifier value:tf.text];
+            case 202: {
+                if (tf.text.length > 0) {
+                    self.frontIdentifierLabel.text = tf.text;
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)]) {
+                        [self.delegate currentEntryDidChange:self reason:kSetVocabFrontIdentifier value:tf.text];
+                    }
+                }
+            }
                 break;
-        case 203:
-                if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
-                    [self.delegate currentEntryDidChange:self reason:kSetVocabBackIdentifier value:tf.text];
+            case 203: {
+                if (tf.text.length > 0) {
+                    self.backIdentifierLabel.text = tf.text;
+                    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)]) {
+                        [self.delegate currentEntryDidChange:self reason:kSetVocabBackIdentifier value:tf.text];
+                    }
+                }
+            }
                 break;
         default:
             break;

@@ -615,18 +615,18 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 }
             } 
             
-            [_doc saveToURL:_doc.fileURL forSaveOperation:UIDocumentSaveForOverwriting
-                                        completionHandler:^(BOOL success) {
-                                                                if (success) {
-                                                                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-                                                                        [self setDetailItem:_doc.fileURL];
-                                                                    }
-                                                                    
-                                                                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-                                                                        [self configureView];
-                                                                    }
-                                                                }
-                                        }];
+            [_doc saveToURL:_doc.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
+                NSLog(@"Degree of success: %i", success);
+                if (success) {
+                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                        [self setDetailItem:_doc.fileURL];
+                    }
+                    
+                    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+                        [self configureView];
+                    }
+                }
+            }];
         }
             break;
         default:
