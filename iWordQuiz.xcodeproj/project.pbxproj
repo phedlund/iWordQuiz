@@ -127,6 +127,7 @@
 		D0D0EC5014DB719100BE3A81 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */; };
 		D0D11E0E1541CCE800B8ECBD /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
 		D0D2B89414DD963B0049C33E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D2B89314DD963B0049C33E /* AboutViewController.m */; };
+		D0E8A2331852787D005F8CAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8A2321852787D005F8CAF /* Images.xcassets */; };
 		D0ED46AF161A0F7000BF31BD /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0ED46AE161A0F7000BF31BD /* Default-568h@2x.png */; };
 		D0ED46B1161A6A6300BF31BD /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */; };
 		D0FC074615E6DAAA00811921 /* MKNumberBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074515E6DAAA00811921 /* MKNumberBadgeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -317,6 +318,7 @@
 		D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQEditViewController.m; sourceTree = "<group>"; };
 		D0D2B89214DD963B0049C33E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		D0D2B89314DD963B0049C33E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		D0E8A2321852787D005F8CAF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iWordQuiz/Images.xcassets; sourceTree = "<group>"; };
 		D0ED46AE161A0F7000BF31BD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Resources/Default-568h@2x.png"; sourceTree = "<group>"; };
 		D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		D0FC074415E6DAAA00811921 /* MKNumberBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKNumberBadgeView.h; path = Classes/iPhoneMK/Views/MKNumberBadgeView/MKNumberBadgeView.h; sourceTree = SOURCE_ROOT; };
@@ -470,6 +472,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D0E8A2321852787D005F8CAF /* Images.xcassets */,
 				D0CED4B415362F43005ADD4C /* en.lproj */,
 				D0CEE19F152F981F000F8C2E /* Flashcard */,
 				D0CEE186152F7FC9000F8C2E /* Popover */,
@@ -830,6 +833,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01DC8FE121F4252006671A1 /* Icon-72.png in Resources */,
+				D0E8A2331852787D005F8CAF /* Images.xcassets in Resources */,
 				D074FB1C12249EBC00E8C175 /* flashTab.png in Resources */,
 				D074FB1E12249EBC00E8C175 /* homeTab.png in Resources */,
 				D074FB2012249EBC00E8C175 /* multipleTab.png in Resources */,
@@ -1018,6 +1022,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1041,7 +1047,7 @@
 				INFOPLIST_OUTPUT_FORMAT = binary;
 				INFOPLIST_PREFIX_HEADER = DBDefines.h;
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = WordQuiz;
 				PROVISIONING_PROFILE = "";
@@ -1056,6 +1062,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Peter Hedlund";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Hedlund";
@@ -1077,7 +1085,7 @@
 				INFOPLIST_OUTPUT_FORMAT = binary;
 				INFOPLIST_PREFIX_HEADER = DBDefines.h;
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = WordQuiz;
 				PROVISIONING_PROFILE = "8D239F6C-DE4B-45FE-B047-20B79B305662";
@@ -1105,7 +1113,7 @@
 					"$(SRCROOT)/Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/",
 					"$(SRCROOT)/DropboxSDK.framework/Headers",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-lxml2";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1132,7 +1140,7 @@
 					"$(SRCROOT)/Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/",
 					"$(SRCROOT)/DropboxSDK.framework/Headers",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-lxml2";
 				PROVISIONING_PROFILE = "8D239F6C-DE4B-45FE-B047-20B79B305662";
