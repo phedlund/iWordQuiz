@@ -34,7 +34,7 @@
 @class DetailViewController;
 @class CHDropboxSync;
 
-@interface RootViewController : UITableViewController <UITabBarControllerDelegate, UIActionSheetDelegate, WQNewFileViewControllerDelegate>
+@interface RootViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate, UIActionSheetDelegate, WQNewFileViewControllerDelegate>
 {
     int m_currentRow;
 }
@@ -45,6 +45,8 @@
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSMutableArray *vocabularies;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *syncButton;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property(strong) CHDropboxSync* syncer;
 

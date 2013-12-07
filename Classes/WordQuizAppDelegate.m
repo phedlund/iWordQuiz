@@ -64,9 +64,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [self.dynamicsDrawerViewController setRevealWidth:320.0f forDirection:MSDynamicsDrawerDirectionLeft];
     [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerParallaxStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
 
-    UINavigationController *menuNavController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Drawer"];
-    [self.dynamicsDrawerViewController setDrawerViewController:menuNavController forDirection:MSDynamicsDrawerDirectionLeft];
-    RootViewController *rootViewController = (RootViewController*)menuNavController.topViewController;
+    RootViewController *rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Drawer"];
+    [self.dynamicsDrawerViewController setDrawerViewController:rootViewController forDirection:MSDynamicsDrawerDirectionLeft];
     
     UINavigationController *detailNavController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Pane"];
     [self.dynamicsDrawerViewController setPaneViewController:detailNavController];

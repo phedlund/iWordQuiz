@@ -55,7 +55,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 {
     m_currentRow = 0;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.clearsSelectionOnViewWillAppear = NO;
+        //self.clearsSelectionOnViewWillAppear = NO;
         self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
     }
     [super awakeFromNib];
@@ -67,12 +67,10 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     //self.detailViewController = (DetailViewController *)self.dynamicsDrawerViewController;
     self.detailViewController.delegate = self;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
+        self.tableView.delegate = self;
+        self.tableView.dataSource = self;
+        self.syncButton.enabled = [[DBSession sharedSession] isLinked];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
-        [self.navigationController.view setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight];
-        CGRect frame = self.navigationController.view.frame;
-        frame.size.width = 320;
-        self.navigationController.view.frame = frame;
     }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newFileURL:) name:@"FileURL" object:nil];
     NSError *err;
@@ -342,7 +340,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 
 - (void)linked:(NSNotification*)n {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
+        self.syncButton.enabled = [[DBSession sharedSession] isLinked];
     }
 }
 
