@@ -35,11 +35,16 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WordQuizAppDelegate.h"
 #import "RootViewController.h"
 #import "DetailViewController.h"
+#import "MSDynamicsDrawerStyler.h"
 #import "DBDefines.h"
 
-@implementation iWordQuizAppDelegate
+@interface iWordQuizAppDelegate ()
 
-@synthesize window = _window;
+@property (nonatomic, strong) UIImageView *windowBackground;
+
+@end
+
+@implementation iWordQuizAppDelegate
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -53,13 +58,24 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	DBSession* session = [[DBSession alloc] initWithAppKey:appKey appSecret:appSecret root:root];
 	session.delegate = self;
 	[DBSession setSharedSession:session];
+
+    self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
+    self.dynamicsDrawerViewController.shouldAlignStatusBarToPaneView = NO;
+    [self.dynamicsDrawerViewController setRevealWidth:320.0f forDirection:MSDynamicsDrawerDirectionLeft];
+    [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerParallaxStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
+
+    UINavigationController *menuNavController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Drawer"];
+    [self.dynamicsDrawerViewController setDrawerViewController:menuNavController forDirection:MSDynamicsDrawerDirectionLeft];
+    RootViewController *rootViewController = (RootViewController*)menuNavController.topViewController;
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-        UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-        splitViewController.delegate = (id)navigationController.topViewController;
-    }
-    
+    UINavigationController *detailNavController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Pane"];
+    [self.dynamicsDrawerViewController setPaneViewController:detailNavController];
+    DetailViewController *detailViewController = (DetailViewController*)detailNavController.topViewController;
+    rootViewController.detailViewController = detailViewController;
+
+    [self.window addSubview:self.windowBackground];
+    [self.window sendSubviewToBack:self.windowBackground];
+
     return YES;
 }
 
@@ -150,6 +166,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		[[DBSession sharedSession] linkUserId:relinkUserId fromController:self.window.rootViewController];
 	}
 	relinkUserId = nil;
+}
+
+- (UIImageView *)windowBackground {
+    if (!_windowBackground) {
+        _windowBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
+    }
+    return _windowBackground;
 }
 
 @end

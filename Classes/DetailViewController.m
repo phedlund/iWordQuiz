@@ -98,9 +98,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             } else {
                 [self configureView];
             }
+            self.editBarButtonItem.enabled = (_doc != nil);
         }
     //}
-    [self updateToolbar];
 	if (self.masterPopoverController != nil) {
         [self.masterPopoverController dismissPopoverAnimated:YES];
     }        
@@ -188,7 +188,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self updateToolbar];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.editBarButtonItem.enabled = (_doc != nil);
+        self.navigationItem.rightBarButtonItems = @[self.infoBarButtonItem, self.editBarButtonItem, self.modeBarButtonItem];
+    }
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        self.navigationItem.rightBarButtonItems = @[self.editBarButtonItem, self.modeBarButtonItem];
+    }
+
     m_currentRow = 0;
 	[self activateTab:1];
 }
@@ -664,46 +671,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         infoBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
     return infoBarButtonItem;
-}
-
-#pragma mark - Toolbar
-
-- (void)updateToolbar {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.editBarButtonItem.enabled = (_doc != nil);
-    }
-    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    fixedSpace.width = 5.0f;
-
-    NSArray *itemsRight;
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        itemsRight = [NSArray arrayWithObjects:
-                               fixedSpace,
-                               self.modeBarButtonItem,
-                               fixedSpace,
-                               self.editBarButtonItem,
-                               fixedSpace,
-                               self.infoBarButtonItem,
-                               fixedSpace,
-                               nil];
-        UIToolbar *toolbarRight = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 125.0f, 44.0f)];
-        toolbarRight.items = itemsRight;
-        toolbarRight.tintColor = self.navigationController.navigationBar.tintColor;
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolbarRight];
-    }
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        itemsRight = [NSArray arrayWithObjects:
-                               fixedSpace,
-                               self.modeBarButtonItem,
-                               fixedSpace,
-                               self.editBarButtonItem,
-                               //fixedSpace,
-                               nil];
-        TransparentToolbar *toolbarRight = [[TransparentToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 85.0f, 44.0f)];
-        toolbarRight.items = itemsRight;
-        toolbarRight.tintColor = self.navigationController.navigationBar.tintColor;
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:toolbarRight];
-    }
 }
 
 @end

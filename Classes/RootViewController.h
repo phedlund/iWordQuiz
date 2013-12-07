@@ -29,6 +29,7 @@
 #import <UIKit/UIKit.h>
 #import "AboutViewController.h"
 #import "WQNewFileViewController.h"
+#import "MSDynamicsDrawerViewController.h"
 
 @class DetailViewController;
 @class CHDropboxSync;
@@ -40,6 +41,7 @@
 
 - (void) enumerateVocabularies;
 
+@property (strong, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSMutableArray *vocabularies;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;

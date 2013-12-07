@@ -35,6 +35,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import <DropboxSDK/DropboxSDK.h>
 
 #import "AboutViewController.h"
+#import "MSDynamicsDrawerViewController.h"
 
 @class RootViewController;
 @class DetailViewController;
@@ -45,5 +46,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @end

@@ -42,6 +42,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 
 @implementation RootViewController
 
+@synthesize dynamicsDrawerViewController;
 @synthesize detailViewController = _detailViewController;
 @synthesize vocabularies = _vocabularies;
 @synthesize addButton;
@@ -63,11 +64,15 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    //self.detailViewController = (DetailViewController *)self.dynamicsDrawerViewController;
     self.detailViewController.delegate = self;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.navigationItem.rightBarButtonItem.enabled = [[DBSession sharedSession] isLinked];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
+        [self.navigationController.view setAutoresizingMask:UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight];
+        CGRect frame = self.navigationController.view.frame;
+        frame.size.width = 320;
+        self.navigationController.view.frame = frame;
     }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newFileURL:) name:@"FileURL" object:nil];
     NSError *err;

@@ -22,3 +22,6 @@
 [submodule "Classes/Reachability"]
 	path = Classes/Reachability
 	url = git://github.com/tonymillion/Reachability.git
+[submodule "MSDynamicsDrawerViewController"]
+	path = MSDynamicsDrawerViewController
+	url = https://github.com/monospacecollective/MSDynamicsDrawerViewController.git
