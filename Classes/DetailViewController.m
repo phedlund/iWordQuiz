@@ -38,6 +38,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "AboutViewController.h"
 #import "TransparentToolbar.h"
 #import "WQUtils.h"
+#import "UIColor+PHColor.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -195,7 +196,36 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         self.navigationItem.rightBarButtonItems = @[self.editBarButtonItem, self.modeBarButtonItem];
     }
+    self.navigationController.navigationBar.tintColor = [UIColor iconColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor backgroundColor];
 
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor clearColor];
+    shadow.shadowBlurRadius = 0.0;
+    shadow.shadowOffset = CGSizeMake(0.0, 0.0);
+
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor iconColor], NSForegroundColorAttributeName,
+      shadow, NSShadowAttributeName, nil]];
+
+    self.tabBar.tintColor = [UIColor iconColor];
+    self.tabBar.barTintColor = [UIColor backgroundColor];
+
+    //remove bottom line/shadow
+    for (UIView *view in self.navigationController.navigationBar.subviews) {
+        for (UIView *view2 in view.subviews) {
+            if ([view2 isKindOfClass:[UIImageView class]]) {
+                if (![view2.superview isKindOfClass:[UIButton class]]) {
+                    [view2 removeFromSuperview];
+                }
+                
+            }
+        }
+    }
+
+    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
+    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
     m_currentRow = 0;
 	[self activateTab:1];
 }
@@ -215,13 +245,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 }
-*/
+
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
 }
-
+*/
 /*
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
@@ -295,6 +325,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	}
 	
 	return myMode;
+}
+
+- (IBAction)doMenu:(id)sender {
+    [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateOpen inDirection:MSDynamicsDrawerDirectionLeft animated:YES allowUserInterruption:YES completion:nil];
 }
 
 - (IBAction) doMode:(id)sender {

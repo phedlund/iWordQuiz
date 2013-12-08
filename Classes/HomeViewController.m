@@ -32,6 +32,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "HomeViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIColor+PHColor.h"
 
 @implementation HomeViewController
 
@@ -53,7 +54,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+        self.view.backgroundColor = [UIColor backgroundColor];
     }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(edited:) name:@"Edited" object:nil];
     spreadView.dataSource = (id)self.tabBarController;

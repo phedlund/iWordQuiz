@@ -38,6 +38,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "MDSpreadViewClasses.h"
 #import "WEPopoverController.h"
 #import "WQEditViewController.h"
+#import "MSDynamicsDrawerViewController.h"
 
 @interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, ModePickerDelegate,MDSpreadViewDataSource, MDSpreadViewDelegate, WQDocumentDelegate, WQEditViewControllerDelegate> {
 
@@ -50,7 +51,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (strong, nonatomic) ModePickerController *modePicker;
 @property (strong, nonatomic) WEPopoverController *modePickerPopover;
 @property (strong, nonatomic) WQDocument *doc;
+@property (weak, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @property (nonatomic, strong, readonly) UIBarButtonItem *modeBarButtonItem;
 @property (nonatomic, strong, readonly) UIBarButtonItem *editBarButtonItem;
 @property (nonatomic, strong, readonly) UIBarButtonItem *infoBarButtonItem;
@@ -60,6 +63,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) quizDidFinish;
 - (BOOL) hasEnoughEntries:(int)index;
 
+- (IBAction)doMenu:(id)sender;
 - (IBAction) doMode:(id)sender;
 - (IBAction) doAbout:(id)sender;
 - (IBAction) doEdit:(id)sender;

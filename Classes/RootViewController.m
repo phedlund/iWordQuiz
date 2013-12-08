@@ -42,7 +42,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 
 @implementation RootViewController
 
-@synthesize dynamicsDrawerViewController;
 @synthesize detailViewController = _detailViewController;
 @synthesize vocabularies = _vocabularies;
 @synthesize addButton;
@@ -224,6 +223,9 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self.detailViewController setDetailItem:[self.vocabularies objectAtIndex: m_currentRow]];
+        [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateClosed inDirection:MSDynamicsDrawerDirectionLeft animated:YES allowUserInterruption:YES completion:^{
+            //
+        }];
     }
 }
 

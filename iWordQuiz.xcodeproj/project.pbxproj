@@ -119,6 +119,7 @@
 		D0E8A2331852787D005F8CAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8A2321852787D005F8CAF /* Images.xcassets */; };
 		D0E8A23A18528A61005F8CAF /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23618528A61005F8CAF /* MSDynamicsDrawerStyler.m */; };
 		D0E8A23B18528A61005F8CAF /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */; };
+		D0E8A2401853EB4F005F8CAF /* UIColor+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */; };
 		D0ED46B1161A6A6300BF31BD /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */; };
 		D0FC074615E6DAAA00811921 /* MKNumberBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074515E6DAAA00811921 /* MKNumberBadgeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0FC075215E7059800811921 /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074F15E7059800811921 /* CHDropboxSync.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -302,6 +303,8 @@
 		D0E8A23618528A61005F8CAF /* MSDynamicsDrawerStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDynamicsDrawerStyler.m; sourceTree = "<group>"; };
 		D0E8A23818528A61005F8CAF /* MSDynamicsDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDynamicsDrawerViewController.h; sourceTree = "<group>"; };
 		D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDynamicsDrawerViewController.m; sourceTree = "<group>"; };
+		D0E8A23E1853EB4F005F8CAF /* UIColor+PHColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PHColor.h"; path = "../iWordQuiz/UIColor+PHColor.h"; sourceTree = "<group>"; };
+		D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PHColor.m"; path = "../iWordQuiz/UIColor+PHColor.m"; sourceTree = "<group>"; };
 		D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		D0FC074415E6DAAA00811921 /* MKNumberBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKNumberBadgeView.h; path = Classes/iPhoneMK/Views/MKNumberBadgeView/MKNumberBadgeView.h; sourceTree = SOURCE_ROOT; };
 		D0FC074515E6DAAA00811921 /* MKNumberBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKNumberBadgeView.m; path = Classes/iPhoneMK/Views/MKNumberBadgeView/MKNumberBadgeView.m; sourceTree = SOURCE_ROOT; };
@@ -415,6 +418,8 @@
 				D0CE841B154737C10097D67A /* WQNewFileViewController.m */,
 				D0CBB7F616B099C300FDAC8C /* TransparentToolbar.h */,
 				D0CBB7F716B099C300FDAC8C /* TransparentToolbar.m */,
+				D0E8A23E1853EB4F005F8CAF /* UIColor+PHColor.h */,
+				D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -924,6 +929,7 @@
 				D04CF951122F371300B446E8 /* WQQuiz.m in Sources */,
 				D0130A3E125AB58C0085482E /* ModePickerController.m in Sources */,
 				D0D2B89414DD963B0049C33E /* AboutViewController.m in Sources */,
+				D0E8A2401853EB4F005F8CAF /* UIColor+PHColor.m in Sources */,
 				D0549F91151BC37900BDE78C /* MDSpreadView.m in Sources */,
 				D0549F93151BC37900BDE78C /* MDSpreadViewCell.m in Sources */,
 				D0549F94151BC37900BDE78C /* MDSpreadViewCellBackground.m in Sources */,

@@ -254,12 +254,19 @@
                 <tabBarController id="d2J-Zu-9To" customClass="DetailViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="VbN-Ct-a05"/>
+                    <navigationItem key="navigationItem" id="VbN-Ct-a05">
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="Ooi-WO-Sbc">
+                            <connections>
+                                <action selector="doMenu:" destination="d2J-Zu-9To" id="gzm-bO-1gi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="oJP-OI-iw4">
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
                     <connections>
+                        <outlet property="menuButton" destination="Ooi-WO-Sbc" id="bfm-c2-xmS"/>
                         <segue destination="ThK-OU-gjs" kind="relationship" relationship="viewControllers" id="WaS-q1-IPq"/>
                         <segue destination="EVf-I6-MsD" kind="relationship" relationship="viewControllers" id="1cu-CA-ibN"/>
                         <segue destination="mKi-xZ-BpX" kind="relationship" relationship="viewControllers" id="3mJ-3O-64B"/>
@@ -1191,6 +1198,7 @@
         <image name="homeTab.png" width="27" height="27"/>
         <image name="icon_about.png" width="72" height="72"/>
         <image name="knowButton_225.png" width="225" height="100"/>
+        <image name="menu" width="28" height="44"/>
         <image name="multipleTab.png" width="30" height="30"/>
         <image name="qaTab.png" width="30" height="30"/>
         <image name="sync.png" width="23" height="20"/>

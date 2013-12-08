@@ -41,7 +41,7 @@
 
 - (void) enumerateVocabularies;
 
-@property (strong, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
+@property (weak, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSMutableArray *vocabularies;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;

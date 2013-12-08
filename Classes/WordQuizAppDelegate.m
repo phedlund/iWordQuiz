@@ -37,10 +37,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "DetailViewController.h"
 #import "MSDynamicsDrawerStyler.h"
 #import "DBDefines.h"
+#import "UIColor+PHColor.h"
 
 @interface iWordQuizAppDelegate ()
-
-@property (nonatomic, strong) UIImageView *windowBackground;
 
 @end
 
@@ -65,15 +64,16 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerParallaxStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
 
     RootViewController *rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Drawer"];
+    rootViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
     [self.dynamicsDrawerViewController setDrawerViewController:rootViewController forDirection:MSDynamicsDrawerDirectionLeft];
     
     UINavigationController *detailNavController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Pane"];
     [self.dynamicsDrawerViewController setPaneViewController:detailNavController];
     DetailViewController *detailViewController = (DetailViewController*)detailNavController.topViewController;
+    detailViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
     rootViewController.detailViewController = detailViewController;
 
-    [self.window addSubview:self.windowBackground];
-    [self.window sendSubviewToBack:self.windowBackground];
+    [self.window setBackgroundColor:[UIColor backgroundColor]];
 
     return YES;
 }
@@ -165,13 +165,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		[[DBSession sharedSession] linkUserId:relinkUserId fromController:self.window.rootViewController];
 	}
 	relinkUserId = nil;
-}
-
-- (UIImageView *)windowBackground {
-    if (!_windowBackground) {
-        _windowBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
-    }
-    return _windowBackground;
 }
 
 @end
