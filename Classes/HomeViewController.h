@@ -36,7 +36,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "MDSpreadViewClasses.h"
 
 @interface HomeViewController : UIViewController {
-    UIView *containerView;
     MDSpreadView *spreadView;
 }
 - (void) start;
