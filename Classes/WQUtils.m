@@ -32,6 +32,7 @@
 
 #import "WQUtils.h"
 #import <QuartzCore/QuartzCore.h>
+#include "UIColor+PHColor.h"
 
 @implementation WQUtils
 
@@ -50,16 +51,16 @@
 
 + (void) renderCardShadow:(UIView*)aView {
     // Rounded corners.
-    aView.layer.cornerRadius = 15;
+    //aView.layer.cornerRadius = 15;
     
     // A thin border.
-    aView.layer.borderColor = [UIColor grayColor].CGColor;
+    aView.layer.borderColor = [UIColor popoverBorderColor].CGColor;
     aView.layer.borderWidth = 0.3;
     
     // Drop shadow.
-    aView.layer.shadowColor = [UIColor blackColor].CGColor;
-    aView.layer.shadowOpacity = 0.5;
-    aView.layer.shadowRadius = 6.0;
+    aView.layer.shadowColor = [UIColor popoverBorderColor].CGColor;
+    aView.layer.shadowOpacity = 0.9;
+    aView.layer.shadowRadius = 1.0;
     aView.layer.shadowOffset = CGSizeMake(0, 0);
 	aView.layer.masksToBounds = NO;
     aView.layer.shadowPath = [UIBezierPath bezierPathWithRect:aView.bounds].CGPath;

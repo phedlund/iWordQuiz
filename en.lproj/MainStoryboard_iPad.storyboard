@@ -301,161 +301,298 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WjB-eK-h8g">
-                                <rect key="frame" x="141" y="488" width="505" height="310"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mof-Uf-GaP">
+                                <rect key="frame" x="55" y="150" width="659" height="655"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHt-cL-Zeu" userLabel="KnowButton">
-                                        <rect key="frame" x="19" y="110" width="225" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                        <state key="normal" image="knowButton_225.png">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="doKnowButton" destination="EVf-I6-MsD" eventType="touchUpInside" id="G6m-By-Ifo"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94t-1q-sDZ" userLabel="DoNotKnowButton">
-                                        <rect key="frame" x="266" y="110" width="225" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                        <state key="normal" image="dontknowButton_225.png">
-                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="doDontKnowButton" destination="EVf-I6-MsD" eventType="touchUpInside" id="7hP-5k-KM0"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZ5-Tp-efA" customClass="WQScoreButton">
-                                <rect key="frame" x="105" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doRestart" destination="EVf-I6-MsD" eventType="touchUpInside" id="kYd-Ym-S8n"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IE0-as-WL7" customClass="WQScoreButton">
-                                <rect key="frame" x="237" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.52156865600000002" green="0.44709280239999999" blue="0.028491707379999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfK-hY-Q2r" customClass="WQScoreButton">
-                                <rect key="frame" x="369" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEU-Om-fsx" customClass="WQScoreButton">
-                                <rect key="frame" x="501" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doRepeat" destination="EVf-I6-MsD" eventType="touchUpInside" id="gHt-t8-l8K"/>
-                                </connections>
-                            </button>
-                            <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E4y-EK-3gj">
-                                <rect key="frame" x="122" y="81" width="535" height="340"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bUN-vK-TDe">
-                                        <rect key="frame" x="15" y="15" width="505" height="310"/>
+                                    <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E4y-EK-3gj">
+                                        <rect key="frame" x="0.0" y="0.0" width="537" height="340"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUN-vK-TDe">
+                                                <rect key="frame" x="15" y="15" width="507" height="310"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aHh-6R-zwQ">
+                                                        <rect key="frame" x="47" y="24" width="437" height="43"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="43" id="5v0-Ww-cpz"/>
+                                                            <constraint firstAttribute="width" constant="437" id="is4-eO-ycm"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XB9-wk-1oy">
+                                                        <rect key="frame" x="42" y="57" width="422" height="1"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="422" id="C7o-Zm-bq8"/>
+                                                            <constraint firstAttribute="height" constant="1" id="rmi-Q3-PDw"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Fj-lD-RnA">
+                                                        <rect key="frame" x="35" y="88" width="437" height="200"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="5Fj-lD-RnA" firstAttribute="leading" secondItem="bUN-vK-TDe" secondAttribute="leading" constant="35" id="7QO-SS-U13"/>
+                                                    <constraint firstItem="XB9-wk-1oy" firstAttribute="leading" secondItem="bUN-vK-TDe" secondAttribute="leading" constant="42" id="8rP-fp-snU"/>
+                                                    <constraint firstAttribute="height" constant="310" id="B3z-oi-Lzm"/>
+                                                    <constraint firstItem="XB9-wk-1oy" firstAttribute="top" secondItem="bUN-vK-TDe" secondAttribute="top" constant="57" id="DJF-Si-4hs"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5Fj-lD-RnA" secondAttribute="bottom" constant="22" id="HQT-bw-oRd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aHh-6R-zwQ" secondAttribute="trailing" constant="23" id="HqO-B7-Xyg"/>
+                                                    <constraint firstItem="aHh-6R-zwQ" firstAttribute="top" secondItem="bUN-vK-TDe" secondAttribute="top" constant="24" id="LpP-mC-uhC"/>
+                                                    <constraint firstItem="aHh-6R-zwQ" firstAttribute="leading" secondItem="bUN-vK-TDe" secondAttribute="leading" constant="47" id="OBy-CG-1jI"/>
+                                                    <constraint firstAttribute="width" constant="507" id="pqI-IA-d7L"/>
+                                                    <constraint firstItem="5Fj-lD-RnA" firstAttribute="centerX" secondItem="XB9-wk-1oy" secondAttribute="centerX" id="pqc-tA-Y7V"/>
+                                                    <constraint firstItem="5Fj-lD-RnA" firstAttribute="top" secondItem="aHh-6R-zwQ" secondAttribute="bottom" constant="21" id="tjU-hb-qUN"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOw-PT-3iF">
+                                                <rect key="frame" x="15" y="15" width="507" height="310"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="X75-DP-sLt">
+                                                        <rect key="frame" x="47" y="24" width="437" height="43"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="437" id="by8-6W-hMl"/>
+                                                            <constraint firstAttribute="height" constant="43" id="ky5-pt-t7K"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SUt-P3-8ZM">
+                                                        <rect key="frame" x="47" y="57" width="422" height="1"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="422" id="DnN-uB-ITE"/>
+                                                            <constraint firstAttribute="height" constant="1" id="Jay-HA-FA3"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ixf-oP-vev">
+                                                        <rect key="frame" x="35" y="88" width="437" height="200"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="437" id="ZzK-4w-MoR"/>
+                                                            <constraint firstAttribute="height" constant="200" id="ibW-ga-5MZ"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="X75-DP-sLt" firstAttribute="leading" secondItem="qOw-PT-3iF" secondAttribute="leading" constant="47" id="68G-aK-z9L"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Ixf-oP-vev" secondAttribute="bottom" constant="22" id="6mq-pR-lU7"/>
+                                                    <constraint firstItem="SUt-P3-8ZM" firstAttribute="top" secondItem="qOw-PT-3iF" secondAttribute="top" constant="57" id="HFC-HT-zyq"/>
+                                                    <constraint firstItem="Ixf-oP-vev" firstAttribute="centerX" secondItem="qOw-PT-3iF" secondAttribute="centerX" id="J6b-vq-wvZ"/>
+                                                    <constraint firstItem="Ixf-oP-vev" firstAttribute="top" secondItem="X75-DP-sLt" secondAttribute="bottom" constant="21" id="V72-3K-c9x"/>
+                                                    <constraint firstItem="X75-DP-sLt" firstAttribute="top" secondItem="qOw-PT-3iF" secondAttribute="top" constant="24" id="g8b-eK-mtU"/>
+                                                    <constraint firstItem="Ixf-oP-vev" firstAttribute="leading" secondItem="qOw-PT-3iF" secondAttribute="leading" constant="35" id="gL4-Tj-wj6"/>
+                                                    <constraint firstAttribute="height" constant="310" id="hfC-nB-hAC"/>
+                                                    <constraint firstItem="SUt-P3-8ZM" firstAttribute="leading" secondItem="X75-DP-sLt" secondAttribute="leading" id="jJ3-rI-bQ5"/>
+                                                    <constraint firstItem="Ixf-oP-vev" firstAttribute="top" secondItem="SUt-P3-8ZM" secondAttribute="bottom" constant="30" id="lcI-a1-WIj"/>
+                                                    <constraint firstAttribute="width" constant="507" id="r3z-7q-OEk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SUt-P3-8ZM" secondAttribute="trailing" constant="38" id="xFw-HV-ivr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="X75-DP-sLt" secondAttribute="trailing" constant="23" id="zkY-wB-uox"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="qOw-PT-3iF" firstAttribute="top" secondItem="E4y-EK-3gj" secondAttribute="top" constant="15" id="4aQ-8r-KFc"/>
+                                            <constraint firstAttribute="height" constant="340" id="6QY-ti-GkL"/>
+                                            <constraint firstItem="qOw-PT-3iF" firstAttribute="bottom" secondItem="bUN-vK-TDe" secondAttribute="bottom" id="GIR-BV-86R"/>
+                                            <constraint firstItem="qOw-PT-3iF" firstAttribute="leading" secondItem="bUN-vK-TDe" secondAttribute="leading" id="JzA-uU-JWO"/>
+                                            <constraint firstItem="qOw-PT-3iF" firstAttribute="centerY" secondItem="E4y-EK-3gj" secondAttribute="centerY" id="MjJ-jq-jrL"/>
+                                            <constraint firstItem="qOw-PT-3iF" firstAttribute="leading" secondItem="E4y-EK-3gj" secondAttribute="leading" constant="15" id="dPK-2K-68t"/>
+                                            <constraint firstAttribute="width" constant="537" id="ku0-pU-XmV"/>
+                                            <constraint firstItem="qOw-PT-3iF" firstAttribute="top" secondItem="bUN-vK-TDe" secondAttribute="top" id="mPa-Cd-fcw"/>
+                                            <constraint firstItem="qOw-PT-3iF" firstAttribute="trailing" secondItem="bUN-vK-TDe" secondAttribute="trailing" id="qYp-Qr-aVE"/>
+                                        </constraints>
+                                    </view>
+                                    <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WjB-eK-h8g">
+                                        <rect key="frame" x="15" y="345" width="505" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHt-cL-Zeu" userLabel="KnowButton">
+                                                <rect key="frame" x="19" y="75" width="225" height="100"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="225" id="MDk-rm-WrT"/>
+                                                    <constraint firstAttribute="height" constant="100" id="edJ-gq-4cL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="26"/>
+                                                <state key="normal" title="I Know">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="doKnowButton" destination="EVf-I6-MsD" eventType="touchUpInside" id="G6m-By-Ifo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94t-1q-sDZ" userLabel="DoNotKnowButton">
+                                                <rect key="frame" x="266" y="75" width="225" height="100"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="5Ee-dh-nUq"/>
+                                                    <constraint firstAttribute="width" constant="225" id="xde-jL-T2V"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="26"/>
+                                                <state key="normal" title="I Do Not Know">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="doDontKnowButton" destination="EVf-I6-MsD" eventType="touchUpInside" id="7hP-5k-KM0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="505" id="PnZ-JT-VHO"/>
+                                            <constraint firstAttribute="height" constant="310" id="esY-Rc-X27"/>
+                                            <constraint firstItem="94t-1q-sDZ" firstAttribute="leading" secondItem="FHt-cL-Zeu" secondAttribute="trailing" constant="22" id="iYb-f1-TKg"/>
+                                            <constraint firstItem="FHt-cL-Zeu" firstAttribute="leading" secondItem="WjB-eK-h8g" secondAttribute="leading" constant="19" id="jOl-BD-aYP"/>
+                                            <constraint firstItem="FHt-cL-Zeu" firstAttribute="top" secondItem="WjB-eK-h8g" secondAttribute="top" constant="75" id="q0m-0y-Mo6"/>
+                                            <constraint firstItem="94t-1q-sDZ" firstAttribute="top" secondItem="FHt-cL-Zeu" secondAttribute="top" id="r81-A9-7s0"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZ5-Tp-efA" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="60" width="102" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aHh-6R-zwQ">
-                                                <rect key="frame" x="47" y="24" width="435" height="43"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XB9-wk-1oy">
-                                                <rect key="frame" x="42" y="57" width="420" height="1"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Fj-lD-RnA">
-                                                <rect key="frame" x="35" y="88" width="435" height="200"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qOw-PT-3iF">
-                                        <rect key="frame" x="15" y="15" width="505" height="310"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="X75-DP-sLt">
-                                                <rect key="frame" x="47" y="24" width="435" height="43"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUt-P3-8ZM">
-                                                <rect key="frame" x="47" y="57" width="420" height="1"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ixf-oP-vev">
-                                                <rect key="frame" x="35" y="88" width="435" height="200"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                    </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="9C4-Dm-8Zo"/>
+                                            <constraint firstAttribute="height" constant="100" id="iug-sZ-6XZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="doRestart" destination="EVf-I6-MsD" eventType="touchUpInside" id="kYd-Ym-S8n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IE0-as-WL7" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="210" width="102" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="7Z9-FJ-3LZ"/>
+                                            <constraint firstAttribute="width" constant="102" id="9dF-E9-3vt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.52156865600000002" green="0.44709280239999999" blue="0.028491707379999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfK-hY-Q2r" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="360" width="102" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="KFK-nZ-j75"/>
+                                            <constraint firstAttribute="height" constant="100" id="hma-Il-Bcb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEU-Om-fsx" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="510" width="102" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="7Tk-e9-yEb"/>
+                                            <constraint firstAttribute="height" constant="100" id="REU-NX-r4L"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="doRepeat" destination="EVf-I6-MsD" eventType="touchUpInside" id="gHt-t8-l8K"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="VfK-hY-Q2r" firstAttribute="top" secondItem="Mof-Uf-GaP" secondAttribute="top" constant="360" id="1y6-SO-alv"/>
+                                    <constraint firstAttribute="height" constant="655" id="4yb-G4-hDu"/>
+                                    <constraint firstItem="WjB-eK-h8g" firstAttribute="leading" secondItem="Mof-Uf-GaP" secondAttribute="leading" constant="15" id="BiF-kw-CHO"/>
+                                    <constraint firstItem="E4y-EK-3gj" firstAttribute="leading" secondItem="Mof-Uf-GaP" secondAttribute="leading" id="Cwa-Za-k2m"/>
+                                    <constraint firstAttribute="bottom" secondItem="WjB-eK-h8g" secondAttribute="bottom" id="Jca-Ef-wFy"/>
+                                    <constraint firstItem="RZ5-Tp-efA" firstAttribute="top" secondItem="Mof-Uf-GaP" secondAttribute="top" constant="60" id="LnX-4c-ldH"/>
+                                    <constraint firstAttribute="width" constant="659" id="MLm-qW-IXW"/>
+                                    <constraint firstItem="RZ5-Tp-efA" firstAttribute="leading" secondItem="Mof-Uf-GaP" secondAttribute="leading" constant="557" id="WjY-1z-Iia"/>
+                                    <constraint firstItem="IE0-as-WL7" firstAttribute="leading" secondItem="Mof-Uf-GaP" secondAttribute="leading" constant="557" id="YlH-Kt-nBP"/>
+                                    <constraint firstItem="VfK-hY-Q2r" firstAttribute="leading" secondItem="Mof-Uf-GaP" secondAttribute="leading" constant="557" id="Zu3-cy-HlI"/>
+                                    <constraint firstItem="GEU-Om-fsx" firstAttribute="top" secondItem="Mof-Uf-GaP" secondAttribute="top" constant="510" id="cgx-u7-Z9l"/>
+                                    <constraint firstAttribute="height" constant="655" id="dtp-F4-vJe"/>
+                                    <constraint firstAttribute="width" constant="659" id="f6k-aa-Nb6"/>
+                                    <constraint firstItem="WjB-eK-h8g" firstAttribute="top" secondItem="E4y-EK-3gj" secondAttribute="bottom" constant="5" id="j7Y-us-yB2"/>
+                                    <constraint firstItem="IE0-as-WL7" firstAttribute="top" secondItem="Mof-Uf-GaP" secondAttribute="top" constant="210" id="rIS-eT-pBI"/>
+                                    <constraint firstItem="GEU-Om-fsx" firstAttribute="leading" secondItem="Mof-Uf-GaP" secondAttribute="leading" constant="557" id="tXb-lc-MZ7"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Mof-Uf-GaP" secondAttribute="centerY" constant="35" id="Ho4-4a-vNm"/>
+                            <constraint firstAttribute="centerX" secondItem="Mof-Uf-GaP" secondAttribute="centerX" id="Uer-0p-Kwv"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Flashcard" image="flashTab.png" id="6r2-Mu-HYx"/>
                     <connections>
@@ -1224,11 +1361,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dontknowButton_225.png" width="225" height="100"/>
         <image name="flashTab.png" width="30" height="30"/>
         <image name="homeTab.png" width="27" height="27"/>
         <image name="icon_about.png" width="72" height="72"/>
-        <image name="knowButton_225.png" width="225" height="100"/>
         <image name="menu" width="32" height="44"/>
         <image name="multipleTab.png" width="30" height="30"/>
         <image name="qaTab.png" width="30" height="30"/>

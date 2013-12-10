@@ -33,7 +33,7 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
-    kBlue,
+    kBlue = 0,
     kYellow,
     kGreen,
     kRed
@@ -44,5 +44,7 @@ typedef enum {
 }
 
 @property StickyColor stickyColor;
+@property (nonatomic, strong) NSNumber *circleColor;
+@property (nonatomic, strong, readonly) CAShapeLayer *circleLayer;
 
 @end

@@ -34,6 +34,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import <QuartzCore/QuartzCore.h>
 #import "WQUtils.h"
 #import "JMWhenTapped.h"
+#import "UIColor+PHColor.h"
 
 #define kCardHeight		    422.0
 #define kCardWidth			663.0
@@ -62,7 +63,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
+    self.view.backgroundColor = [UIColor backgroundColor];
 	
 	frontView.userInteractionEnabled = YES;
     backView.hidden = true;
@@ -72,27 +73,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [backView whenTapped:^{
 		[self flipCard:false];
 	}];
-	/*UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-	tgr.delegate = self;
-	tgr.numberOfTapsRequired = 1;
-	[frontView addGestureRecognizer:tgr];
-	[tgr release];
-    
-    UITapGestureRecognizer *tgr2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-	tgr2.delegate = self;
-	tgr2.numberOfTapsRequired = 1;
-    [backView addGestureRecognizer:tgr2];
-	[tgr2 release];*/
-	
+
 	[questionCountButton setTitle:@"" forState:UIControlStateNormal];
 	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
 	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
 	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
-    
-    questionCountButton.stickyColor = kBlue;
-    answerCountButton.stickyColor = kYellow;
-    correctCountButton.stickyColor = kGreen;
-    errorCountButton.stickyColor = kRed;
     
     badgeQuestionCount.fillColor = [UIColor blueColor];
     badgeAnswerCount.fillColor = [UIColor colorWithRed:0.95 green:0.76 blue:0.21 alpha:1.0];
@@ -109,8 +94,16 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     m_animationLayer.bounds = containerView.layer.bounds;
     [containerView.layer addSublayer:m_animationLayer];
     
-	knowButton.enabled = NO;
-	dontKnowButton.enabled = NO;
+    self.knowButton.layer.cornerRadius = 30.0f;
+    self.knowButton.layer.backgroundColor = [UIColor colorWithRed:0.45 green:0.9 blue:0.25 alpha:1.0].CGColor;
+	self.knowButton.enabled = NO;
+    self.knowButton.titleLabel.textColor = [UIColor whiteColor];
+
+    self.dontKnowButton.layer.cornerRadius = 30.0f;
+    self.dontKnowButton.layer.backgroundColor = [UIColor colorWithRed:1.0 green:0.45 blue:0.45 alpha:1.0].CGColor;
+	self.dontKnowButton.enabled = NO;
+    self.dontKnowButton.titleLabel.textColor = [UIColor whiteColor];
+    
 	self.errorCountButton.enabled = NO;
     [badgeErrorCount setUserInteractionEnabled:NO];
     [self willRotateToInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation duration:0];
@@ -134,7 +127,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+      /*  if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
             self.containerView.frame = CGRectMake(20, 20, 535, 340);
             self.previousView.frame = CGRectMake(41, 315, 505, 310);
             
@@ -151,7 +144,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             answerCountButton.frame = CGRectMake(266, 760, 104, 100);
             correctCountButton.frame = CGRectMake(398, 760, 104, 100);
             errorCountButton.frame = CGRectMake(530, 760, 104, 100);
-        }
+        }*/
     }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         int width;
@@ -194,7 +187,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             }
         }
     }
-    [WQUtils renderCardShadow:previousView];
+    //[WQUtils renderCardShadow:previousView];
     [WQUtils renderCardShadow:frontView];
     [WQUtils renderCardShadow:backView];
 }
