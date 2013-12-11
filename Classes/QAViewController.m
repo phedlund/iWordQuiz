@@ -34,6 +34,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQUtils.h"
 #import "JMWhenTapped.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIColor+PHColor.h"
 
 @implementation QAViewController
 
@@ -63,7 +64,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background.png"]];
+	self.view.backgroundColor = [UIColor backgroundColor];
 	answerIdentifierLabel.text = @"";
 	answerTextField.hidden = YES;
 	
@@ -113,7 +114,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+       /* if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
             self.questionView.frame = CGRectMake(35, 35, 505, 310);
             self.previousView.frame = CGRectMake(41, 315, 505, 310);
             
@@ -130,7 +131,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             answerCountButton.frame = CGRectMake(620, 215, 104, 100);
             correctCountButton.frame = CGRectMake(620, 345, 104, 100);
             errorCountButton.frame = CGRectMake(620, 480, 104, 100);
-        }
+        }*/
     }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {

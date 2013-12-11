@@ -310,16 +310,16 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUN-vK-TDe">
-                                                <rect key="frame" x="15" y="15" width="507" height="310"/>
+                                                <rect key="frame" x="15" y="15" width="505" height="310"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="aHh-6R-zwQ">
-                                                        <rect key="frame" x="47" y="24" width="437" height="43"/>
+                                                        <rect key="frame" x="47" y="24" width="435" height="43"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="43" id="5v0-Ww-cpz"/>
-                                                            <constraint firstAttribute="width" constant="437" id="is4-eO-ycm"/>
+                                                            <constraint firstAttribute="width" constant="435" id="is4-eO-ycm"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -335,7 +335,7 @@
                                                         </constraints>
                                                     </view>
                                                     <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="5Fj-lD-RnA">
-                                                        <rect key="frame" x="35" y="88" width="437" height="200"/>
+                                                        <rect key="frame" x="35" y="88" width="435" height="200"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -351,21 +351,21 @@
                                                     <constraint firstAttribute="trailing" secondItem="aHh-6R-zwQ" secondAttribute="trailing" constant="23" id="HqO-B7-Xyg"/>
                                                     <constraint firstItem="aHh-6R-zwQ" firstAttribute="top" secondItem="bUN-vK-TDe" secondAttribute="top" constant="24" id="LpP-mC-uhC"/>
                                                     <constraint firstItem="aHh-6R-zwQ" firstAttribute="leading" secondItem="bUN-vK-TDe" secondAttribute="leading" constant="47" id="OBy-CG-1jI"/>
-                                                    <constraint firstAttribute="width" constant="507" id="pqI-IA-d7L"/>
+                                                    <constraint firstAttribute="width" constant="505" id="pqI-IA-d7L"/>
                                                     <constraint firstItem="5Fj-lD-RnA" firstAttribute="centerX" secondItem="XB9-wk-1oy" secondAttribute="centerX" id="pqc-tA-Y7V"/>
                                                     <constraint firstItem="5Fj-lD-RnA" firstAttribute="top" secondItem="aHh-6R-zwQ" secondAttribute="bottom" constant="21" id="tjU-hb-qUN"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qOw-PT-3iF">
-                                                <rect key="frame" x="15" y="15" width="507" height="310"/>
+                                                <rect key="frame" x="15" y="15" width="505" height="310"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="X75-DP-sLt">
-                                                        <rect key="frame" x="47" y="24" width="437" height="43"/>
+                                                        <rect key="frame" x="47" y="24" width="435" height="43"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="437" id="by8-6W-hMl"/>
+                                                            <constraint firstAttribute="width" constant="435" id="by8-6W-hMl"/>
                                                             <constraint firstAttribute="height" constant="43" id="ky5-pt-t7K"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
@@ -382,7 +382,7 @@
                                                         </constraints>
                                                     </view>
                                                     <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ixf-oP-vev">
-                                                        <rect key="frame" x="35" y="88" width="437" height="200"/>
+                                                        <rect key="frame" x="34" y="88" width="437" height="200"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="437" id="ZzK-4w-MoR"/>
@@ -400,12 +400,12 @@
                                                     <constraint firstItem="Ixf-oP-vev" firstAttribute="centerX" secondItem="qOw-PT-3iF" secondAttribute="centerX" id="J6b-vq-wvZ"/>
                                                     <constraint firstItem="Ixf-oP-vev" firstAttribute="top" secondItem="X75-DP-sLt" secondAttribute="bottom" constant="21" id="V72-3K-c9x"/>
                                                     <constraint firstItem="X75-DP-sLt" firstAttribute="top" secondItem="qOw-PT-3iF" secondAttribute="top" constant="24" id="g8b-eK-mtU"/>
-                                                    <constraint firstItem="Ixf-oP-vev" firstAttribute="leading" secondItem="qOw-PT-3iF" secondAttribute="leading" constant="35" id="gL4-Tj-wj6"/>
+                                                    <constraint firstItem="Ixf-oP-vev" firstAttribute="leading" secondItem="qOw-PT-3iF" secondAttribute="leading" constant="34" id="gL4-Tj-wj6"/>
                                                     <constraint firstAttribute="height" constant="310" id="hfC-nB-hAC"/>
                                                     <constraint firstItem="SUt-P3-8ZM" firstAttribute="leading" secondItem="X75-DP-sLt" secondAttribute="leading" id="jJ3-rI-bQ5"/>
                                                     <constraint firstItem="Ixf-oP-vev" firstAttribute="top" secondItem="SUt-P3-8ZM" secondAttribute="bottom" constant="30" id="lcI-a1-WIj"/>
-                                                    <constraint firstAttribute="width" constant="507" id="r3z-7q-OEk"/>
-                                                    <constraint firstAttribute="trailing" secondItem="SUt-P3-8ZM" secondAttribute="trailing" constant="38" id="xFw-HV-ivr"/>
+                                                    <constraint firstAttribute="width" constant="505" id="r3z-7q-OEk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SUt-P3-8ZM" secondAttribute="trailing" constant="36" id="xFw-HV-ivr"/>
                                                     <constraint firstAttribute="trailing" secondItem="X75-DP-sLt" secondAttribute="trailing" constant="23" id="zkY-wB-uox"/>
                                                 </constraints>
                                             </view>
@@ -580,8 +580,6 @@
                                     <constraint firstItem="IE0-as-WL7" firstAttribute="leading" secondItem="Mof-Uf-GaP" secondAttribute="leading" constant="557" id="YlH-Kt-nBP"/>
                                     <constraint firstItem="VfK-hY-Q2r" firstAttribute="leading" secondItem="Mof-Uf-GaP" secondAttribute="leading" constant="557" id="Zu3-cy-HlI"/>
                                     <constraint firstItem="GEU-Om-fsx" firstAttribute="top" secondItem="Mof-Uf-GaP" secondAttribute="top" constant="510" id="cgx-u7-Z9l"/>
-                                    <constraint firstAttribute="height" constant="655" id="dtp-F4-vJe"/>
-                                    <constraint firstAttribute="width" constant="659" id="f6k-aa-Nb6"/>
                                     <constraint firstItem="WjB-eK-h8g" firstAttribute="top" secondItem="E4y-EK-3gj" secondAttribute="bottom" constant="5" id="j7Y-us-yB2"/>
                                     <constraint firstItem="IE0-as-WL7" firstAttribute="top" secondItem="Mof-Uf-GaP" secondAttribute="top" constant="210" id="rIS-eT-pBI"/>
                                     <constraint firstItem="GEU-Om-fsx" firstAttribute="leading" secondItem="Mof-Uf-GaP" secondAttribute="leading" constant="557" id="tXb-lc-MZ7"/>
@@ -615,7 +613,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiQ-KQ-aDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1437" y="-631"/>
+            <point key="canvasLocation" x="1437" y="-503"/>
         </scene>
         <!--View Controller - Question & Answer-->
         <scene sceneID="1Ue-pP-EdJ">
@@ -629,185 +627,329 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                         <subviews>
-                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IGn-Ae-RMk">
-                                <rect key="frame" x="111" y="448" width="505" height="310"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLa-DI-jPi">
+                                <rect key="frame" x="54" y="150" width="659" height="655"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Previous Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="IFX-MG-skW">
-                                        <rect key="frame" x="47" y="37" width="420" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJG-Fn-jTJ">
-                                        <rect key="frame" x="47" y="70" width="420" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nid-FU-tlG">
+                                        <rect key="frame" x="15" y="15" width="505" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="YwO-3k-2l5">
+                                                <rect key="frame" x="47" y="24" width="420" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="h7R-sO-zdq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmm-Ad-rGK">
+                                                <rect key="frame" x="47" y="57" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Select a vocabulary." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Zu-nE-sSL">
+                                                <rect key="frame" x="75" y="55" width="392" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="h0D-oT-6cV">
+                                                <rect key="frame" x="47" y="107" width="420" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="35b-1e-Wkk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5Y-wh-xU2">
+                                                <rect key="frame" x="47" y="140" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pcp-dI-eMI">
+                                                <rect key="frame" x="75" y="153" width="392" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Epe-N4-cJI" id="gJj-2g-0ja"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="YwO-3k-2l5" firstAttribute="trailing" secondItem="h0D-oT-6cV" secondAttribute="trailing" id="1Sx-Kk-s2C"/>
+                                            <constraint firstItem="YwO-3k-2l5" firstAttribute="trailing" secondItem="F5Y-wh-xU2" secondAttribute="trailing" id="6Yh-Cq-D68"/>
+                                            <constraint firstItem="F5Y-wh-xU2" firstAttribute="top" secondItem="8Zu-nE-sSL" secondAttribute="bottom" constant="42" id="8cD-GH-pyp"/>
+                                            <constraint firstItem="YwO-3k-2l5" firstAttribute="top" secondItem="Nid-FU-tlG" secondAttribute="top" constant="24" id="8lz-uW-Y77"/>
+                                            <constraint firstAttribute="height" constant="310" id="Btp-2o-ddV"/>
+                                            <constraint firstItem="YwO-3k-2l5" firstAttribute="trailing" secondItem="8Zu-nE-sSL" secondAttribute="trailing" id="IYe-2n-iW8"/>
+                                            <constraint firstItem="8Zu-nE-sSL" firstAttribute="top" secondItem="Nid-FU-tlG" secondAttribute="top" constant="55" id="Jxs-tX-Fs9"/>
+                                            <constraint firstItem="YwO-3k-2l5" firstAttribute="leading" secondItem="hmm-Ad-rGK" secondAttribute="leading" id="Pi1-4m-xMt"/>
+                                            <constraint firstItem="h0D-oT-6cV" firstAttribute="top" secondItem="8Zu-nE-sSL" secondAttribute="bottom" constant="9" id="Qea-EZ-TcV"/>
+                                            <constraint firstItem="YwO-3k-2l5" firstAttribute="trailing" secondItem="Pcp-dI-eMI" secondAttribute="trailing" id="QwV-v9-acp"/>
+                                            <constraint firstItem="h0D-oT-6cV" firstAttribute="top" secondItem="YwO-3k-2l5" secondAttribute="bottom" constant="40" id="Wpo-nI-Pje"/>
+                                            <constraint firstItem="Pcp-dI-eMI" firstAttribute="leading" secondItem="8Zu-nE-sSL" secondAttribute="leading" id="ZCW-dj-TUP"/>
+                                            <constraint firstItem="YwO-3k-2l5" firstAttribute="leading" secondItem="Nid-FU-tlG" secondAttribute="leading" constant="47" id="beM-Lw-TTc"/>
+                                            <constraint firstItem="Pcp-dI-eMI" firstAttribute="leading" secondItem="Nid-FU-tlG" secondAttribute="leading" constant="75" id="g8b-Tv-oeS"/>
+                                            <constraint firstAttribute="width" constant="505" id="iHi-Q0-5Pd"/>
+                                            <constraint firstItem="Pcp-dI-eMI" firstAttribute="top" secondItem="h0D-oT-6cV" secondAttribute="bottom" constant="3" id="jbk-Oe-Apj"/>
+                                            <constraint firstItem="h0D-oT-6cV" firstAttribute="top" secondItem="hmm-Ad-rGK" secondAttribute="bottom" constant="49" id="nhr-P3-SFb"/>
+                                            <constraint firstItem="YwO-3k-2l5" firstAttribute="trailing" secondItem="hmm-Ad-rGK" secondAttribute="trailing" id="pCL-Dv-BLn"/>
+                                            <constraint firstItem="YwO-3k-2l5" firstAttribute="leading" secondItem="h0D-oT-6cV" secondAttribute="leading" id="piN-lQ-pje"/>
+                                            <constraint firstItem="hmm-Ad-rGK" firstAttribute="top" secondItem="Nid-FU-tlG" secondAttribute="top" constant="57" id="q1W-lD-ibn"/>
+                                            <constraint firstItem="YwO-3k-2l5" firstAttribute="leading" secondItem="F5Y-wh-xU2" secondAttribute="leading" id="qCE-lg-hLY"/>
+                                            <constraint firstItem="Pcp-dI-eMI" firstAttribute="top" secondItem="F5Y-wh-xU2" secondAttribute="bottom" constant="12" id="wKY-rY-Tr3"/>
+                                            <constraint firstAttribute="trailing" secondItem="YwO-3k-2l5" secondAttribute="trailing" constant="38" id="xiO-PG-EXl"/>
+                                        </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="The previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="XVr-8B-gQ1">
-                                        <rect key="frame" x="75" y="67" width="392" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Your Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="sfV-3x-wnw">
-                                        <rect key="frame" x="47" y="120" width="420" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="66k-St-G6j">
-                                        <rect key="frame" x="47" y="153" width="420" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGn-Ae-RMk">
+                                        <rect key="frame" x="15" y="345" width="505" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Previous Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="IFX-MG-skW">
+                                                <rect key="frame" x="47" y="37" width="420" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="uu5-fq-kIw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qJG-Fn-jTJ">
+                                                <rect key="frame" x="47" y="70" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="The previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="XVr-8B-gQ1">
+                                                <rect key="frame" x="75" y="67" width="392" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Your Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="sfV-3x-wnw">
+                                                <rect key="frame" x="47" y="120" width="420" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="GMT-n3-S7R"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66k-St-G6j">
+                                                <rect key="frame" x="47" y="153" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Your answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="2JK-dF-Hej">
+                                                <rect key="frame" x="75" y="151" width="392" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Correct Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="RH9-bk-Kt8">
+                                                <rect key="frame" x="47" y="203" width="420" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="Lv8-ZJ-3Lb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBp-9q-c2o">
+                                                <rect key="frame" x="47" y="236" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="The correct answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="j9f-zs-h06">
+                                                <rect key="frame" x="75" y="234" width="392" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="ZMi-b4-baM"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="sfV-3x-wnw" firstAttribute="top" secondItem="IFX-MG-skW" secondAttribute="bottom" constant="40" id="0gj-2A-JgJ"/>
+                                            <constraint firstItem="66k-St-G6j" firstAttribute="top" secondItem="IGn-Ae-RMk" secondAttribute="top" constant="153" id="2Bg-Ba-Cbo"/>
+                                            <constraint firstItem="IFX-MG-skW" firstAttribute="leading" secondItem="iBp-9q-c2o" secondAttribute="leading" id="2PY-JV-BrS"/>
+                                            <constraint firstItem="IFX-MG-skW" firstAttribute="trailing" secondItem="sfV-3x-wnw" secondAttribute="trailing" id="2zw-UJ-EvM"/>
+                                            <constraint firstItem="XVr-8B-gQ1" firstAttribute="trailing" secondItem="qJG-Fn-jTJ" secondAttribute="trailing" id="3gh-yd-ojQ"/>
+                                            <constraint firstItem="2JK-dF-Hej" firstAttribute="trailing" secondItem="66k-St-G6j" secondAttribute="trailing" id="3kA-cx-lr3"/>
+                                            <constraint firstAttribute="bottom" secondItem="66k-St-G6j" secondAttribute="bottom" constant="156" id="5TX-Lx-qrO"/>
+                                            <constraint firstItem="2JK-dF-Hej" firstAttribute="leading" secondItem="XVr-8B-gQ1" secondAttribute="leading" id="6gT-tF-TeQ"/>
+                                            <constraint firstItem="iBp-9q-c2o" firstAttribute="top" secondItem="2JK-dF-Hej" secondAttribute="bottom" constant="42" id="6yy-x2-5Xf"/>
+                                            <constraint firstItem="sfV-3x-wnw" firstAttribute="top" secondItem="qJG-Fn-jTJ" secondAttribute="bottom" constant="49" id="8mu-u6-9yu"/>
+                                            <constraint firstItem="sfV-3x-wnw" firstAttribute="top" secondItem="XVr-8B-gQ1" secondAttribute="bottom" constant="10" id="9lm-pN-let"/>
+                                            <constraint firstItem="IFX-MG-skW" firstAttribute="trailing" secondItem="iBp-9q-c2o" secondAttribute="trailing" id="BDL-QD-shl"/>
+                                            <constraint firstItem="IFX-MG-skW" firstAttribute="top" secondItem="IGn-Ae-RMk" secondAttribute="top" constant="37" id="DJW-mL-wPs"/>
+                                            <constraint firstAttribute="bottom" secondItem="j9f-zs-h06" secondAttribute="bottom" constant="33" id="GFp-dA-so1"/>
+                                            <constraint firstAttribute="bottom" secondItem="iBp-9q-c2o" secondAttribute="bottom" constant="73" id="Joj-PT-ogs"/>
+                                            <constraint firstItem="IFX-MG-skW" firstAttribute="trailing" secondItem="j9f-zs-h06" secondAttribute="trailing" id="KmT-zk-JmQ"/>
+                                            <constraint firstItem="IFX-MG-skW" firstAttribute="leading" secondItem="IGn-Ae-RMk" secondAttribute="leading" constant="47" id="LHv-Js-ZVW"/>
+                                            <constraint firstItem="IFX-MG-skW" firstAttribute="trailing" secondItem="66k-St-G6j" secondAttribute="trailing" id="LTI-hu-NyY"/>
+                                            <constraint firstItem="j9f-zs-h06" firstAttribute="leading" secondItem="IGn-Ae-RMk" secondAttribute="leading" constant="75" id="Lip-SC-Z8g"/>
+                                            <constraint firstItem="RH9-bk-Kt8" firstAttribute="leading" secondItem="iBp-9q-c2o" secondAttribute="leading" id="PrN-5I-bka"/>
+                                            <constraint firstItem="IFX-MG-skW" firstAttribute="leading" secondItem="sfV-3x-wnw" secondAttribute="leading" id="RH5-rp-Sv9"/>
+                                            <constraint firstItem="RH9-bk-Kt8" firstAttribute="top" secondItem="2JK-dF-Hej" secondAttribute="bottom" constant="9" id="V7T-qb-5O3"/>
+                                            <constraint firstItem="IFX-MG-skW" firstAttribute="leading" secondItem="qJG-Fn-jTJ" secondAttribute="leading" id="VlA-Dc-kFX"/>
+                                            <constraint firstAttribute="width" constant="505" id="XoH-6l-Sug"/>
+                                            <constraint firstItem="IFX-MG-skW" firstAttribute="leading" secondItem="66k-St-G6j" secondAttribute="leading" id="ig3-yw-TLn"/>
+                                            <constraint firstAttribute="height" constant="310" id="iz7-vy-is5"/>
+                                            <constraint firstAttribute="bottom" secondItem="RH9-bk-Kt8" secondAttribute="bottom" constant="64" id="jEH-ri-RB4"/>
+                                            <constraint firstItem="RH9-bk-Kt8" firstAttribute="trailing" secondItem="iBp-9q-c2o" secondAttribute="trailing" id="nWp-E5-ZFo"/>
+                                            <constraint firstItem="IFX-MG-skW" firstAttribute="trailing" secondItem="qJG-Fn-jTJ" secondAttribute="trailing" id="pae-Rh-8QU"/>
+                                            <constraint firstAttribute="trailing" secondItem="IFX-MG-skW" secondAttribute="trailing" constant="38" id="pcc-md-ykO"/>
+                                            <constraint firstItem="2JK-dF-Hej" firstAttribute="top" secondItem="XVr-8B-gQ1" secondAttribute="bottom" constant="41" id="pff-oX-c5W"/>
+                                            <constraint firstItem="qJG-Fn-jTJ" firstAttribute="top" secondItem="IGn-Ae-RMk" secondAttribute="top" constant="70" id="tt8-2w-lGO"/>
+                                            <constraint firstItem="XVr-8B-gQ1" firstAttribute="top" secondItem="IGn-Ae-RMk" secondAttribute="top" constant="67" id="vuc-tf-OYw"/>
+                                            <constraint firstItem="2JK-dF-Hej" firstAttribute="leading" secondItem="j9f-zs-h06" secondAttribute="leading" id="xav-cs-GVh"/>
+                                        </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Your answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="2JK-dF-Hej">
-                                        <rect key="frame" x="75" y="151" width="392" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Correct Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="RH9-bk-Kt8">
-                                        <rect key="frame" x="47" y="203" width="420" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iBp-9q-c2o">
-                                        <rect key="frame" x="47" y="236" width="420" height="1"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyb-30-EHL" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="60" width="102" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="The correct answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="j9f-zs-h06">
-                                        <rect key="frame" x="75" y="234" width="392" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nid-FU-tlG">
-                                <rect key="frame" x="107" y="59" width="505" height="310"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="YwO-3k-2l5">
-                                        <rect key="frame" x="47" y="24" width="420" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hmm-Ad-rGK">
-                                        <rect key="frame" x="47" y="57" width="420" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Select a vocabulary." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Zu-nE-sSL">
-                                        <rect key="frame" x="75" y="55" width="392" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="h0D-oT-6cV">
-                                        <rect key="frame" x="47" y="107" width="420" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F5Y-wh-xU2">
-                                        <rect key="frame" x="47" y="140" width="420" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pcp-dI-eMI">
-                                        <rect key="frame" x="75" y="153" width="392" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="OeV-kC-128"/>
+                                            <constraint firstAttribute="height" constant="100" id="WIR-30-kzC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <outlet property="delegate" destination="Epe-N4-cJI" id="gJj-2g-0ja"/>
+                                            <action selector="doRestart" destination="Epe-N4-cJI" eventType="touchUpInside" id="j7b-ka-Tpv"/>
                                         </connections>
-                                    </textField>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpv-9o-Rnr" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="210" width="102" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="Oag-bm-Hxp"/>
+                                            <constraint firstAttribute="width" constant="102" id="acZ-0u-xer"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.52156865600000002" green="0.44709280239999999" blue="0.028491707379999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNO-3J-BuK" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="360" width="102" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="WM8-pN-HkP"/>
+                                            <constraint firstAttribute="height" constant="100" id="wSu-ul-NZI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEB-yg-gJk" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="510" width="102" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="aSq-c3-Jlx"/>
+                                            <constraint firstAttribute="width" constant="102" id="qKN-7F-EXl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="doRepeat" destination="Epe-N4-cJI" eventType="touchUpInside" id="ow9-F9-elp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="eyb-30-EHL" firstAttribute="leading" secondItem="Nid-FU-tlG" secondAttribute="trailing" constant="37" id="ABU-43-8iC"/>
+                                    <constraint firstItem="Nid-FU-tlG" firstAttribute="top" secondItem="gLa-DI-jPi" secondAttribute="top" constant="15" id="KN8-t4-aVq"/>
+                                    <constraint firstItem="eyb-30-EHL" firstAttribute="top" secondItem="gLa-DI-jPi" secondAttribute="top" constant="60" id="M1y-wh-2bf"/>
+                                    <constraint firstItem="Nid-FU-tlG" firstAttribute="leading" secondItem="gLa-DI-jPi" secondAttribute="leading" constant="15" id="OMw-7e-v1V"/>
+                                    <constraint firstItem="fEB-yg-gJk" firstAttribute="top" secondItem="gLa-DI-jPi" secondAttribute="top" constant="510" id="Q3W-m2-9t5"/>
+                                    <constraint firstAttribute="height" constant="655" id="Qfi-YC-z51"/>
+                                    <constraint firstItem="fEB-yg-gJk" firstAttribute="leading" secondItem="zNO-3J-BuK" secondAttribute="leading" id="Rx6-d4-GOV"/>
+                                    <constraint firstAttribute="width" constant="659" id="UVg-Pq-HPx"/>
+                                    <constraint firstItem="IGn-Ae-RMk" firstAttribute="top" secondItem="Nid-FU-tlG" secondAttribute="bottom" constant="20" id="acv-8e-bY7"/>
+                                    <constraint firstItem="IGn-Ae-RMk" firstAttribute="leading" secondItem="gLa-DI-jPi" secondAttribute="leading" constant="15" id="at3-MK-myp"/>
+                                    <constraint firstItem="Kpv-9o-Rnr" firstAttribute="top" secondItem="gLa-DI-jPi" secondAttribute="top" constant="210" id="eiH-C8-n57"/>
+                                    <constraint firstItem="fEB-yg-gJk" firstAttribute="leading" secondItem="eyb-30-EHL" secondAttribute="leading" id="fCN-Gb-W08"/>
+                                    <constraint firstItem="zNO-3J-BuK" firstAttribute="top" secondItem="gLa-DI-jPi" secondAttribute="top" constant="360" id="fGe-NL-FbY"/>
+                                    <constraint firstItem="IGn-Ae-RMk" firstAttribute="top" secondItem="gLa-DI-jPi" secondAttribute="top" constant="345" id="fyH-Zk-BlX"/>
+                                    <constraint firstAttribute="bottom" secondItem="IGn-Ae-RMk" secondAttribute="bottom" id="ibE-M4-hvF"/>
+                                    <constraint firstItem="fEB-yg-gJk" firstAttribute="leading" secondItem="Kpv-9o-Rnr" secondAttribute="leading" id="lF4-vY-kBe"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyb-30-EHL" customClass="WQScoreButton">
-                                <rect key="frame" x="134" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doRestart" destination="Epe-N4-cJI" eventType="touchUpInside" id="j7b-ka-Tpv"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kpv-9o-Rnr" customClass="WQScoreButton">
-                                <rect key="frame" x="266" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.52156865600000002" green="0.44709280239999999" blue="0.028491707379999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNO-3J-BuK" customClass="WQScoreButton">
-                                <rect key="frame" x="398" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEB-yg-gJk" customClass="WQScoreButton">
-                                <rect key="frame" x="530" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doRepeat" destination="Epe-N4-cJI" eventType="touchUpInside" id="ow9-F9-elp"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="gLa-DI-jPi" secondAttribute="centerY" constant="35" id="XzE-VC-qjp"/>
+                            <constraint firstAttribute="centerX" secondItem="gLa-DI-jPi" secondAttribute="centerX" id="xrm-8w-NGi"/>
+                        </constraints>
                         <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Question &amp; Answer" image="qaTab.png" id="bSN-DV-Ouc"/>
@@ -838,7 +980,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRY-Yl-DxS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1437" y="1167"/>
+            <point key="canvasLocation" x="1429" y="1735"/>
         </scene>
         <!--View Controller - Multiple Choice-->
         <scene sceneID="Pk5-Nc-GAB">
@@ -852,248 +994,318 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fzt-XH-yGr">
-                                <rect key="frame" x="141" y="488" width="505" height="310"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pxw-B5-dDo">
+                                <rect key="frame" x="54" y="150" width="659" height="655"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Previous Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rjC-gL-Kie">
-                                        <rect key="frame" x="47" y="37" width="420" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0f-ul-IwZ">
-                                        <rect key="frame" x="47" y="70" width="420" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJZ-P2-wVH">
+                                        <rect key="frame" x="15" y="15" width="505" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lgi-o7-yk8">
+                                                <rect key="frame" x="47" y="24" width="420" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Select a vocabulary." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KBV-DI-mzX">
+                                                <rect key="frame" x="75" y="55" width="392" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tjt-un-yxb">
+                                                <rect key="frame" x="47" y="107" width="420" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecg-Dd-Toc">
+                                                <rect key="frame" x="70" y="153" width="400" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="This is the first option">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="doChoice:" destination="mKi-xZ-BpX" eventType="touchUpInside" id="esz-OK-taG"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omm-mN-xpN">
+                                                <rect key="frame" x="70" y="203" width="400" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="This is the second option">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="doChoice:" destination="mKi-xZ-BpX" eventType="touchUpInside" id="YTS-ht-ibY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ca3-2k-w3D">
+                                                <rect key="frame" x="70" y="255" width="400" height="45"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="This is the third option">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="doChoice:" destination="mKi-xZ-BpX" eventType="touchUpInside" id="2nZ-ZM-njj"/>
+                                                </connections>
+                                            </button>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1f1-wb-MCu">
+                                                <rect key="frame" x="47" y="57" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wcB-AO-dRi">
+                                                <rect key="frame" x="47" y="140" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="310" id="DXd-gj-gfe"/>
+                                            <constraint firstAttribute="width" constant="505" id="z6p-79-8xU"/>
+                                        </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="The previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Gk-nn-eR0">
-                                        <rect key="frame" x="75" y="67" width="392" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Your Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lAp-w0-3FD">
-                                        <rect key="frame" x="47" y="120" width="420" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8q-sl-D9E">
-                                        <rect key="frame" x="47" y="153" width="420" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzt-XH-yGr">
+                                        <rect key="frame" x="15" y="345" width="505" height="310"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Previous Question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="rjC-gL-Kie">
+                                                <rect key="frame" x="47" y="37" width="420" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0f-ul-IwZ">
+                                                <rect key="frame" x="47" y="70" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="The previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Gk-nn-eR0">
+                                                <rect key="frame" x="75" y="67" width="392" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Your Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="lAp-w0-3FD">
+                                                <rect key="frame" x="47" y="120" width="420" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8q-sl-D9E">
+                                                <rect key="frame" x="47" y="153" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Your answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="scf-Hr-MYz">
+                                                <rect key="frame" x="75" y="151" width="392" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Correct Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="iyk-lW-TKL">
+                                                <rect key="frame" x="47" y="203" width="420" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F8B-Dp-Shh">
+                                                <rect key="frame" x="47" y="236" width="420" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="The correct answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="EDw-qq-Zj1">
+                                                <rect key="frame" x="75" y="234" width="392" height="43"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="505" id="B0N-5M-JF5"/>
+                                            <constraint firstAttribute="height" constant="310" id="a4U-Pi-glu"/>
+                                        </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Your answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="scf-Hr-MYz">
-                                        <rect key="frame" x="75" y="151" width="392" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Correct Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="iyk-lW-TKL">
-                                        <rect key="frame" x="47" y="203" width="420" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F8B-Dp-Shh">
-                                        <rect key="frame" x="47" y="236" width="420" height="1"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCa-fi-YIm" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="60" width="102" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="The correct answer to the previous question" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="EDw-qq-Zj1">
-                                        <rect key="frame" x="75" y="234" width="392" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RX8-Iz-lHX">
-                                <rect key="frame" x="137" y="99" width="505" height="310"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="MP8-5U-pDe">
-                                        <rect key="frame" x="47" y="24" width="420" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Select a vocabulary." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bTI-nd-DZl">
-                                        <rect key="frame" x="75" y="55" width="392" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Answer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DnE-9B-D6l">
-                                        <rect key="frame" x="47" y="107" width="420" height="43"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcJ-Mj-NFn">
-                                        <rect key="frame" x="70" y="153" width="400" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="This is the first option">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="102" id="Bnw-my-omF"/>
+                                            <constraint firstAttribute="height" constant="100" id="qys-kM-gRY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="doChoice:" destination="mKi-xZ-BpX" eventType="touchUpInside" id="DN6-F2-bSD"/>
+                                            <action selector="doRestart" destination="mKi-xZ-BpX" eventType="touchUpInside" id="M3I-SM-uu5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iQ-8y-Ehk">
-                                        <rect key="frame" x="70" y="203" width="400" height="45"/>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4q-Zw-mlr" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="210" width="102" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="This is the second option">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="doChoice:" destination="mKi-xZ-BpX" eventType="touchUpInside" id="Dpd-QC-t1R"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iic-Tz-WPz">
-                                        <rect key="frame" x="70" y="255" width="400" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                        <inset key="contentEdgeInsets" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="This is the third option">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="BU5-i3-cxS"/>
+                                            <constraint firstAttribute="width" constant="102" id="Qsk-oA-IcI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <state key="highlighted">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.52156865600000002" green="0.44709280239999999" blue="0.028491707379999998" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IwP-TZ-jdq" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="360" width="102" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="EYE-nw-3xg"/>
+                                            <constraint firstAttribute="width" constant="102" id="hUE-vv-kGJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VD9-SS-nC3" customClass="WQScoreButton">
+                                        <rect key="frame" x="557" y="510" width="102" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="eHg-bc-19N"/>
+                                            <constraint firstAttribute="width" constant="102" id="pod-Z3-a07"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
+                                        <state key="normal" title="00">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="doChoice:" destination="mKi-xZ-BpX" eventType="touchUpInside" id="NC7-3H-Pn5"/>
+                                            <action selector="doRepeat" destination="EVf-I6-MsD" eventType="touchUpInside" id="7AY-Kw-B5v"/>
+                                            <action selector="doRepeat" destination="mKi-xZ-BpX" eventType="touchUpInside" id="Smu-Kj-4c6"/>
                                         </connections>
                                     </button>
-                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fof-V0-TQH">
-                                        <rect key="frame" x="47" y="57" width="420" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aa8-u2-8fA">
-                                        <rect key="frame" x="47" y="140" width="420" height="1"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="nJZ-P2-wVH" firstAttribute="top" secondItem="Pxw-B5-dDo" secondAttribute="top" constant="15" id="0f3-qC-tlK"/>
+                                    <constraint firstItem="D4q-Zw-mlr" firstAttribute="leading" secondItem="nJZ-P2-wVH" secondAttribute="trailing" constant="37" id="9yf-9R-Tzy"/>
+                                    <constraint firstItem="VD9-SS-nC3" firstAttribute="leading" secondItem="fzt-XH-yGr" secondAttribute="trailing" constant="37" id="BdI-zY-SFQ"/>
+                                    <constraint firstAttribute="width" constant="659" id="MWb-4B-6fG"/>
+                                    <constraint firstItem="VD9-SS-nC3" firstAttribute="leading" secondItem="Pxw-B5-dDo" secondAttribute="leading" constant="557" id="Nnj-Pq-BYX"/>
+                                    <constraint firstItem="IwP-TZ-jdq" firstAttribute="leading" secondItem="Pxw-B5-dDo" secondAttribute="leading" constant="557" id="cfZ-zR-1W5"/>
+                                    <constraint firstAttribute="height" constant="655" id="d5f-4o-phd"/>
+                                    <constraint firstItem="D4q-Zw-mlr" firstAttribute="top" secondItem="Pxw-B5-dDo" secondAttribute="top" constant="210" id="ewl-nd-vOJ"/>
+                                    <constraint firstItem="VD9-SS-nC3" firstAttribute="top" secondItem="Pxw-B5-dDo" secondAttribute="top" constant="510" id="hRw-V1-pjA"/>
+                                    <constraint firstItem="IwP-TZ-jdq" firstAttribute="top" secondItem="Pxw-B5-dDo" secondAttribute="top" constant="360" id="kkn-pn-Ebc"/>
+                                    <constraint firstItem="fzt-XH-yGr" firstAttribute="top" secondItem="nJZ-P2-wVH" secondAttribute="bottom" constant="20" id="pcr-cG-IiQ"/>
+                                    <constraint firstItem="fzt-XH-yGr" firstAttribute="top" secondItem="Pxw-B5-dDo" secondAttribute="top" constant="345" id="wR3-eQ-M9N"/>
+                                    <constraint firstItem="eCa-fi-YIm" firstAttribute="leading" secondItem="Pxw-B5-dDo" secondAttribute="leading" constant="557" id="xTY-sl-ecs"/>
+                                    <constraint firstItem="eCa-fi-YIm" firstAttribute="top" secondItem="Pxw-B5-dDo" secondAttribute="top" constant="60" id="yNF-h7-H4z"/>
+                                    <constraint firstItem="D4q-Zw-mlr" firstAttribute="leading" secondItem="Pxw-B5-dDo" secondAttribute="leading" constant="557" id="yUc-0q-AAb"/>
+                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zan-BM-Z6P" customClass="WQScoreButton">
-                                <rect key="frame" x="134" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doRestart" destination="mKi-xZ-BpX" eventType="touchUpInside" id="ePG-vB-dUl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUK-Ef-o6w" customClass="WQScoreButton">
-                                <rect key="frame" x="266" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.52156865600000002" green="0.44709280239999999" blue="0.028491707379999998" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taR-Ot-D8n" customClass="WQScoreButton">
-                                <rect key="frame" x="398" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXC-nA-F7g" customClass="WQScoreButton">
-                                <rect key="frame" x="530" y="760" width="104" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="48"/>
-                                <state key="normal" title="00">
-                                    <color key="titleColor" white="0.22" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="doRepeat" destination="mKi-xZ-BpX" eventType="touchUpInside" id="7O2-qg-hnY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Pxw-B5-dDo" secondAttribute="centerX" id="9iR-hR-egS"/>
+                            <constraint firstItem="Pxw-B5-dDo" firstAttribute="centerY" secondItem="zlk-8o-dPx" secondAttribute="centerY" constant="-35" id="eQs-kh-k5t"/>
+                        </constraints>
                         <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Multiple Choice" image="multipleTab.png" id="o54-qe-bJx"/>
                     <connections>
-                        <outlet property="answerCountButton" destination="uUK-Ef-o6w" id="hGQ-d7-WxX"/>
-                        <outlet property="answerIdentifierLabel" destination="DnE-9B-D6l" id="Fjq-dK-vYb"/>
-                        <outlet property="answerLine" destination="Aa8-u2-8fA" id="DcZ-4N-IZi"/>
+                        <outlet property="answerCountButton" destination="D4q-Zw-mlr" id="4D9-hE-QUD"/>
+                        <outlet property="answerIdentifierLabel" destination="Tjt-un-yxb" id="8kw-7W-CZB"/>
+                        <outlet property="answerLine" destination="wcB-AO-dRi" id="dIk-rY-mgF"/>
                         <outlet property="correactAnswerLabel" destination="EDw-qq-Zj1" id="hxX-ca-Vnf"/>
                         <outlet property="correctAnswerHeaderLabel" destination="iyk-lW-TKL" id="6hV-xL-j4J"/>
                         <outlet property="correctAnswerLine" destination="F8B-Dp-Shh" id="uOl-E2-4Ed"/>
-                        <outlet property="correctCountButton" destination="taR-Ot-D8n" id="lzS-Ch-pri"/>
-                        <outlet property="errorCountButton" destination="NXC-nA-F7g" id="aTU-Wz-HYE"/>
-                        <outlet property="opt1Button" destination="pcJ-Mj-NFn" id="hnB-5Y-jpi"/>
-                        <outlet property="opt2Button" destination="2iQ-8y-Ehk" id="ikI-gr-jxm"/>
-                        <outlet property="opt3Button" destination="iic-Tz-WPz" id="fcK-dv-uRe"/>
+                        <outlet property="correctCountButton" destination="IwP-TZ-jdq" id="Fjo-8J-bxS"/>
+                        <outlet property="errorCountButton" destination="VD9-SS-nC3" id="lu0-97-x4A"/>
+                        <outlet property="opt1Button" destination="ecg-Dd-Toc" id="OXc-Ud-2lP"/>
+                        <outlet property="opt2Button" destination="omm-mN-xpN" id="O4A-xm-Y7Z"/>
+                        <outlet property="opt3Button" destination="ca3-2k-w3D" id="IVu-fb-Egf"/>
                         <outlet property="previousQuestionHeaderLabel" destination="rjC-gL-Kie" id="GY2-GX-hpb"/>
                         <outlet property="previousQuestionLabel" destination="4Gk-nn-eR0" id="Km7-qa-7Eq"/>
                         <outlet property="previousQuestionLine" destination="B0f-ul-IwZ" id="fqC-Tb-DTs"/>
                         <outlet property="previousView" destination="fzt-XH-yGr" id="ZaN-Uf-kCc"/>
-                        <outlet property="questionCountButton" destination="zan-BM-Z6P" id="FVx-OJ-xPH"/>
-                        <outlet property="questionIdentifierLabel" destination="MP8-5U-pDe" id="cTc-gR-fZE"/>
-                        <outlet property="questionLabel" destination="bTI-nd-DZl" id="8Vr-pc-Wfh"/>
-                        <outlet property="questionLine" destination="fof-V0-TQH" id="IWv-WJ-c0E"/>
-                        <outlet property="questionView" destination="RX8-Iz-lHX" id="w6m-vi-nfs"/>
+                        <outlet property="questionCountButton" destination="eCa-fi-YIm" id="lZj-Xj-YJP"/>
+                        <outlet property="questionIdentifierLabel" destination="Lgi-o7-yk8" id="E0m-Ik-E55"/>
+                        <outlet property="questionLabel" destination="KBV-DI-mzX" id="yYH-Z6-dgz"/>
+                        <outlet property="questionLine" destination="1f1-wb-MCu" id="Ztu-FD-790"/>
+                        <outlet property="questionView" destination="nJZ-P2-wVH" id="7eL-Fg-SZH"/>
                         <outlet property="view" destination="zlk-8o-dPx" id="lay-7y-ZrF"/>
                         <outlet property="yourAnswerHeaderLabel" destination="lAp-w0-3FD" id="k4U-Zt-Gtn"/>
                         <outlet property="yourAnswerLabel" destination="scf-Hr-MYz" id="dU6-KQ-ZMp"/>
@@ -1102,7 +1314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKq-DT-1ID" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1437" y="254"/>
+            <point key="canvasLocation" x="1429" y="614"/>
         </scene>
         <!--New File View Controller - New Vocabulary-->
         <scene sceneID="YRM-uR-iRi">
@@ -1274,7 +1486,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
             </objects>
-            <point key="canvasLocation" x="1429" y="-1536"/>
+            <point key="canvasLocation" x="1437" y="-1640"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="YAW-KR-jEa">
