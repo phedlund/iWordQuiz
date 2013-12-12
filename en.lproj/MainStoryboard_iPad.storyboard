@@ -958,6 +958,7 @@
                         <outlet property="answerIdentifierLabel" destination="h0D-oT-6cV" id="lBY-pg-N3z"/>
                         <outlet property="answerLine" destination="F5Y-wh-xU2" id="Nrc-bf-Ge6"/>
                         <outlet property="answerTextField" destination="Pcp-dI-eMI" id="RKl-6Y-uqD"/>
+                        <outlet property="centerYConstraint" destination="XzE-VC-qjp" id="xxM-Lz-Jqa"/>
                         <outlet property="correctAnswerHeaderLabel" destination="RH9-bk-Kt8" id="drr-BW-SHc"/>
                         <outlet property="correctAnswerLabel" destination="j9f-zs-h06" id="paJ-xc-6sD"/>
                         <outlet property="correctAnswerLine" destination="iBp-9q-c2o" id="mOE-oh-fAf"/>

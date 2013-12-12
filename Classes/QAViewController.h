@@ -107,6 +107,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, strong) IBOutlet UIView *questionView;
 @property (nonatomic, strong) IBOutlet UIView *previousView;
 
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *centerYConstraint;
+
 - (IBAction) doRestart;
 - (IBAction) doRepeat;
 

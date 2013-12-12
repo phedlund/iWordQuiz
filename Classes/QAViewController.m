@@ -99,7 +99,16 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	correctAnswerLine.hidden = YES;
 	
 	self.errorCountButton.enabled = NO;
-    badgeErrorCount.userInteractionEnabled = NO;  
+    badgeErrorCount.userInteractionEnabled = NO;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
     [self willRotateToInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation duration:0];
 }
 
@@ -114,7 +123,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-       /* if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+       /* if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+            self.centerYConstraint.constant = 35;
+        } else {
+            self.centerYConstraint.constant = 125;
+        }
+        if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
             self.questionView.frame = CGRectMake(35, 35, 505, 310);
             self.previousView.frame = CGRectMake(41, 315, 505, 310);
             
@@ -161,6 +175,30 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
     [WQUtils renderCardShadow:previousView];
     [WQUtils renderCardShadow:questionView];
+}
+
+- (void)keyboardWasShown:(NSNotification*)aNotification {
+    //NSDictionary* info = [aNotification userInfo];
+    //CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+            self.centerYConstraint.constant = 125;
+        }
+    }
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        //
+    }
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+            self.centerYConstraint.constant = 35;
+        }
+    }
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        //
+    }
 }
 
 - (void) start {
