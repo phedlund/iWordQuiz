@@ -1,9 +1,6 @@
 [submodule "Classes/MDSpreadView"]
 	path = Classes/MDSpreadView
 	url = git://github.com/mochidev/MDSpreadView.git
-[submodule "Classes/WEPopover"]
-	path = Classes/WEPopover
-	url = git://github.com/werner77/WEPopover.git
 [submodule "Classes/JMWhenTapped"]
 	path = Classes/JMWhenTapped
 	url = git://github.com/jakemarsh/JMWhenTapped.git
@@ -25,3 +22,6 @@
 [submodule "MSDynamicsDrawerViewController"]
 	path = MSDynamicsDrawerViewController
 	url = https://github.com/monospacecollective/MSDynamicsDrawerViewController.git
+[submodule "WYPopoverController"]
+	path = WYPopoverController
+	url = https://github.com/nicolaschengdev/WYPopoverController.git

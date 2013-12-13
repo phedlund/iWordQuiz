@@ -50,7 +50,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @synthesize masterPopoverController = _masterPopoverController;
 @synthesize modePicker = _modePicker;
-@synthesize modePickerPopover = _modePickerPopover;
+@synthesize modePickerPopover;
 @synthesize doc = _doc;
 @synthesize detailItem = _detailItem;
 @synthesize modeBarButtonItem, editBarButtonItem, infoBarButtonItem;
@@ -363,15 +363,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (IBAction) doMode:(id)sender {
-    if (_modePicker == nil) {
-        _modePicker = [[ModePickerController alloc] initWithStyle:UITableViewStylePlain];
-        _modePicker.delegate = self;
-        _modePickerPopover = [[WEPopoverController alloc] initWithContentViewController:_modePicker];  
-        if ([_modePickerPopover respondsToSelector:@selector(setContainerViewProperties:)]) {
-			[_modePickerPopover setContainerViewProperties:[self improvedContainerViewProperties]];
-		}
-    }
-    [_modePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:(UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown) animated:YES];
+    [self.modePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:(UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown) animated:YES options:WYPopoverAnimationOptionFadeWithScale];
 }
 
 - (IBAction) doAbout:(id)sender {
@@ -569,46 +561,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [aSpreadView reloadData];
 }
 
-
-#pragma mark WEPopover
-/**
- Thanks to Paul Solt for supplying these background images and container view properties
- */
-- (WEPopoverContainerViewProperties *)improvedContainerViewProperties {
-	
-	WEPopoverContainerViewProperties *props = [WEPopoverContainerViewProperties alloc];
-	NSString *bgImageName = nil;
-	CGFloat bgMargin = 0.0;
-	CGFloat bgCapSize = 0.0;
-	CGFloat contentMargin = 6.0;
-	
-	bgImageName = @"popoverBg.png";
-	
-	// These constants are determined by the popoverBg.png image file and are image dependent
-	bgMargin = 13; // margin width of 13 pixels on all sides popoverBg.png (62 pixels wide - 36 pixel background) / 2 == 26 / 2 == 13 
-	bgCapSize = 31; // ImageSize/2  == 62 / 2 == 31 pixels
-	
-	props.leftBgMargin = bgMargin;
-	props.rightBgMargin = bgMargin;
-	props.topBgMargin = bgMargin;
-	props.bottomBgMargin = bgMargin;
-	props.leftBgCapSize = bgCapSize;
-	props.topBgCapSize = bgCapSize;
-	props.bgImageName = bgImageName;
-	props.leftContentMargin = contentMargin;
-	props.rightContentMargin = contentMargin - 1; // Need to shift one pixel for border to look correct
-	props.topContentMargin = contentMargin; 
-	props.bottomContentMargin = contentMargin;
-	
-	props.arrowMargin = 4.0;
-	
-	props.upArrowImageName = @"popoverArrowUp.png";
-	props.downArrowImageName = @"popoverArrowDown.png";
-	props.leftArrowImageName = @"popoverArrowLeft.png";
-	props.rightArrowImageName = @"popoverArrowRight.png";
-	return props;	
-}
-
 #pragma mark WQEditViewControllerDelegate
 
 - (void)currentEntryDidChange:(WQEditViewController*)aEditViewController reason:(EditReason)aReason value:(NSString *)aValue {
@@ -736,6 +688,20 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         infoBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     }
     return infoBarButtonItem;
+}
+
+#pragma mark - Mode Popover
+
+- (WYPopoverController*)modePickerPopover {
+    if (!modePickerPopover) {
+        _modePicker = [[ModePickerController alloc] initWithStyle:UITableViewStylePlain];
+        _modePicker.delegate = self;
+        _modePicker.preferredContentSize = CGSizeMake(290.0, 220.0);
+        modePickerPopover = [[WYPopoverController alloc] initWithContentViewController:_modePicker];
+        WYPopoverBackgroundView* appearance = [WYPopoverBackgroundView appearance];
+        [appearance setFillTopColor:[UIColor popoverBackgroundColor]];
+    }
+    return modePickerPopover;
 }
 
 @end

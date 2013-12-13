@@ -36,7 +36,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "ModePickerController.h"
 #import "WQDocument.h"
 #import "MDSpreadViewClasses.h"
-#import "WEPopoverController.h"
+#import "WYPopoverController.h"
 #import "WQEditViewController.h"
 #import "MSDynamicsDrawerViewController.h"
 
@@ -49,7 +49,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @property (strong, nonatomic) NSURL *detailItem;
 @property (strong, nonatomic) ModePickerController *modePicker;
-@property (strong, nonatomic) WEPopoverController *modePickerPopover;
+@property (strong, nonatomic) WYPopoverController *modePickerPopover;
 @property (strong, nonatomic) WQDocument *doc;
 @property (weak, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
