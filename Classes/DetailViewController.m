@@ -39,6 +39,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "TransparentToolbar.h"
 #import "WQUtils.h"
 #import "UIColor+PHColor.h"
+#import "UIImage+PHColor.h"
 
 @interface DetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
@@ -211,6 +212,36 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     self.tabBar.tintColor = [UIColor iconColor];
     self.tabBar.barTintColor = [UIColor backgroundColor];
+    [[UITabBarItem appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIColor iconColor], NSForegroundColorAttributeName, nil]
+                                             forState: UIControlStateSelected];
+
+    UIColor *unselectedColor = [UIColor colorWithRed:0.70 green:0.60 blue:0.42 alpha:1.0];
+    [[UITabBarItem appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: unselectedColor, NSForegroundColorAttributeName, nil]
+                                             forState: UIControlStateNormal];
+    
+    // set selected and unselected icons
+    UIImage *img;
+    UITabBarItem *item;
+    
+    item = [self.tabBar.items objectAtIndex:0];
+    img = [UIImage changeImage:[UIImage imageNamed:@"homeTab"] toColor:unselectedColor];
+    item.image = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item.selectedImage = [UIImage imageNamed:@"homeTab"];
+
+    item = [self.tabBar.items objectAtIndex:1];
+    img = [UIImage changeImage:[UIImage imageNamed:@"flashTab"] toColor:unselectedColor];
+    item.image = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item.selectedImage = [UIImage imageNamed:@"flashTab"];
+
+    item = [self.tabBar.items objectAtIndex:2];
+    img = [UIImage changeImage:[UIImage imageNamed:@"multipleTab"] toColor:unselectedColor];
+    item.image = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item.selectedImage = [UIImage imageNamed:@"multipleTab"];
+
+    item = [self.tabBar.items objectAtIndex:3];
+    img = [UIImage changeImage:[UIImage imageNamed:@"qaTab"] toColor:unselectedColor];
+    item.image = [img imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    item.selectedImage = [UIImage imageNamed:@"qaTab"];
 
     //remove bottom line/shadow
     for (UIView *view in self.navigationController.navigationBar.subviews) {
@@ -506,19 +537,19 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
 }
 
-- (CGFloat)spreadView:(MDSpreadView *)aSpreadView widthForColumnAtIndexPath:(MDIndexPath *)indexPath
-{
+- (CGFloat)spreadView:(MDSpreadView *)aSpreadView widthForColumnAtIndexPath:(MDIndexPath *)indexPath {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        if (([[UIDevice currentDevice] orientation ] == UIDeviceOrientationLandscapeLeft) ||
-            ([[UIDevice currentDevice] orientation ] == UIDeviceOrientationLandscapeRight)) {
-            
-            return (CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 54) / 2; // 214;
+        if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+            return (CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 54) / 2;
         } else {
-            return 138;
+            return (CGRectGetWidth([UIScreen mainScreen].applicationFrame) - 54) / 2;
         }
-        
-    } else {
-        return 302;
+    } else { //iPad
+        if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+            return (CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 70) / 2;
+        } else {
+            return (CGRectGetWidth([UIScreen mainScreen].applicationFrame) - 70) / 2;
+        }
     }
 }
 

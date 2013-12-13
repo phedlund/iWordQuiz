@@ -75,6 +75,7 @@
 		D0549FBF151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F8F151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected.png */; };
 		D0549FC0151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F90151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png */; };
 		D0549FC2151BCADB00BDE78C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0549FC1151BCADB00BDE78C /* QuartzCore.framework */; };
+		D06A08D0185AA33900A0A158 /* UIImage+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */; };
 		D074FB1C12249EBC00E8C175 /* flashTab.png in Resources */ = {isa = PBXBuildFile; fileRef = D074FB1512249EBC00E8C175 /* flashTab.png */; };
 		D074FB1E12249EBC00E8C175 /* homeTab.png in Resources */ = {isa = PBXBuildFile; fileRef = D074FB1712249EBC00E8C175 /* homeTab.png */; };
 		D074FB2012249EBC00E8C175 /* multipleTab.png in Resources */ = {isa = PBXBuildFile; fileRef = D074FB1912249EBC00E8C175 /* multipleTab.png */; };
@@ -243,6 +244,8 @@
 		D0549F8F151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MDSpreadViewRowHeaderTopSelected.png; sourceTree = "<group>"; };
 		D0549F90151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MDSpreadViewRowHeaderTopSelected@2x.png"; sourceTree = "<group>"; };
 		D0549FC1151BCADB00BDE78C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D06A08CE185AA33900A0A158 /* UIImage+PHColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PHColor.h"; path = "iWordQuiz/UIImage+PHColor.h"; sourceTree = SOURCE_ROOT; };
+		D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PHColor.m"; path = "iWordQuiz/UIImage+PHColor.m"; sourceTree = SOURCE_ROOT; };
 		D0713DB314DE15820053121A /* WordQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WordQuiz.entitlements; sourceTree = "<group>"; };
 		D074FB1512249EBC00E8C175 /* flashTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flashTab.png; path = Resources/flashTab.png; sourceTree = "<group>"; };
 		D074FB1712249EBC00E8C175 /* homeTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = homeTab.png; path = Resources/homeTab.png; sourceTree = "<group>"; };
@@ -420,6 +423,8 @@
 				D0CBB7F716B099C300FDAC8C /* TransparentToolbar.m */,
 				D0E8A23E1853EB4F005F8CAF /* UIColor+PHColor.h */,
 				D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */,
+				D06A08CE185AA33900A0A158 /* UIImage+PHColor.h */,
+				D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -943,6 +948,7 @@
 				D0CC677815252F2B000D067C /* WQScoreButton.m in Sources */,
 				D09F1D2C152CE92D003E8968 /* UIView+WhenTappedBlocks.m in Sources */,
 				D0CEE17A152F6EC6000F8C2E /* UIBarButtonItem+WEPopover.m in Sources */,
+				D06A08D0185AA33900A0A158 /* UIImage+PHColor.m in Sources */,
 				D0CEE17B152F6EC6000F8C2E /* WEPopoverContainerView.m in Sources */,
 				D0CEE17C152F6EC6000F8C2E /* WEPopoverController.m in Sources */,
 				D0CEE17D152F6EC6000F8C2E /* WETouchableView.m in Sources */,
