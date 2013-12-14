@@ -32,6 +32,7 @@
 
 #import "WQEditViewController.h"
 #import "WQNewFileViewController.h"
+#import "UIColor+PHColor.h"
 
 @interface WQEditViewController () {
     NSString *_newFileName;
@@ -43,31 +44,32 @@
 
 @implementation WQEditViewController
 
-@synthesize backIdentifierLabel = _backIdentifierLabel;
-@synthesize backTextField = _backTextField;
-@synthesize frontIdentifierLabel = _frontIdentifierLabel;
-@synthesize frontTextField = _frontTextField;
-@synthesize addButton = _addButton;
-@synthesize removeButton = _removeButton;
-@synthesize previousButton = _previousButton;
-@synthesize nextButton = _nextButton;
-@synthesize delegate = _delegate;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        _newFileName = nil;
-    }
-    return self;
+- (void)awakeFromNib {
+    _newFileName = nil;
+    self.view.backgroundColor = [UIColor backgroundColor];
+    self.navigationController.navigationBar.tintColor = [UIColor iconColor];
+    //self.navigationController.navigationBar.barTintColor = [UIColor backgroundColor];
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor clearColor];
+    shadow.shadowBlurRadius = 0.0;
+    shadow.shadowOffset = CGSizeMake(0.0, 0.0);
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor iconColor], NSForegroundColorAttributeName,
+      shadow, NSShadowAttributeName, nil]];
+    
+    self.previousButton.tintColor = [UIColor iconColor];
+    self.addButton.tintColor = [UIColor iconColor];
+    self.removeButton.tintColor = [UIColor iconColor];
+    self.nextButton.tintColor = [UIColor iconColor];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
 }
 
 - (void)viewDidUnload
