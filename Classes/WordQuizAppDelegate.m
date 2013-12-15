@@ -58,21 +58,22 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	session.delegate = self;
 	[DBSession setSharedSession:session];
 
-    self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
-    self.dynamicsDrawerViewController.shouldAlignStatusBarToPaneView = NO;
-    [self.dynamicsDrawerViewController setRevealWidth:320.0f forDirection:MSDynamicsDrawerDirectionLeft];
-    [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerParallaxStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
-
-    RootViewController *rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Drawer"];
-    rootViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
-    [self.dynamicsDrawerViewController setDrawerViewController:rootViewController forDirection:MSDynamicsDrawerDirectionLeft];
-    
-    UINavigationController *detailNavController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Pane"];
-    [self.dynamicsDrawerViewController setPaneViewController:detailNavController];
-    DetailViewController *detailViewController = (DetailViewController*)detailNavController.topViewController;
-    detailViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
-    rootViewController.detailViewController = detailViewController;
-
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
+        self.dynamicsDrawerViewController.shouldAlignStatusBarToPaneView = NO;
+        [self.dynamicsDrawerViewController setRevealWidth:320.0f forDirection:MSDynamicsDrawerDirectionLeft];
+        [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerParallaxStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
+        
+        RootViewController *rootViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Drawer"];
+        rootViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+        [self.dynamicsDrawerViewController setDrawerViewController:rootViewController forDirection:MSDynamicsDrawerDirectionLeft];
+        
+        UINavigationController *detailNavController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"Pane"];
+        [self.dynamicsDrawerViewController setPaneViewController:detailNavController];
+        DetailViewController *detailViewController = (DetailViewController*)detailNavController.topViewController;
+        detailViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
+        rootViewController.detailViewController = detailViewController;
+    }
     [self.window setBackgroundColor:[UIColor backgroundColor]];
 
     return YES;

@@ -117,7 +117,7 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
 	if (section < 2) {
-        return 44.0f;
+        return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 44.0f : 27.0f;
     }
     return 0.0f;
 }
