@@ -35,6 +35,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQDocument.h"
 #import "WQUtils.h"
 #import "CHDropboxSync.h"
+#import "UIColor+PHColor.h"
 
 NSString* WQDocmentFileExtension = @"kvtml";
 NSString* DisplayDetailSegue = @"DisplayDetailSegue";
@@ -71,6 +72,23 @@ NSString* WQDocumentsDirectoryName = @"Documents";
         self.syncButton.enabled = [[DBSession sharedSession] isLinked];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
     }
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        self.navigationController.navigationBar.tintColor = [UIColor iconColor];
+        self.navigationController.navigationBar.barTintColor = [UIColor backgroundColor];
+        
+        NSShadow *shadow = [[NSShadow alloc] init];
+        shadow.shadowColor = [UIColor clearColor];
+        shadow.shadowBlurRadius = 0.0;
+        shadow.shadowOffset = CGSizeMake(0.0, 0.0);
+        
+        [self.navigationController.navigationBar setTitleTextAttributes:
+         [NSDictionary dictionaryWithObjectsAndKeys:
+          [UIColor iconColor], NSForegroundColorAttributeName,
+          shadow, NSShadowAttributeName, nil]];
+        
+    }
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newFileURL:) name:@"FileURL" object:nil];
     NSError *err;
      
@@ -232,7 +250,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         [[segue destinationViewController] setDetailItem:[self.vocabularies objectAtIndex: indexPath.row]];
         [[segue destinationViewController] setDelegate:self];
     }

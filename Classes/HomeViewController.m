@@ -41,9 +41,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.view.backgroundColor = [UIColor backgroundColor];
-    }
+	self.view.backgroundColor = [UIColor backgroundColor];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(edited:) name:@"Edited" object:nil];
     spreadView.dataSource = (id)self.tabBarController;
     spreadView.delegate = (id) self.tabBarController;
@@ -66,26 +64,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (void) viewWillLayoutSubviews {
-    NSLog(@"Frame for layout: %@", NSStringFromCGRect([UIScreen mainScreen].applicationFrame));
+    //NSLog(@"Frame for layout: %@", NSStringFromCGRect([UIScreen mainScreen].applicationFrame));
     [super viewWillLayoutSubviews];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        int width;
-        int height;
-        if (([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeLeft) ||
-            ([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeRight)) {
-            width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
-            height = CGRectGetWidth([UIScreen mainScreen].applicationFrame) - 44 - 49 + 20;
-        } else {
-            width = CGRectGetWidth([UIScreen mainScreen].applicationFrame);
-            height = CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 44 - 49 + 20;
-        }
-        NSLog(@"Width: %d, Height: %d", width, height);
-        self.spreadView.frame = CGRectMake(0, 0, width, height);
-        [spreadView reloadData];
-    }
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self.spreadView reloadData];
-    }
+    [self.spreadView reloadData];
 }
 
 - (void) start {
