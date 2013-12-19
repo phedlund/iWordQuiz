@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -36,27 +36,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "JMWhenTapped.h"
 #import "UIColor+PHColor.h"
 
-#define kCardHeight		    422.0
-#define kCardWidth			663.0
 #define kTransitionDuration	0.50
-#define kTopPlacement		55.0	// y coord for the images
 
 @implementation FCViewController
 
 @synthesize quiz = m_quiz;
 @synthesize slideToTheRight;
 
-@synthesize frontIdentifierLabel;
-@synthesize backIdentifierLabel;
-@synthesize frontText;
-@synthesize backText;
-@synthesize questionCountButton, answerCountButton, correctCountButton, errorCountButton;
-@synthesize knowButton, dontKnowButton;
-@synthesize containerView, previousView, frontView, backView;
-@synthesize badgeQuestionCount;
-@synthesize badgeAnswerCount;
-@synthesize badgeCorrectCount;
-@synthesize badgeErrorCount;
 @synthesize animationImage;
 
 
@@ -64,48 +50,38 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor backgroundColor];
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 	
-	frontView.userInteractionEnabled = YES;
-    backView.hidden = true;
-    [frontView whenTapped:^{
+	self.frontView.userInteractionEnabled = YES;
+    self.backView.hidden = true;
+    [self.frontView whenTapped:^{
 		[self flipCard:false];
 	}];
-    [backView whenTapped:^{
+    [self.backView whenTapped:^{
 		[self flipCard:false];
 	}];
 
-	[questionCountButton setTitle:@"" forState:UIControlStateNormal];
-	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
-	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
-	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
-    
-    badgeQuestionCount.fillColor = [UIColor blueColor];
-    badgeAnswerCount.fillColor = [UIColor colorWithRed:0.95 green:0.76 blue:0.21 alpha:1.0];
-    badgeCorrectCount.fillColor = [UIColor greenColor];
-    badgeErrorCount.fillColor = [UIColor redColor];
-    [badgeQuestionCount whenTapped:^{
-		[self doRestart];
-	}];
-    [badgeErrorCount whenTapped:^{
-		[self doRepeat];
-	}];
+	[self.questionCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.answerCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.correctCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.errorCountButton setTitle:@"" forState:UIControlStateNormal];
     
     m_animationLayer = [CALayer layer];
-    m_animationLayer.bounds = containerView.layer.bounds;
-    [containerView.layer addSublayer:m_animationLayer];
+    m_animationLayer.bounds = self.containerView.layer.bounds;
+    [self.containerView.layer addSublayer:m_animationLayer];
     
-    self.knowButton.layer.cornerRadius = 30.0f;
+    CGFloat cRadius = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 30.0f : 15.0f;
+    self.knowButton.layer.cornerRadius = cRadius;
     self.knowButton.layer.backgroundColor = [UIColor colorWithRed:0.45 green:0.9 blue:0.25 alpha:1.0].CGColor;
 	self.knowButton.enabled = NO;
     self.knowButton.titleLabel.textColor = [UIColor whiteColor];
 
-    self.dontKnowButton.layer.cornerRadius = 30.0f;
+    self.dontKnowButton.layer.cornerRadius = cRadius;
     self.dontKnowButton.layer.backgroundColor = [UIColor colorWithRed:1.0 green:0.45 blue:0.45 alpha:1.0].CGColor;
 	self.dontKnowButton.enabled = NO;
     self.dontKnowButton.titleLabel.textColor = [UIColor whiteColor];
     
 	self.errorCountButton.enabled = NO;
-    [badgeErrorCount setUserInteractionEnabled:NO];
     [self willRotateToInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation duration:0];
 }
 
@@ -126,89 +102,81 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-      /*  if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-            self.containerView.frame = CGRectMake(20, 20, 535, 340);
-            self.previousView.frame = CGRectMake(41, 315, 505, 310);
-            
-            questionCountButton.frame = CGRectMake(580, 45, 104, 100);
-            answerCountButton.frame = CGRectMake(580, 175, 104, 100);
-            correctCountButton.frame = CGRectMake(580, 305, 104, 100);
-            errorCountButton.frame = CGRectMake(580, 440, 104, 100);
-            
-        } else {
-            self.containerView.frame = CGRectMake(122, 60, 535, 340);
-            self.previousView.frame = CGRectMake(146, 368, 505, 310);
-            
-            questionCountButton.frame = CGRectMake(134, 760, 104, 100);
-            answerCountButton.frame = CGRectMake(266, 760, 104, 100);
-            correctCountButton.frame = CGRectMake(398, 760, 104, 100);
-            errorCountButton.frame = CGRectMake(530, 760, 104, 100);
-        }*/
-    }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         int width;
         int height;
-        if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+        if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
             width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
-            self.containerView.frame = CGRectMake(5, 15, 310, 185);
-            knowButton.frame = CGRectMake(330, 25, 125, 56);
-            dontKnowButton.frame = CGRectMake(330, 80, 125, 56);
-            
-            if (width > 500) {
-                badgeQuestionCount.frame = CGRectMake(480, 5, 50, 50);
-                badgeAnswerCount.frame = CGRectMake(480, 60, 50, 50);
-                badgeCorrectCount.frame = CGRectMake(480, 115, 50, 50);
-                badgeErrorCount.frame = CGRectMake(480, 170, 50, 50);
+            self.scoreYPos.constant = 216;
+            if (width > 500) { //4" screen
+                self.knowButtonXPos.constant = 380;
+                self.dontKnowButtonXPos.constant = 380;
                 
+                self.knowButtonYPos.constant = 56;
+                self.dontKnowButtonYPos.constant = 130;
+                
+                self.cardXPos.constant = 55;
+                self.cardYPos.constant = 32;
+                
+                self.scoreXPos.constant = 80;
             } else {
-                badgeQuestionCount.frame = CGRectMake(330, 130, 50, 50);
-                badgeAnswerCount.frame = CGRectMake(400, 130, 50, 50);
-                badgeCorrectCount.frame = CGRectMake(330, 170, 50, 50);
-                badgeErrorCount.frame = CGRectMake(400, 170, 50, 50);
+                self.knowButtonXPos.constant = 330;
+                self.dontKnowButtonXPos.constant = 330;
+                
+                self.knowButtonYPos.constant = 56;
+                self.dontKnowButtonYPos.constant = 130;
+                
+                self.cardXPos.constant = 5;
+                self.cardYPos.constant = 32;
+                
+                self.scoreXPos.constant = 30;
             }
             
         } else {
             height = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
-            self.containerView.frame = CGRectMake(5, 5, 310, 185);
-            knowButton.frame = CGRectMake(20, 225, 125, 56);
-            dontKnowButton.frame = CGRectMake(175, 225, 125, 56);
-            
             if (height > 500) {
-                badgeQuestionCount.frame = CGRectMake(20, 340, 50, 50);
-                badgeAnswerCount.frame = CGRectMake(90, 340, 50, 50);
-                badgeCorrectCount.frame = CGRectMake(170, 340, 50, 50);
-                badgeErrorCount.frame = CGRectMake(240, 340, 50, 50);
+                self.knowButtonXPos.constant = 20;
+                self.dontKnowButtonXPos.constant = 175;
+                
+                self.knowButtonYPos.constant = 307;
+                self.dontKnowButtonYPos.constant = 307;
+                
+                self.cardXPos.constant = 5;
+                self.cardYPos.constant = 82;
+                
+                self.scoreXPos.constant = 30;
+                self.scoreYPos.constant = 387;
             } else {
-                badgeQuestionCount.frame = CGRectMake(20, 300, 50, 50);
-                badgeAnswerCount.frame = CGRectMake(90, 300, 50, 50);
-                badgeCorrectCount.frame = CGRectMake(170, 300, 50, 50);
-                badgeErrorCount.frame = CGRectMake(240, 300, 50, 50);
+                self.knowButtonXPos.constant = 20;
+                self.dontKnowButtonXPos.constant = 175;
+                
+                self.knowButtonYPos.constant = 277;
+                self.dontKnowButtonYPos.constant = 277;
+                
+                self.cardXPos.constant = 5;
+                self.cardYPos.constant = 52;
+                
+                self.scoreXPos.constant = 30;
+                self.scoreYPos.constant = 357;
             }
         }
     }
-    //[WQUtils renderCardShadow:previousView];
-    [WQUtils renderCardShadow:frontView];
-    [WQUtils renderCardShadow:backView];
+    [WQUtils renderCardShadow:self.frontView];
+    [WQUtils renderCardShadow:self.backView];
 }
 
 
 - (void) start {
-	[questionCountButton setTitle:[@([self.quiz questionCount]) stringValue] forState:UIControlStateNormal];
-	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
-	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
-	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
-    badgeQuestionCount.value = self.quiz.questionCount;
-    badgeAnswerCount.value = 0;
-    badgeCorrectCount.value = 0;
-    badgeErrorCount.value = 0;
+	[self.questionCountButton setTitle:[@([self.quiz questionCount]) stringValue] forState:UIControlStateNormal];
+	[self.answerCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.correctCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.errorCountButton setTitle:@"" forState:UIControlStateNormal];
     self.slideToTheRight = false;
     self.frontView.hidden = false;
     self.backView.hidden = true;
 	self.knowButton.enabled = YES;
 	self.dontKnowButton.enabled = YES;
 	self.errorCountButton.enabled = NO;
-    [badgeErrorCount setUserInteractionEnabled:NO];
     self.animationImage = nil;
     m_animationLayer.contents = nil;
 	[self updateCard];
@@ -242,22 +210,18 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     self.slideToTheRight = !keep;
     [self flipCard:true];
     
-	[answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
-	[correctCountButton setTitle:[@([self.quiz correctCount]) stringValue] forState:UIControlStateNormal];
-	[errorCountButton setTitle:[@([self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
-	badgeAnswerCount.value = [self.quiz correctCount] + [self.quiz errorCount];
-    badgeCorrectCount.value = [self.quiz correctCount];
-    badgeErrorCount.value = [self.quiz errorCount];
+	[self.answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
+	[self.correctCountButton setTitle:[@([self.quiz correctCount]) stringValue] forState:UIControlStateNormal];
+	[self.errorCountButton setTitle:[@([self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
 	[self.quiz toNext];
 	if ([self.quiz atEnd]) {
 		[self.quiz finish];
 		self.errorCountButton.enabled = [self.quiz hasErrors];
-        [badgeErrorCount setUserInteractionEnabled:[self.quiz hasErrors]];
-		frontIdentifierLabel.text = @"Summary";
-		frontText.text = @"";
+		self.frontIdentifierLabel.text = @"Summary";
+		self.frontText.text = @"";
 
-		knowButton.enabled = NO;
-		dontKnowButton.enabled = NO;
+		self.knowButton.enabled = NO;
+		self.dontKnowButton.enabled = NO;
 	}
 }
 
@@ -275,18 +239,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (IBAction) doRepeat {
 	self.errorCountButton.enabled = NO;
-    [badgeErrorCount setUserInteractionEnabled:NO];
 	[self.quiz activateErrorList];
 	[self start];
 }
 
 - (void) flipCard:(BOOL)withSlide {
-    BOOL shouldOnlySlide = withSlide & (backView.isHidden);
+    BOOL shouldOnlySlide = withSlide & (self.backView.isHidden);
     
     if (shouldOnlySlide) {
         [self slideCard];
     } else {
-        BOOL showFront = frontView.isHidden;
+        BOOL showFront = self.frontView.isHidden;
 
         [UIView transitionFromView:(showFront ? self.backView : self.frontView)
                             toView:(showFront ? self.frontView : self.backView)
@@ -307,10 +270,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void) updateCard {
     if (![self.quiz atEnd]) {
-        frontIdentifierLabel.text = [self.quiz langQuestion];
-        frontText.text = [self.quiz question];
-        backIdentifierLabel.text = [self.quiz langAnswer];
-        backText.text = [self.quiz answer];
+        self.frontIdentifierLabel.text = [self.quiz langQuestion];
+        self.frontText.text = [self.quiz question];
+        self.backIdentifierLabel.text = [self.quiz langAnswer];
+        self.backText.text = [self.quiz answer];
     }
     
 }
@@ -338,8 +301,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
        deltaX = (self.slideToTheRight ? -800 : 800);
    }
 
-    UIGraphicsBeginImageContext(containerView.frame.size);
-    [containerView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIGraphicsBeginImageContext(self.containerView.frame.size);
+    [self.containerView.layer renderInContext:UIGraphicsGetCurrentContext()];
     self.animationImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     
@@ -347,7 +310,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [self.animationImage drawAtPoint:CGPointMake(0, 0)]; // handy!
 
     m_animationLayer.bounds = CGRectMake(0, 0, self.animationImage.size.width, self.animationImage.size.height);
-    CGPoint point = CGPointMake(containerView.layer.position.x - containerView.frame.origin.x, containerView.layer.position.y - containerView.frame.origin.y);
+    CGPoint point = CGPointMake(self.containerView.layer.position.x - self.containerView.frame.origin.x, self.containerView.layer.position.y - self.containerView.frame.origin.y);
     m_animationLayer.position =  point;
     m_animationLayer.contentsScale = self.view.layer.contentsScale; // for retina compat. Make sure you've set you view's main layer
     m_animationLayer.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
@@ -390,7 +353,5 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
-
-
 
 @end

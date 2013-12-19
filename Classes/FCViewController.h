@@ -33,31 +33,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import <UIKit/UIKit.h>
 #import "WQQuiz.h"
 #import "WQScoreButton.h"
-#import "MKNumberBadgeView.h"
 
 @interface FCViewController : UIViewController <UIGestureRecognizerDelegate> {
 
 	WQQuiz * m_quiz;
     bool slideToTheRight;
-	
-	UILabel *frontIdentifierLabel;
-    UILabel *backIdentifierLabel;
-	UITextView *frontText;
-    UITextView *backText;
-	
-	WQScoreButton *questionCountButton;
-	WQScoreButton *answerCountButton;
-	WQScoreButton *correctCountButton;
-	WQScoreButton *errorCountButton;
-	
-	UIButton *knowButton;
-	UIButton *dontKnowButton;
-	
-	UIView *containerView;
-	UIView *previousView;
-	UIView *frontView;
-    UIView *backView;
-    
+	    
     CALayer *m_animationLayer;
     UIImage *animationImage;
 }
@@ -84,11 +65,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, strong) IBOutlet WQScoreButton *correctCountButton;
 @property (nonatomic, strong) IBOutlet WQScoreButton *errorCountButton;
 
-@property (strong) IBOutlet MKNumberBadgeView* badgeQuestionCount;
-@property (strong) IBOutlet MKNumberBadgeView* badgeAnswerCount;
-@property (strong) IBOutlet MKNumberBadgeView* badgeCorrectCount;
-@property (strong) IBOutlet MKNumberBadgeView* badgeErrorCount;
-
 @property (nonatomic, strong) IBOutlet UIButton *knowButton;
 @property (nonatomic, strong) IBOutlet UIButton *dontKnowButton;
 
@@ -98,6 +74,15 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, strong) IBOutlet UIView *backView;
 
 @property (nonatomic, strong) UIImage *animationImage;
+
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *knowButtonXPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *knowButtonYPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *dontKnowButtonXPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *dontKnowButtonYPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *cardXPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *cardYPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *scoreXPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *scoreYPos;
 
 - (IBAction) doKnowButton;
 - (IBAction) doDontKnowButton;

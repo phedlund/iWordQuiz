@@ -179,7 +179,6 @@
 		D06A093D185D421E00A0A158 /* UIImage+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */; };
 		D06A093E185D421E00A0A158 /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
 		D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CE841B154737C10097D67A /* WQNewFileViewController.m */; };
-		D06A0940185D421E00A0A158 /* MKNumberBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074515E6DAAA00811921 /* MKNumberBadgeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0941185D421E00A0A158 /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074F15E7059800811921 /* CHDropboxSync.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0942185D421E00A0A158 /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075115E7059800811921 /* SyncTask.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0943185D421E00A0A158 /* ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075915E7100600811921 /* ConciseKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -246,7 +245,6 @@
 		D0E8A23B18528A61005F8CAF /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */; };
 		D0E8A2401853EB4F005F8CAF /* UIColor+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */; };
 		D0ED46B1161A6A6300BF31BD /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */; };
-		D0FC074615E6DAAA00811921 /* MKNumberBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074515E6DAAA00811921 /* MKNumberBadgeView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0FC075215E7059800811921 /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074F15E7059800811921 /* CHDropboxSync.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0FC075315E7059800811921 /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075115E7059800811921 /* SyncTask.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D0FC076015E7100600811921 /* ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075915E7100600811921 /* ConciseKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -415,8 +413,6 @@
 		D0E8A23E1853EB4F005F8CAF /* UIColor+PHColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PHColor.h"; path = "../iWordQuiz/UIColor+PHColor.h"; sourceTree = "<group>"; };
 		D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PHColor.m"; path = "../iWordQuiz/UIColor+PHColor.m"; sourceTree = "<group>"; };
 		D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
-		D0FC074415E6DAAA00811921 /* MKNumberBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKNumberBadgeView.h; path = Classes/iPhoneMK/Views/MKNumberBadgeView/MKNumberBadgeView.h; sourceTree = SOURCE_ROOT; };
-		D0FC074515E6DAAA00811921 /* MKNumberBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKNumberBadgeView.m; path = Classes/iPhoneMK/Views/MKNumberBadgeView/MKNumberBadgeView.m; sourceTree = SOURCE_ROOT; };
 		D0FC074E15E7059800811921 /* CHDropboxSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHDropboxSync.h; path = Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/CHDropboxSync.h; sourceTree = SOURCE_ROOT; };
 		D0FC074F15E7059800811921 /* CHDropboxSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHDropboxSync.m; path = Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/CHDropboxSync.m; sourceTree = SOURCE_ROOT; };
 		D0FC075015E7059800811921 /* SyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncTask.h; path = Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/SyncTask.h; sourceTree = SOURCE_ROOT; };
@@ -489,7 +485,6 @@
 				D0FC074D15E703A600811921 /* CHDropboxSync */,
 				D0FC075415E7100500811921 /* ConciseKit */,
 				D09F1D28152CE92D003E8968 /* JMWhenTapped */,
-				D0E9D3DE152BC52100AB88E8 /* MKNumberBadgeView */,
 				D0549F51151BC37900BDE78C /* MDSpreadView */,
 				D0FC076415E7EAAF00811921 /* KissXML */,
 				1D3623240D0F684500981E51 /* WordQuizAppDelegate.h */,
@@ -759,15 +754,6 @@
 			);
 			name = MSDynamicsDrawerViewController;
 			path = MSDynamicsDrawerViewController/MSDynamicsDrawerViewController;
-			sourceTree = "<group>";
-		};
-		D0E9D3DE152BC52100AB88E8 /* MKNumberBadgeView */ = {
-			isa = PBXGroup;
-			children = (
-				D0FC074415E6DAAA00811921 /* MKNumberBadgeView.h */,
-				D0FC074515E6DAAA00811921 /* MKNumberBadgeView.m */,
-			);
-			path = MKNumberBadgeView;
 			sourceTree = "<group>";
 		};
 		D0FC074D15E703A600811921 /* CHDropboxSync */ = {
@@ -1115,7 +1101,6 @@
 				D06A08D0185AA33900A0A158 /* UIImage+PHColor.m in Sources */,
 				D0D11E0E1541CCE800B8ECBD /* WQEditViewController.m in Sources */,
 				D0CE841C154737C10097D67A /* WQNewFileViewController.m in Sources */,
-				D0FC074615E6DAAA00811921 /* MKNumberBadgeView.m in Sources */,
 				D0FC075215E7059800811921 /* CHDropboxSync.m in Sources */,
 				D0FC075315E7059800811921 /* SyncTask.m in Sources */,
 				D0FC076015E7100600811921 /* ConciseKit.m in Sources */,
@@ -1167,7 +1152,6 @@
 				D06A093D185D421E00A0A158 /* UIImage+PHColor.m in Sources */,
 				D06A093E185D421E00A0A158 /* WQEditViewController.m in Sources */,
 				D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */,
-				D06A0940185D421E00A0A158 /* MKNumberBadgeView.m in Sources */,
 				D06A0941185D421E00A0A158 /* CHDropboxSync.m in Sources */,
 				D06A0942185D421E00A0A158 /* SyncTask.m in Sources */,
 				D06A0943185D421E00A0A158 /* ConciseKit.m in Sources */,

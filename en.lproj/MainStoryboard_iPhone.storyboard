@@ -401,15 +401,19 @@
                         <viewControllerLayoutGuide type="bottom" id="sIY-jy-wwr"/>
                     </layoutGuides>
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="i8Z-cV-zaL">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ode-zn-beR" userLabel="KnowButton">
-                                <rect key="frame" x="20" y="225" width="125" height="169"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ode-zn-beR" userLabel="KnowButton">
+                                <rect key="frame" x="20" y="277" width="125" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="OYw-oq-mDL"/>
+                                    <constraint firstAttribute="height" constant="50" id="rlg-io-iXb"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" image="knowButton.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="I Know">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -419,12 +423,16 @@
                                     <action selector="doKnowButton" destination="4fW-El-8z2" eventType="touchUpInside" id="2DY-FF-Owo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXb-Bu-hhj" userLabel="DoNotKnowButton">
-                                <rect key="frame" x="175" y="225" width="125" height="169"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXb-Bu-hhj" userLabel="DoNotKnowButton">
+                                <rect key="frame" x="175" y="277" width="125" height="50"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="eMF-1R-W9z"/>
+                                    <constraint firstAttribute="height" constant="50" id="iZ9-ry-9aS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" image="dontknowButton.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="I Do Not Know">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
@@ -434,104 +442,245 @@
                                     <action selector="doDontKnowButton" destination="4fW-El-8z2" eventType="touchUpInside" id="SQF-nJ-Z5A"/>
                                 </connections>
                             </button>
-                            <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QL4-1V-3cN">
-                                <rect key="frame" x="5" y="8" width="310" height="185"/>
+                            <view autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QL4-1V-3cN">
+                                <rect key="frame" x="5" y="72" width="310" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gYD-iD-1oa">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYD-iD-1oa">
                                         <rect key="frame" x="10" y="10" width="290" height="165"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tyO-Hz-ELV">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tyO-Hz-ELV">
                                                 <rect key="frame" x="10" y="10" width="270" height="15"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="B4Z-NB-1uM"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Soq-Us-fjh">
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Soq-Us-fjh">
                                                 <rect key="frame" x="10" y="26" width="270" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
-                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f9c-Ux-jqq">
+                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f9c-Ux-jqq">
                                                 <rect key="frame" x="10" y="40" width="270" height="120"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="Efu-ES-kUA"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="tyO-Hz-ELV" firstAttribute="trailing" secondItem="Soq-Us-fjh" secondAttribute="trailing" id="4Yf-i3-DSY"/>
+                                            <constraint firstItem="tyO-Hz-ELV" firstAttribute="top" secondItem="gYD-iD-1oa" secondAttribute="top" constant="10" id="AUg-qb-Wyc"/>
+                                            <constraint firstItem="f9c-Ux-jqq" firstAttribute="leading" secondItem="Soq-Us-fjh" secondAttribute="leading" id="Gbg-mW-GSb"/>
+                                            <constraint firstAttribute="bottom" secondItem="f9c-Ux-jqq" secondAttribute="bottom" constant="5" id="QvV-LQ-OOW"/>
+                                            <constraint firstItem="Soq-Us-fjh" firstAttribute="trailing" secondItem="f9c-Ux-jqq" secondAttribute="trailing" id="WZa-2W-wpo"/>
+                                            <constraint firstItem="tyO-Hz-ELV" firstAttribute="leading" secondItem="gYD-iD-1oa" secondAttribute="leading" constant="10" id="exS-Yz-Nvp"/>
+                                            <constraint firstItem="f9c-Ux-jqq" firstAttribute="top" secondItem="Soq-Us-fjh" secondAttribute="bottom" constant="13" id="gnq-f9-hgR"/>
+                                            <constraint firstItem="tyO-Hz-ELV" firstAttribute="centerX" secondItem="gYD-iD-1oa" secondAttribute="centerX" id="kpQ-p7-HCZ"/>
+                                            <constraint firstItem="Soq-Us-fjh" firstAttribute="top" secondItem="tyO-Hz-ELV" secondAttribute="bottom" constant="1" id="q7W-1N-yNl"/>
+                                            <constraint firstItem="tyO-Hz-ELV" firstAttribute="leading" secondItem="Soq-Us-fjh" secondAttribute="leading" id="tky-4s-w7W"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CXK-kS-8Gd">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXK-kS-8Gd">
                                         <rect key="frame" x="10" y="10" width="290" height="165"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0La-sT-wTP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0La-sT-wTP">
                                                 <rect key="frame" x="10" y="10" width="270" height="15"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="3cP-DF-YnO"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22e-iT-r8f">
+                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22e-iT-r8f">
                                                 <rect key="frame" x="10" y="26" width="270" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
-                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uvG-s0-Ig5">
+                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uvG-s0-Ig5">
                                                 <rect key="frame" x="10" y="40" width="270" height="120"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="nqO-Vl-vr5"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="22e-iT-r8f" firstAttribute="trailing" secondItem="0La-sT-wTP" secondAttribute="trailing" id="KWe-Vv-5jd"/>
+                                            <constraint firstItem="22e-iT-r8f" firstAttribute="top" secondItem="0La-sT-wTP" secondAttribute="bottom" constant="1" id="Lvs-aC-S8P"/>
+                                            <constraint firstAttribute="bottom" secondItem="uvG-s0-Ig5" secondAttribute="bottom" constant="5" id="NzK-Aw-gsc"/>
+                                            <constraint firstItem="0La-sT-wTP" firstAttribute="top" secondItem="CXK-kS-8Gd" secondAttribute="top" constant="10" id="eIz-rn-0Go"/>
+                                            <constraint firstItem="22e-iT-r8f" firstAttribute="leading" secondItem="uvG-s0-Ig5" secondAttribute="leading" id="fbH-YI-R4p"/>
+                                            <constraint firstItem="0La-sT-wTP" firstAttribute="leading" secondItem="CXK-kS-8Gd" secondAttribute="leading" constant="10" id="j0L-sf-Kqf"/>
+                                            <constraint firstItem="22e-iT-r8f" firstAttribute="trailing" secondItem="uvG-s0-Ig5" secondAttribute="trailing" id="nZx-mX-v9m"/>
+                                            <constraint firstItem="22e-iT-r8f" firstAttribute="leading" secondItem="0La-sT-wTP" secondAttribute="leading" id="qEd-jj-A7B"/>
+                                            <constraint firstItem="uvG-s0-Ig5" firstAttribute="top" secondItem="22e-iT-r8f" secondAttribute="bottom" constant="13" id="tgm-gM-8mH"/>
+                                            <constraint firstItem="22e-iT-r8f" firstAttribute="centerX" secondItem="CXK-kS-8Gd" secondAttribute="centerX" id="xVk-hE-EPn"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="CXK-kS-8Gd" firstAttribute="top" secondItem="gYD-iD-1oa" secondAttribute="top" id="OAf-AP-K3b"/>
+                                    <constraint firstAttribute="height" constant="185" id="TfW-OA-0Lm"/>
+                                    <constraint firstItem="CXK-kS-8Gd" firstAttribute="centerX" secondItem="QL4-1V-3cN" secondAttribute="centerX" id="ZsB-4H-V8j"/>
+                                    <constraint firstAttribute="width" constant="310" id="jGA-xd-w9m"/>
+                                    <constraint firstItem="CXK-kS-8Gd" firstAttribute="trailing" secondItem="gYD-iD-1oa" secondAttribute="trailing" id="jt1-Xg-UV8"/>
+                                    <constraint firstItem="gYD-iD-1oa" firstAttribute="top" secondItem="QL4-1V-3cN" secondAttribute="top" constant="10" id="k7u-uo-FIy"/>
+                                    <constraint firstItem="CXK-kS-8Gd" firstAttribute="leading" secondItem="QL4-1V-3cN" secondAttribute="leading" constant="10" id="loj-l9-xm4"/>
+                                    <constraint firstItem="gYD-iD-1oa" firstAttribute="centerY" secondItem="QL4-1V-3cN" secondAttribute="centerY" id="oif-Le-Nih"/>
+                                    <constraint firstItem="CXK-kS-8Gd" firstAttribute="leading" secondItem="gYD-iD-1oa" secondAttribute="leading" id="pop-94-yeb"/>
+                                    <constraint firstItem="gYD-iD-1oa" firstAttribute="bottom" secondItem="CXK-kS-8Gd" secondAttribute="bottom" id="xdw-tn-T9d"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KkO-0K-eea" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="20" y="298" width="50" height="50"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KkO-0K-eea" customClass="WQScoreButton">
+                                <rect key="frame" x="30" y="357" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30F-R1-QRy" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="90" y="298" width="50" height="50"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Kq1-kl-aEU"/>
+                                    <constraint firstAttribute="height" constant="30" id="fTO-Yq-zz4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doRestart" destination="4fW-El-8z2" eventType="touchUpInside" id="YSt-uA-UR4"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30F-R1-QRy" customClass="WQScoreButton">
+                                <rect key="frame" x="107" y="357" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VWT-sW-noQ" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="170" y="298" width="50" height="50"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="XJl-sj-mPG"/>
+                                    <constraint firstAttribute="width" constant="30" id="fD7-0g-Ig0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWT-sW-noQ" customClass="WQScoreButton">
+                                <rect key="frame" x="183" y="357" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nR9-d4-WA7" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="240" y="298" width="50" height="50"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="6WG-xs-YfF"/>
+                                    <constraint firstAttribute="height" constant="30" id="TfT-8G-DC9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nR9-d4-WA7" customClass="WQScoreButton">
+                                <rect key="frame" x="260" y="357" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EwO-Hz-Hx1"/>
+                                    <constraint firstAttribute="width" constant="30" id="ju5-DF-G0Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doRepeat" destination="4fW-El-8z2" eventType="touchUpInside" id="0Bm-6N-RbQ"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VWT-sW-noQ" firstAttribute="leading" secondItem="30F-R1-QRy" secondAttribute="trailing" constant="46" id="4ri-oJ-eLE"/>
+                            <constraint firstItem="KkO-0K-eea" firstAttribute="top" secondItem="nR9-d4-WA7" secondAttribute="top" id="78j-x3-BiL"/>
+                            <constraint firstItem="QL4-1V-3cN" firstAttribute="top" secondItem="u2L-s2-dez" secondAttribute="bottom" constant="8" id="DIz-AF-fDf"/>
+                            <constraint firstItem="QL4-1V-3cN" firstAttribute="leading" secondItem="i8Z-cV-zaL" secondAttribute="leading" constant="5" id="Yv4-Vj-eAl"/>
+                            <constraint firstItem="KkO-0K-eea" firstAttribute="leading" secondItem="i8Z-cV-zaL" secondAttribute="leading" constant="30" id="Yzr-zY-B2Y"/>
+                            <constraint firstItem="KkO-0K-eea" firstAttribute="top" secondItem="VWT-sW-noQ" secondAttribute="top" id="beh-2b-2R2"/>
+                            <constraint firstItem="nR9-d4-WA7" firstAttribute="leading" secondItem="VWT-sW-noQ" secondAttribute="trailing" constant="47" id="bv8-67-6k2"/>
+                            <constraint firstItem="ode-zn-beR" firstAttribute="top" secondItem="u2L-s2-dez" secondAttribute="bottom" constant="213" id="d5J-22-wwC"/>
+                            <constraint firstItem="30F-R1-QRy" firstAttribute="leading" secondItem="KkO-0K-eea" secondAttribute="trailing" constant="47" id="gMd-fQ-QQl"/>
+                            <constraint firstItem="KkO-0K-eea" firstAttribute="top" secondItem="30F-R1-QRy" secondAttribute="top" id="geN-LP-UPR"/>
+                            <constraint firstItem="mXb-Bu-hhj" firstAttribute="leading" secondItem="i8Z-cV-zaL" secondAttribute="leading" constant="175" id="npV-nq-NLe"/>
+                            <constraint firstItem="KkO-0K-eea" firstAttribute="top" secondItem="u2L-s2-dez" secondAttribute="bottom" constant="293" id="too-K6-ntn"/>
+                            <constraint firstItem="mXb-Bu-hhj" firstAttribute="top" secondItem="u2L-s2-dez" secondAttribute="bottom" constant="213" id="ux7-Lt-XWY"/>
+                            <constraint firstItem="ode-zn-beR" firstAttribute="leading" secondItem="i8Z-cV-zaL" secondAttribute="leading" constant="20" id="wSZ-XQ-jew"/>
+                        </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Flashcard" image="flashTab.png" id="PlT-aK-sCm"/>
                     <connections>
+                        <outlet property="answerCountButton" destination="30F-R1-QRy" id="Kfg-sw-227"/>
                         <outlet property="backIdentifierLabel" destination="tyO-Hz-ELV" id="I2s-tq-069"/>
                         <outlet property="backText" destination="f9c-Ux-jqq" id="b1l-hg-AAX"/>
                         <outlet property="backView" destination="gYD-iD-1oa" id="gPa-bP-W2a"/>
-                        <outlet property="badgeAnswerCount" destination="30F-R1-QRy" id="2IZ-ls-i6c"/>
-                        <outlet property="badgeCorrectCount" destination="VWT-sW-noQ" id="SIY-uT-pjd"/>
-                        <outlet property="badgeErrorCount" destination="nR9-d4-WA7" id="N31-dk-XgP"/>
-                        <outlet property="badgeQuestionCount" destination="KkO-0K-eea" id="ojx-qg-qhb"/>
+                        <outlet property="cardXPos" destination="Yv4-Vj-eAl" id="arf-Xa-7cp"/>
+                        <outlet property="cardYPos" destination="DIz-AF-fDf" id="h3I-eY-xxR"/>
                         <outlet property="containerView" destination="QL4-1V-3cN" id="soz-Oz-SOH"/>
+                        <outlet property="correctCountButton" destination="VWT-sW-noQ" id="nw5-Ic-gdx"/>
                         <outlet property="dontKnowButton" destination="mXb-Bu-hhj" id="9N2-fh-m1I"/>
+                        <outlet property="dontKnowButtonXPos" destination="npV-nq-NLe" id="N6J-sL-ie1"/>
+                        <outlet property="dontKnowButtonYPos" destination="ux7-Lt-XWY" id="SJ1-WY-RCI"/>
+                        <outlet property="errorCountButton" destination="nR9-d4-WA7" id="AjJ-bH-8oF"/>
                         <outlet property="frontIdentifierLabel" destination="0La-sT-wTP" id="aSA-3G-ioS"/>
                         <outlet property="frontText" destination="uvG-s0-Ig5" id="IJ2-MI-8QT"/>
                         <outlet property="frontView" destination="CXK-kS-8Gd" id="EQs-9k-5Qw"/>
                         <outlet property="knowButton" destination="ode-zn-beR" id="SD6-Kf-hdA"/>
+                        <outlet property="knowButtonXPos" destination="wSZ-XQ-jew" id="qwP-rq-pXP"/>
+                        <outlet property="knowButtonYPos" destination="d5J-22-wwC" id="fax-xa-QJL"/>
+                        <outlet property="questionCountButton" destination="KkO-0K-eea" id="sSf-Qf-xW9"/>
+                        <outlet property="scoreXPos" destination="Yzr-zY-B2Y" id="MTV-hb-2BK"/>
+                        <outlet property="scoreYPos" destination="too-K6-ntn" id="68r-Nm-QkZ"/>
                         <outlet property="view" destination="i8Z-cV-zaL" id="Boi-MQ-gVj"/>
                     </connections>
                 </viewController>
@@ -566,27 +715,85 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23a-Cd-7eB" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="20" y="298" width="50" height="50"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="23a-Cd-7eB" customClass="WQScoreButton">
+                                <rect key="frame" x="20" y="318" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9VQ-i4-5ds" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="90" y="298" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="byg-P3-FRz"/>
+                                    <constraint firstAttribute="width" constant="30" id="o0F-6m-2mJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doRestart" destination="nUB-1S-5cD" eventType="touchUpInside" id="jP5-yo-Ck6"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VQ-i4-5ds" customClass="WQScoreButton">
+                                <rect key="frame" x="70" y="318" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CiM-BC-3lL" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="160" y="298" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GkX-CK-osm"/>
+                                    <constraint firstAttribute="width" constant="30" id="T76-Ur-H9Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CiM-BC-3lL" customClass="WQScoreButton">
+                                <rect key="frame" x="200" y="318" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82G-BI-qRX" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="230" y="298" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="eAh-Wy-2SD"/>
+                                    <constraint firstAttribute="height" constant="30" id="gcm-63-LD6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82G-BI-qRX" customClass="WQScoreButton">
+                                <rect key="frame" x="250" y="318" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eKG-Kw-rd4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="gD0-DD-hi4"/>
+                                    <constraint firstAttribute="height" constant="30" id="vD5-Xt-Tlh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doRepeat" destination="nUB-1S-5cD" eventType="touchUpInside" id="ZZC-wu-bSA"/>
+                                </connections>
+                            </button>
+                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKG-Kw-rd4">
                                 <rect key="frame" x="15" y="23" width="290" height="165"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -625,7 +832,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="RUQ-nm-WVN">
-                                        <rect key="frame" x="15" y="85" width="265" height="31"/>
+                                        <rect key="frame" x="15" y="85" width="265" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -644,19 +851,33 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="82G-BI-qRX" firstAttribute="leading" secondItem="CiM-BC-3lL" secondAttribute="trailing" constant="20" id="325-64-od6"/>
+                            <constraint firstItem="eKG-Kw-rd4" firstAttribute="centerX" secondItem="loY-p9-Uql" secondAttribute="centerX" id="7G6-4l-7C8"/>
+                            <constraint firstItem="eKG-Kw-rd4" firstAttribute="leading" secondItem="loY-p9-Uql" secondAttribute="leading" constant="15" id="7aA-WP-7wi"/>
+                            <constraint firstAttribute="trailing" secondItem="82G-BI-qRX" secondAttribute="trailing" constant="40" id="9Mq-Et-1Ky"/>
+                            <constraint firstItem="IsL-DA-OD6" firstAttribute="top" secondItem="82G-BI-qRX" secondAttribute="bottom" constant="19" id="B65-ru-cdm"/>
+                            <constraint firstItem="23a-Cd-7eB" firstAttribute="leading" secondItem="loY-p9-Uql" secondAttribute="leading" constant="20" symbolic="YES" id="D71-8s-7Ti"/>
+                            <constraint firstItem="CiM-BC-3lL" firstAttribute="top" secondItem="eKG-Kw-rd4" secondAttribute="bottom" constant="130" id="O48-EQ-iYE"/>
+                            <constraint firstItem="eKG-Kw-rd4" firstAttribute="top" secondItem="Giz-kQ-qWQ" secondAttribute="bottom" constant="23" id="Ob9-N8-GHv"/>
+                            <constraint firstItem="9VQ-i4-5ds" firstAttribute="top" secondItem="eKG-Kw-rd4" secondAttribute="bottom" constant="130" id="PaH-2j-dlW"/>
+                            <constraint firstItem="82G-BI-qRX" firstAttribute="top" secondItem="eKG-Kw-rd4" secondAttribute="bottom" constant="130" id="hkx-Wd-npi"/>
+                            <constraint firstItem="9VQ-i4-5ds" firstAttribute="leading" secondItem="23a-Cd-7eB" secondAttribute="trailing" constant="20" id="hmS-nP-6N1"/>
+                            <constraint firstItem="23a-Cd-7eB" firstAttribute="top" secondItem="eKG-Kw-rd4" secondAttribute="bottom" constant="130" id="pH3-kz-QZl"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Question &amp; Answer" image="qaTab.png" id="fPQ-7l-Mz4"/>
                     <connections>
+                        <outlet property="answerCountButton" destination="9VQ-i4-5ds" id="PG6-lk-OV2"/>
                         <outlet property="answerIdentifierLabel" destination="T0V-6E-7YM" id="jFE-kj-mNb"/>
                         <outlet property="answerLine" destination="are-NC-DIf" id="KqY-tl-jKa"/>
                         <outlet property="answerTextField" destination="RUQ-nm-WVN" id="nWH-wo-Nxq"/>
-                        <outlet property="badgeAnswerCount" destination="9VQ-i4-5ds" id="TDK-Dr-4pE"/>
-                        <outlet property="badgeCorrectCount" destination="CiM-BC-3lL" id="VvU-uP-VW1"/>
-                        <outlet property="badgeErrorCount" destination="82G-BI-qRX" id="bly-xY-9pt"/>
-                        <outlet property="badgeQuestionCount" destination="23a-Cd-7eB" id="RiL-ey-81d"/>
                         <outlet property="correctAnswerLabel" destination="fel-jK-gpf" id="bIN-YS-dZt"/>
+                        <outlet property="correctCountButton" destination="CiM-BC-3lL" id="pvn-G7-UDl"/>
+                        <outlet property="errorCountButton" destination="82G-BI-qRX" id="fNt-Ld-9AA"/>
+                        <outlet property="questionCountButton" destination="23a-Cd-7eB" id="CbS-S9-GeE"/>
                         <outlet property="questionIdentifierLabel" destination="82m-0x-DOt" id="T46-dF-kh0"/>
                         <outlet property="questionLabel" destination="HXS-LN-rhO" id="y1R-fr-Cdx"/>
                         <outlet property="questionLine" destination="AtI-9U-WFr" id="oik-ly-Oa1"/>
@@ -680,27 +901,85 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X8I-oz-83g" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="20" y="298" width="50" height="50"/>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8I-oz-83g" customClass="WQScoreButton">
+                                <rect key="frame" x="20" y="318" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ost-61-2oE" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="90" y="298" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="G28-WB-rkU"/>
+                                    <constraint firstAttribute="width" constant="30" id="nPp-7M-1TU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doRestart" destination="6hP-JD-549" eventType="touchUpInside" id="a6G-iF-hGb"/>
+                                </connections>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ost-61-2oE" customClass="WQScoreButton">
+                                <rect key="frame" x="70" y="318" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27H-hg-8pW" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="160" y="298" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="TgC-zk-RpY"/>
+                                    <constraint firstAttribute="height" constant="30" id="WdN-Ak-XE5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27H-hg-8pW" customClass="WQScoreButton">
+                                <rect key="frame" x="200" y="318" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EgY-xy-fYG" customClass="MKNumberBadgeView">
-                                <rect key="frame" x="230" y="298" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="GXF-Yr-lrW"/>
+                                    <constraint firstAttribute="height" constant="30" id="zLH-hm-c19"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgY-xy-fYG" customClass="WQScoreButton">
+                                <rect key="frame" x="250" y="318" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rI7-uN-emd">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="7ip-fz-IJP"/>
+                                    <constraint firstAttribute="height" constant="30" id="f3Z-0R-wkW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="000">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="circleColor">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="doRepeat" destination="6hP-JD-549" eventType="touchUpInside" id="fM2-1X-aez"/>
+                                </connections>
+                            </button>
+                            <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rI7-uN-emd">
                                 <rect key="frame" x="15" y="24" width="290" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -790,20 +1069,35 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EgY-xy-fYG" firstAttribute="baseline" secondItem="Ost-61-2oE" secondAttribute="baseline" id="3yi-Qz-1dt"/>
+                            <constraint firstAttribute="trailing" secondItem="EgY-xy-fYG" secondAttribute="trailing" constant="40" id="74N-he-RBz"/>
+                            <constraint firstItem="7IT-u1-I9d" firstAttribute="top" secondItem="EgY-xy-fYG" secondAttribute="bottom" constant="19" id="AmV-Qe-hIC"/>
+                            <constraint firstItem="rI7-uN-emd" firstAttribute="leading" secondItem="yio-F9-SvB" secondAttribute="leading" constant="15" id="Bvb-A9-4yc"/>
+                            <constraint firstItem="Ost-61-2oE" firstAttribute="leading" secondItem="X8I-oz-83g" secondAttribute="trailing" constant="20" id="Koe-3p-JeR"/>
+                            <constraint firstItem="EgY-xy-fYG" firstAttribute="baseline" secondItem="27H-hg-8pW" secondAttribute="baseline" id="QFM-pt-ahe"/>
+                            <constraint firstItem="X8I-oz-83g" firstAttribute="leading" secondItem="yio-F9-SvB" secondAttribute="leading" constant="20" symbolic="YES" id="TLD-SM-Rot"/>
+                            <constraint firstItem="X8I-oz-83g" firstAttribute="top" secondItem="rI7-uN-emd" secondAttribute="bottom" constant="104" id="TsO-8d-CIr"/>
+                            <constraint firstItem="EgY-xy-fYG" firstAttribute="baseline" secondItem="X8I-oz-83g" secondAttribute="baseline" id="TyD-xa-5l3"/>
+                            <constraint firstItem="rI7-uN-emd" firstAttribute="top" secondItem="xon-Fg-DNa" secondAttribute="bottom" constant="24" id="Z4K-V6-dSg"/>
+                            <constraint firstItem="EgY-xy-fYG" firstAttribute="top" secondItem="rI7-uN-emd" secondAttribute="bottom" constant="104" id="kA2-qt-IqZ"/>
+                            <constraint firstItem="rI7-uN-emd" firstAttribute="centerX" secondItem="yio-F9-SvB" secondAttribute="centerX" id="lZB-05-zf4"/>
+                            <constraint firstItem="EgY-xy-fYG" firstAttribute="leading" secondItem="27H-hg-8pW" secondAttribute="trailing" constant="20" id="rFl-3G-vKg"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Multiple Choice" image="multipleTab.png" id="OUk-Cx-jXT"/>
                     <connections>
+                        <outlet property="answerCountButton" destination="Ost-61-2oE" id="faO-AL-j3P"/>
                         <outlet property="answerIdentifierLabel" destination="UXA-AB-F15" id="1au-K1-h8U"/>
                         <outlet property="answerLine" destination="Lry-0h-AGC" id="udQ-wd-V2B"/>
-                        <outlet property="badgeAnswerCount" destination="Ost-61-2oE" id="yw9-7O-ajS"/>
-                        <outlet property="badgeCorrectCount" destination="27H-hg-8pW" id="zLe-eg-GcJ"/>
-                        <outlet property="badgeErrorCount" destination="EgY-xy-fYG" id="hTq-xs-eYP"/>
-                        <outlet property="badgeQuestionCount" destination="X8I-oz-83g" id="A8s-Ll-oIz"/>
+                        <outlet property="correctCountButton" destination="27H-hg-8pW" id="xXm-yi-Fkx"/>
+                        <outlet property="errorCountButton" destination="EgY-xy-fYG" id="PRh-Qs-hP4"/>
                         <outlet property="opt1Button" destination="hhc-e7-1s6" id="TJW-f9-F9c"/>
                         <outlet property="opt2Button" destination="xGL-sh-F7o" id="I1n-gU-giM"/>
                         <outlet property="opt3Button" destination="XDz-wk-0kT" id="TIa-M7-EdL"/>
+                        <outlet property="questionCountButton" destination="X8I-oz-83g" id="RiO-YF-UwB"/>
                         <outlet property="questionIdentifierLabel" destination="6l6-DJ-yGp" id="qko-gg-xzN"/>
                         <outlet property="questionLabel" destination="XsM-gE-teg" id="yet-kE-6nh"/>
                         <outlet property="questionLine" destination="rwb-KC-p6p" id="zPE-Vs-nB1"/>
@@ -854,7 +1148,6 @@
         <scene sceneID="Iuc-ao-b8S">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="2Es-mn-NwG" customClass="DetailViewController" sceneMemberID="viewController">
-                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="0t0-nB-bGr"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="k8S-sp-zxo">
@@ -875,11 +1168,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dontknowButton.png" width="125" height="56"/>
         <image name="flashTab.png" width="30" height="30"/>
         <image name="homeTab.png" width="27" height="27"/>
         <image name="icon_about.png" width="72" height="72"/>
-        <image name="knowButton.png" width="125" height="56"/>
         <image name="multipleTab.png" width="30" height="30"/>
         <image name="qaTab.png" width="30" height="30"/>
     </resources>

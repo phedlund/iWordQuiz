@@ -34,7 +34,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "WQQuiz.h"
 #import "WQScoreButton.h"
-#import "MKNumberBadgeView.h"
 
 @interface MCViewController : UIViewController {
 	WQQuiz * m_quiz;
@@ -90,12 +89,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, strong) IBOutlet WQScoreButton *answerCountButton;
 @property (nonatomic, strong) IBOutlet WQScoreButton *correctCountButton;
 @property (nonatomic, strong) IBOutlet WQScoreButton *errorCountButton;
-
-
-@property (strong) IBOutlet MKNumberBadgeView* badgeQuestionCount;
-@property (strong) IBOutlet MKNumberBadgeView* badgeAnswerCount;
-@property (strong) IBOutlet MKNumberBadgeView* badgeCorrectCount;
-@property (strong) IBOutlet MKNumberBadgeView* badgeErrorCount;
 
 @property (nonatomic, strong) IBOutlet UILabel *previousQuestionHeaderLabel;
 @property (nonatomic, strong) IBOutlet UILabel *previousQuestionLabel;

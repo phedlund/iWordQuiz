@@ -45,10 +45,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @synthesize previousQuestionHeaderLabel, previousQuestionLabel, yourAnswerHeaderLabel, yourAnswerLabel, correctAnswerHeaderLabel, correactAnswerLabel;
 @synthesize questionLine, answerLine, previousQuestionLine, yourAnswerLine, correctAnswerLine;
 @synthesize questionView, previousView;
-@synthesize badgeQuestionCount;
-@synthesize badgeAnswerCount;
-@synthesize badgeCorrectCount;
-@synthesize badgeErrorCount;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -70,17 +66,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     correctCountButton.stickyColor = kGreen;
     errorCountButton.stickyColor = kRed;
     
-    badgeQuestionCount.fillColor = [UIColor blueColor];
-    badgeAnswerCount.fillColor = [UIColor colorWithRed:0.95 green:0.76 blue:0.21 alpha:1.0];
-    badgeCorrectCount.fillColor = [UIColor greenColor];
-    badgeErrorCount.fillColor = [UIColor redColor];
-    [badgeQuestionCount whenTapped:^{
-		[self doRestart];
-	}];
-    [badgeErrorCount whenTapped:^{
-		[self doRepeat];
-	}];
-    
 	previousQuestionHeaderLabel.text = @"";
 	previousQuestionLabel.text = @"";
 	yourAnswerHeaderLabel.text = @"";
@@ -92,7 +77,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	correctAnswerLine.hidden = YES;
 	
 	self.errorCountButton.enabled = NO;
-    self.badgeErrorCount.userInteractionEnabled = NO;
     [self willRotateToInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation duration:0];
 }
 
@@ -127,7 +111,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
          }*/
      }
      if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-         if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+        /* if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
              int width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
              self.questionView.frame = CGRectMake(15, 15, 290, 190 );
      
@@ -152,7 +136,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
              badgeCorrectCount.frame = CGRectMake(170, 300, 50, 50);
              badgeErrorCount.frame = CGRectMake(240, 300, 50, 50);
 
-         }
+         }*/
      }
      
      [WQUtils renderCardShadow:previousView];
@@ -165,10 +149,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
 	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
 	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
-    badgeQuestionCount.value = self.quiz.questionCount;
-    badgeAnswerCount.value = 0;
-    badgeCorrectCount.value = 0;
-    badgeErrorCount.value = 0;
 	previousQuestionHeaderLabel.text = @"";
 	previousQuestionLabel.text = @"";
 	yourAnswerHeaderLabel.text = @"";
@@ -179,7 +159,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	yourAnswerLine.hidden = YES;
 	correctAnswerLine.hidden = YES;
     errorCountButton.enabled = NO;
-    badgeErrorCount.userInteractionEnabled = NO;
 	[self showQuestion];
 }
 
@@ -236,10 +215,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
 	[correctCountButton setTitle:[@([self.quiz correctCount]) stringValue] forState:UIControlStateNormal];
 	[errorCountButton setTitle:[@([self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
-	badgeAnswerCount.value = [self.quiz correctCount] + [self.quiz errorCount];
-    badgeCorrectCount.value = [self.quiz correctCount];
-    badgeErrorCount.value = [self.quiz errorCount];
-    
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         UIButton *btn = (UIButton*)sender;
         [self animate:btn.titleLabel error:!fIsCorrect];
@@ -265,7 +240,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         } else {
             [m_quiz finish];
             self.errorCountButton.enabled = [self.quiz hasErrors];
-            [badgeErrorCount setUserInteractionEnabled:[self.quiz hasErrors]];
             questionIdentifierLabel.text = @"Summary";
             questionLabel.text = @"";
             answerIdentifierLabel.text = @"";
@@ -283,7 +257,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (IBAction) doRepeat {
 	self.errorCountButton.enabled = NO;
-    [badgeErrorCount setUserInteractionEnabled:NO];
 	[self.quiz activateErrorList];
 	[self start];
 }
@@ -409,7 +382,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     } else {
         [m_quiz finish];
         self.errorCountButton.enabled = [self.quiz hasErrors];
-        [badgeErrorCount setUserInteractionEnabled:[self.quiz hasErrors]];
         questionIdentifierLabel.text = @"Summary";
         questionLabel.text = @"";
         answerIdentifierLabel.text = @"";
