@@ -38,13 +38,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #define kTransitionDuration	0.50
 
+@interface FCViewController () {
+    bool _slideToTheRight;
+    CALayer *_animationLayer;
+}
+
+@end
+
 @implementation FCViewController
-
-@synthesize quiz = m_quiz;
-@synthesize slideToTheRight;
-
-@synthesize animationImage;
-
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -66,9 +67,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[self.correctCountButton setTitle:@"" forState:UIControlStateNormal];
 	[self.errorCountButton setTitle:@"" forState:UIControlStateNormal];
     
-    m_animationLayer = [CALayer layer];
-    m_animationLayer.bounds = self.containerView.layer.bounds;
-    [self.containerView.layer addSublayer:m_animationLayer];
+    _animationLayer = [CALayer layer];
+    _animationLayer.bounds = self.containerView.layer.bounds;
+    [self.containerView.layer addSublayer:_animationLayer];
     
     CGFloat cRadius = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 30.0f : 15.0f;
     self.knowButton.layer.cornerRadius = cRadius;
@@ -171,14 +172,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[self.answerCountButton setTitle:@"" forState:UIControlStateNormal];
 	[self.correctCountButton setTitle:@"" forState:UIControlStateNormal];
 	[self.errorCountButton setTitle:@"" forState:UIControlStateNormal];
-    self.slideToTheRight = false;
+    _slideToTheRight = false;
     self.frontView.hidden = false;
     self.backView.hidden = true;
 	self.knowButton.enabled = YES;
 	self.dontKnowButton.enabled = YES;
 	self.errorCountButton.enabled = NO;
     self.animationImage = nil;
-    m_animationLayer.contents = nil;
+    _animationLayer.contents = nil;
 	[self updateCard];
 }
 
@@ -207,7 +208,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		//todo add notifications
 	}
 
-    self.slideToTheRight = !keep;
+    _slideToTheRight = !keep;
     [self flipCard:true];
     
 	[self.answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
@@ -285,7 +286,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     CGFloat deltaY = 0.0;   
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        if (!self.slideToTheRight) {
+        if (!_slideToTheRight) {
             if (([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeLeft) ||
                 ([UIApplication sharedApplication].statusBarOrientation == UIDeviceOrientationLandscapeRight)) {
                 deltaY = 400;
@@ -298,7 +299,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
 
    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-       deltaX = (self.slideToTheRight ? -800 : 800);
+       deltaX = (_slideToTheRight ? -800 : 800);
    }
 
     UIGraphicsBeginImageContext(self.containerView.frame.size);
@@ -309,26 +310,26 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     UIGraphicsBeginImageContext(self.animationImage.size);
     [self.animationImage drawAtPoint:CGPointMake(0, 0)]; // handy!
 
-    m_animationLayer.bounds = CGRectMake(0, 0, self.animationImage.size.width, self.animationImage.size.height);
+    _animationLayer.bounds = CGRectMake(0, 0, self.animationImage.size.width, self.animationImage.size.height);
     CGPoint point = CGPointMake(self.containerView.layer.position.x - self.containerView.frame.origin.x, self.containerView.layer.position.y - self.containerView.frame.origin.y);
-    m_animationLayer.position =  point;
-    m_animationLayer.contentsScale = self.view.layer.contentsScale; // for retina compat. Make sure you've set you view's main layer
-    m_animationLayer.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
-    m_animationLayer.opacity = 1.0;
+    _animationLayer.position =  point;
+    _animationLayer.contentsScale = self.view.layer.contentsScale; // for retina compat. Make sure you've set you view's main layer
+    _animationLayer.contents = (id)UIGraphicsGetImageFromCurrentImageContext().CGImage;
+    _animationLayer.opacity = 1.0;
     UIGraphicsEndImageContext();
     
     // Prepare the animation from the current position to the new position
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
-    animation.fromValue = [m_animationLayer valueForKey:@"position"];
+    animation.fromValue = [_animationLayer valueForKey:@"position"];
     animation.toValue = [NSValue valueWithCGPoint:CGPointMake(point.x + deltaX, point.y + deltaY)];
     
     // Update the layer's position so that the layer doesn't snap back when the animation completes.
-    m_animationLayer.position = CGPointMake(point.x + deltaX, point.y + deltaY);
+    _animationLayer.position = CGPointMake(point.x + deltaX, point.y + deltaY);
     animation.duration = kTransitionDuration;
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     animation.delegate = self;
     // Add the animation, overriding the implicit animation.
-    [m_animationLayer addAnimation:animation forKey:@"position"];
+    [_animationLayer addAnimation:animation forKey:@"position"];
 }
 
 
@@ -339,7 +340,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
     self.animationImage = nil;
-    m_animationLayer.contents = nil;
+    _animationLayer.contents = nil;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -32,7 +32,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "MCViewController.h"
 #import "WQUtils.h"
-#import "JMWhenTapped.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+PHColor.h"
 
@@ -61,11 +60,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[self.correctCountButton setTitle:@"" forState:UIControlStateNormal];
 	[self.errorCountButton setTitle:@"" forState:UIControlStateNormal];
 
-    self.questionCountButton.stickyColor = kBlue;
-    self.answerCountButton.stickyColor = kYellow;
-    self.correctCountButton.stickyColor = kGreen;
-    self.errorCountButton.stickyColor = kRed;
-    
 	self.previousQuestionHeaderLabel.text = @"";
 	self.previousQuestionLabel.text = @"";
 	self.yourAnswerHeaderLabel.text = @"";
@@ -304,10 +298,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     UIColor *opaque;
     
     if (flag) {
-        clear = [UIColor colorWithRed:1.0 green:0.39 blue:0.39 alpha:0.0];
+        clear = [UIColor colorWithRed:1.0 green:0.45 blue:0.45 alpha:0.0];
         opaque = [UIColor colorWithRed:1.0 green:0.45 blue:0.45 alpha:1.0];
     } else {
-        clear = [UIColor colorWithRed:0.39 green:1.0 blue:0.39 alpha:0.0];
+        clear = [UIColor colorWithRed:0.62 green:1.0 blue:0.27 alpha:0.0];
         opaque = [UIColor colorWithRed:0.62 green:1.0 blue:0.27 alpha:1.0];
     }
     

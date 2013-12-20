@@ -34,14 +34,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQQuiz.h"
 #import "WQScoreButton.h"
 
-@interface FCViewController : UIViewController <UIGestureRecognizerDelegate> {
-
-	WQQuiz * m_quiz;
-    bool slideToTheRight;
-	    
-    CALayer *m_animationLayer;
-    UIImage *animationImage;
-}
+@interface FCViewController : UIViewController <UIGestureRecognizerDelegate>
 
 - (void) start;
 - (void) restart;
@@ -53,7 +46,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) slideCard;
 
 @property (nonatomic, strong) WQQuiz *quiz;
-@property (nonatomic, assign) bool slideToTheRight;
 
 @property (nonatomic, strong) IBOutlet UILabel *frontIdentifierLabel;
 @property (nonatomic, strong) IBOutlet UILabel *backIdentifierLabel;

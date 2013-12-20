@@ -32,7 +32,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "QAViewController.h"
 #import "WQUtils.h"
-#import "JMWhenTapped.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+PHColor.h"
 
