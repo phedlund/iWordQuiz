@@ -35,9 +35,6 @@
 @class CHDropboxSync;
 
 @interface RootViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate, UIActionSheetDelegate, WQNewFileViewControllerDelegate>
-{
-    int m_currentRow;
-}
 
 - (void) enumerateVocabularies;
 

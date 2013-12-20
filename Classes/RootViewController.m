@@ -41,25 +41,16 @@ NSString* WQDocmentFileExtension = @"kvtml";
 NSString* DisplayDetailSegue = @"DisplayDetailSegue";
 NSString* WQDocumentsDirectoryName = @"Documents";
 
-@implementation RootViewController
+@interface RootViewController () {
+    int _currentRow;
+}
 
-@synthesize detailViewController = _detailViewController;
-@synthesize vocabularies = _vocabularies;
-@synthesize addButton;
-@synthesize syncer;
+@end
+
+@implementation RootViewController
 
 #pragma mark -
 #pragma mark View lifecycle
-
-- (void)awakeFromNib
-{
-    m_currentRow = 0;
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        //self.clearsSelectionOnViewWillAppear = NO;
-        self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    }
-    [super awakeFromNib];
-}
 
 - (void)viewDidLoad
 {
@@ -111,32 +102,11 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 			[fm copyItemAtURL:aFile toURL:dest error:&err];
 		}
     }
-		
+    
+    _currentRow = 0;
 	_vocabularies = [[NSMutableArray alloc] init];
     [self enumerateVocabularies];
 }
-
-
-/*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
-/*
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
 
 // Ensure that the view controller supports rotation and that the split view can therefore show in both portrait and landscape.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -198,7 +168,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
-        BOOL deletingCurrentRow = (indexPath.row == m_currentRow);
+        BOOL deletingCurrentRow = (indexPath.row == _currentRow);
 		[[NSFileManager defaultManager] removeItemAtURL:[self.vocabularies objectAtIndex:indexPath.row] error:nil];
 		[self.vocabularies removeObjectAtIndex:indexPath.row];
 		[tableView reloadData];
@@ -233,14 +203,14 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 #pragma mark Table view delegate
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    m_currentRow = indexPath.row;
+    _currentRow = indexPath.row;
     NSFileManager *fm = [NSFileManager defaultManager];
-    if (![fm fileExistsAtPath:[[self.vocabularies objectAtIndex: m_currentRow] path]]) {
+    if (![fm fileExistsAtPath:[[self.vocabularies objectAtIndex: _currentRow] path]]) {
         [self enumerateVocabularies];
         [aTableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
     }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self.detailViewController setDetailItem:[self.vocabularies objectAtIndex: m_currentRow]];
+        [self.detailViewController setDetailItem:[self.vocabularies objectAtIndex: _currentRow]];
         [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateClosed inDirection:MSDynamicsDrawerDirectionLeft animated:YES allowUserInterruption:YES completion:^{
             //
         }];
@@ -287,7 +257,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 }
 
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-	NSLog(@"didSelectViewController: %d", tabBarController.selectedIndex);
 	[(DetailViewController *) tabBarController activateTab:tabBarController.selectedIndex];
 	[viewController viewWillAppear:NO];
 }
@@ -366,8 +335,8 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 
 - (void)newFileURL:(NSNotification*)n {
     NSURL *newURL = (NSURL*)[n.userInfo valueForKey:@"URL"];
-    [self.vocabularies replaceObjectAtIndex:m_currentRow withObject:newURL];
-    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:m_currentRow inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.vocabularies replaceObjectAtIndex:_currentRow withObject:newURL];
+    [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:_currentRow inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 
@@ -395,7 +364,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
         switch (buttonIndex) {
             case 0:
                 navController =  [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
-                [self presentModalViewController:navController animated:YES];
+                [self presentViewController:navController animated:YES completion:nil];
                 break;
             case 1:
                 [self doDBSync:nil];
