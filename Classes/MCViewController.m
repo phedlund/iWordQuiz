@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -36,45 +36,45 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+PHColor.h"
 
-@implementation MCViewController
+@interface MCViewController (){
+    NSArray *_optionButtons;
+}
 
-@synthesize quiz = m_quiz;
-@synthesize questionIdentifierLabel, answerIdentifierLabel, questionLabel;
-@synthesize opt1Button, opt2Button, opt3Button;
-@synthesize questionCountButton, answerCountButton, correctCountButton, errorCountButton;
-@synthesize previousQuestionHeaderLabel, previousQuestionLabel, yourAnswerHeaderLabel, yourAnswerLabel, correctAnswerHeaderLabel, correactAnswerLabel;
-@synthesize questionLine, answerLine, previousQuestionLine, yourAnswerLine, correctAnswerLine;
-@synthesize questionView, previousView;
+@end
+
+@implementation MCViewController
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor backgroundColor];
-	answerIdentifierLabel.text = @"";
-	opt1Button.hidden = YES;
-	opt2Button.hidden = YES;
-	opt3Button.hidden = YES;
-    m_optionButtons = @[opt1Button, opt2Button, opt3Button];
-    
-	[questionCountButton setTitle:@"" forState:UIControlStateNormal];
-	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
-	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
-	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
-    questionCountButton.stickyColor = kBlue;
-    answerCountButton.stickyColor = kYellow;
-    correctCountButton.stickyColor = kGreen;
-    errorCountButton.stickyColor = kRed;
+	self.answerIdentifierLabel.text = @"";
+	self.opt1Button.hidden = YES;
+	self.opt2Button.hidden = YES;
+	self.opt3Button.hidden = YES;
+    _optionButtons = @[self.opt1Button, self.opt2Button, self.opt3Button];
     
-	previousQuestionHeaderLabel.text = @"";
-	previousQuestionLabel.text = @"";
-	yourAnswerHeaderLabel.text = @"";
-	yourAnswerLabel.text = @"";
-	correctAnswerHeaderLabel.text = @"";
-	correactAnswerLabel.text = @"";
-	previousQuestionLine.hidden =YES;
-	yourAnswerLine.hidden = YES;
-	correctAnswerLine.hidden = YES;
+	[self.questionCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.answerCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.correctCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.errorCountButton setTitle:@"" forState:UIControlStateNormal];
+
+    self.questionCountButton.stickyColor = kBlue;
+    self.answerCountButton.stickyColor = kYellow;
+    self.correctCountButton.stickyColor = kGreen;
+    self.errorCountButton.stickyColor = kRed;
+    
+	self.previousQuestionHeaderLabel.text = @"";
+	self.previousQuestionLabel.text = @"";
+	self.yourAnswerHeaderLabel.text = @"";
+	self.yourAnswerLabel.text = @"";
+	self.correctAnswerHeaderLabel.text = @"";
+	self.correactAnswerLabel.text = @"";
+	self.previousQuestionLine.hidden =YES;
+	self.yourAnswerLine.hidden = YES;
+	self.correctAnswerLine.hidden = YES;
 	
 	self.errorCountButton.enabled = NO;
     [self willRotateToInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation duration:0];
@@ -89,76 +89,98 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
  - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	 [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-
-	 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-         /*if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-             self.questionView.frame = CGRectMake(35, 35, 505, 310);
-             self.previousView.frame = CGRectMake(41, 315, 505, 310);
-             
-             questionCountButton.frame = CGRectMake(580, 45, 104, 100);
-             answerCountButton.frame = CGRectMake(580, 175, 104, 100);
-             correctCountButton.frame = CGRectMake(580, 305, 104, 100);
-             errorCountButton.frame = CGRectMake(580, 440, 104, 100);
-             
-         } else {
-             self.questionView.frame = CGRectMake(137, 75, 505, 310);
-             self.previousView.frame = CGRectMake(146, 368, 505, 310);
-             
-             questionCountButton.frame = CGRectMake(134, 760, 104, 100);
-             answerCountButton.frame = CGRectMake(266, 760, 104, 100);
-             correctCountButton.frame = CGRectMake(398, 760, 104, 100);
-             errorCountButton.frame = CGRectMake(530, 760, 104, 100);
-         }*/
-     }
      if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        /* if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+         if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
              int width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
-             self.questionView.frame = CGRectMake(15, 15, 290, 190 );
      
              if (width > 500) {
-                 badgeQuestionCount.frame = CGRectMake(410, 5, 50, 50);
-                 badgeAnswerCount.frame = CGRectMake(410, 60, 50, 50);
-                 badgeCorrectCount.frame = CGRectMake(410, 115, 50, 50);
-                 badgeErrorCount.frame = CGRectMake(410, 170, 50, 50);
-
+                 self.cardXPos.constant = 65;
+                 self.cardYPos.constant = 42;
+                 
+                 self.questionCountXPos.constant = 440;
+                 self.questionCountYPos.constant = 45;
+                 
+                 self.answerCountXPos.constant = 440;
+                 self.answerCountYPos.constant = 95;
+                 
+                 self.correctCountXPos.constant = 440;
+                 self.correctCountYPos.constant = 145;
+                 
+                 self.errorCountXPos.constant = 440;
+                 self.errorCountYPos.constant = 195;
              } else {
-                 badgeQuestionCount.frame = CGRectMake(365, 5, 50, 50);
-                 badgeAnswerCount.frame = CGRectMake(365, 60, 50, 50);
-                 badgeCorrectCount.frame = CGRectMake(365, 115, 50, 50);
-                 badgeErrorCount.frame = CGRectMake(365, 170, 50, 50);
+                 self.cardXPos.constant = 15;
+                 self.cardYPos.constant = 42;
+                 
+                 self.questionCountXPos.constant = 365;
+                 self.questionCountYPos.constant = 45;
+                 
+                 self.answerCountXPos.constant = 365;
+                 self.answerCountYPos.constant = 95;
+                 
+                 self.correctCountXPos.constant = 365;
+                 self.correctCountYPos.constant = 145;
+                 
+                 self.errorCountXPos.constant = 365;
+                 self.errorCountYPos.constant = 195;
+             }
+         } else {
+             int height = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
+             if (height > 500) {
+                 self.cardXPos.constant = 15;
+                 self.cardYPos.constant = 92;
+                 
+                 self.questionCountXPos.constant = 30;
+                 self.questionCountYPos.constant = 387;
+                 
+                 self.answerCountXPos.constant = 107;
+                 self.answerCountYPos.constant = 387;
+                 
+                 self.correctCountXPos.constant = 183;
+                 self.correctCountYPos.constant = 387;
+                 
+                 self.errorCountXPos.constant = 260;
+                 self.errorCountYPos.constant = 387;
+             } else {
+                 self.cardXPos.constant = 15;
+                 self.cardYPos.constant = 62;
+                 
+                 self.questionCountXPos.constant = 30;
+                 self.questionCountYPos.constant = 357;
+                 
+                 self.answerCountXPos.constant = 107;
+                 self.answerCountYPos.constant = 357;
+                 
+                 self.correctCountXPos.constant = 183;
+                 self.correctCountYPos.constant = 357;
+                 
+                 self.errorCountXPos.constant = 260;
+                 self.errorCountYPos.constant = 357;
              }
 
-         } else {
-             self.questionView.frame = CGRectMake(15, 15, 290, 190);
-        
-             badgeQuestionCount.frame = CGRectMake(20, 300, 50, 50);
-             badgeAnswerCount.frame = CGRectMake(90, 300, 50, 50);
-             badgeCorrectCount.frame = CGRectMake(170, 300, 50, 50);
-             badgeErrorCount.frame = CGRectMake(240, 300, 50, 50);
-
-         }*/
+         }
      }
      
-     [WQUtils renderCardShadow:previousView];
-     [WQUtils renderCardShadow:questionView];
+     [WQUtils renderCardShadow:self.previousView];
+     [WQUtils renderCardShadow:self.questionView];
  }
  
 
 - (void) start {
-	[questionCountButton setTitle:[@([self.quiz questionCount]) stringValue] forState:UIControlStateNormal];
-	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
-	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
-	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
-	previousQuestionHeaderLabel.text = @"";
-	previousQuestionLabel.text = @"";
-	yourAnswerHeaderLabel.text = @"";
-	yourAnswerLabel.text = @"";
-	correctAnswerHeaderLabel.text = @"";
-	correactAnswerLabel.text = @"";
-	previousQuestionLine.hidden =YES;
-	yourAnswerLine.hidden = YES;
-	correctAnswerLine.hidden = YES;
-    errorCountButton.enabled = NO;
+	[self.questionCountButton setTitle:[@([self.quiz questionCount]) stringValue] forState:UIControlStateNormal];
+	[self.answerCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.correctCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.errorCountButton setTitle:@"" forState:UIControlStateNormal];
+	self.previousQuestionHeaderLabel.text = @"";
+	self.previousQuestionLabel.text = @"";
+	self.yourAnswerHeaderLabel.text = @"";
+	self.yourAnswerLabel.text = @"";
+	self.correctAnswerHeaderLabel.text = @"";
+	self.correactAnswerLabel.text = @"";
+	self.previousQuestionLine.hidden =YES;
+	self.yourAnswerLine.hidden = YES;
+	self.correctAnswerLine.hidden = YES;
+    self.errorCountButton.enabled = NO;
 	[self showQuestion];
 }
 
@@ -168,18 +190,18 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (void) showQuestion {
-	questionIdentifierLabel.text = [self.quiz langQuestion];
-	questionLabel.text = [self.quiz question];
-	answerIdentifierLabel.text = [self.quiz langAnswer];
-	opt1Button.hidden = NO;
-	opt2Button.hidden = NO;
-	opt3Button.hidden = NO;
-	answerLine.hidden = NO;
+	self.questionIdentifierLabel.text = [self.quiz langQuestion];
+	self.questionLabel.text = [self.quiz question];
+	self.answerIdentifierLabel.text = [self.quiz langAnswer];
+	self.opt1Button.hidden = NO;
+	self.opt2Button.hidden = NO;
+	self.opt3Button.hidden = NO;
+	self.answerLine.hidden = NO;
 	
-	NSArray *options = [m_quiz multiOptions];
-	[opt1Button setTitle:[options objectAtIndex:0] forState:UIControlStateNormal];
-	[opt2Button setTitle:[options objectAtIndex:1] forState:UIControlStateNormal];
-	[opt3Button setTitle:[options objectAtIndex:2] forState:UIControlStateNormal];
+	NSArray *options = [self.quiz multiOptions];
+	[self.opt1Button setTitle:[options objectAtIndex:0] forState:UIControlStateNormal];
+	[self.opt2Button setTitle:[options objectAtIndex:1] forState:UIControlStateNormal];
+	[self.opt3Button setTitle:[options objectAtIndex:2] forState:UIControlStateNormal];
 }
 
 - (void) slotCheck {
@@ -188,33 +210,33 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (IBAction) doChoice:(id)sender {
 	NSString *ans = @"";
-    int selectedButtonIndex = [m_optionButtons indexOfObject:sender];
-	UIButton *selectedButton = [m_optionButtons objectAtIndex:selectedButtonIndex];
-    ans = selectedButton.currentTitle;
-
-	bool fIsCorrect = [m_quiz checkAnswer:ans];
+    //int selectedButtonIndex = [m_optionButtons indexOfObject:sender];
+	//UIButton *selectedButton = [m_optionButtons objectAtIndex:selectedButtonIndex];
+    //ans = selectedButton.currentTitle;
+    ans = [(UIButton*)sender currentTitle];
+	bool fIsCorrect = [self.quiz checkAnswer:ans];
 	
 	if (fIsCorrect)	{
-		correctAnswerHeaderLabel.text = @"";
-		correactAnswerLabel.text = @"";
-		correctAnswerLine.hidden = YES;
+		self.correctAnswerHeaderLabel.text = @"";
+		self.correactAnswerLabel.text = @"";
+		self.correctAnswerLine.hidden = YES;
 		[self.quiz countIncrement:1];
 	} else {
-		correctAnswerHeaderLabel.text = @"Correct Answer";
-		correactAnswerLabel.text = [m_quiz answer];
-		correctAnswerLine.hidden = NO;
+		self.correctAnswerHeaderLabel.text = @"Correct Answer";
+		self.correactAnswerLabel.text = [self.quiz answer];
+		self.correctAnswerLine.hidden = NO;
 		[self.quiz countIncrement:-1];
 	}
-	previousQuestionHeaderLabel.text = @"Previous Question";
-	previousQuestionLabel.text = [m_quiz question];
-	yourAnswerHeaderLabel.text = @"Your Answer";
-	yourAnswerLabel.text = ans;
-	previousQuestionLine.hidden =NO;
-	yourAnswerLine.hidden = NO;
+	self.previousQuestionHeaderLabel.text = @"Previous Question";
+	self.previousQuestionLabel.text = [self.quiz question];
+	self.yourAnswerHeaderLabel.text = @"Your Answer";
+	self.yourAnswerLabel.text = ans;
+	self.previousQuestionLine.hidden =NO;
+	self.yourAnswerLine.hidden = NO;
 	
-	[answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
-	[correctCountButton setTitle:[@([self.quiz correctCount]) stringValue] forState:UIControlStateNormal];
-	[errorCountButton setTitle:[@([self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
+	[self.answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
+	[self.correctCountButton setTitle:[@([self.quiz correctCount]) stringValue] forState:UIControlStateNormal];
+	[self.errorCountButton setTitle:[@([self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         UIButton *btn = (UIButton*)sender;
         [self animate:btn.titleLabel error:!fIsCorrect];
@@ -223,8 +245,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             int currentIndex = 0;
             UIButton *currentButton;
             while (!correct) {
-                currentButton = [m_optionButtons objectAtIndex:currentIndex];
-                if ([currentButton.currentTitle isEqualToString:[m_quiz answer]]) {
+                currentButton = [_optionButtons objectAtIndex:currentIndex];
+                if ([currentButton.currentTitle isEqualToString:[self.quiz answer]]) {
                     [self animate:currentButton.titleLabel error:false];
                     correct = true;
                 }
@@ -234,19 +256,19 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         
-        [m_quiz toNext];
-        if (![m_quiz atEnd]) {
+        [self.quiz toNext];
+        if (![self.quiz atEnd]) {
             [self showQuestion];
         } else {
-            [m_quiz finish];
+            [self.quiz finish];
             self.errorCountButton.enabled = [self.quiz hasErrors];
-            questionIdentifierLabel.text = @"Summary";
-            questionLabel.text = @"";
-            answerIdentifierLabel.text = @"";
-            opt1Button.hidden = YES;
-            opt2Button.hidden = YES;
-            opt3Button.hidden = YES;
-            answerLine.hidden = YES;
+            self.questionIdentifierLabel.text = @"Summary";
+            self.questionLabel.text = @"";
+            self.answerIdentifierLabel.text = @"";
+            self.opt1Button.hidden = YES;
+            self.opt2Button.hidden = YES;
+            self.opt3Button.hidden = YES;
+            self.answerLine.hidden = YES;
         }
 	}
 }
@@ -283,16 +305,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     if (flag) {
         clear = [UIColor colorWithRed:1.0 green:0.39 blue:0.39 alpha:0.0];
-        opaque = [UIColor colorWithRed:1.0 green:0.39 blue:0.39 alpha:1.0]; 
+        opaque = [UIColor colorWithRed:1.0 green:0.45 blue:0.45 alpha:1.0];
     } else {
         clear = [UIColor colorWithRed:0.39 green:1.0 blue:0.39 alpha:0.0];
-        opaque = [UIColor colorWithRed:0.39 green:1.0 blue:0.39 alpha:1.0];
+        opaque = [UIColor colorWithRed:0.62 green:1.0 blue:0.27 alpha:1.0];
     }
     
-    
-    
     // Rounded corners.
-    aLabel.layer.cornerRadius = 6;
+    aLabel.layer.cornerRadius = 3;
 
     // Drop shadow.
     aLabel.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -300,7 +320,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     aLabel.layer.shadowRadius = 1.0;
     aLabel.layer.shadowOffset = CGSizeMake(0, 1);
 	aLabel.layer.masksToBounds = NO;
-    aLabel.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:aLabel.bounds cornerRadius:6].CGPath;   
+    aLabel.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:aLabel.bounds cornerRadius:3].CGPath;
     
     CGFloat duration = 0.3;
     CGFloat totalDuration = 0.0;
@@ -373,22 +393,22 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
-    [opt1Button.titleLabel.layer removeAllAnimations];
-    [opt2Button.titleLabel.layer removeAllAnimations];
-    [opt3Button.titleLabel.layer removeAllAnimations];
-    [m_quiz toNext];
-    if (![m_quiz atEnd]) {
+    [self.opt1Button.titleLabel.layer removeAllAnimations];
+    [self.opt2Button.titleLabel.layer removeAllAnimations];
+    [self.opt3Button.titleLabel.layer removeAllAnimations];
+    [self.quiz toNext];
+    if (![self.quiz atEnd]) {
         [self showQuestion];
     } else {
-        [m_quiz finish];
+        [self.quiz finish];
         self.errorCountButton.enabled = [self.quiz hasErrors];
-        questionIdentifierLabel.text = @"Summary";
-        questionLabel.text = @"";
-        answerIdentifierLabel.text = @"";
-        opt1Button.hidden = YES;
-        opt2Button.hidden = YES;
-        opt3Button.hidden = YES;
-        answerLine.hidden = YES;
+        self.questionIdentifierLabel.text = @"Summary";
+        self.questionLabel.text = @"";
+        self.answerIdentifierLabel.text = @"";
+        self.opt1Button.hidden = YES;
+        self.opt2Button.hidden = YES;
+        self.opt3Button.hidden = YES;
+        self.answerLine.hidden = YES;
     }
 }
 

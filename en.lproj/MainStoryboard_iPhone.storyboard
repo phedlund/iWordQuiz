@@ -898,15 +898,14 @@
                         <viewControllerLayoutGuide type="bottom" id="7IT-u1-I9d"/>
                     </layoutGuides>
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="yio-F9-SvB">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8I-oz-83g" customClass="WQScoreButton">
-                                <rect key="frame" x="20" y="318" width="30" height="30"/>
+                                <rect key="frame" x="30" y="357" width="30" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="G28-WB-rkU"/>
                                     <constraint firstAttribute="width" constant="30" id="nPp-7M-1TU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -923,7 +922,7 @@
                                 </connections>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ost-61-2oE" customClass="WQScoreButton">
-                                <rect key="frame" x="70" y="318" width="30" height="30"/>
+                                <rect key="frame" x="107" y="357" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -941,7 +940,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="27H-hg-8pW" customClass="WQScoreButton">
-                                <rect key="frame" x="200" y="318" width="30" height="30"/>
+                                <rect key="frame" x="183" y="357" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -959,7 +958,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgY-xy-fYG" customClass="WQScoreButton">
-                                <rect key="frame" x="250" y="318" width="30" height="30"/>
+                                <rect key="frame" x="260" y="357" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
@@ -980,7 +979,7 @@
                                 </connections>
                             </button>
                             <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rI7-uN-emd">
-                                <rect key="frame" x="15" y="24" width="290" height="190"/>
+                                <rect key="frame" x="15" y="82" width="290" height="196"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6l6-DJ-yGp">
@@ -1067,37 +1066,47 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="196" id="Npb-bu-mJo"/>
+                                    <constraint firstAttribute="width" constant="290" id="yK8-pE-O8L"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="EgY-xy-fYG" firstAttribute="baseline" secondItem="Ost-61-2oE" secondAttribute="baseline" id="3yi-Qz-1dt"/>
-                            <constraint firstAttribute="trailing" secondItem="EgY-xy-fYG" secondAttribute="trailing" constant="40" id="74N-he-RBz"/>
-                            <constraint firstItem="7IT-u1-I9d" firstAttribute="top" secondItem="EgY-xy-fYG" secondAttribute="bottom" constant="19" id="AmV-Qe-hIC"/>
+                            <constraint firstItem="EgY-xy-fYG" firstAttribute="leading" secondItem="yio-F9-SvB" secondAttribute="leading" constant="260" id="3Pe-Qw-OSK"/>
+                            <constraint firstItem="27H-hg-8pW" firstAttribute="leading" secondItem="yio-F9-SvB" secondAttribute="leading" constant="183" id="69j-he-EGY"/>
+                            <constraint firstItem="X8I-oz-83g" firstAttribute="top" secondItem="xon-Fg-DNa" secondAttribute="bottom" constant="293" id="8m7-SF-zOK"/>
                             <constraint firstItem="rI7-uN-emd" firstAttribute="leading" secondItem="yio-F9-SvB" secondAttribute="leading" constant="15" id="Bvb-A9-4yc"/>
-                            <constraint firstItem="Ost-61-2oE" firstAttribute="leading" secondItem="X8I-oz-83g" secondAttribute="trailing" constant="20" id="Koe-3p-JeR"/>
-                            <constraint firstItem="EgY-xy-fYG" firstAttribute="baseline" secondItem="27H-hg-8pW" secondAttribute="baseline" id="QFM-pt-ahe"/>
-                            <constraint firstItem="X8I-oz-83g" firstAttribute="leading" secondItem="yio-F9-SvB" secondAttribute="leading" constant="20" symbolic="YES" id="TLD-SM-Rot"/>
-                            <constraint firstItem="X8I-oz-83g" firstAttribute="top" secondItem="rI7-uN-emd" secondAttribute="bottom" constant="104" id="TsO-8d-CIr"/>
-                            <constraint firstItem="EgY-xy-fYG" firstAttribute="baseline" secondItem="X8I-oz-83g" secondAttribute="baseline" id="TyD-xa-5l3"/>
-                            <constraint firstItem="rI7-uN-emd" firstAttribute="top" secondItem="xon-Fg-DNa" secondAttribute="bottom" constant="24" id="Z4K-V6-dSg"/>
-                            <constraint firstItem="EgY-xy-fYG" firstAttribute="top" secondItem="rI7-uN-emd" secondAttribute="bottom" constant="104" id="kA2-qt-IqZ"/>
-                            <constraint firstItem="rI7-uN-emd" firstAttribute="centerX" secondItem="yio-F9-SvB" secondAttribute="centerX" id="lZB-05-zf4"/>
-                            <constraint firstItem="EgY-xy-fYG" firstAttribute="leading" secondItem="27H-hg-8pW" secondAttribute="trailing" constant="20" id="rFl-3G-vKg"/>
+                            <constraint firstItem="27H-hg-8pW" firstAttribute="top" secondItem="xon-Fg-DNa" secondAttribute="bottom" constant="293" id="EN3-vQ-F3B"/>
+                            <constraint firstItem="Ost-61-2oE" firstAttribute="top" secondItem="xon-Fg-DNa" secondAttribute="bottom" constant="293" id="LJS-Uu-5h7"/>
+                            <constraint firstItem="EgY-xy-fYG" firstAttribute="top" secondItem="xon-Fg-DNa" secondAttribute="bottom" constant="293" id="Xyw-xR-DDF"/>
+                            <constraint firstItem="Ost-61-2oE" firstAttribute="leading" secondItem="yio-F9-SvB" secondAttribute="leading" constant="107" id="riH-vX-fPT"/>
+                            <constraint firstItem="X8I-oz-83g" firstAttribute="leading" secondItem="yio-F9-SvB" secondAttribute="leading" constant="30" id="wG6-uP-RmZ"/>
+                            <constraint firstItem="rI7-uN-emd" firstAttribute="top" secondItem="xon-Fg-DNa" secondAttribute="bottom" constant="18" id="xZD-gE-1m3"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Multiple Choice" image="multipleTab.png" id="OUk-Cx-jXT"/>
                     <connections>
                         <outlet property="answerCountButton" destination="Ost-61-2oE" id="faO-AL-j3P"/>
+                        <outlet property="answerCountXPos" destination="riH-vX-fPT" id="15D-va-H4C"/>
+                        <outlet property="answerCountYPos" destination="LJS-Uu-5h7" id="s0R-OX-JmJ"/>
                         <outlet property="answerIdentifierLabel" destination="UXA-AB-F15" id="1au-K1-h8U"/>
                         <outlet property="answerLine" destination="Lry-0h-AGC" id="udQ-wd-V2B"/>
+                        <outlet property="cardXPos" destination="Bvb-A9-4yc" id="lE8-bv-P1h"/>
+                        <outlet property="cardYPos" destination="xZD-gE-1m3" id="soP-EG-yEf"/>
                         <outlet property="correctCountButton" destination="27H-hg-8pW" id="xXm-yi-Fkx"/>
+                        <outlet property="correctCountXPos" destination="69j-he-EGY" id="Zj2-yd-bV8"/>
+                        <outlet property="correctCountYPos" destination="EN3-vQ-F3B" id="0PD-yE-aQf"/>
                         <outlet property="errorCountButton" destination="EgY-xy-fYG" id="PRh-Qs-hP4"/>
+                        <outlet property="errorCountXPos" destination="3Pe-Qw-OSK" id="UYA-dM-JO6"/>
+                        <outlet property="errorCountYPos" destination="Xyw-xR-DDF" id="16J-2a-jlt"/>
                         <outlet property="opt1Button" destination="hhc-e7-1s6" id="TJW-f9-F9c"/>
                         <outlet property="opt2Button" destination="xGL-sh-F7o" id="I1n-gU-giM"/>
                         <outlet property="opt3Button" destination="XDz-wk-0kT" id="TIa-M7-EdL"/>
                         <outlet property="questionCountButton" destination="X8I-oz-83g" id="RiO-YF-UwB"/>
+                        <outlet property="questionCountXPos" destination="wG6-uP-RmZ" id="r7y-oS-gPK"/>
+                        <outlet property="questionCountYPos" destination="8m7-SF-zOK" id="FGB-eU-iny"/>
                         <outlet property="questionIdentifierLabel" destination="6l6-DJ-yGp" id="qko-gg-xzN"/>
                         <outlet property="questionLabel" destination="XsM-gE-teg" id="yet-kE-6nh"/>
                         <outlet property="questionLine" destination="rwb-KC-p6p" id="zPE-Vs-nB1"/>
