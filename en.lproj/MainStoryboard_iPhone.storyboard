@@ -794,7 +794,7 @@
                                 </connections>
                             </button>
                             <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKG-Kw-rd4">
-                                <rect key="frame" x="15" y="23" width="290" height="165"/>
+                                <rect key="frame" x="15" y="18" width="290" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="82m-0x-DOt">
@@ -849,35 +849,47 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="9Jx-fc-VTh"/>
+                                    <constraint firstAttribute="height" constant="170" id="Pfb-LX-tWq"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="82G-BI-qRX" firstAttribute="leading" secondItem="CiM-BC-3lL" secondAttribute="trailing" constant="20" id="325-64-od6"/>
-                            <constraint firstItem="eKG-Kw-rd4" firstAttribute="centerX" secondItem="loY-p9-Uql" secondAttribute="centerX" id="7G6-4l-7C8"/>
                             <constraint firstItem="eKG-Kw-rd4" firstAttribute="leading" secondItem="loY-p9-Uql" secondAttribute="leading" constant="15" id="7aA-WP-7wi"/>
-                            <constraint firstAttribute="trailing" secondItem="82G-BI-qRX" secondAttribute="trailing" constant="40" id="9Mq-Et-1Ky"/>
-                            <constraint firstItem="IsL-DA-OD6" firstAttribute="top" secondItem="82G-BI-qRX" secondAttribute="bottom" constant="19" id="B65-ru-cdm"/>
-                            <constraint firstItem="23a-Cd-7eB" firstAttribute="leading" secondItem="loY-p9-Uql" secondAttribute="leading" constant="20" symbolic="YES" id="D71-8s-7Ti"/>
-                            <constraint firstItem="CiM-BC-3lL" firstAttribute="top" secondItem="eKG-Kw-rd4" secondAttribute="bottom" constant="130" id="O48-EQ-iYE"/>
-                            <constraint firstItem="eKG-Kw-rd4" firstAttribute="top" secondItem="Giz-kQ-qWQ" secondAttribute="bottom" constant="23" id="Ob9-N8-GHv"/>
-                            <constraint firstItem="9VQ-i4-5ds" firstAttribute="top" secondItem="eKG-Kw-rd4" secondAttribute="bottom" constant="130" id="PaH-2j-dlW"/>
-                            <constraint firstItem="82G-BI-qRX" firstAttribute="top" secondItem="eKG-Kw-rd4" secondAttribute="bottom" constant="130" id="hkx-Wd-npi"/>
-                            <constraint firstItem="9VQ-i4-5ds" firstAttribute="leading" secondItem="23a-Cd-7eB" secondAttribute="trailing" constant="20" id="hmS-nP-6N1"/>
-                            <constraint firstItem="23a-Cd-7eB" firstAttribute="top" secondItem="eKG-Kw-rd4" secondAttribute="bottom" constant="130" id="pH3-kz-QZl"/>
+                            <constraint firstItem="eKG-Kw-rd4" firstAttribute="top" secondItem="Giz-kQ-qWQ" secondAttribute="bottom" constant="18" id="Ob9-N8-GHv"/>
+                            <constraint firstItem="9VQ-i4-5ds" firstAttribute="top" secondItem="Giz-kQ-qWQ" secondAttribute="bottom" constant="318" id="TDx-GI-0F8"/>
+                            <constraint firstItem="82G-BI-qRX" firstAttribute="top" secondItem="Giz-kQ-qWQ" secondAttribute="bottom" constant="318" id="Xag-Qb-Nig"/>
+                            <constraint firstItem="9VQ-i4-5ds" firstAttribute="leading" secondItem="loY-p9-Uql" secondAttribute="leading" constant="70" id="a5P-77-7mJ"/>
+                            <constraint firstItem="23a-Cd-7eB" firstAttribute="top" secondItem="Giz-kQ-qWQ" secondAttribute="bottom" constant="318" id="aN8-Fh-XMQ"/>
+                            <constraint firstItem="CiM-BC-3lL" firstAttribute="top" secondItem="Giz-kQ-qWQ" secondAttribute="bottom" constant="318" id="mFZ-ni-42L"/>
+                            <constraint firstItem="CiM-BC-3lL" firstAttribute="leading" secondItem="loY-p9-Uql" secondAttribute="leading" constant="200" id="o7X-dP-nya"/>
+                            <constraint firstItem="82G-BI-qRX" firstAttribute="leading" secondItem="loY-p9-Uql" secondAttribute="leading" constant="250" id="v5I-oA-R7u"/>
+                            <constraint firstItem="23a-Cd-7eB" firstAttribute="leading" secondItem="loY-p9-Uql" secondAttribute="leading" constant="20" id="xS0-CM-pRE"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Question &amp; Answer" image="qaTab.png" id="fPQ-7l-Mz4"/>
                     <connections>
                         <outlet property="answerCountButton" destination="9VQ-i4-5ds" id="PG6-lk-OV2"/>
+                        <outlet property="answerCountXPos" destination="a5P-77-7mJ" id="Do8-Uw-Jsy"/>
+                        <outlet property="answerCountYPos" destination="TDx-GI-0F8" id="IsT-90-Vdi"/>
                         <outlet property="answerIdentifierLabel" destination="T0V-6E-7YM" id="jFE-kj-mNb"/>
                         <outlet property="answerLine" destination="are-NC-DIf" id="KqY-tl-jKa"/>
                         <outlet property="answerTextField" destination="RUQ-nm-WVN" id="nWH-wo-Nxq"/>
+                        <outlet property="cardXPos" destination="7aA-WP-7wi" id="1By-hc-K3s"/>
+                        <outlet property="cardYPos" destination="Ob9-N8-GHv" id="DBl-ne-wvb"/>
                         <outlet property="correctAnswerLabel" destination="fel-jK-gpf" id="bIN-YS-dZt"/>
                         <outlet property="correctCountButton" destination="CiM-BC-3lL" id="pvn-G7-UDl"/>
+                        <outlet property="correctCountXPos" destination="o7X-dP-nya" id="ryT-e5-vgb"/>
+                        <outlet property="correctCountYPos" destination="mFZ-ni-42L" id="HTf-f7-XOl"/>
                         <outlet property="errorCountButton" destination="82G-BI-qRX" id="fNt-Ld-9AA"/>
+                        <outlet property="errorCountXPos" destination="v5I-oA-R7u" id="Qay-Ey-Z9i"/>
+                        <outlet property="errorCountYPos" destination="Xag-Qb-Nig" id="n0e-vh-sZQ"/>
                         <outlet property="questionCountButton" destination="23a-Cd-7eB" id="CbS-S9-GeE"/>
+                        <outlet property="questionCountXPos" destination="xS0-CM-pRE" id="gJ7-fg-21s"/>
+                        <outlet property="questionCountYPos" destination="aN8-Fh-XMQ" id="qkD-Q9-KMB"/>
                         <outlet property="questionIdentifierLabel" destination="82m-0x-DOt" id="T46-dF-kh0"/>
                         <outlet property="questionLabel" destination="HXS-LN-rhO" id="y1R-fr-Cdx"/>
                         <outlet property="questionLine" destination="AtI-9U-WFr" id="oik-ly-Oa1"/>

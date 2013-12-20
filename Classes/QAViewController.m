@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -38,51 +38,29 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @implementation QAViewController
 
-@synthesize quiz = m_quiz;
-@synthesize questionIdentifierLabel, answerIdentifierLabel, questionLabel;
-@synthesize answerTextField;
-@synthesize questionCountButton, answerCountButton, correctCountButton, errorCountButton;
-@synthesize previousQuestionHeaderLabel, previousQuestionLabel, yourAnswerHeaderLabel, yourAnswerLabel, correctAnswerHeaderLabel, correctAnswerLabel;
-@synthesize questionLine, answerLine, previousQuestionLine, yourAnswerLine, correctAnswerLine;
-@synthesize questionView, previousView;
-
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor backgroundColor];
-	answerIdentifierLabel.text = @"";
-	answerTextField.hidden = YES;
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
+	self.answerIdentifierLabel.text = @"";
+	self.answerTextField.hidden = YES;
 	
-	[questionCountButton setTitle:@"" forState:UIControlStateNormal];
-	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
-	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
-	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.questionCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.answerCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.correctCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.errorCountButton setTitle:@"" forState:UIControlStateNormal];
 
-    questionCountButton.stickyColor = kBlue;
-    answerCountButton.stickyColor = kYellow;
-    correctCountButton.stickyColor = kGreen;
-    errorCountButton.stickyColor = kRed;
-
-	previousQuestionHeaderLabel.text = @"";
-	previousQuestionLabel.text = @"";
-	yourAnswerHeaderLabel.text = @"";
-	yourAnswerLabel.text = @"";
-	correctAnswerHeaderLabel.text = @"";
-	correctAnswerLabel.text = @"";
-	previousQuestionLine.hidden =YES;
-	yourAnswerLine.hidden = YES;
-	correctAnswerLine.hidden = YES;
+	self.previousQuestionHeaderLabel.text = @"";
+	self.previousQuestionLabel.text = @"";
+	self.yourAnswerHeaderLabel.text = @"";
+	self.yourAnswerLabel.text = @"";
+	self.correctAnswerHeaderLabel.text = @"";
+	self.correctAnswerLabel.text = @"";
+	self.previousQuestionLine.hidden =YES;
+	self.yourAnswerLine.hidden = YES;
+	self.correctAnswerLine.hidden = YES;
 	
 	self.errorCountButton.enabled = NO;
     
@@ -107,59 +85,78 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-       /* if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-            self.centerYConstraint.constant = 35;
-        } else {
-            self.centerYConstraint.constant = 125;
-        }
-        if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-            self.questionView.frame = CGRectMake(35, 35, 505, 310);
-            self.previousView.frame = CGRectMake(41, 315, 505, 310);
-            
-            questionCountButton.frame = CGRectMake(580, 45, 104, 100);
-            answerCountButton.frame = CGRectMake(580, 175, 104, 100);
-            correctCountButton.frame = CGRectMake(580, 305, 104, 100);
-            errorCountButton.frame = CGRectMake(580, 440, 104, 100);
-            
-        } else {
-            self.questionView.frame = CGRectMake(65, 75, 505, 310);
-            self.previousView.frame = CGRectMake(69, 368, 505, 310);
-            
-            questionCountButton.frame = CGRectMake(620, 85, 104, 100);
-            answerCountButton.frame = CGRectMake(620, 215, 104, 100);
-            correctCountButton.frame = CGRectMake(620, 345, 104, 100);
-            errorCountButton.frame = CGRectMake(620, 480, 104, 100);
-        }*/
-    }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        /*if ((toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
-            self.questionView.frame = CGRectMake(15, 3, 290, 160 );
+        if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
+            int width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
             
-            badgeQuestionCount.frame = CGRectMake(330, 5, 50, 50);
-            badgeAnswerCount.frame = CGRectMake(400, 5, 50, 50);
-            badgeCorrectCount.frame = CGRectMake(330, 60, 50, 50);
-            badgeErrorCount.frame = CGRectMake(400, 60, 50, 50);
-            
+            if (width > 500) {
+                self.cardXPos.constant = 65;
+                self.cardYPos.constant = 33;
+                
+                self.questionCountXPos.constant = 410;
+                self.questionCountYPos.constant = 45;
+                
+                self.answerCountXPos.constant = 410;
+                self.answerCountYPos.constant = 95;
+                
+                self.correctCountXPos.constant = 470;
+                self.correctCountYPos.constant = 45;
+                
+                self.errorCountXPos.constant = 470;
+                self.errorCountYPos.constant = 95;
+            } else {
+                self.cardXPos.constant = 15;
+                self.cardYPos.constant = 33;
+                
+                self.questionCountXPos.constant = 335;
+                self.questionCountYPos.constant = 45;
+                
+                self.answerCountXPos.constant = 335;
+                self.answerCountYPos.constant = 95;
+                
+                self.correctCountXPos.constant = 395;
+                self.correctCountYPos.constant = 45;
+                
+                self.errorCountXPos.constant = 395;
+                self.errorCountYPos.constant = 95;
+            }
         } else {
             int height = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
             if (height > 500) {
-                self.questionView.frame = CGRectMake(15, 15, 290, 165);
-                badgeQuestionCount.frame = CGRectMake(20, 200, 50, 50);
-                badgeAnswerCount.frame = CGRectMake(90, 200, 50, 50);
-                badgeCorrectCount.frame = CGRectMake(170, 200, 50, 50);
-                badgeErrorCount.frame = CGRectMake(240, 200, 50, 50);
+                self.cardXPos.constant = 15;
+                self.cardYPos.constant = 92;
+                
+                self.questionCountXPos.constant = 30;
+                self.questionCountYPos.constant = 280;
+                
+                self.answerCountXPos.constant = 107;
+                self.answerCountYPos.constant = 280;
+                
+                self.correctCountXPos.constant = 183;
+                self.correctCountYPos.constant = 280;
+                
+                self.errorCountXPos.constant = 260;
+                self.errorCountYPos.constant = 280;
             } else {
-                self.questionView.frame = CGRectMake(15, 15, 290, 152);
-                badgeQuestionCount.frame = CGRectMake(20, 160, 50, 50);
-                badgeAnswerCount.frame = CGRectMake(90, 160, 50, 50);
-                badgeCorrectCount.frame = CGRectMake(170, 160, 50, 50);
-                badgeErrorCount.frame = CGRectMake(240, 160, 50, 50);
+                self.cardXPos.constant = 15;
+                self.cardYPos.constant = 45;
+                
+                self.questionCountXPos.constant = 30;
+                self.questionCountYPos.constant = 217;
+                
+                self.answerCountXPos.constant = 107;
+                self.answerCountYPos.constant = 217;
+                
+                self.correctCountXPos.constant = 183;
+                self.correctCountYPos.constant = 217;
+                
+                self.errorCountXPos.constant = 260;
+                self.errorCountYPos.constant = 217;
             }
-        }*/
-    }
-    [WQUtils renderCardShadow:previousView];
-    [WQUtils renderCardShadow:questionView];
+            
+        }
+    }    [WQUtils renderCardShadow:self.previousView];
+    [WQUtils renderCardShadow:self.questionView];
 }
 
 - (void)keyboardWasShown:(NSNotification*)aNotification {
@@ -187,20 +184,20 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (void) start {
-	[questionCountButton setTitle:[@([self.quiz questionCount]) stringValue] forState:UIControlStateNormal];
-	[answerCountButton setTitle:@"" forState:UIControlStateNormal];
-	[correctCountButton setTitle:@"" forState:UIControlStateNormal];
-	[errorCountButton setTitle:@"" forState:UIControlStateNormal];
-	previousQuestionHeaderLabel.text = @"";
-	previousQuestionLabel.text = @"";
-	yourAnswerHeaderLabel.text = @"";
-	yourAnswerLabel.text = @"";
-	correctAnswerHeaderLabel.text = @"";
-	correctAnswerLabel.text = @"";
-	previousQuestionLine.hidden =YES;
-	yourAnswerLine.hidden = YES;
-	correctAnswerLine.hidden = YES;
-    errorCountButton.enabled = NO;
+	[self.questionCountButton setTitle:[@([self.quiz questionCount]) stringValue] forState:UIControlStateNormal];
+	[self.answerCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.correctCountButton setTitle:@"" forState:UIControlStateNormal];
+	[self.errorCountButton setTitle:@"" forState:UIControlStateNormal];
+	self.previousQuestionHeaderLabel.text = @"";
+	self.previousQuestionLabel.text = @"";
+	self.yourAnswerHeaderLabel.text = @"";
+	self.yourAnswerLabel.text = @"";
+	self.correctAnswerHeaderLabel.text = @"";
+	self.correctAnswerLabel.text = @"";
+	self.previousQuestionLine.hidden =YES;
+	self.yourAnswerLine.hidden = YES;
+	self.correctAnswerLine.hidden = YES;
+    self.errorCountButton.enabled = NO;
 	[self showQuestion];
 }
 
@@ -210,74 +207,69 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (void) showQuestion {
-	questionIdentifierLabel.text = [self.quiz langQuestion];
-	questionLabel.text = [self.quiz question];
-	answerIdentifierLabel.text = [self.quiz langAnswer];
-	answerTextField.hidden = NO;
-	answerTextField.text = @"";
+	self.questionIdentifierLabel.text = [self.quiz langQuestion];
+	self.questionLabel.text = [self.quiz question];
+	self.answerIdentifierLabel.text = [self.quiz langAnswer];
+	self.answerTextField.hidden = NO;
+	self.answerTextField.text = @"";
 }
 
 - (void) slotCheck {
-	NSString *ans = answerTextField.text;
-	bool fIsCorrect = [m_quiz checkAnswer:ans];
+	NSString *ans = self.answerTextField.text;
+	bool fIsCorrect = [self.quiz checkAnswer:ans];
 	
-	if (fIsCorrect)
-	{
-		correctAnswerHeaderLabel.text = @"";
-		correctAnswerLabel.text = @"";
-		correctAnswerLine.hidden = YES;
+	if (fIsCorrect) {
+		self.correctAnswerHeaderLabel.text = @"";
+		self.correctAnswerLabel.text = @"";
+		self.correctAnswerLine.hidden = YES;
 		[self.quiz countIncrement:1];
-	}
-	else
-	{
-		correctAnswerHeaderLabel.text = @"Correct Answer";
-		correctAnswerLabel.text = [m_quiz answer];
-		correctAnswerLine.hidden = NO;
+	} else {
+		self.correctAnswerHeaderLabel.text = @"Correct Answer";
+		self.correctAnswerLabel.text = [self.quiz answer];
+		self.correctAnswerLine.hidden = NO;
 		[self.quiz countIncrement:-1];
 	}
 		
-	previousQuestionHeaderLabel.text = @"Previous Question";
-	previousQuestionLabel.text = [m_quiz question];
-	yourAnswerHeaderLabel.text = @"Your Answer";
-	yourAnswerLabel.text = ans;
-	previousQuestionLine.hidden =NO;
-	yourAnswerLine.hidden = NO;	
+	self.previousQuestionHeaderLabel.text = @"Previous Question";
+	self.previousQuestionLabel.text = [self.quiz question];
+	self.yourAnswerHeaderLabel.text = @"Your Answer";
+	self.yourAnswerLabel.text = ans;
+	self.previousQuestionLine.hidden =NO;
+	self.yourAnswerLine.hidden = NO;
 	
-	[answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
-	[correctCountButton setTitle:[@([self.quiz correctCount]) stringValue] forState:UIControlStateNormal];
-	[errorCountButton setTitle:[@([self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
+	[self.answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
+	[self.correctCountButton setTitle:[@([self.quiz correctCount]) stringValue] forState:UIControlStateNormal];
+	[self.errorCountButton setTitle:[@([self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
 
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        //UIButton *btn = (UIButton*)sender;
-        answerTextField.borderStyle = UITextBorderStyleNone;
-        [self animate:answerTextField error:!fIsCorrect];
+        self.answerTextField.borderStyle = UITextBorderStyleNone;
+        [self animate:self.answerTextField error:!fIsCorrect];
         if (!fIsCorrect) {
-            [self animate:correctAnswerLabel error:false];
+            [self animate:self.correctAnswerLabel error:false];
         }
     }
 	if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
 
-        [m_quiz toNext];
-        if (![m_quiz atEnd]) {
+        [self.quiz toNext];
+        if (![self.quiz atEnd]) {
             [self showQuestion];
         } else {
-            [m_quiz finish];
+            [self.quiz finish];
             self.errorCountButton.enabled = [self.quiz hasErrors];
-            questionIdentifierLabel.text = @"Summary";
-            questionLabel.text = @"";
-            answerIdentifierLabel.text = @"";
-            answerTextField.hidden = YES;
-            answerLine.hidden = YES;
+            self.questionIdentifierLabel.text = @"Summary";
+            self.questionLabel.text = @"";
+            self.answerIdentifierLabel.text = @"";
+            self.answerTextField.hidden = YES;
+            self.answerLine.hidden = YES;
         }
     }
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
     // When the user presses return, take focus away from the text field so that the keyboard is dismissed.
-    if (theTextField == answerTextField) {
-        if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation))
-		{
-			[answerTextField resignFirstResponder];
+    if ([theTextField isEqual:self.answerTextField]) {
+        if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)) {
+			[self.answerTextField resignFirstResponder];
 		}
 		[self slotCheck];
     }
@@ -294,10 +286,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[self start];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     // Dismiss the keyboard when the view outside the text field is touched.
-    [answerTextField resignFirstResponder];
+    [self.answerTextField resignFirstResponder];
     // Revert the text field to the previous value.
     //textField.text = self.string; 
     [super touchesBegan:touches withEvent:event];
@@ -310,14 +301,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     // Release any cached data, images, etc that aren't in use.
 }
 
-
 - (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
-
-
 
 - (void) animate:(UIView *)aLabel error:(BOOL) flag {
     
@@ -325,17 +313,15 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     UIColor *opaque;
     
     if (flag) {
-        clear = [UIColor colorWithRed:1.0 green:0.39 blue:0.39 alpha:0.0];
-        opaque = [UIColor colorWithRed:1.0 green:0.39 blue:0.39 alpha:1.0]; 
+        clear = [UIColor colorWithRed:1.0 green:0.45 blue:0.45 alpha:0.0];
+        opaque = [UIColor colorWithRed:1.0 green:0.45 blue:0.45 alpha:1.0];
     } else {
-        clear = [UIColor colorWithRed:0.39 green:1.0 blue:0.39 alpha:0.0];
-        opaque = [UIColor colorWithRed:0.39 green:1.0 blue:0.39 alpha:1.0];
+        clear = [UIColor colorWithRed:0.62 green:1.0 blue:0.27 alpha:0.0];
+        opaque = [UIColor colorWithRed:0.62 green:1.0 blue:0.27 alpha:1.0];
     }
     
-    
-    
     // Rounded corners.
-    aLabel.layer.cornerRadius = 6;
+    aLabel.layer.cornerRadius = 3;
     
     // Drop shadow.
     aLabel.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -343,7 +329,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     aLabel.layer.shadowRadius = 1.0;
     aLabel.layer.shadowOffset = CGSizeMake(0, 1);
 	aLabel.layer.masksToBounds = NO;
-    aLabel.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:aLabel.bounds cornerRadius:6].CGPath;   
+    //aLabel.layer.shadowPath = [UIBezierPath bezierPathWithRoundedRect:aLabel.bounds cornerRadius:3].CGPath;
     
     CGFloat duration = 0.3;
     CGFloat totalDuration = 0.0;
@@ -414,24 +400,23 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [aLabel.layer addAnimation: group forKey:  nil];
 }
 
-
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag {
-    [answerTextField.layer removeAllAnimations];
-    [correctAnswerLabel.layer removeAllAnimations];
-    answerTextField.borderStyle = UITextBorderStyleRoundedRect;
-    [answerTextField becomeFirstResponder];
-    correctAnswerLabel.text = nil;
-    [m_quiz toNext];
-    if (![m_quiz atEnd]) {
+    [self.answerTextField.layer removeAllAnimations];
+    [self.correctAnswerLabel.layer removeAllAnimations];
+    self.answerTextField.borderStyle = UITextBorderStyleRoundedRect;
+    [self.answerTextField becomeFirstResponder];
+    self.correctAnswerLabel.text = nil;
+    [self.quiz toNext];
+    if (![self.quiz atEnd]) {
         [self showQuestion];
     } else {
-        [m_quiz finish];
+        [self.quiz finish];
         self.errorCountButton.enabled = [self.quiz hasErrors];
-        questionIdentifierLabel.text = @"Summary";
-        questionLabel.text = @"";
-        answerIdentifierLabel.text = @"";
-        answerTextField.hidden = YES;
-        answerLine.hidden = YES;
+        self.questionIdentifierLabel.text = @"Summary";
+        self.questionLabel.text = @"";
+        self.answerIdentifierLabel.text = @"";
+        self.answerTextField.hidden = YES;
+        self.answerLine.hidden = YES;
     }
 }
 

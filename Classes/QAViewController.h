@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -35,37 +35,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQQuiz.h"
 #import "WQScoreButton.h"
 
-@interface QAViewController : UIViewController <UITextFieldDelegate> {
-	WQQuiz * m_quiz;
-	
-	UILabel *questionIdentifierLabel;
-	UILabel *answerIdentifierLabel;
-	UILabel *questionLabel;
-	
-	UITextField *answerTextField;
-	
-	WQScoreButton *questionCountButton;
-	WQScoreButton *answerCountButton;
-	WQScoreButton *correctCountButton;
-	WQScoreButton *errorCountButton;
-	
-	UILabel *previousQuestionHeaderLabel;
-	UILabel *previousQuestionLabel;
-	UILabel *yourAnswerHeaderLabel;
-	UILabel *yourAnswerLabel;
-	UILabel *correctAnswerHeaderLabel;
-	UILabel *correctAnswerLabel;
-	
-	UIView * questionLine;
-    UIView * answerLine;
-	UIView * previousQuestionLine;
-	UIView * yourAnswerLine;
-	UIView * correctAnswerLine;
-	
-	UIView *questionView;
-	UIView *previousView;
-	
-}
+@interface QAViewController : UIViewController <UITextFieldDelegate>
+
 - (void) start;
 - (void) restart;
 - (void) slotCheck;
@@ -102,6 +73,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, strong) IBOutlet UIView *previousView;
 
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *centerYConstraint;
+
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *cardXPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *cardYPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *questionCountXPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *questionCountYPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *answerCountXPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *answerCountYPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *correctCountXPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *correctCountYPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *errorCountXPos;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *errorCountYPos;
 
 - (IBAction) doRestart;
 - (IBAction) doRepeat;
