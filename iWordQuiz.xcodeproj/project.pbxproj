@@ -175,7 +175,6 @@
 		D06A0939185D421E00A0A158 /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23618528A61005F8CAF /* MSDynamicsDrawerStyler.m */; };
 		D06A093A185D421E00A0A158 /* WQUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0BF0151E38D90084ACB0 /* WQUtils.m */; };
 		D06A093B185D421E00A0A158 /* WQScoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC677715252F2B000D067C /* WQScoreButton.m */; };
-		D06A093C185D421E00A0A158 /* UIView+WhenTappedBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F1D2B152CE92D003E8968 /* UIView+WhenTappedBlocks.m */; };
 		D06A093D185D421E00A0A158 /* UIImage+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */; };
 		D06A093E185D421E00A0A158 /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
 		D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CE841B154737C10097D67A /* WQNewFileViewController.m */; };
@@ -208,7 +207,6 @@
 		D074FB2012249EBC00E8C175 /* multipleTab.png in Resources */ = {isa = PBXBuildFile; fileRef = D074FB1912249EBC00E8C175 /* multipleTab.png */; };
 		D074FB2112249EBC00E8C175 /* qaTab.png in Resources */ = {isa = PBXBuildFile; fileRef = D074FB1A12249EBC00E8C175 /* qaTab.png */; };
 		D092B32B12CD620B000D7E87 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = D092B32A12CD620B000D7E87 /* iTunesArtwork.png */; };
-		D09F1D2C152CE92D003E8968 /* UIView+WhenTappedBlocks.m in Sources */ = {isa = PBXBuildFile; fileRef = D09F1D2B152CE92D003E8968 /* UIView+WhenTappedBlocks.m */; };
 		D0C0B84F12823CE40020C111 /* knowButton_225.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C0B84B12823CE40020C111 /* knowButton_225.png */; };
 		D0C0B85012823CE40020C111 /* dontknowButton_225.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C0B84C12823CE40020C111 /* dontknowButton_225.png */; };
 		D0C85E8B14F595A300C2A499 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */; };
@@ -365,9 +363,6 @@
 		D074FB1912249EBC00E8C175 /* multipleTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = multipleTab.png; path = Resources/multipleTab.png; sourceTree = "<group>"; };
 		D074FB1A12249EBC00E8C175 /* qaTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = qaTab.png; path = Resources/qaTab.png; sourceTree = "<group>"; };
 		D092B32A12CD620B000D7E87 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = SOURCE_ROOT; };
-		D09F1D29152CE92D003E8968 /* JMWhenTapped.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JMWhenTapped.h; path = Classes/JMWhenTapped/JMWhenTapped/JMWhenTapped.h; sourceTree = SOURCE_ROOT; };
-		D09F1D2A152CE92D003E8968 /* UIView+WhenTappedBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+WhenTappedBlocks.h"; path = "Classes/JMWhenTapped/JMWhenTapped/UIView+WhenTappedBlocks.h"; sourceTree = SOURCE_ROOT; };
-		D09F1D2B152CE92D003E8968 /* UIView+WhenTappedBlocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+WhenTappedBlocks.m"; path = "Classes/JMWhenTapped/JMWhenTapped/UIView+WhenTappedBlocks.m"; sourceTree = SOURCE_ROOT; };
 		D0C0B84B12823CE40020C111 /* knowButton_225.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = knowButton_225.png; path = Resources/knowButton_225.png; sourceTree = "<group>"; };
 		D0C0B84C12823CE40020C111 /* dontknowButton_225.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dontknowButton_225.png; path = Resources/dontknowButton_225.png; sourceTree = "<group>"; };
 		D0C791D814F6F1AE000AFF00 /* DBDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDefines.h; sourceTree = "<group>"; };
@@ -484,7 +479,6 @@
 				D0FC077C15E7ED9300811921 /* Reachability */,
 				D0FC074D15E703A600811921 /* CHDropboxSync */,
 				D0FC075415E7100500811921 /* ConciseKit */,
-				D09F1D28152CE92D003E8968 /* JMWhenTapped */,
 				D0549F51151BC37900BDE78C /* MDSpreadView */,
 				D0FC076415E7EAAF00811921 /* KissXML */,
 				1D3623240D0F684500981E51 /* WordQuizAppDelegate.h */,
@@ -697,16 +691,6 @@
 			);
 			name = WYPopoverController;
 			path = WYPopoverController/WYPopoverController;
-			sourceTree = "<group>";
-		};
-		D09F1D28152CE92D003E8968 /* JMWhenTapped */ = {
-			isa = PBXGroup;
-			children = (
-				D09F1D29152CE92D003E8968 /* JMWhenTapped.h */,
-				D09F1D2A152CE92D003E8968 /* UIView+WhenTappedBlocks.h */,
-				D09F1D2B152CE92D003E8968 /* UIView+WhenTappedBlocks.m */,
-			);
-			path = JMWhenTapped;
 			sourceTree = "<group>";
 		};
 		D0CED4B415362F43005ADD4C /* en.lproj */ = {
@@ -1097,7 +1081,6 @@
 				D0E8A23A18528A61005F8CAF /* MSDynamicsDrawerStyler.m in Sources */,
 				D0CC0BF1151E38DA0084ACB0 /* WQUtils.m in Sources */,
 				D0CC677815252F2B000D067C /* WQScoreButton.m in Sources */,
-				D09F1D2C152CE92D003E8968 /* UIView+WhenTappedBlocks.m in Sources */,
 				D06A08D0185AA33900A0A158 /* UIImage+PHColor.m in Sources */,
 				D0D11E0E1541CCE800B8ECBD /* WQEditViewController.m in Sources */,
 				D0CE841C154737C10097D67A /* WQNewFileViewController.m in Sources */,
@@ -1148,7 +1131,6 @@
 				D06A0939185D421E00A0A158 /* MSDynamicsDrawerStyler.m in Sources */,
 				D06A093A185D421E00A0A158 /* WQUtils.m in Sources */,
 				D06A093B185D421E00A0A158 /* WQScoreButton.m in Sources */,
-				D06A093C185D421E00A0A158 /* UIView+WhenTappedBlocks.m in Sources */,
 				D06A093D185D421E00A0A158 /* UIImage+PHColor.m in Sources */,
 				D06A093E185D421E00A0A158 /* WQEditViewController.m in Sources */,
 				D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */,

@@ -1,9 +1,6 @@
 [submodule "Classes/MDSpreadView"]
 	path = Classes/MDSpreadView
 	url = git://github.com/mochidev/MDSpreadView.git
-[submodule "Classes/JMWhenTapped"]
-	path = Classes/JMWhenTapped
-	url = git://github.com/jakemarsh/JMWhenTapped.git
 [submodule "Classes/CHDropboxSync"]
 	path = Classes/CHDropboxSync
 	url = git://github.com/chrishulbert/CHDropboxSync.git

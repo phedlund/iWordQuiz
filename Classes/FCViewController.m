@@ -33,19 +33,24 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "FCViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "WQUtils.h"
-#import "JMWhenTapped.h"
 #import "UIColor+PHColor.h"
 
 #define kTransitionDuration	0.50
 
-@interface FCViewController () {
+@interface FCViewController () <UIGestureRecognizerDelegate> {
     bool _slideToTheRight;
     CALayer *_animationLayer;
 }
 
+@property (nonatomic, strong, readonly) UITapGestureRecognizer *frontTapRecognizer;
+@property (nonatomic, strong, readonly) UITapGestureRecognizer *backTapRecognizer;
+
 @end
 
 @implementation FCViewController
+
+@synthesize frontTapRecognizer;
+@synthesize backTapRecognizer;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -55,12 +60,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	self.frontView.userInteractionEnabled = YES;
     self.backView.hidden = true;
-    [self.frontView whenTapped:^{
-		[self flipCard:false];
-	}];
-    [self.backView whenTapped:^{
-		[self flipCard:false];
-	}];
+    [self.frontView addGestureRecognizer:self.frontTapRecognizer];
+    [self.backView addGestureRecognizer:self.backTapRecognizer];
 
 	[self.questionCountButton setTitle:@"" forState:UIControlStateNormal];
 	[self.answerCountButton setTitle:@"" forState:UIControlStateNormal];
@@ -355,4 +356,27 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     // e.g. self.myOutlet = nil;
 }
 
+- (UITapGestureRecognizer *) frontTapRecognizer {
+    if (!frontTapRecognizer) {
+        frontTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+        frontTapRecognizer.numberOfTapsRequired = 1;
+        frontTapRecognizer.delegate = self;
+    }
+    return frontTapRecognizer;
+}
+
+- (UITapGestureRecognizer *) backTapRecognizer {
+    if (!backTapRecognizer) {
+        backTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+        backTapRecognizer.numberOfTapsRequired = 1;
+        backTapRecognizer.delegate = self;
+    }
+    return backTapRecognizer;
+}
+
+- (void)handleTap:(UITapGestureRecognizer *)gesture {
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        [self flipCard:false];
+    }
+}
 @end
