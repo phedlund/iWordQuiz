@@ -35,14 +35,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQDocument.h"
 #import "MDSpreadViewClasses.h"
 
-@interface HomeViewController : UIViewController {
-    MDSpreadView *spreadView;
-}
+@interface HomeViewController : UIViewController
+
 - (void) start;
 - (void) restart;
 - (void) slotCheck;
 
-@property (nonatomic, strong) IBOutlet UIView *containerView;
 @property (nonatomic, strong) IBOutlet MDSpreadView *spreadView;
 
 @end

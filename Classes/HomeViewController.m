@@ -36,19 +36,16 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @implementation HomeViewController
 
-@synthesize spreadView;
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.view.backgroundColor = [UIColor backgroundColor];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(edited:) name:@"Edited" object:nil];
-    spreadView.dataSource = (id)self.tabBarController;
-    spreadView.delegate = (id) self.tabBarController;
-    spreadView.selectionMode = MDSpreadViewSelectionModeCell;
-    [spreadView reloadData];
+    self.spreadView.dataSource = (id)self.tabBarController;
+    self.spreadView.delegate = (id) self.tabBarController;
+    self.spreadView.selectionMode = MDSpreadViewSelectionModeCell;
+    [self.spreadView reloadData];
 }
-
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Overriden to allow any orientation.
@@ -70,7 +67,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (void) start {
-    [spreadView reloadData];
+    [self.spreadView reloadData];
 	[self slotCheck];
 }
 
@@ -90,7 +87,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (void)edited:(NSNotification*)n {
-    [spreadView reloadData];
+    [self.spreadView reloadData];
 }
 
 @end
