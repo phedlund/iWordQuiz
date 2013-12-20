@@ -40,12 +40,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQEditViewController.h"
 #import "MSDynamicsDrawerViewController.h"
 
-@interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, UISplitViewControllerDelegate, ModePickerDelegate,MDSpreadViewDataSource, MDSpreadViewDelegate, WQDocumentDelegate, WQEditViewControllerDelegate> {
-
-	WQQuiz * m_quiz;
-    int m_currentRow;
-    int m_currentColumn;
-}
+@interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, ModePickerDelegate,MDSpreadViewDataSource, MDSpreadViewDelegate, WQDocumentDelegate, WQEditViewControllerDelegate>
 
 @property (strong, nonatomic) NSURL *detailItem;
 @property (strong, nonatomic) ModePickerController *modePicker;

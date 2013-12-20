@@ -41,32 +41,35 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "UIColor+PHColor.h"
 #import "UIImage+PHColor.h"
 
-@interface DetailViewController ()
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+@interface DetailViewController () {
+	WQQuiz * _quiz;
+    int _currentRow;
+    int _currentColumn;
+}
+
 - (void)configureView;
+
 @end
 
 @implementation DetailViewController
 
-@synthesize masterPopoverController = _masterPopoverController;
-@synthesize modePicker = _modePicker;
+@synthesize modeBarButtonItem;
+@synthesize editBarButtonItem;
+@synthesize infoBarButtonItem;
 @synthesize modePickerPopover;
-@synthesize doc = _doc;
-@synthesize detailItem = _detailItem;
-@synthesize modeBarButtonItem, editBarButtonItem, infoBarButtonItem;
 
 - (void)documentContentsDidChange:(WQDocument *)document {
     dispatch_async(dispatch_get_main_queue(), ^{
         
-        if (m_quiz != nil) {
-            m_quiz = nil;
+        if (_quiz != nil) {
+            _quiz = nil;
         }
         
-        m_quiz = [[WQQuiz alloc] init];
-        [m_quiz setEntries:[document quizEntries]];
-        [m_quiz setFrontIdentifier:[document frontIdentifier]];
-        [m_quiz setBackIdentifier:[document backIdentifier]];
-        [m_quiz setFileName:[[document.fileURL lastPathComponent] stringByDeletingPathExtension]];
+        _quiz = [[WQQuiz alloc] init];
+        [_quiz setEntries:[document quizEntries]];
+        [_quiz setFrontIdentifier:[document frontIdentifier]];
+        [_quiz setBackIdentifier:[document backIdentifier]];
+        [_quiz setFileName:[[document.fileURL lastPathComponent] stringByDeletingPathExtension]];
         
         [self activateTab:self.selectedIndex];
         self.navigationItem.title = [[document.fileURL lastPathComponent] stringByDeletingPathExtension];
@@ -91,8 +94,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                     [_doc closeWithCompletionHandler:nil];
                     _doc = nil;
                 }
-                if (m_quiz != nil) {
-                    m_quiz = nil;
+                if (_quiz != nil) {
+                    _quiz = nil;
                 }
                 [self setSelectedIndex:0];
                 [self activateTab:0];
@@ -103,9 +106,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             self.editBarButtonItem.enabled = (_doc != nil);
         }
     //}
-	if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
 }
 
 
@@ -120,15 +120,15 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     [_doc openWithCompletionHandler:^(BOOL success) {
         
-        if (m_quiz != nil) {
-            m_quiz = nil;
+        if (_quiz != nil) {
+            _quiz = nil;
         }
         
-        m_quiz = [[WQQuiz alloc] init];
-        [m_quiz setEntries:[_doc quizEntries]];
-        [m_quiz setFrontIdentifier:[_doc frontIdentifier]];
-        [m_quiz setBackIdentifier:[_doc backIdentifier]];
-        [m_quiz setFileName:[[_detailItem lastPathComponent] stringByDeletingPathExtension]];
+        _quiz = [[WQQuiz alloc] init];
+        [_quiz setEntries:[_doc quizEntries]];
+        [_quiz setFrontIdentifier:[_doc frontIdentifier]];
+        [_quiz setBackIdentifier:[_doc backIdentifier]];
+        [_quiz setFileName:[[_detailItem lastPathComponent] stringByDeletingPathExtension]];
         
         if (![self hasEnoughEntries:self.selectedIndex]) {
             [self setSelectedIndex:0];
@@ -138,24 +138,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         self.navigationItem.title = [[_detailItem lastPathComponent] stringByDeletingPathExtension];
      }];
 }
-
-
-#pragma mark -
-#pragma mark Split view support
-
-- (void)splitViewController: (UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController: (UIPopoverController*)pc {
-    barButtonItem.title = @"Vocabularies";
-	[self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = pc;
-}
-
-
-// Called when the view is shown again in the split view, invalidating the button and popover controller.
-- (void)splitViewController: (UISplitViewController*)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
-	[self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
-}
-
 
 #pragma mark -
 #pragma mark Rotation support
@@ -180,8 +162,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		[myView willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 	}
 }
-
-
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -257,7 +237,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
     [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
-    m_currentRow = 0;
+    _currentRow = 0;
 	[self activateTab:1];
 }
 
@@ -272,27 +252,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
 }
 
-/*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-}
-*/
-/*
-- (void)viewDidDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-}
-*/
-
 - (void)viewDidUnload {
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-    self.masterPopoverController = nil;
     [_doc closeWithCompletionHandler:nil];
 }
 
@@ -305,8 +267,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	if (myMode == 0) {
 		myMode = 1;
 	}
-	if (m_quiz != nil) {
-		m_quiz.quizMode = myMode;
+	if (_quiz != nil) {
+		_quiz.quizMode = myMode;
         HomeViewController *homeViewController;
         switch (index) {
             case 0:
@@ -314,18 +276,18 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 [homeViewController restart];
                 break;
             case 1:
-                m_quiz.quizType = WQQuizTypeFC;
-                [(FCViewController *) self.selectedViewController setQuiz:m_quiz];
+                _quiz.quizType = WQQuizTypeFC;
+                [(FCViewController *) self.selectedViewController setQuiz:_quiz];
                 [(FCViewController *) self.selectedViewController restart];
                 break;
             case 2:
-                m_quiz.quizType = WQQuizTypeMC;
-                [(MCViewController *) self.selectedViewController setQuiz:m_quiz];
+                _quiz.quizType = WQQuizTypeMC;
+                [(MCViewController *) self.selectedViewController setQuiz:_quiz];
                 [(MCViewController *) self.selectedViewController restart];
                 break;
             case 3:
-                m_quiz.quizType = WQQuizTypeQA;
-                [(QAViewController *) self.selectedViewController setQuiz:m_quiz];
+                _quiz.quizType = WQQuizTypeQA;
+                [(QAViewController *) self.selectedViewController setQuiz:_quiz];
                 [(QAViewController *) self.selectedViewController restart];
                 break;
             default:
@@ -341,7 +303,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[prefs setInteger:mode + 1 forKey:@"Mode"];
 	[prefs synchronize];
 	
-	m_quiz.quizMode = mode + 1;
+	_quiz.quizMode = mode + 1;
     [self.modePickerPopover dismissPopoverAnimated:YES];
 	[self activateTab:self.selectedIndex];
 }
@@ -378,12 +340,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     WQEditViewController *editViewController = (WQEditViewController*)navController.topViewController;
     [self presentViewController:navController animated:YES completion:nil];
     editViewController.delegate = self;
-    editViewController.nextButton.enabled = (m_currentRow < (_doc.entries.count - 1));
-    editViewController.previousButton.enabled = (m_currentRow > 0);
+    editViewController.nextButton.enabled = (_currentRow < (_doc.entries.count - 1));
+    editViewController.previousButton.enabled = (_currentRow > 0);
     editViewController.frontIdentifierLabel.text = _doc.frontIdentifier;
     editViewController.backIdentifierLabel.text = _doc.backIdentifier;
-    editViewController.frontTextField.text = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:0];
-    editViewController.backTextField.text = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:1];
+    editViewController.frontTextField.text = [[_doc.entries objectAtIndex:_currentRow] objectAtIndex:0];
+    editViewController.backTextField.text = [[_doc.entries objectAtIndex:_currentRow] objectAtIndex:1];
 }
 
 - (void) quizDidFinish {
@@ -397,13 +359,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             result = true;
             break;
         case 1:
-            result = ((m_quiz != nil) && (m_quiz.entries.count > 0));
+            result = ((_quiz != nil) && (_quiz.entries.count > 0));
             break;
         case 2:
-            result = ((m_quiz != nil) && (m_quiz.entries.count > 2));
+            result = ((_quiz != nil) && (_quiz.entries.count > 2));
             break;
         case 3:
-            result = ((m_quiz != nil) && (m_quiz.entries.count > 0));
+            result = ((_quiz != nil) && (_quiz.entries.count > 0));
             break;
         default:
             result = true;
@@ -423,9 +385,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     // Release any cached data, images, etc that aren't in use.
 }
 */
-
-
-
 
 #pragma mark - Spread View Datasource
 
@@ -556,8 +515,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)spreadView:(MDSpreadView *)aSpreadView didSelectCellForRowAtIndexPath:(MDIndexPath *)rowPath forColumnAtIndexPath:(MDIndexPath *)columnPath
 {
-    m_currentRow = rowPath.row;
-    m_currentColumn = columnPath.column;
+    _currentRow = rowPath.row;
+    _currentColumn = columnPath.column;
     [aSpreadView reloadData];
 }
 
@@ -566,8 +525,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)currentEntryDidChange:(WQEditViewController*)aEditViewController reason:(EditReason)aReason value:(NSString *)aValue {
     NSString *newFront = aEditViewController.frontTextField.text;
     NSString *newBack = aEditViewController.backTextField.text;
-    NSString *oldFront = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:0];
-    NSString *oldBack = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:1];
+    NSString *oldFront = [[_doc.entries objectAtIndex:_currentRow] objectAtIndex:0];
+    NSString *oldBack = [[_doc.entries objectAtIndex:_currentRow] objectAtIndex:1];
     int valueChanges = 0;
     if (![newFront isEqualToString:oldFront])
         ++valueChanges;
@@ -575,8 +534,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         ++valueChanges;
     
     if (valueChanges > 0) {
-        [_doc.entries removeObjectAtIndex:m_currentRow];
-        [_doc.entries insertObject:@[newFront, newBack] atIndex:m_currentRow];
+        [_doc.entries removeObjectAtIndex:_currentRow];
+        [_doc.entries insertObject:@[newFront, newBack] atIndex:_currentRow];
         [_doc updateChangeCount:UIDocumentChangeDone];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
     }
@@ -584,23 +543,23 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     switch (aReason) {
         case kNext: {
-            ++m_currentRow;
+            ++_currentRow;
         }
             break;
         case kPrevious: {
-            --m_currentRow;
+            --_currentRow;
         }
             break;
         case kAdd: {
-            [_doc.entries insertObject:@[@"", @""] atIndex:++m_currentRow];
+            [_doc.entries insertObject:@[@"", @""] atIndex:++_currentRow];
             [_doc updateChangeCount:UIDocumentChangeDone];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
         }
             break;
         case kRemove: {
-            [_doc.entries removeObjectAtIndex:m_currentRow];
-            while (m_currentRow > (_doc.entries.count - 1)) {
-                --m_currentRow;
+            [_doc.entries removeObjectAtIndex:_currentRow];
+            while (_currentRow > (_doc.entries.count - 1)) {
+                --_currentRow;
             }
             [_doc updateChangeCount:UIDocumentChangeDone];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"Edited" object:nil];
@@ -658,10 +617,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             break;
     }
 
-    aEditViewController.nextButton.enabled = (m_currentRow < (_doc.entries.count - 1));
-    aEditViewController.previousButton.enabled = (m_currentRow > 0);
-    aEditViewController.frontTextField.text = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:0];
-    aEditViewController.backTextField.text = [[_doc.entries objectAtIndex:m_currentRow] objectAtIndex:1];
+    aEditViewController.nextButton.enabled = (_currentRow < (_doc.entries.count - 1));
+    aEditViewController.previousButton.enabled = (_currentRow > 0);
+    aEditViewController.frontTextField.text = [[_doc.entries objectAtIndex:_currentRow] objectAtIndex:0];
+    aEditViewController.backTextField.text = [[_doc.entries objectAtIndex:_currentRow] objectAtIndex:1];
 }
 
 #pragma mark - Toolbar buttons
