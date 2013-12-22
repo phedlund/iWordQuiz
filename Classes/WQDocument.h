@@ -34,13 +34,7 @@
 
 @protocol WQDocumentDelegate;
 
-@interface WQDocument : UIDocument {
-
-    NSString * frontIdentifier;
-    NSString * backIdentifier;
-
-    NSMutableArray *entries;
-}
+@interface WQDocument : UIDocument
 
 - (void) load;
 - (void) loadKvtml;

@@ -37,19 +37,14 @@
 
 @implementation WQDocument
 
-@synthesize documentText = _documentText;
-@synthesize delegate = _delegate;
+@synthesize documentText;
+@synthesize delegate;
 @synthesize frontIdentifier;
 @synthesize backIdentifier;
 @synthesize entries;
 
 - (void)setDocumentText:(NSString *)newText {
-    //NSString* oldText = _documentText;
-    _documentText = [newText copy];
-    
-    // Register the undo operation.
-    //[self.undoManager setActionName:@"Text Change"];
-    //[self.undoManager registerUndoWithTarget:self selector:@selector(setDocumentText:) object:oldText];
+    documentText = [newText copy];
 }
 
 - (id)contentsForType:(NSString *)typeName error:(NSError *__autoreleasing *)outError {
@@ -81,10 +76,10 @@
 - (id) initWithFileURL:(NSURL*)url {
     self = [super initWithFileURL:url];
     if (self) {
-        frontIdentifier = @"Front";
-        backIdentifier = @"Back";
+        self.frontIdentifier = @"Front";
+        self.backIdentifier = @"Back";
     
-        entries = [[NSMutableArray alloc] init];
+        self.entries = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -244,7 +239,6 @@
 
 - (void)dealloc {
     [entries removeAllObjects];
-    
 }
 
 @end

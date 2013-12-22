@@ -32,12 +32,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface WQQuizItem : NSObject <NSCoding> {
-    NSString *frontIdentifier;
-	NSString *backIdentifier;
-	NSString *front;
-    NSString *back;
-}
+@interface WQQuizItem : NSObject <NSCoding>
 
 @property (nonatomic, copy) NSString *frontIdentifier;
 @property (nonatomic, copy) NSString *backIdentifier;

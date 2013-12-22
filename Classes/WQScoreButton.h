@@ -5,7 +5,7 @@
 
 /************************************************************************
  
- Copyright 2012 Peter Hedlund peter.hedlund@me.com
+ Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
@@ -31,19 +31,8 @@
  *************************************************************************/
 
 #import <UIKit/UIKit.h>
+@interface WQScoreButton : UIButton
 
-typedef enum {
-    kBlue = 0,
-    kYellow,
-    kGreen,
-    kRed
-} StickyColor;
-
-@interface WQScoreButton : UIButton {
-    StickyColor stickyColor;
-}
-
-@property StickyColor stickyColor;
 @property (nonatomic, strong) NSNumber *circleColor;
 @property (nonatomic, strong, readonly) CAShapeLayer *circleLayer;
 

@@ -50,19 +50,19 @@
 
 - (id)initWithCoder:(NSCoder *)decoder {
 	if ((self = [super init])) {
-        frontIdentifier = [decoder decodeObjectForKey:@"frontIdentifier"];
-        backIdentifier = [decoder decodeObjectForKey:@"backIdentifier"];
-        front = [decoder decodeObjectForKey:@"front"];
-        back = [decoder decodeObjectForKey:@"back"];
+        self.frontIdentifier = [decoder decodeObjectForKey:@"frontIdentifier"];
+        self.backIdentifier = [decoder decodeObjectForKey:@"backIdentifier"];
+        self.front = [decoder decodeObjectForKey:@"front"];
+        self.back = [decoder decodeObjectForKey:@"back"];
 	}
 	return self;
 }
 
 - (void)encodeWithCoder:(NSCoder *)encoder {
-    [encoder encodeObject:frontIdentifier forKey:@"frontIdentifier"];
-    [encoder encodeObject:backIdentifier forKey:@"backIdentifier"];
-    [encoder encodeObject:front forKey:@"front"];
-    [encoder encodeObject:back forKey:@"back"];
+    [encoder encodeObject:self.frontIdentifier forKey:@"frontIdentifier"];
+    [encoder encodeObject:self.backIdentifier forKey:@"backIdentifier"];
+    [encoder encodeObject:self.front forKey:@"front"];
+    [encoder encodeObject:self.back forKey:@"back"];
 }
 
 @end

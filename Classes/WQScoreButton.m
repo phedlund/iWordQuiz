@@ -5,7 +5,7 @@
 
 /************************************************************************
  
- Copyright 2012 Peter Hedlund peter.hedlund@me.com
+ Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
  
  Redistribution and use in source and binary forms, with or without
  modification, are permitted provided that the following conditions
@@ -31,19 +31,16 @@
  *************************************************************************/
 
 #import "WQScoreButton.h"
-#include "UIColor+PHColor.h"
+#import "UIColor+PHColor.h"
 
 @implementation WQScoreButton
 
-@synthesize stickyColor;
 @synthesize circleColor;
 @synthesize circleLayer;
 
 - (void)awakeFromNib {
-    NSLog(@"My circleColor is %@", self.circleColor);
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
-    self.stickyColor = kBlue;
     [[self layer] addSublayer:self.circleLayer];
     self.titleLabel.textColor = [UIColor iconColor];
 }
@@ -61,21 +58,20 @@
 - (CALayer*)circleLayer {
     if (!circleLayer) {
         UIColor *color;
-        //NSLog(@"My circleColor is %@", self.circleColor);
         switch ([self.circleColor intValue]) {
-            case kBlue:
+            case 0: //blue
                 //startColor = [UIColor colorWithRed:0.59 green:0.70 blue:0.78 alpha:1];
                 color = [UIColor colorWithRed:0.76 green:0.9 blue:1.0 alpha:1.0];
                 break;
-            case kYellow:
+            case 1: //yellow
                 //startColor = [UIColor colorWithRed:0.78 green:0.78 blue:0.0 alpha:1.0];
                 color = [UIColor colorWithRed:1.0 green:1.0 blue:0.29 alpha:1];
                 break;
-            case kGreen:
+            case 2: //green
                 //startColor = [UIColor colorWithRed:0.49 green:0.80 blue:0.22 alpha:1];
                 color = [UIColor colorWithRed:0.62 green:1.0 blue:0.27 alpha:1.0];
                 break;
-            case kRed:
+            case 3: //red
                 //startColor = [UIColor colorWithRed:0.80 green:0.36 blue:0.36 alpha:1];
                 color = [UIColor colorWithRed:1.0 green:0.45 blue:0.45 alpha:1.0];
                 break;
