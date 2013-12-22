@@ -623,6 +623,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     aEditViewController.backTextField.text = [[_doc.entries objectAtIndex:_currentRow] objectAtIndex:1];
 }
 
+- (NSString*)identifierForSection:(NSInteger)section {
+    NSString *result;
+    if (section == 0) {
+        result = _doc.frontIdentifier;
+    }
+    if (section == 1) {
+        result = _doc.backIdentifier;
+    }
+    return result;
+}
+
 #pragma mark - Toolbar buttons
 
 - (UIBarButtonItem *)modeBarButtonItem {

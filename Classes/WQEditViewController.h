@@ -45,7 +45,7 @@ typedef enum {
 
 @protocol WQEditViewControllerDelegate;
 
-@interface WQEditViewController : UIViewController
+@interface WQEditViewController : UITableViewController
 
 - (IBAction) doNext;
 - (IBAction) doPrevious;
@@ -63,6 +63,8 @@ typedef enum {
 @property (nonatomic, strong) IBOutlet UITextField *frontTextField;
 @property (nonatomic, strong) IBOutlet UITextField *backTextField;
 
+@property (strong, nonatomic) IBOutlet UITableViewCell *buttonCell;
+
 @property (strong, nonatomic) id<WQEditViewControllerDelegate> delegate;
 
 @end
@@ -71,4 +73,5 @@ typedef enum {
 @protocol WQEditViewControllerDelegate <NSObject>
 @optional
 - (void)currentEntryDidChange:(WQEditViewController*)aEditViewController reason:(EditReason)aReason value:(NSString*)aValue;
+- (NSString*)identifierForSection:(NSInteger)section;
 @end

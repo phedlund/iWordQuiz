@@ -34,7 +34,7 @@
 #import "WQNewFileViewController.h"
 #import "UIColor+PHColor.h"
 
-@interface WQEditViewController () {
+@interface WQEditViewController () <UITextFieldDelegate> {
     NSString *_newFileName;
 }
 
@@ -64,6 +64,9 @@
     self.addButton.tintColor = [UIColor iconColor];
     self.removeButton.tintColor = [UIColor iconColor];
     self.nextButton.tintColor = [UIColor iconColor];
+    
+    self.frontTextField.delegate = self;
+    self.backTextField.delegate = self;
 }
 
 - (void)viewDidLoad
@@ -83,6 +86,28 @@
     return YES;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.backgroundColor = [UIColor backgroundColor];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *result;
+    if (self.delegate && [self.delegate respondsToSelector:@selector(identifierForSection:)]) {
+       result = [self.delegate identifierForSection:section];
+    }
+    return result;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	if (section < 2) {
+        return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 44.0f : 27.0f;
+    }
+    return 0.0f;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.0f;
+}
 
 - (IBAction) doNext {
     if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
@@ -155,6 +180,18 @@
         }
     }
 
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([textField isEqual:self.frontTextField]) {
+        [self.backTextField becomeFirstResponder];
+    }
+    if ([textField isEqual:self.backTextField]) {
+        [self doNext];
+        [self.frontTextField becomeFirstResponder];
+    }
+
+    return YES;
 }
 
 @end

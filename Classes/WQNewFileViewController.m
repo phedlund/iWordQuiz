@@ -32,7 +32,7 @@
 
 #import "WQNewFileViewController.h"
 
-@interface WQNewFileViewController () {
+@interface WQNewFileViewController () <UITextFieldDelegate> {
     NSString *_frontIdentifier;
     NSString *_backIdentifier;
     NSString *_fileName;
@@ -75,6 +75,10 @@
     self.frontTextField.text = _frontIdentifier;
     self.backTextField.text = _backIdentifier;
     self.fileNameTextField.text = _fileName;
+    
+    self.frontTextField.delegate = self;
+    self.backTextField.delegate = self;
+    self.fileNameTextField.delegate = self;
 }
 
 - (void)viewDidUnload
@@ -163,6 +167,20 @@
     _frontIdentifier = [dict valueForKey:@"FrontIdentifier"];
     _backIdentifier = (NSString*)[dict valueForKey:@"BackIdentifier"];
     _fileName = [[(NSURL*)[dict valueForKey:@"URL"] lastPathComponent] stringByDeletingPathExtension];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([textField isEqual:self.fileNameTextField]) {
+        [self.frontTextField becomeFirstResponder];
+    }
+    if ([textField isEqual:self.frontTextField]) {
+        [self.backTextField becomeFirstResponder];
+    }
+    if ([textField isEqual:self.backTextField]) {
+        [self.fileNameTextField becomeFirstResponder];
+    }
+    
+    return YES;
 }
 
 @end
