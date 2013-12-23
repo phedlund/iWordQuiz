@@ -14,10 +14,10 @@
    id="svg5330"
    version="1.1"
    inkscape:version="0.48.4 r9943 custom"
-   sodipodi:docname="mode_new.svg"
-   inkscape:export-filename="/Users/peter/Projects/iWordQuiz/Resources/mode.png"
-   inkscape:export-xdpi="45"
-   inkscape:export-ydpi="45">
+   sodipodi:docname="minus.svg"
+   inkscape:export-filename="/Users/peter/Projects/iWordQuiz/iWordQuiz/Images.xcassets/minus.imageset/minus@2x.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs5332">
     <marker
@@ -55,8 +55,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="10.034091"
-     inkscape:cx="44"
-     inkscape:cy="44"
+     inkscape:cx="35.77803"
+     inkscape:cy="44.04983"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:document-units="px"
@@ -93,35 +93,10 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      transform="translate(0,24)">
-    <g
-       id="g6724"
-       transform="translate(-4,4)">
-      <path
-         inkscape:connector-curvature="0"
-         d="m 24.999198,5.0000001 c 44.001604,0 44.001604,0 44.001604,0"
-         style="fill:#000000;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-mid:none;marker-end:none"
-         id="path6711" />
-      <path
-         sodipodi:nodetypes="ccc"
-         inkscape:connector-curvature="0"
-         id="rect6522"
-         d="M 56.003389,-3.0792724 70.0034,4.9779121 56.003402,13.081537"
-         style="fill:none;stroke:#000000;stroke-width:2.00000024;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1" />
-    </g>
-    <g
-       id="g6728"
-       transform="translate(4,-4)">
-      <path
-         id="path6716"
-         style="fill:#000000;stroke:#000000;stroke-width:1.99999964;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-mid:none;marker-end:none"
-         d="M 63.001456,35 C 19,35 19,35 19,35"
-         inkscape:connector-curvature="0" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:2.00000024;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"
-         d="M 32.000053,26.920728 18.000001,34.977912 32.00004,43.081537"
-         id="path6718"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccc" />
-    </g>
+    <path
+       id="path6711"
+       style="fill:#000000;stroke:#000000;stroke-width:3;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-mid:none;marker-end:none"
+       d="m 26.494098,21.5 c 35.011804,0 35.011804,0 35.011804,0"
+       inkscape:connector-curvature="0" />
   </g>
 </svg>

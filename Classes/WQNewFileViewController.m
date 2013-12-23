@@ -31,6 +31,7 @@
  *************************************************************************/
 
 #import "WQNewFileViewController.h"
+#import "UIColor+PHColor.h"
 
 @interface WQNewFileViewController () <UITextFieldDelegate> {
     NSString *_frontIdentifier;
@@ -62,16 +63,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImageView *tempImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background"]];
-    [tempImageView setFrame:self.tableView.frame];
-    
-    self.tableView.backgroundView = tempImageView;
-    //[tempImageView release];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.view.backgroundColor = [UIColor backgroundColor];
+
     self.frontTextField.text = _frontIdentifier;
     self.backTextField.text = _backIdentifier;
     self.fileNameTextField.text = _fileName;

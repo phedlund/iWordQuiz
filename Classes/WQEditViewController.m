@@ -226,7 +226,7 @@
 
 - (UIBarButtonItem*)previousEntryButton {
     if (!previousEntryButton) {
-        previousEntryButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(doPreviousEntry)];
+        previousEntryButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"up"] style:UIBarButtonItemStylePlain target:self action:@selector(doPreviousEntry)];
     }
     return previousEntryButton;
 }
@@ -249,7 +249,7 @@
 
 - (UIBarButtonItem*)removeButton {
     if (!removeButton) {
-        removeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(doRemove)];
+        removeButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"minus"] style:UIBarButtonItemStylePlain target:self action:@selector(doRemove)];
     }
     return removeButton;
  
@@ -265,7 +265,7 @@
 
 - (UIBarButtonItem*)nextEntryButton {
     if (!nextEntryButton) {
-        nextEntryButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"forward"] style:UIBarButtonItemStylePlain target:self action:@selector(doNextEntry)];
+        nextEntryButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"down"] style:UIBarButtonItemStylePlain target:self action:@selector(doNextEntry)];
     }
     return nextEntryButton;
 
@@ -276,19 +276,15 @@
         UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
         fixedSpace.width = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ? 5.0f : 15.0f;
 
-        entryToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        entryToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ? 320.0f : 400.0f, 44)];
         entryToolbar.tintColor = [UIColor iconColor];
         entryToolbar.barStyle = UIBarStyleDefault;
         entryToolbar.items = @[self.previousEntryButton,
-                               fixedSpace,
                                self.previousFieldButton,
                                fixedSpace,
                                self.addButton,
-                               fixedSpace,
                                self.removeButton,
-                               fixedSpace,
                                self.nextFieldButton,
-                               fixedSpace,
                                self.nextEntryButton,
                                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
                                [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView)]];
