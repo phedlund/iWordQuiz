@@ -641,82 +641,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="VUz-4x-BMu">
-                                        <rect key="frame" x="0.0" y="255" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VUz-4x-BMu" id="x7v-Qw-SJR">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Og-3M-HIV">
-                                                    <rect key="frame" x="20" y="0.0" width="55" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="AWH-DP-ujl"/>
-                                                    </constraints>
-                                                    <state key="normal" title="&lt;&lt;">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="doPrevious" destination="WYO-7q-5Od" eventType="touchUpInside" id="N7S-cV-Go4"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUc-kf-l8Y">
-                                                    <rect key="frame" x="245" y="0.0" width="55" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="Dg8-5Q-YXX"/>
-                                                    </constraints>
-                                                    <state key="normal" title=">>">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="doNext" destination="WYO-7q-5Od" eventType="touchUpInside" id="a3W-bH-Dy8"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKk-5h-UHG">
-                                                    <rect key="frame" x="95" y="0.0" width="55" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="sbB-uD-LyF"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Add">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="doAdd" destination="WYO-7q-5Od" eventType="touchUpInside" id="N49-eS-1Fm"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZsF-Jf-Zea">
-                                                    <rect key="frame" x="170" y="0.0" width="55" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="55" id="zE7-zT-hdH"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Del">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="doRemove" destination="WYO-7q-5Od" eventType="touchUpInside" id="Iyz-gV-RSM"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="wUc-kf-l8Y" firstAttribute="leading" secondItem="x7v-Qw-SJR" secondAttribute="leading" constant="245" id="A0Q-Gx-fqd"/>
-                                                <constraint firstItem="ZsF-Jf-Zea" firstAttribute="top" secondItem="wUc-kf-l8Y" secondAttribute="top" id="Efc-oi-vJq"/>
-                                                <constraint firstItem="ZsF-Jf-Zea" firstAttribute="leading" secondItem="x7v-Qw-SJR" secondAttribute="leading" constant="170" id="Vqb-dT-D1b"/>
-                                                <constraint firstItem="JKk-5h-UHG" firstAttribute="bottom" secondItem="1Og-3M-HIV" secondAttribute="bottom" id="XWH-E2-x1O"/>
-                                                <constraint firstItem="ZsF-Jf-Zea" firstAttribute="bottom" secondItem="wUc-kf-l8Y" secondAttribute="bottom" id="Yi1-KR-hff"/>
-                                                <constraint firstItem="ZsF-Jf-Zea" firstAttribute="bottom" secondItem="JKk-5h-UHG" secondAttribute="bottom" id="bdE-Ol-kFl"/>
-                                                <constraint firstItem="JKk-5h-UHG" firstAttribute="top" secondItem="x7v-Qw-SJR" secondAttribute="top" id="nZa-K7-Isu"/>
-                                                <constraint firstItem="1Og-3M-HIV" firstAttribute="leading" secondItem="x7v-Qw-SJR" secondAttribute="leading" constant="20" symbolic="YES" id="t6m-G4-3rI"/>
-                                                <constraint firstItem="JKk-5h-UHG" firstAttribute="top" secondItem="1Og-3M-HIV" secondAttribute="top" id="vOh-Na-hGR"/>
-                                                <constraint firstItem="ZsF-Jf-Zea" firstAttribute="centerY" secondItem="x7v-Qw-SJR" secondAttribute="centerY" id="vrU-Hn-mfS"/>
-                                                <constraint firstItem="JKk-5h-UHG" firstAttribute="top" secondItem="ZsF-Jf-Zea" secondAttribute="top" id="yEc-7j-CdJ"/>
-                                                <constraint firstItem="JKk-5h-UHG" firstAttribute="leading" secondItem="x7v-Qw-SJR" secondAttribute="leading" constant="95" id="z7H-F8-j7o"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -738,13 +662,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="addButton" destination="JKk-5h-UHG" id="8E8-H9-7Na"/>
                         <outlet property="backTextField" destination="sEW-zR-IVk" id="hKy-VG-4i4"/>
-                        <outlet property="buttonCell" destination="VUz-4x-BMu" id="rho-2G-tVp"/>
                         <outlet property="frontTextField" destination="s9J-gE-btO" id="YIZ-1e-c4T"/>
-                        <outlet property="nextButton" destination="wUc-kf-l8Y" id="hg6-pL-vzJ"/>
-                        <outlet property="previousButton" destination="1Og-3M-HIV" id="xbu-od-eid"/>
-                        <outlet property="removeButton" destination="ZsF-Jf-Zea" id="fSu-kF-GGK"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJ4-s5-egh" userLabel="First Responder" sceneMemberID="firstResponder"/>

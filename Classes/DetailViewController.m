@@ -340,10 +340,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     WQEditViewController *editViewController = (WQEditViewController*)navController.topViewController;
     [self presentViewController:navController animated:YES completion:nil];
     editViewController.delegate = self;
-    editViewController.nextButton.enabled = (_currentRow < (_doc.entries.count - 1));
-    editViewController.previousButton.enabled = (_currentRow > 0);
-    editViewController.frontIdentifierLabel.text = _doc.frontIdentifier;
-    editViewController.backIdentifierLabel.text = _doc.backIdentifier;
+    editViewController.nextEntryButton.enabled = (_currentRow < (_doc.entries.count - 1));
+    editViewController.previousEntryButton.enabled = (_currentRow > 0);
     editViewController.frontTextField.text = [[_doc.entries objectAtIndex:_currentRow] objectAtIndex:0];
     editViewController.backTextField.text = [[_doc.entries objectAtIndex:_currentRow] objectAtIndex:1];
 }
@@ -617,8 +615,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             break;
     }
 
-    aEditViewController.nextButton.enabled = (_currentRow < (_doc.entries.count - 1));
-    aEditViewController.previousButton.enabled = (_currentRow > 0);
+    aEditViewController.nextEntryButton.enabled = (_currentRow < (_doc.entries.count - 1));
+    aEditViewController.previousEntryButton.enabled = (_currentRow > 0);
     aEditViewController.frontTextField.text = [[_doc.entries objectAtIndex:_currentRow] objectAtIndex:0];
     aEditViewController.backTextField.text = [[_doc.entries objectAtIndex:_currentRow] objectAtIndex:1];
 }

@@ -44,11 +44,19 @@
 
 @implementation WQEditViewController
 
+@synthesize previousEntryButton;
+@synthesize previousFieldButton;
+@synthesize addButton;
+@synthesize removeButton;
+@synthesize nextFieldButton;
+@synthesize nextEntryButton;
+
+@synthesize entryToolbar;
+
 - (void)awakeFromNib {
     _newFileName = nil;
     self.view.backgroundColor = [UIColor backgroundColor];
     self.navigationController.navigationBar.tintColor = [UIColor iconColor];
-    //self.navigationController.navigationBar.barTintColor = [UIColor backgroundColor];
     
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor clearColor];
@@ -59,14 +67,12 @@
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor iconColor], NSForegroundColorAttributeName,
       shadow, NSShadowAttributeName, nil]];
-    
-    self.previousButton.tintColor = [UIColor iconColor];
-    self.addButton.tintColor = [UIColor iconColor];
-    self.removeButton.tintColor = [UIColor iconColor];
-    self.nextButton.tintColor = [UIColor iconColor];
-    
+
     self.frontTextField.delegate = self;
     self.backTextField.delegate = self;
+    
+    self.frontTextField.inputAccessoryView = self.entryToolbar;
+    self.backTextField.inputAccessoryView = self.entryToolbar;
 }
 
 - (void)viewDidLoad
@@ -109,14 +115,15 @@
     return 0.0f;
 }
 
-- (IBAction) doNext {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
-        [self.delegate currentEntryDidChange:self reason:kNext value:nil];
-}
-
-- (IBAction) doPrevious {
+- (IBAction) doPreviousEntry {
     if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
         [self.delegate currentEntryDidChange:self reason:kPrevious value:nil];
+}
+
+- (IBAction) doPreviousField {
+    [self.frontTextField becomeFirstResponder];
+    self.previousFieldButton.enabled = NO;
+    self.nextFieldButton.enabled = YES;
 }
 
 - (IBAction) doAdd {
@@ -128,6 +135,18 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
         [self.delegate currentEntryDidChange:self reason:kRemove value:nil];
 }
+
+- (IBAction) doNextField {
+    [self.backTextField becomeFirstResponder];
+    self.previousFieldButton.enabled = YES;
+    self.nextFieldButton.enabled = NO;
+}
+
+- (IBAction) doNextEntry {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
+        [self.delegate currentEntryDidChange:self reason:kNext value:nil];
+}
+
 
 - (IBAction) dismissView {
     if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)])
@@ -159,7 +178,7 @@
             break;
             case 202: {
                 if (tf.text.length > 0) {
-                    self.frontIdentifierLabel.text = tf.text;
+                    [self.tableView reloadData];
                     if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)]) {
                         [self.delegate currentEntryDidChange:self reason:kSetVocabFrontIdentifier value:tf.text];
                     }
@@ -168,7 +187,7 @@
                 break;
             case 203: {
                 if (tf.text.length > 0) {
-                    self.backIdentifierLabel.text = tf.text;
+                    [self.tableView reloadData];
                     if (self.delegate && [self.delegate respondsToSelector:@selector(currentEntryDidChange: reason: value:)]) {
                         [self.delegate currentEntryDidChange:self reason:kSetVocabBackIdentifier value:tf.text];
                     }
@@ -182,16 +201,100 @@
 
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
     if ([textField isEqual:self.frontTextField]) {
-        [self.backTextField becomeFirstResponder];
+        self.previousFieldButton.enabled = NO;
+        self.nextFieldButton.enabled = YES;
     }
     if ([textField isEqual:self.backTextField]) {
-        [self doNext];
-        [self.frontTextField becomeFirstResponder];
+        self.previousFieldButton.enabled = YES;
+        self.nextFieldButton.enabled = NO;
+    }
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([textField isEqual:self.frontTextField]) {
+        [self doNextField];
+    }
+    if ([textField isEqual:self.backTextField]) {
+        [self doNextEntry];
+        [self doPreviousField];
     }
 
     return YES;
+}
+
+- (UIBarButtonItem*)previousEntryButton {
+    if (!previousEntryButton) {
+        previousEntryButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(doPreviousEntry)];
+    }
+    return previousEntryButton;
+}
+
+- (UIBarButtonItem*)previousFieldButton {
+    if (!previousFieldButton) {
+        previousFieldButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(doPreviousField)];
+    }
+    return previousFieldButton;
+  
+}
+
+- (UIBarButtonItem*)addButton {
+    if (!addButton) {
+        addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(doAdd)];
+    }
+    return addButton;
+ 
+}
+
+- (UIBarButtonItem*)removeButton {
+    if (!removeButton) {
+        removeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemTrash target:self action:@selector(doRemove)];
+    }
+    return removeButton;
+ 
+}
+
+- (UIBarButtonItem*)nextFieldButton {
+    if (!nextFieldButton) {
+        nextFieldButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"forward"] style:UIBarButtonItemStylePlain target:self action:@selector(doNextField)];
+    }
+    return nextFieldButton;
+
+}
+
+- (UIBarButtonItem*)nextEntryButton {
+    if (!nextEntryButton) {
+        nextEntryButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"forward"] style:UIBarButtonItemStylePlain target:self action:@selector(doNextEntry)];
+    }
+    return nextEntryButton;
+
+}
+
+- (UIToolbar*) entryToolbar {
+    if (!entryToolbar) {
+        UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        fixedSpace.width = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ? 5.0f : 15.0f;
+
+        entryToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+        entryToolbar.tintColor = [UIColor iconColor];
+        entryToolbar.barStyle = UIBarStyleDefault;
+        entryToolbar.items = @[self.previousEntryButton,
+                               fixedSpace,
+                               self.previousFieldButton,
+                               fixedSpace,
+                               self.addButton,
+                               fixedSpace,
+                               self.removeButton,
+                               fixedSpace,
+                               self.nextFieldButton,
+                               fixedSpace,
+                               self.nextEntryButton,
+                               [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
+                               [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissView)]];
+        [entryToolbar sizeToFit];
+    }
+    return entryToolbar;
 }
 
 @end

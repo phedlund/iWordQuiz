@@ -128,7 +128,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Hqg-py-mob" kind="relationship" relationship="rootViewController" id="zYt-oB-HH2"/>
+                        <segue destination="Luc-C2-X22" kind="relationship" relationship="rootViewController" id="8VA-0d-yfF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BG8-Eh-CmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,119 +136,82 @@
             <point key="canvasLocation" x="115" y="-2332"/>
         </scene>
         <!--Edit View Controller - Edit Entry-->
-        <scene sceneID="3mL-PC-kja">
+        <scene sceneID="zKT-wv-lNq">
             <objects>
-                <viewController title="Edit Entry" modalPresentationStyle="formSheet" id="Hqg-py-mob" customClass="WQEditViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9Od-LL-eLa"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZLc-0N-EZw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="E5U-Pt-0Ly">
-                        <rect key="frame" x="0.0" y="64" width="540" height="556"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Front" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="dhT-7l-28a">
-                                <rect key="frame" x="20" y="20" width="500" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="97A-sK-0iH">
-                                <rect key="frame" x="20" y="49" width="500" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Back" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QxB-DS-fvn">
-                                <rect key="frame" x="20" y="95" width="500" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0EP-KE-kob">
-                                <rect key="frame" x="20" y="124" width="500" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t0q-To-ry6">
-                                <rect key="frame" x="20" y="175" width="115" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="&lt;&lt; Previous">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doPrevious" destination="Hqg-py-mob" eventType="touchUpInside" id="RuZ-QE-0yh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ik-Cb-Ntc">
-                                <rect key="frame" x="405" y="175" width="115" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Next >>">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doNext" destination="Hqg-py-mob" eventType="touchUpInside" id="Jpa-FK-ptz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t6S-mm-CRb">
-                                <rect key="frame" x="148" y="175" width="115" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doAdd" destination="Hqg-py-mob" eventType="touchUpInside" id="ISP-qA-8hm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlz-A2-5jZ">
-                                <rect key="frame" x="277" y="175" width="115" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Remove">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="doRemove" destination="Hqg-py-mob" eventType="touchUpInside" id="H8V-jF-2cR"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Edit Entry" id="fTl-Av-3K7">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="KoY-pf-HsB">
+                <tableViewController id="Luc-C2-X22" customClass="WQEditViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="O5o-Hi-pbg">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Front" id="wjq-dX-6xb">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bIh-lK-lZB">
+                                        <rect key="frame" x="0.0" y="119" width="540" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bIh-lK-lZB" id="f76-Ju-fdA">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eqm-Vw-Z83">
+                                                    <rect key="frame" x="20" y="7" width="500" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Back" id="GMH-Qa-yi5">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tCC-5Z-8LT">
+                                        <rect key="frame" x="0.0" y="211" width="540" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tCC-5Z-8LT" id="AVg-7T-N35">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKt-OD-1VZ">
+                                                    <rect key="frame" x="20" y="7" width="500" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Luc-C2-X22" id="jdI-8l-tsr"/>
+                            <outlet property="delegate" destination="Luc-C2-X22" id="tz7-fw-mXe"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Edit Entry" id="Oyi-UW-k9x">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="KZb-dS-9wR">
                             <connections>
-                                <action selector="dismissView" destination="Hqg-py-mob" id="QZW-sG-6bx"/>
+                                <action selector="dismissView" destination="Luc-C2-X22" id="zFn-vk-ZfB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Vocabulary" id="gjE-hv-MhR">
+                        <barButtonItem key="rightBarButtonItem" title="Vocabulary" id="T2a-R8-So4">
                             <connections>
-                                <segue destination="LdF-eC-gfZ" kind="push" identifier="editVocabulary" id="2bd-L7-Nzd"/>
+                                <segue destination="LdF-eC-gfZ" kind="push" identifier="editVocabulary" id="hcO-sX-ik2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addButton" destination="t6S-mm-CRb" id="f7w-dY-wVB"/>
-                        <outlet property="backIdentifierLabel" destination="QxB-DS-fvn" id="iGi-xy-tjX"/>
-                        <outlet property="backTextField" destination="0EP-KE-kob" id="DY8-Cr-cTx"/>
-                        <outlet property="frontIdentifierLabel" destination="dhT-7l-28a" id="ZFw-ww-hoH"/>
-                        <outlet property="frontTextField" destination="97A-sK-0iH" id="Zbm-5g-DFm"/>
-                        <outlet property="nextButton" destination="5Ik-Cb-Ntc" id="lDX-dm-nJ0"/>
-                        <outlet property="previousButton" destination="t0q-To-ry6" id="FsA-6V-yyU"/>
-                        <outlet property="removeButton" destination="Mlz-A2-5jZ" id="Qii-d8-gXb"/>
-                        <outlet property="view" destination="E5U-Pt-0Ly" id="7DB-rC-LNl"/>
+                        <outlet property="backTextField" destination="lKt-OD-1VZ" id="vxi-eg-qBS"/>
+                        <outlet property="frontTextField" destination="eqm-Vw-Z83" id="s67-YH-rVs"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uea-W7-BZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a6z-sZ-Rnx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="-2332"/>
+            <point key="canvasLocation" x="718" y="-2332"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="50">
@@ -1593,6 +1556,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="2bd-L7-Nzd"/>
+        <segue reference="hcO-sX-ik2"/>
     </inferredMetricsTieBreakers>
 </document>
