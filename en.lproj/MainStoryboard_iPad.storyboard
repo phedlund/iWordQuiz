@@ -1416,7 +1416,7 @@
             </objects>
             <point key="canvasLocation" x="817" y="-3143"/>
         </scene>
-        <!--Home View Controller - Home-->
+        <!--Home View Controller - Vocabulary-->
         <scene sceneID="vCY-ih-qCP">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="ThK-OU-gjs" customClass="HomeViewController" sceneMemberID="viewController">
@@ -1441,19 +1441,13 @@
                             <constraint firstAttribute="trailing" secondItem="AxY-Gk-bFB" secondAttribute="trailing" id="wAE-gC-3Zg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="homeTab.png" id="Wru-OY-yQd"/>
+                    <tabBarItem key="tabBarItem" title="Vocabulary" image="homeTab.png" id="Wru-OY-yQd"/>
                     <connections>
                         <outlet property="spreadView" destination="AxY-Gk-bFB" id="0Pc-Gb-zLz"/>
                         <outlet property="view" destination="qBL-v9-uKk" id="6vX-ye-mg4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o9g-8e-lrt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Z1O-Hc-XRh">
-                    <rect key="frame" x="0.0" y="0.0" width="500" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
             </objects>
             <point key="canvasLocation" x="1437" y="-1640"/>
         </scene>
@@ -1542,7 +1536,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="flashTab.png" width="30" height="30"/>
+        <image name="flashTab.png" width="27" height="27"/>
         <image name="homeTab.png" width="27" height="27"/>
         <image name="icon_about.png" width="72" height="72"/>
         <image name="menu" width="32" height="44"/>

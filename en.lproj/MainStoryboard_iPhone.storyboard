@@ -1097,7 +1097,7 @@
             </objects>
             <point key="canvasLocation" x="1465" y="483"/>
         </scene>
-        <!--Home View Controller - Home-->
+        <!--Home View Controller - Vocabulary-->
         <scene sceneID="xiV-q0-gua">
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" id="gKe-bg-pnD" customClass="HomeViewController" sceneMemberID="viewController">
@@ -1122,7 +1122,7 @@
                             <constraint firstItem="9J6-ra-Nfr" firstAttribute="leading" secondItem="mn1-gl-YPW" secondAttribute="leading" id="eew-Nj-6cB"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="homeTab.png" id="y1z-es-zmr"/>
+                    <tabBarItem key="tabBarItem" title="Vocabulary" image="homeTab.png" id="y1z-es-zmr"/>
                     <connections>
                         <outlet property="spreadView" destination="9J6-ra-Nfr" id="cp6-ml-jC7"/>
                         <outlet property="view" destination="mn1-gl-YPW" id="J8J-lF-7Td"/>
@@ -1174,7 +1174,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="flashTab.png" width="30" height="30"/>
+        <image name="flashTab.png" width="27" height="27"/>
         <image name="homeTab.png" width="27" height="27"/>
         <image name="icon_about.png" width="72" height="72"/>
         <image name="multipleTab.png" width="30" height="30"/>

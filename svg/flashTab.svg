@@ -9,12 +9,15 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="32px"
-   height="32px"
+   width="54"
+   height="54"
    id="svg10473"
    version="1.1"
-   inkscape:version="0.47 r22583"
-   sodipodi:docname="New document 9">
+   inkscape:version="0.48.4 r9943 custom"
+   sodipodi:docname="flashTab.svg"
+   inkscape:export-filename="/Users/peter/Projects/iWordQuiz/Resources/flashTab.png"
+   inkscape:export-xdpi="45"
+   inkscape:export-ydpi="45">
   <defs
      id="defs10475">
     <inkscape:perspective
@@ -46,21 +49,25 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.395604"
-     inkscape:cx="16"
-     inkscape:cy="15.379105"
+     inkscape:zoom="8.83"
+     inkscape:cx="31.879955"
+     inkscape:cy="31.055493"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
-     inkscape:window-width="1326"
-     inkscape:window-height="1039"
-     inkscape:window-x="115"
-     inkscape:window-y="41"
+     inkscape:window-width="1653"
+     inkscape:window-height="1036"
+     inkscape:window-x="196"
+     inkscape:window-y="22"
      inkscape:window-maximized="0">
     <inkscape:grid
        type="xygrid"
-       id="grid10483" />
+       id="grid10483"
+       empspacing="4"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
   </sodipodi:namedview>
   <metadata
      id="metadata10478">
@@ -77,52 +84,36 @@
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     transform="translate(0,22)">
     <path
-       d="m 28.499991,24.066471 -24.999991,0 0,-16.1329421 24.999991,0 0,16.1329421 z M 28.499991,5 3.5,5 C 2.125,5 1,6.3186213 1,7.9335289 L 1,24.066471 C 1,25.678445 2.125,27 3.5,27 l 24.999991,0 c 1.37375,0 2.5,-1.321555 2.5,-2.933529 l 0,-16.1329421 C 30.999991,6.3186213 29.873741,5 28.499991,5"
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 52.999999,21.000001 -51.99999902,0 0,-32.000001 51.99999902,0 z"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
        id="path3608"
-       sodipodi:nodetypes="cccccccccccccc"
+       sodipodi:nodetypes="ccccc"
        inkscape:export-filename="/home/peter/flashTab.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:export-ydpi="90"
+       inkscape:connector-curvature="0" />
     <path
-       id="path3606"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 27,13.5 -22,0 0,-1.5 22,0 0,1.5 z"
-       inkscape:export-filename="/home/peter/flashTab.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       style="fill:none;stroke:#000000;stroke-width:2.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 7.0000017,-5.0000001 c 20.0030063,0 20.0030063,0 20.0030063,0"
+       id="path7856"
+       inkscape:connector-curvature="0" />
     <path
-       d="M 15,10.5 5,10.5 5,9 15,9 15,10.5 z"
-       style="opacity:0.75;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="path9435"
-       inkscape:export-filename="/home/peter/flashTab.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:connector-curvature="0"
+       id="path7858"
+       d="M 6.9999998,15 C 42.999999,15 42.999999,15 42.999999,15"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     <path
-       id="path9437"
-       style="opacity:0.75;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 25,16.5 -18,0 0,-1.5 18,0 0,1.5 z"
-       inkscape:export-filename="/home/peter/flashTab.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 6.9999998,8.9999936 c 35.9999992,0 35.9999992,0 35.9999992,0"
+       id="path7860"
+       inkscape:connector-curvature="0" />
     <path
-       d="m 25,19.5 -18,0 0,-1.5 18,0 0,1.5 z"
-       style="opacity:0.75;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="path9439"
-       inkscape:export-filename="/home/peter/flashTab.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <rect
-       style="opacity:0;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.99900001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect10539"
-       width="29.001001"
-       height="29.000999"
-       x="1.4995"
-       y="0.49950054"
-       inkscape:export-filename="/home/peter/flashTab.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+       inkscape:connector-curvature="0"
+       id="path7862"
+       d="M 6.9999998,1 C 42.999999,1 42.999999,1 42.999999,1"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
   </g>
 </svg>

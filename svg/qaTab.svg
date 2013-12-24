@@ -9,12 +9,15 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="32px"
-   height="32px"
+   width="54"
+   height="54"
    id="svg10473"
    version="1.1"
-   inkscape:version="0.47 r22583"
-   sodipodi:docname="qaTab.svg">
+   inkscape:version="0.48.4 r9943 custom"
+   sodipodi:docname="qaTab.svg"
+   inkscape:export-filename="/Users/peter/Projects/iWordQuiz/Resources/qaTab@2x.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs10475">
     <inkscape:perspective
@@ -53,21 +56,25 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="22.395604"
-     inkscape:cx="16"
-     inkscape:cy="15.379105"
+     inkscape:zoom="16.35"
+     inkscape:cx="27"
+     inkscape:cy="27"
      inkscape:current-layer="layer1"
      showgrid="true"
      inkscape:grid-bbox="true"
      inkscape:document-units="px"
-     inkscape:window-width="1326"
-     inkscape:window-height="1039"
-     inkscape:window-x="115"
-     inkscape:window-y="41"
+     inkscape:window-width="1622"
+     inkscape:window-height="1036"
+     inkscape:window-x="228"
+     inkscape:window-y="22"
      inkscape:window-maximized="0">
     <inkscape:grid
        type="xygrid"
-       id="grid10483" />
+       id="grid10483"
+       empspacing="4"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
   </sodipodi:namedview>
   <metadata
      id="metadata10478">
@@ -84,43 +91,8 @@
   <g
      id="layer1"
      inkscape:label="Layer 1"
-     inkscape:groupmode="layer">
-    <path
-       d="m 28.499991,24.066471 -24.999991,0 0,-16.1329421 24.999991,0 0,16.1329421 z M 28.499991,5 3.5,5 C 2.125,5 1,6.3186213 1,7.9335289 L 1,24.066471 C 1,25.678445 2.125,27 3.5,27 l 24.999991,0 c 1.37375,0 2.5,-1.321555 2.5,-2.933529 l 0,-16.1329421 C 30.999991,6.3186213 29.873741,5 28.499991,5"
-       style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="path3608"
-       sodipodi:nodetypes="cccccccccccccc"
-       inkscape:export-filename="/home/peter/qaTab.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       id="path3606"
-       style="opacity:0.5;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 27,13.5 -22,0 0,-1.5 22,0 0,1.5 z"
-       inkscape:export-filename="/home/peter/qaTab.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       d="M 15,10.5 5,10.5 5,9 15,9 15,10.5 z"
-       style="opacity:0.75;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="path9435"
-       inkscape:export-filename="/home/peter/qaTab.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       id="path9437"
-       style="opacity:0.75;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       d="m 25,16.5 -18,0 0,-1.5 18,0 0,1.5 z"
-       inkscape:export-filename="/home/peter/qaTab.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       d="m 25,19.5 -18,0 0,-1.5 18,0 0,1.5 z"
-       style="opacity:0.75;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-       id="path9439"
-       inkscape:export-filename="/home/peter/qaTab.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+     inkscape:groupmode="layer"
+     transform="translate(0,22)">
     <rect
        style="opacity:0;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.99900001;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect10539"
@@ -131,18 +103,43 @@
        inkscape:export-filename="/home/peter/qaTab.png"
        inkscape:export-xdpi="90"
        inkscape:export-ydpi="90" />
-    <g
-       id="g3504"
-       transform="matrix(0.88849366,-0.87923356,-0.68451147,-0.69636576,-79.394992,22.894845)"
-       style="opacity:0.85"
-       inkscape:export-filename="/home/peter/qaTab.png"
+    <path
+       d="m 49.999999,-11.000001 3,0 0,32.000001 L 1,21 l 0,-32.000001 32,0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path3608-1"
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="/home/peter/flashTab.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
-      <path
-         d="m 53.776663,-65.177532 14.681473,0.05319 0,5 -14.681473,-0.05319 m -0.718383,-4.989728 -3,2.5 3,2.5 m 16.189389,0.01804 1.810611,-0.01804 0,-5 -1.810611,0.01804"
-         style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
-         id="path3506"
-         sodipodi:nodetypes="ccccccccccc" />
-    </g>
+       inkscape:export-ydpi="90"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 7.000002,-5.000001 c 18.999998,0 18.999998,0 18.999998,0"
+       id="path7856"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path7858"
+       d="m 9,14.999999 c 35.999999,0 33.999999,0 33.999999,0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 7,8.999993 c 9,0 -1.4549834,0 3.607516,0 m 11.892483,0 c 4.5,0 20.5,0 20.5,0"
+       id="path7860"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path7862"
+       d="m 7,0.999999 c 9,0 6.422706,0 11.485206,0 m 14.014793,0 c 4.5,0 10.5,0 10.5,0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:nodetypes="cccc" />
+    <path
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccc"
+       id="path3506"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 44.405734,-9.3441559 37.684837,-15.203262 11.507372,7.1063908 8.9999999,15 18.228268,12.965498 z M 40.30079,-17.24148 42.279103,-19 49,-13.140894 46.734031,-11.40048 z" />
   </g>
 </svg>
