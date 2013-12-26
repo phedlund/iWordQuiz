@@ -5,102 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="3n0-7x-hNv">
-            <objects>
-                <navigationController storyboardIdentifier="about" definesPresentationContext="YES" id="5SH-ti-uw6" sceneMemberID="viewController">
-                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ia5-bO-0K0">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="DGs-Xz-3fw" kind="relationship" relationship="rootViewController" id="wpF-rf-FS3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1v7-Uo-1IK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="121" y="-3970"/>
-        </scene>
-        <!--About View Controller - About WordQuiz-->
-        <scene sceneID="Z8b-Rm-BO7">
-            <objects>
-                <viewController id="DGs-Xz-3fw" customClass="AboutViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bXx-AX-72Z"/>
-                        <viewControllerLayoutGuide type="bottom" id="f1o-ND-QEH"/>
-                    </layoutGuides>
-                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="GqC-0X-viN">
-                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="WordQuiz" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="NRa-gR-ANP">
-                                <rect key="frame" x="120" y="110" width="300" height="91"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="JRv-cV-Fbe">
-                                <rect key="frame" x="198" y="159" width="143" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Copyright © 2012 Peter B. Hedlund" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="FRK-Md-g5X">
-                                <rect key="frame" x="129" y="211" width="282" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="icon_about.png" translatesAutoresizingMaskIntoConstraints="NO" id="1XY-5Q-FCy">
-                                <rect key="frame" x="234" y="30" width="72" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="http://peterandlinda.com" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wxV-X9-JG9">
-                                <rect key="frame" x="149" y="269" width="240" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" link="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVv-91-MMK">
-                                <rect key="frame" x="198" y="433" width="145" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="Link Dropbox">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressLink" destination="DGs-Xz-3fw" eventType="touchUpInside" id="gps-QY-6Hk"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="About WordQuiz" id="aUt-mo-Iay">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="shh-qO-UPn">
-                            <connections>
-                                <action selector="dismissView" destination="DGs-Xz-3fw" id="CHZ-nO-a1R"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <connections>
-                        <outlet property="linkButton" destination="GVv-91-MMK" id="xF7-ta-mu5"/>
-                        <outlet property="versionLabel" destination="JRv-cV-Fbe" id="3Wq-4E-X82"/>
-                        <outlet property="view" destination="GqC-0X-viN" id="bjc-v0-LOs"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FIm-qS-Aa3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="839" y="-3970"/>
-        </scene>
         <!--Dynamics Drawer View Controller-->
         <scene sceneID="biB-3o-xGJ">
             <objects>
@@ -235,7 +139,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="VbN-Ct-a05">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="Ooi-WO-Sbc">
+                        <barButtonItem key="leftBarButtonItem" image="sideMenu" id="Ooi-WO-Sbc">
                             <connections>
                                 <action selector="doMenu:" destination="d2J-Zu-9To" id="gzm-bO-1gi"/>
                             </connections>
@@ -1472,12 +1376,6 @@
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="add" id="SNr-CM-yXD">
-                                        <connections>
-                                            <action selector="doActions:" destination="8hA-C1-5yX" id="v0k-0k-7Qp"/>
-                                            <segue destination="HxX-hT-fED" kind="modal" identifier="NewDocument" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="mFD-zP-qbw"/>
-                                        </connections>
-                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="n6z-9W-kKX"/>
                                     <barButtonItem style="plain" id="Ag9-G1-Qzu">
                                         <view key="customView" contentMode="scaleToFill" id="L3j-7K-SQf">
@@ -1496,9 +1394,9 @@
                                         </view>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="eQU-pM-m6U"/>
-                                    <barButtonItem image="sync.png" id="Hne-pY-l8t">
+                                    <barButtonItem image="menu" id="Hne-pY-l8t">
                                         <connections>
-                                            <action selector="doDBSync:" destination="8hA-C1-5yX" id="pur-JQ-njl"/>
+                                            <action selector="doActions:" destination="8hA-C1-5yX" id="e07-X9-m7l"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -1508,8 +1406,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="addButton" destination="SNr-CM-yXD" id="BIw-vH-uus"/>
-                        <outlet property="syncButton" destination="Hne-pY-l8t" id="Ov5-Y8-25s"/>
+                        <outlet property="menuButton" destination="Hne-pY-l8t" id="BPr-kq-oDy"/>
                         <outlet property="tableView" destination="Dxd-ab-j18" id="C0k-71-eyi"/>
                     </connections>
                 </viewController>
@@ -1520,7 +1417,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ns4-eB-tYb">
             <objects>
-                <navigationController definesPresentationContext="YES" id="HxX-hT-fED" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="newVocabulary" definesPresentationContext="YES" modalPresentationStyle="formSheet" id="HxX-hT-fED" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="rTk-rY-Y9Q"/>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="65p-Iv-Zno">
@@ -1538,11 +1435,10 @@
     <resources>
         <image name="flashTab.png" width="27" height="27"/>
         <image name="homeTab.png" width="27" height="27"/>
-        <image name="icon_about.png" width="72" height="72"/>
-        <image name="menu" width="32" height="44"/>
+        <image name="menu" width="28" height="44"/>
         <image name="multipleTab.png" width="30" height="30"/>
         <image name="qaTab.png" width="30" height="30"/>
-        <image name="sync.png" width="23" height="20"/>
+        <image name="sideMenu" width="32" height="44"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1550,6 +1446,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hcO-sX-ik2"/>
+        <segue reference="Vxn-WX-f4Y"/>
     </inferredMetricsTieBreakers>
 </document>

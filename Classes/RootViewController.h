@@ -3,7 +3,7 @@
 //  iWordQuiz
 //
 //  Created by Peter Hedlund on 8/13/10.
-//  Copyright 2010-2011 Peter Hedlund.
+//  Copyright 2010-2013 Peter Hedlund.
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation
@@ -27,7 +27,6 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import "AboutViewController.h"
 #import "WQNewFileViewController.h"
 #import "MSDynamicsDrawerViewController.h"
 
@@ -41,13 +40,12 @@
 @property (weak, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSMutableArray *vocabularies;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *syncButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property(strong) CHDropboxSync* syncer;
 
-- (IBAction) doDBSync:(id)sender;
 - (IBAction) doActions:(id)sender;
 
 @end
+                

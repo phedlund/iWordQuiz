@@ -35,7 +35,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "FCViewController.h"
 #import "MCViewController.h"
 #import "QAViewController.h"
-#import "AboutViewController.h"
 #import "TransparentToolbar.h"
 #import "WQUtils.h"
 #import "UIColor+PHColor.h"
@@ -55,7 +54,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @synthesize modeBarButtonItem;
 @synthesize editBarButtonItem;
-@synthesize infoBarButtonItem;
 @synthesize modePickerPopover;
 
 - (void)documentContentsDidChange:(WQDocument *)document {
@@ -172,7 +170,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [super viewDidLoad];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.editBarButtonItem.enabled = (_doc != nil);
-        self.navigationItem.rightBarButtonItems = @[self.infoBarButtonItem, self.editBarButtonItem, self.modeBarButtonItem];
+        self.navigationItem.rightBarButtonItems = @[self.editBarButtonItem, self.modeBarButtonItem];
     }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         self.navigationItem.rightBarButtonItems = @[self.editBarButtonItem, self.modeBarButtonItem];
@@ -326,12 +324,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (IBAction) doMode:(id)sender {
     [self.modePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:(UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown) animated:YES options:WYPopoverAnimationOptionFadeWithScale];
-}
-
-- (IBAction) doAbout:(id)sender {
-    UINavigationController *navController =  [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
-    navController.modalPresentationStyle = UIModalPresentationFormSheet;
-    [self presentViewController:navController animated:YES completion:nil];
 }
 
 - (void) doEdit:(id)sender {
@@ -647,15 +639,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         editBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(doEdit:)];
     }
     return editBarButtonItem;
-}
-
-- (UIBarButtonItem *)infoBarButtonItem {
-    if (!infoBarButtonItem) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoDark];
-        [button addTarget:self action:@selector(doAbout:) forControlEvents:UIControlEventTouchUpInside];
-        infoBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-    }
-    return infoBarButtonItem;
 }
 
 #pragma mark - Mode Popover

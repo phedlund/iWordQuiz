@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -34,11 +34,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <DropboxSDK/DropboxSDK.h>
 
-#import "AboutViewController.h"
 #import "MSDynamicsDrawerViewController.h"
-
-@class RootViewController;
-@class DetailViewController;
 
 @interface iWordQuizAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, DBSessionDelegate> {
     

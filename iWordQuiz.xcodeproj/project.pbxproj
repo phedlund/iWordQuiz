@@ -16,10 +16,10 @@
 		D01DC971121F57F2006671A1 /* MCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC96D121F57F2006671A1 /* MCViewController.m */; };
 		D01DC972121F57F2006671A1 /* QAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC96F121F57F2006671A1 /* QAViewController.m */; };
 		D01DC97B121F5981006671A1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC979121F5981006671A1 /* HomeViewController.m */; };
+		D02888C4186927F40094E582 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D02888C3186927F40094E582 /* Settings.bundle */; };
+		D02888C5186927F40094E582 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D02888C3186927F40094E582 /* Settings.bundle */; };
 		D03A5B851536422F00BEA27B /* document-icon-22x29.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B831536422F00BEA27B /* document-icon-22x29.png */; };
 		D03A5B861536422F00BEA27B /* document-icon-44x58.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B841536422F00BEA27B /* document-icon-44x58.png */; };
-		D0430399151683FD002374F3 /* icon_about.png in Resources */ = {isa = PBXBuildFile; fileRef = D0430397151683FD002374F3 /* icon_about.png */; };
-		D043039A151683FD002374F3 /* icon_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0430398151683FD002374F3 /* icon_about@2x.png */; };
 		D04BD0B413C90DDC006A7387 /* Example.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B113C90DDC006A7387 /* Example.kvtml */; };
 		D04BD0B513C90DDC006A7387 /* French Verbs.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B213C90DDC006A7387 /* French Verbs.kvtml */; };
 		D04BD0B613C90DDC006A7387 /* US States and Capitals.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B313C90DDC006A7387 /* US States and Capitals.kvtml */; };
@@ -77,10 +77,6 @@
 		D06A08E5185D421E00A0A158 /* Example.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B113C90DDC006A7387 /* Example.kvtml */; };
 		D06A08E6185D421E00A0A158 /* French Verbs.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B213C90DDC006A7387 /* French Verbs.kvtml */; };
 		D06A08E7185D421E00A0A158 /* US States and Capitals.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B313C90DDC006A7387 /* US States and Capitals.kvtml */; };
-		D06A08E8185D421E00A0A158 /* sync.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C98FEA14F44AFD00412777 /* sync.png */; };
-		D06A08EB185D421E00A0A158 /* icon_about.png in Resources */ = {isa = PBXBuildFile; fileRef = D0430397151683FD002374F3 /* icon_about.png */; };
-		D06A08EC185D421E00A0A158 /* icon_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0430398151683FD002374F3 /* icon_about@2x.png */; };
-		D06A08F1185D421E00A0A158 /* sync@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16615179ACA004AC04B /* sync@2x.png */; };
 		D06A08F2185D421E00A0A158 /* document-icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16815179F6F004AC04B /* document-icon-128.png */; };
 		D06A08F3185D421E00A0A158 /* document-icon-640.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16915179F6F004AC04B /* document-icon-640.png */; };
 		D06A08F4185D421E00A0A158 /* MDSpreadViewCell.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F6D151BC37900BDE78C /* MDSpreadViewCell.png */; };
@@ -134,7 +130,6 @@
 		D06A092B185D421E00A0A158 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC979121F5981006671A1 /* HomeViewController.m */; };
 		D06A092C185D421E00A0A158 /* WQQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CF950122F371300B446E8 /* WQQuiz.m */; };
 		D06A092D185D421E00A0A158 /* ModePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0130A3D125AB58C0085482E /* ModePickerController.m */; };
-		D06A092E185D421E00A0A158 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D2B89314DD963B0049C33E /* AboutViewController.m */; };
 		D06A092F185D421E00A0A158 /* UIColor+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */; };
 		D06A0930185D421E00A0A158 /* MDSpreadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F54151BC37900BDE78C /* MDSpreadView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0931185D421E00A0A158 /* MDSpreadViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F58151BC37900BDE78C /* MDSpreadViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -176,8 +171,6 @@
 		D06A0958185D421E00A0A158 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		D06A0959185D421E00A0A158 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */; };
 		D0C85E8B14F595A300C2A499 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */; };
-		D0C98FEB14F44AFD00412777 /* sync.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C98FEA14F44AFD00412777 /* sync.png */; };
-		D0C9B16715179ACA004AC04B /* sync@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16615179ACA004AC04B /* sync@2x.png */; };
 		D0C9B16A15179F6F004AC04B /* document-icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16815179F6F004AC04B /* document-icon-128.png */; };
 		D0C9B16B15179F6F004AC04B /* document-icon-640.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16915179F6F004AC04B /* document-icon-640.png */; };
 		D0CA3EC312CD0F6800F7BB72 /* document-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC112CD0F6800F7BB72 /* document-icon-64.png */; };
@@ -197,7 +190,6 @@
 		D0D0EC4E14DB713A00BE3A81 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		D0D0EC5014DB719100BE3A81 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */; };
 		D0D11E0E1541CCE800B8ECBD /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
-		D0D2B89414DD963B0049C33E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D2B89314DD963B0049C33E /* AboutViewController.m */; };
 		D0E8A2331852787D005F8CAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8A2321852787D005F8CAF /* Images.xcassets */; };
 		D0E8A23A18528A61005F8CAF /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23618528A61005F8CAF /* MSDynamicsDrawerStyler.m */; };
 		D0E8A23B18528A61005F8CAF /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */; };
@@ -241,10 +233,9 @@
 		D01DC96F121F57F2006671A1 /* QAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAViewController.m; sourceTree = "<group>"; };
 		D01DC978121F5981006671A1 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		D01DC979121F5981006671A1 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D02888C3186927F40094E582 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = iWordQuiz/Settings.bundle; sourceTree = "<group>"; };
 		D03A5B831536422F00BEA27B /* document-icon-22x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-22x29.png"; path = "Resources/document-icon-22x29.png"; sourceTree = "<group>"; };
 		D03A5B841536422F00BEA27B /* document-icon-44x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-44x58.png"; path = "Resources/document-icon-44x58.png"; sourceTree = "<group>"; };
-		D0430397151683FD002374F3 /* icon_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_about.png; path = Resources/icon_about.png; sourceTree = "<group>"; };
-		D0430398151683FD002374F3 /* icon_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_about@2x.png"; path = "Resources/icon_about@2x.png"; sourceTree = "<group>"; };
 		D04BD0B113C90DDC006A7387 /* Example.kvtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Example.kvtml; path = Resources/Examples/Example.kvtml; sourceTree = "<group>"; };
 		D04BD0B213C90DDC006A7387 /* French Verbs.kvtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "French Verbs.kvtml"; path = "Resources/Examples/French Verbs.kvtml"; sourceTree = "<group>"; };
 		D04BD0B313C90DDC006A7387 /* US States and Capitals.kvtml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "US States and Capitals.kvtml"; path = "Resources/Examples/US States and Capitals.kvtml"; sourceTree = "<group>"; };
@@ -313,8 +304,6 @@
 		D0713DB314DE15820053121A /* WordQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WordQuiz.entitlements; sourceTree = "<group>"; };
 		D0C791D814F6F1AE000AFF00 /* DBDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDefines.h; sourceTree = "<group>"; };
 		D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D0C98FEA14F44AFD00412777 /* sync.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sync.png; path = Resources/sync.png; sourceTree = "<group>"; };
-		D0C9B16615179ACA004AC04B /* sync@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sync@2x.png"; path = "Resources/sync@2x.png"; sourceTree = "<group>"; };
 		D0C9B16815179F6F004AC04B /* document-icon-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-128.png"; path = "Resources/document-icon-128.png"; sourceTree = "<group>"; };
 		D0C9B16915179F6F004AC04B /* document-icon-640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-640.png"; path = "Resources/document-icon-640.png"; sourceTree = "<group>"; };
 		D0CA3EC112CD0F6800F7BB72 /* document-icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-64.png"; path = "Resources/document-icon-64.png"; sourceTree = "<group>"; };
@@ -338,8 +327,6 @@
 		D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		D0D11E0C1541CCE800B8ECBD /* WQEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQEditViewController.h; sourceTree = "<group>"; };
 		D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQEditViewController.m; sourceTree = "<group>"; };
-		D0D2B89214DD963B0049C33E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		D0D2B89314DD963B0049C33E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		D0E8A2321852787D005F8CAF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iWordQuiz/Images.xcassets; sourceTree = "<group>"; };
 		D0E8A23518528A61005F8CAF /* MSDynamicsDrawerStyler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDynamicsDrawerStyler.h; sourceTree = "<group>"; };
 		D0E8A23618528A61005F8CAF /* MSDynamicsDrawerStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDynamicsDrawerStyler.m; sourceTree = "<group>"; };
@@ -435,8 +422,6 @@
 				D01DC96D121F57F2006671A1 /* MCViewController.m */,
 				D01DC96E121F57F2006671A1 /* QAViewController.h */,
 				D01DC96F121F57F2006671A1 /* QAViewController.m */,
-				D0D2B89214DD963B0049C33E /* AboutViewController.h */,
-				D0D2B89314DD963B0049C33E /* AboutViewController.m */,
 				D0130A3C125AB58C0085482E /* ModePickerController.h */,
 				D0130A3D125AB58C0085482E /* ModePickerController.m */,
 				D04CF94F122F371300B446E8 /* WQQuiz.h */,
@@ -500,6 +485,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D02888C3186927F40094E582 /* Settings.bundle */,
 				D0E8A2321852787D005F8CAF /* Images.xcassets */,
 				D0CED4B415362F43005ADD4C /* en.lproj */,
 				D0D2B89514DDAC0D0049C33E /* Examples */,
@@ -509,10 +495,6 @@
 				D0C9B16815179F6F004AC04B /* document-icon-128.png */,
 				D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */,
 				D0C9B16915179F6F004AC04B /* document-icon-640.png */,
-				D0430397151683FD002374F3 /* icon_about.png */,
-				D0430398151683FD002374F3 /* icon_about@2x.png */,
-				D0C98FEA14F44AFD00412777 /* sync.png */,
-				D0C9B16615179ACA004AC04B /* sync@2x.png */,
 				8D1107310486CEB800E47090 /* iWordQuiz-Info.plist */,
 				D06A095E185D421F00A0A158 /* iWordQuiz copy-Info.plist */,
 			);
@@ -745,6 +727,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				D02888C6186928C50094E582 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -762,6 +745,7 @@
 				D06A08D9185D421E00A0A158 /* Resources */,
 				D06A0923185D421E00A0A158 /* Sources */,
 				D06A0951185D421E00A0A158 /* Frameworks */,
+				D02888C7186928FE0094E582 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -812,10 +796,6 @@
 				D04BD0B413C90DDC006A7387 /* Example.kvtml in Resources */,
 				D04BD0B513C90DDC006A7387 /* French Verbs.kvtml in Resources */,
 				D04BD0B613C90DDC006A7387 /* US States and Capitals.kvtml in Resources */,
-				D0C98FEB14F44AFD00412777 /* sync.png in Resources */,
-				D0430399151683FD002374F3 /* icon_about.png in Resources */,
-				D043039A151683FD002374F3 /* icon_about@2x.png in Resources */,
-				D0C9B16715179ACA004AC04B /* sync@2x.png in Resources */,
 				D0C9B16A15179F6F004AC04B /* document-icon-128.png in Resources */,
 				D0C9B16B15179F6F004AC04B /* document-icon-640.png in Resources */,
 				D0549F9D151BC37900BDE78C /* MDSpreadViewCell.png in Resources */,
@@ -858,6 +838,7 @@
 				D0CED4BC15362F43005ADD4C /* MainStoryboard_iPad.storyboard in Resources */,
 				D0CED4BD15362F43005ADD4C /* MainStoryboard_iPhone.storyboard in Resources */,
 				D03A5B851536422F00BEA27B /* document-icon-22x29.png in Resources */,
+				D02888C4186927F40094E582 /* Settings.bundle in Resources */,
 				D03A5B861536422F00BEA27B /* document-icon-44x58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -872,10 +853,6 @@
 				D06A08E5185D421E00A0A158 /* Example.kvtml in Resources */,
 				D06A08E6185D421E00A0A158 /* French Verbs.kvtml in Resources */,
 				D06A08E7185D421E00A0A158 /* US States and Capitals.kvtml in Resources */,
-				D06A08E8185D421E00A0A158 /* sync.png in Resources */,
-				D06A08EB185D421E00A0A158 /* icon_about.png in Resources */,
-				D06A08EC185D421E00A0A158 /* icon_about@2x.png in Resources */,
-				D06A08F1185D421E00A0A158 /* sync@2x.png in Resources */,
 				D06A08F2185D421E00A0A158 /* document-icon-128.png in Resources */,
 				D06A08F3185D421E00A0A158 /* document-icon-640.png in Resources */,
 				D06A08F4185D421E00A0A158 /* MDSpreadViewCell.png in Resources */,
@@ -918,11 +895,41 @@
 				D06A091D185D421E00A0A158 /* MainStoryboard_iPad.storyboard in Resources */,
 				D06A091E185D421E00A0A158 /* MainStoryboard_iPhone.storyboard in Resources */,
 				D06A091F185D421E00A0A158 /* document-icon-22x29.png in Resources */,
+				D02888C5186927F40094E582 /* Settings.bundle in Resources */,
 				D06A0920185D421E00A0A158 /* document-icon-44x58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D02888C6186928C50094E582 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\n#note: for simplicity, it's assumed that there's already a bundle version (which is an integer) and a version string. set them in the Summary pane!\n\n#get path to the BUILT .plist, NOT the packaged one! this fixes the off-by-one bug\nbuiltInfoPlistPath=${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\necho \"using plist at $builtInfoPlistPath\"\n\nmodifiedFilesExist=false\n#this is the modification date to compare to -- there's a possible bug here, if you edit the built plist directly, for some reason. probably you shouldn't do that anyways.\ncompModDate=$(stat -f \"%m\" \"$builtInfoPlistPath\")\n\nfor filename in *\ndo\nmodDate=$(stat -f \"%m\" \"$filename\")\nif [ \"$modDate\" -gt \"$compModDate\" ]\nthen\nmodifiedFilesExist=true;\necho \"found newly modified file: $filename\"\nbreak\nfi\ndone\n\nif $modifiedFilesExist\nthen\necho \"A file is new, bumping version\"\n\n#increment the build number\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleVersion\" \"$builtInfoPlistPath\")\necho \"retrieved current build number: $buildNumber\"\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$builtInfoPlistPath\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n#compose the version number string\nversionString=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleShortVersionString\" \"$builtInfoPlistPath\")\nversionString+=\" (\"\nversionString+=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleVersion\" \"$builtInfoPlistPath\")\nversionString+=\")\"\n\n#write the version number string to the settings bundle\n#IMPORTANT: this assumes the version number is the second property in the settings bundle!\n/usr/libexec/PlistBuddy -c \"Set :PreferenceSpecifiers:1:DefaultValue $versionString\" \"$SRCROOT/iWordQuiz/Settings.bundle/Root.plist\"\nelse\necho \"Version not incremented -- no newly modified files\"\nfi\n";
+		};
+		D02888C7186928FE0094E582 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\n\n#note: for simplicity, it's assumed that there's already a bundle version (which is an integer) and a version string. set them in the Summary pane!\n\n#get path to the BUILT .plist, NOT the packaged one! this fixes the off-by-one bug\nbuiltInfoPlistPath=${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\necho \"using plist at $builtInfoPlistPath\"\n\nmodifiedFilesExist=false\n#this is the modification date to compare to -- there's a possible bug here, if you edit the built plist directly, for some reason. probably you shouldn't do that anyways.\ncompModDate=$(stat -f \"%m\" \"$builtInfoPlistPath\")\n\nfor filename in *\ndo\nmodDate=$(stat -f \"%m\" \"$filename\")\nif [ \"$modDate\" -gt \"$compModDate\" ]\nthen\nmodifiedFilesExist=true;\necho \"found newly modified file: $filename\"\nbreak\nfi\ndone\n\nif $modifiedFilesExist\nthen\necho \"A file is new, bumping version\"\n\n#increment the build number\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleVersion\" \"$builtInfoPlistPath\")\necho \"retrieved current build number: $buildNumber\"\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$builtInfoPlistPath\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n#compose the version number string\nversionString=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleShortVersionString\" \"$builtInfoPlistPath\")\nversionString+=\" (\"\nversionString+=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleVersion\" \"$builtInfoPlistPath\")\nversionString+=\")\"\n\n#write the version number string to the settings bundle\n#IMPORTANT: this assumes the version number is the second property in the settings bundle!\n/usr/libexec/PlistBuddy -c \"Set :PreferenceSpecifiers:1:DefaultValue $versionString\" \"$SRCROOT/iWordQuiz/Settings.bundle/Root.plist\"\nelse\necho \"Version not incremented -- no newly modified files\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
@@ -939,7 +946,6 @@
 				D01DC97B121F5981006671A1 /* HomeViewController.m in Sources */,
 				D04CF951122F371300B446E8 /* WQQuiz.m in Sources */,
 				D0130A3E125AB58C0085482E /* ModePickerController.m in Sources */,
-				D0D2B89414DD963B0049C33E /* AboutViewController.m in Sources */,
 				D0E8A2401853EB4F005F8CAF /* UIColor+PHColor.m in Sources */,
 				D0549F91151BC37900BDE78C /* MDSpreadView.m in Sources */,
 				D0549F93151BC37900BDE78C /* MDSpreadViewCell.m in Sources */,
@@ -989,7 +995,6 @@
 				D06A092B185D421E00A0A158 /* HomeViewController.m in Sources */,
 				D06A092C185D421E00A0A158 /* WQQuiz.m in Sources */,
 				D06A092D185D421E00A0A158 /* ModePickerController.m in Sources */,
-				D06A092E185D421E00A0A158 /* AboutViewController.m in Sources */,
 				D06A092F185D421E00A0A158 /* UIColor+PHColor.m in Sources */,
 				D06A0930185D421E00A0A158 /* MDSpreadView.m in Sources */,
 				D06A0931185D421E00A0A158 /* MDSpreadViewCell.m in Sources */,

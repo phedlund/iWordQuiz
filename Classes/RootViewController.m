@@ -60,7 +60,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        self.syncButton.enabled = [[DBSession sharedSession] isLinked];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
     }
     
@@ -272,7 +271,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 }
 
 - (void)viewDidUnload {
-    [self setAddButton:nil];
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 }
@@ -312,12 +310,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     [self.tableView reloadData];
 }
 
-- (IBAction) doDBSync:(id)sender {
-    // Now do the sync
-    self.syncer = [[CHDropboxSync alloc] init];
-    self.syncer.delegate = self;
-    [self.syncer doSync];
-}
+#pragma mark - Dropbox syncer delegate
 
 // Sync has finished, so you can dealloc it now
 - (void)syncComplete {
@@ -328,9 +321,9 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 #pragma mark - Notifications
 
 - (void)linked:(NSNotification*)n {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.syncButton.enabled = [[DBSession sharedSession] isLinked];
-    }
+    /*if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.menuButton.enabled = [[DBSession sharedSession] isLinked];
+    }*/
 }
 
 - (void)newFileURL:(NSNotification*)n {
@@ -345,32 +338,54 @@ NSString* WQDocumentsDirectoryName = @"Documents";
                                         delegate:self
                                cancelButtonTitle:nil
                           destructiveButtonTitle:nil
-                               otherButtonTitles:@"About", nil];
+                               otherButtonTitles:@"New Vocabulary", nil];
     if ([[DBSession sharedSession] isLinked]) {
-        [sheet addButtonWithTitle:@"Dropbox Sync"];
+        [sheet addButtonWithTitle:@"Sync With Dropbox"];
+        [sheet addButtonWithTitle:@"Unlink Dropbox"];
+    } else {
+        [sheet addButtonWithTitle:@"Link Dropbox"];
     }
     sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Cancel"];
     // Show the sheet
-    [sheet showInView:self.view];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [sheet showFromBarButtonItem:self.menuButton animated:YES];
+    } else {
+        [sheet showInView:self.view];
+    }
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSLog(@"Button %d", buttonIndex);
     
     if (buttonIndex != actionSheet.cancelButtonIndex) {
-        UINavigationController *navController;
-        
-        switch (buttonIndex) {
-            case 0:
-                navController =  [self.storyboard instantiateViewControllerWithIdentifier:@"about"];
+        NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+        if ([buttonTitle isEqualToString:@"New Vocabulary"]) {
+            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+                UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"newVocabulary"];
+                [(WQNewFileViewController*)navController.topViewController setDelegate:self];
                 [self presentViewController:navController animated:YES completion:nil];
-                break;
-            case 1:
-                [self doDBSync:nil];
-                break;            
-            default:
-                break;
+            } else {
+                WQNewFileViewController *newController = [self.storyboard instantiateViewControllerWithIdentifier:@"newVocabulary"];
+                newController.delegate = self;
+                [self.navigationController pushViewController:newController animated:YES];
+            }
+        }
+        if ([buttonTitle isEqualToString:@"Sync With Dropbox"]) {
+            self.syncer = [[CHDropboxSync alloc] init];
+            self.syncer.delegate = self;
+            [self.syncer doSync];
+        }
+        if ([buttonTitle isEqualToString:@"Link Dropbox"]) {
+            [[DBSession sharedSession] linkFromController:self];
+        }
+        if ([buttonTitle isEqualToString:@"Unlink Dropbox"]) {
+            [[DBSession sharedSession] unlinkAll];
+            [[[UIAlertView alloc] initWithTitle:@"Account Unlinked!"
+                                        message:@"Your Dropbox account has been unlinked"
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil]
+             show];
         }
     }
 }

@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -51,16 +51,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @property (nonatomic, strong, readonly) UIBarButtonItem *modeBarButtonItem;
 @property (nonatomic, strong, readonly) UIBarButtonItem *editBarButtonItem;
-@property (nonatomic, strong, readonly) UIBarButtonItem *infoBarButtonItem;
 
 - (void) activateTab:(int)index;
 
 - (void) quizDidFinish;
 - (BOOL) hasEnoughEntries:(int)index;
 
-- (IBAction)doMenu:(id)sender;
+- (IBAction) doMenu:(id)sender;
 - (IBAction) doMode:(id)sender;
-- (IBAction) doAbout:(id)sender;
 - (IBAction) doEdit:(id)sender;
 
 @end

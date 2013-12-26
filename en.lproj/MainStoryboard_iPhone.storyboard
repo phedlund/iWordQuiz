@@ -20,100 +20,6 @@
             </objects>
             <point key="canvasLocation" x="-1" y="64"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="lLG-8h-mYB">
-            <objects>
-                <navigationController storyboardIdentifier="about" definesPresentationContext="YES" id="IvU-Bg-UQA" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ldp-vX-xiD">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="qkM-ys-0SR" kind="relationship" relationship="rootViewController" id="x5c-bx-ctb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nya-nS-X68" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1" y="-552"/>
-        </scene>
-        <!--About View Controller - About WordQuiz-->
-        <scene sceneID="Yc3-tw-lvA">
-            <objects>
-                <viewController id="qkM-ys-0SR" customClass="AboutViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="C4T-k6-19b"/>
-                        <viewControllerLayoutGuide type="bottom" id="bpi-or-BnV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YAo-XU-wRW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="WordQuiz" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="QZL-dw-wF7">
-                                <rect key="frame" x="118" y="85" width="85" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="I1f-ZL-9bM">
-                                <rect key="frame" x="117" y="110" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" text="Copyright © 2012 Peter B. Hedlund" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="CYt-9K-FoT">
-                                <rect key="frame" x="25" y="135" width="271" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="icon_about.png" translatesAutoresizingMaskIntoConstraints="NO" id="lRT-43-w5r">
-                                <rect key="frame" x="124" y="5" width="72" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="http://peterandlinda.com" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CiT-i0-IVH">
-                                <rect key="frame" x="39" y="170" width="240" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" link="YES"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7k-Ku-gjb">
-                                <rect key="frame" x="88" y="225" width="145" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="Link Dropbox">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressLink" destination="qkM-ys-0SR" eventType="touchUpInside" id="XGQ-Zp-XJo"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="About WordQuiz" id="Dfh-ag-HoN">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="xOa-jT-WEP">
-                            <connections>
-                                <action selector="dismissView" destination="qkM-ys-0SR" id="U9i-Yk-IpT"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="linkButton" destination="S7k-Ku-gjb" id="v2m-Bd-cSW"/>
-                        <outlet property="versionLabel" destination="I1f-ZL-9bM" id="Pbg-ul-gPu"/>
-                        <outlet property="view" destination="YAo-XU-wRW" id="ns6-kF-Flg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fQ9-8Q-uHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="459" y="-552"/>
-        </scene>
         <!--Root View Controller - Master-->
         <scene sceneID="18">
             <objects>
@@ -152,12 +58,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Vocabularies" id="36">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="NYW-s1-Cst">
-                            <connections>
-                                <segue destination="Jq8-xV-TCr" kind="push" identifier="NewDocument" id="QdD-ao-5FX"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="hA5-YN-deN">
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="hA5-YN-deN">
                             <connections>
                                 <action selector="doActions:" destination="12" id="7Ii-jX-d5A"/>
                             </connections>
@@ -174,7 +75,7 @@
         <!--New File View Controller - New-->
         <scene sceneID="51K-M5-aYH">
             <objects>
-                <tableViewController id="Jq8-xV-TCr" customClass="WQNewFileViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="newVocabulary" id="Jq8-xV-TCr" customClass="WQNewFileViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="9S1-5C-KSe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1176,7 +1077,7 @@
     <resources>
         <image name="flashTab.png" width="27" height="27"/>
         <image name="homeTab.png" width="27" height="27"/>
-        <image name="icon_about.png" width="72" height="72"/>
+        <image name="menu" width="28" height="44"/>
         <image name="multipleTab.png" width="30" height="30"/>
         <image name="qaTab.png" width="30" height="30"/>
     </resources>
@@ -1185,7 +1086,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="l6h-cG-mTz"/>
-    </inferredMetricsTieBreakers>
 </document>
