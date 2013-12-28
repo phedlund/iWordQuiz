@@ -36,4 +36,6 @@
 @property (nonatomic, strong) NSNumber *circleColor;
 @property (nonatomic, strong, readonly) CAShapeLayer *circleLayer;
 
+- (void) setScore:(NSInteger)score of:(NSInteger)total;
+
 @end

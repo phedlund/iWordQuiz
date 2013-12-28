@@ -42,15 +42,15 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @implementation ModePickerController
 
 @synthesize modes;
-@synthesize delegate = m_delegate;
+@synthesize delegate;
 
 - (NSArray *)modes {
     if (!modes) {
-        modes = [NSArray arrayWithObjects:@"Front to Back In Order",
+        modes = @[@"Front to Back In Order",
                   @"Back To Front In Order",
                   @"Front To Back Randomly",
                   @"Back To Front Randomly",
-                  @"Back <-> Front Randomly", nil];
+                  @"Back <-> Front Randomly"];
     }
     return modes;
 }
@@ -61,9 +61,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.clearsSelectionOnViewWillAppear = YES;
-    self.preferredContentSize = CGSizeMake(290.0, 220.0);
+    //self.preferredContentSize = CGSizeMake(290.0, 264.0);
     self.tableView.scrollEnabled = NO;
     self.tableView.separatorColor = [UIColor popoverBorderColor];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -76,12 +81,18 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-	return 1;
+	return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-	return [self.modes count];
+    NSInteger result;
+	if (section == 0) {
+        result = self.modes.count;
+    } else {
+        result = 1;
+    }
+    return result;
 }
 
 // Customize the appearance of table view cells.
@@ -92,35 +103,101 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.backgroundColor = [UIColor popoverBackgroundColor];
+        cell.textLabel.textColor = [UIColor popoverIconColor];
+        cell.tintColor = [UIColor iconColor];
     }
     
-    // Configure the cell...
-	cell.textLabel.text = [self.modes objectAtIndex:indexPath.row];
-    cell.backgroundColor = [UIColor popoverBackgroundColor];
-    cell.textLabel.textColor = [UIColor popoverIconColor];
-    cell.tintColor = [UIColor iconColor];
 	[cell setAccessoryType:UITableViewCellAccessoryNone];
-	int r = [m_delegate selectedMode] - 1;
-	if (r == indexPath.row) {
-		cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        _currentMode = r;
-	}
+
+    
+    if (indexPath.section == 0) {
+        cell.textLabel.text = [self.modes objectAtIndex:indexPath.row];
+        int r = [self.delegate selectedMode] - 1;
+        if (r == indexPath.row) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            _currentMode = r;
+        }
+
+    } else {
+        cell.textLabel.text = @"Show Score As Percent";
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:@"ScoreAsPercent"]) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+    }
+    
     return cell;
+}
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSString *result;
+    if (section == 0) {
+        result = @"Mode";
+    } else {
+        result = @"Score";
+    }
+    return result;
 }
 
 #pragma mark -
 #pragma mark Table view delegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 30.0f;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.0f;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    CGRect frame = CGRectMake(0, 0, 200, 30);
+    UIView *customView = [[UIView alloc] initWithFrame:frame];
+    UILabel *headerLabel = [[UILabel alloc] init];
+    [customView addSubview:headerLabel];
+    customView.backgroundColor = [UIColor popoverButtonColor];
+    
+    frame.origin.x = 10;
+    frame.size.width = frame.size.width - 10;
+    
+    headerLabel.frame = frame;
+    headerLabel.backgroundColor = [UIColor popoverButtonColor];
+    headerLabel.textColor = [UIColor iconColor];
+    headerLabel.font = [UIFont systemFontOfSize:14];
+    if (section == 0) {
+        headerLabel.text = @"MODE";
+    } else {
+        headerLabel.text = @"SCORE";
+    }
+    return customView;
+}
+
+- (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [[UIView alloc] initWithFrame:CGRectZero];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    view.backgroundColor = [UIColor popoverBackgroundColor];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    if (_currentMode == indexPath.row) {
-        return;
+    if (indexPath.section == 0) {
+        if (_currentMode == indexPath.row) {
+            return;
+        }
+        _currentMode = indexPath.row;
+        [self.tableView reloadData];
+        if (self.delegate != nil) {
+            [self.delegate modeSelected:_currentMode];
+        }
+    } else {
+        [[NSUserDefaults standardUserDefaults] setBool:![[NSUserDefaults standardUserDefaults] boolForKey:@"ScoreAsPercent"] forKey:@"ScoreAsPercent"];
+        if (self.delegate != nil) {
+            [self.delegate modeSelected:-1];
+        }
     }
-    _currentMode = indexPath.row;
-    [self.tableView reloadData];
-    if (m_delegate != nil) {
-		[m_delegate modeSelected:_currentMode];
-	}
+   
 }
 
 @end

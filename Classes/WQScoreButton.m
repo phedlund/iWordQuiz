@@ -101,4 +101,12 @@
     return circleLayer;
 }
 
+- (void)setScore:(NSInteger)score of:(NSInteger)total {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"ScoreAsPercent"]) {
+        [self setTitle:[NSString stringWithFormat:@"%d%%", (score * 100) / total] forState:UIControlStateNormal];
+    } else {
+        [self setTitle:[@(score) stringValue] forState:UIControlStateNormal];
+    }
+}
+
 @end

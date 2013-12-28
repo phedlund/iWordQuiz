@@ -296,25 +296,22 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 - (void)modeSelected:(NSUInteger)mode {
-	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-	// saving an NSInteger
-	[prefs setInteger:mode + 1 forKey:@"Mode"];
-	[prefs synchronize];
-	
-	_quiz.quizMode = mode + 1;
+	if (mode != -1) { //-1 == ScoreAsPercent (hack!)
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setInteger:mode + 1 forKey:@"Mode"];
+        [prefs synchronize];
+        _quiz.quizMode = mode + 1;
+        [self activateTab:self.selectedIndex];
+    }
     [self.modePickerPopover dismissPopoverAnimated:YES];
-	[self activateTab:self.selectedIndex];
 }
 
 - (NSUInteger)selectedMode {
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-	
-	// getting an NSInteger
 	NSInteger myMode = [prefs integerForKey:@"Mode"];
 	if (myMode == 0) {
 		myMode = 1;
 	}
-	
 	return myMode;
 }
 
@@ -647,7 +644,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     if (!modePickerPopover) {
         _modePicker = [[ModePickerController alloc] initWithStyle:UITableViewStylePlain];
         _modePicker.delegate = self;
-        _modePicker.preferredContentSize = CGSizeMake(290.0, 220.0);
+        _modePicker.preferredContentSize = CGSizeMake(290.0, 324.0f);
         modePickerPopover = [[WYPopoverController alloc] initWithContentViewController:_modePicker];
         WYPopoverBackgroundView* appearance = [WYPopoverBackgroundView appearance];
         [appearance setFillTopColor:[UIColor popoverBackgroundColor]];

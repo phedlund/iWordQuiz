@@ -57,7 +57,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor backgroundColor];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-	
+
+    [[NSUserDefaults standardUserDefaults] addObserver:self
+                                            forKeyPath:@"ScoreAsPercent"
+                                               options:NSKeyValueObservingOptionNew
+                                               context:NULL];
+
 	self.frontView.userInteractionEnabled = YES;
     self.backView.hidden = true;
     [self.frontView addGestureRecognizer:self.frontTapRecognizer];
@@ -212,9 +217,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     _slideToTheRight = !keep;
     [self flipCard:true];
     
-	[self.answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
-	[self.correctCountButton setTitle:[@([self.quiz correctCount]) stringValue] forState:UIControlStateNormal];
-	[self.errorCountButton setTitle:[@([self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
+	[self.answerCountButton setScore:[self.quiz correctCount] + [self.quiz errorCount] of:[self.quiz questionCount]];
+	[self.correctCountButton setScore:[self.quiz correctCount] of:[self.quiz questionCount]];
+	[self.errorCountButton setScore:[self.quiz errorCount] of:[self.quiz questionCount]];
 	[self.quiz toNext];
 	if ([self.quiz atEnd]) {
 		[self.quiz finish];
@@ -379,4 +384,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         [self flipCard:false];
     }
 }
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:@"ScoreAsPercent"]) {
+        [self.answerCountButton setScore:[self.quiz correctCount] + [self.quiz errorCount] of:[self.quiz questionCount]];
+        [self.correctCountButton setScore:[self.quiz correctCount] of:[self.quiz questionCount]];
+        [self.errorCountButton setScore:[self.quiz errorCount] of:[self.quiz questionCount]];
+    }
+}
+
 @end

@@ -49,6 +49,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	self.view.backgroundColor = [UIColor backgroundColor];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
+    [[NSUserDefaults standardUserDefaults] addObserver:self
+                                            forKeyPath:@"ScoreAsPercent"
+                                               options:NSKeyValueObservingOptionNew
+                                               context:NULL];
+
 	self.answerIdentifierLabel.text = @"";
 	self.opt1Button.hidden = YES;
 	self.opt2Button.hidden = YES;
@@ -228,9 +233,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	self.previousQuestionLine.hidden =NO;
 	self.yourAnswerLine.hidden = NO;
 	
-	[self.answerCountButton setTitle:[@([self.quiz correctCount] + [self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
-	[self.correctCountButton setTitle:[@([self.quiz correctCount]) stringValue] forState:UIControlStateNormal];
-	[self.errorCountButton setTitle:[@([self.quiz errorCount]) stringValue] forState:UIControlStateNormal];
+	[self.answerCountButton setScore:[self.quiz correctCount] + [self.quiz errorCount] of:[self.quiz questionCount]];
+	[self.correctCountButton setScore:[self.quiz correctCount] of:[self.quiz questionCount]];
+	[self.errorCountButton setScore:[self.quiz errorCount] of:[self.quiz questionCount]];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         UIButton *btn = (UIButton*)sender;
         [self animate:btn.titleLabel error:!fIsCorrect];
@@ -403,6 +408,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         self.opt2Button.hidden = YES;
         self.opt3Button.hidden = YES;
         self.answerLine.hidden = YES;
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if([keyPath isEqualToString:@"ScoreAsPercent"]) {
+        [self.answerCountButton setScore:[self.quiz correctCount] + [self.quiz errorCount] of:[self.quiz questionCount]];
+        [self.correctCountButton setScore:[self.quiz correctCount] of:[self.quiz questionCount]];
+        [self.errorCountButton setScore:[self.quiz errorCount] of:[self.quiz questionCount]];
     }
 }
 

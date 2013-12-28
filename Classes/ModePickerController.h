@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -33,13 +33,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import <UIKit/UIKit.h>
 
 @protocol ModePickerDelegate
+
 - (void)modeSelected:(NSUInteger)mode;
 - (NSUInteger)selectedMode;
+
 @end
 
-@interface ModePickerController : UITableViewController {
-    id<ModePickerDelegate> __unsafe_unretained m_delegate;
-}
+@interface ModePickerController : UITableViewController
 
 @property (nonatomic, strong, readonly) NSArray *modes;
 @property (nonatomic, unsafe_unretained) id<ModePickerDelegate> delegate;
