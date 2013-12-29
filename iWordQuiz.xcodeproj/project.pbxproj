@@ -16,6 +16,8 @@
 		D01DC971121F57F2006671A1 /* MCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC96D121F57F2006671A1 /* MCViewController.m */; };
 		D01DC972121F57F2006671A1 /* QAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC96F121F57F2006671A1 /* QAViewController.m */; };
 		D01DC97B121F5981006671A1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC979121F5981006671A1 /* HomeViewController.m */; };
+		D0254D02186F6B970032566D /* UIFont+WQDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D01186F6B970032566D /* UIFont+WQDynamic.m */; };
+		D0254D03186F6F1B0032566D /* UIFont+WQDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D01186F6B970032566D /* UIFont+WQDynamic.m */; };
 		D02888C4186927F40094E582 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D02888C3186927F40094E582 /* Settings.bundle */; };
 		D02888C5186927F40094E582 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D02888C3186927F40094E582 /* Settings.bundle */; };
 		D03A5B851536422F00BEA27B /* document-icon-22x29.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B831536422F00BEA27B /* document-icon-22x29.png */; };
@@ -233,6 +235,8 @@
 		D01DC96F121F57F2006671A1 /* QAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAViewController.m; sourceTree = "<group>"; };
 		D01DC978121F5981006671A1 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		D01DC979121F5981006671A1 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		D0254D00186F6B970032566D /* UIFont+WQDynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+WQDynamic.h"; path = "iWordQuiz/UIFont+WQDynamic.h"; sourceTree = SOURCE_ROOT; };
+		D0254D01186F6B970032566D /* UIFont+WQDynamic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+WQDynamic.m"; path = "iWordQuiz/UIFont+WQDynamic.m"; sourceTree = SOURCE_ROOT; };
 		D02888C3186927F40094E582 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = iWordQuiz/Settings.bundle; sourceTree = "<group>"; };
 		D03A5B831536422F00BEA27B /* document-icon-22x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-22x29.png"; path = "Resources/document-icon-22x29.png"; sourceTree = "<group>"; };
 		D03A5B841536422F00BEA27B /* document-icon-44x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-44x58.png"; path = "Resources/document-icon-44x58.png"; sourceTree = "<group>"; };
@@ -444,6 +448,8 @@
 				D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */,
 				D06A08CE185AA33900A0A158 /* UIImage+PHColor.h */,
 				D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */,
+				D0254D00186F6B970032566D /* UIFont+WQDynamic.h */,
+				D0254D01186F6B970032566D /* UIFont+WQDynamic.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -978,6 +984,7 @@
 				D0CBB7F116A9FD0000FDAC8C /* WQQuizItem.m in Sources */,
 				D0E8A23B18528A61005F8CAF /* MSDynamicsDrawerViewController.m in Sources */,
 				D0CBB7F816B099C300FDAC8C /* TransparentToolbar.m in Sources */,
+				D0254D02186F6B970032566D /* UIFont+WQDynamic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1027,6 +1034,7 @@
 				D06A094E185D421E00A0A158 /* WQQuizItem.m in Sources */,
 				D06A094F185D421E00A0A158 /* MSDynamicsDrawerViewController.m in Sources */,
 				D06A0950185D421E00A0A158 /* TransparentToolbar.m in Sources */,
+				D0254D03186F6F1B0032566D /* UIFont+WQDynamic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

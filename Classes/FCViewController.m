@@ -34,6 +34,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import <QuartzCore/QuartzCore.h>
 #import "WQUtils.h"
 #import "UIColor+PHColor.h"
+#import "UIFont+WQDynamic.h"
 
 #define kTransitionDuration	0.50
 
@@ -63,6 +64,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                                                options:NSKeyValueObservingOptionNew
                                                context:NULL];
 
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIContentSizeCategoryDidChangeNotification
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *notification) {
+                                                      [self applyFonts];
+                                                  }];
+    
+    [self applyFonts];
 	self.frontView.userInteractionEnabled = YES;
     self.backView.hidden = true;
     [self.frontView addGestureRecognizer:self.frontTapRecognizer];
@@ -391,6 +400,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         [self.correctCountButton setScore:[self.quiz correctCount] of:[self.quiz questionCount]];
         [self.errorCountButton setScore:[self.quiz errorCount] of:[self.quiz questionCount]];
     }
+}
+
+- (void)applyFonts {
+	self.frontIdentifierLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleHeadline];
+	self.frontText.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleBody];
+    self.backIdentifierLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleHeadline];
+	self.backText.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleBody];
 }
 
 @end

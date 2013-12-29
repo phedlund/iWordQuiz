@@ -242,87 +242,86 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tyO-Hz-ELV">
-                                                <rect key="frame" x="10" y="10" width="270" height="15"/>
+                                                <rect key="frame" x="10" y="10" width="270" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="15" id="B4Z-NB-1uM"/>
+                                                    <constraint firstAttribute="width" constant="270" id="dmx-1T-lkF"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Soq-Us-fjh">
-                                                <rect key="frame" x="10" y="26" width="270" height="1"/>
+                                                <rect key="frame" x="10" y="30" width="270" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f9c-Ux-jqq">
-                                                <rect key="frame" x="10" y="40" width="270" height="120"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="120" id="Efu-ES-kUA"/>
+                                                    <constraint firstAttribute="height" constant="1" id="70v-z0-ArO"/>
                                                 </constraints>
+                                            </view>
+                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f9c-Ux-jqq">
+                                                <rect key="frame" x="10" y="42" width="270" height="118"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="tyO-Hz-ELV" firstAttribute="trailing" secondItem="Soq-Us-fjh" secondAttribute="trailing" id="4Yf-i3-DSY"/>
                                             <constraint firstItem="tyO-Hz-ELV" firstAttribute="top" secondItem="gYD-iD-1oa" secondAttribute="top" constant="10" id="AUg-qb-Wyc"/>
-                                            <constraint firstItem="f9c-Ux-jqq" firstAttribute="leading" secondItem="Soq-Us-fjh" secondAttribute="leading" id="Gbg-mW-GSb"/>
                                             <constraint firstAttribute="bottom" secondItem="f9c-Ux-jqq" secondAttribute="bottom" constant="5" id="QvV-LQ-OOW"/>
-                                            <constraint firstItem="Soq-Us-fjh" firstAttribute="trailing" secondItem="f9c-Ux-jqq" secondAttribute="trailing" id="WZa-2W-wpo"/>
+                                            <constraint firstItem="f9c-Ux-jqq" firstAttribute="leading" secondItem="tyO-Hz-ELV" secondAttribute="leading" id="RXL-oj-zva"/>
                                             <constraint firstItem="tyO-Hz-ELV" firstAttribute="leading" secondItem="gYD-iD-1oa" secondAttribute="leading" constant="10" id="exS-Yz-Nvp"/>
-                                            <constraint firstItem="f9c-Ux-jqq" firstAttribute="top" secondItem="Soq-Us-fjh" secondAttribute="bottom" constant="13" id="gnq-f9-hgR"/>
+                                            <constraint firstItem="f9c-Ux-jqq" firstAttribute="top" secondItem="Soq-Us-fjh" secondAttribute="bottom" constant="11" id="gDK-9w-nfa"/>
                                             <constraint firstItem="tyO-Hz-ELV" firstAttribute="centerX" secondItem="gYD-iD-1oa" secondAttribute="centerX" id="kpQ-p7-HCZ"/>
-                                            <constraint firstItem="Soq-Us-fjh" firstAttribute="top" secondItem="tyO-Hz-ELV" secondAttribute="bottom" constant="1" id="q7W-1N-yNl"/>
-                                            <constraint firstItem="tyO-Hz-ELV" firstAttribute="leading" secondItem="Soq-Us-fjh" secondAttribute="leading" id="tky-4s-w7W"/>
+                                            <constraint firstItem="Soq-Us-fjh" firstAttribute="width" secondItem="tyO-Hz-ELV" secondAttribute="width" id="ljw-cw-jIp"/>
+                                            <constraint firstItem="Soq-Us-fjh" firstAttribute="top" secondItem="tyO-Hz-ELV" secondAttribute="bottom" constant="3" id="qsn-f9-8RJ"/>
+                                            <constraint firstItem="f9c-Ux-jqq" firstAttribute="leading" secondItem="Soq-Us-fjh" secondAttribute="leading" id="rVj-Qa-nNR"/>
+                                            <constraint firstItem="f9c-Ux-jqq" firstAttribute="width" secondItem="tyO-Hz-ELV" secondAttribute="width" id="suz-mO-Bop"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXK-kS-8Gd">
                                         <rect key="frame" x="10" y="10" width="290" height="165"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="0La-sT-wTP">
-                                                <rect key="frame" x="10" y="10" width="270" height="15"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Welcome to WordQuiz" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="270" translatesAutoresizingMaskIntoConstraints="NO" id="0La-sT-wTP">
+                                                <rect key="frame" x="10" y="10" width="270" height="17"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="15" id="3cP-DF-YnO"/>
+                                                    <constraint firstAttribute="width" constant="270" id="KBG-ge-VDz"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22e-iT-r8f">
-                                                <rect key="frame" x="10" y="26" width="270" height="1"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3G-bB-gRI">
+                                                <rect key="frame" x="10" y="30" width="270" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </view>
-                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uvG-s0-Ig5">
-                                                <rect key="frame" x="10" y="40" width="270" height="120"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="120" id="nqO-Vl-vr5"/>
+                                                    <constraint firstAttribute="height" constant="1" id="c2Z-fT-xJm"/>
                                                 </constraints>
+                                            </view>
+                                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="250" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Select a vocabulary." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uvG-s0-Ig5">
+                                                <rect key="frame" x="10" y="42" width="270" height="118"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="22e-iT-r8f" firstAttribute="trailing" secondItem="0La-sT-wTP" secondAttribute="trailing" id="KWe-Vv-5jd"/>
-                                            <constraint firstItem="22e-iT-r8f" firstAttribute="top" secondItem="0La-sT-wTP" secondAttribute="bottom" constant="1" id="Lvs-aC-S8P"/>
+                                            <constraint firstItem="a3G-bB-gRI" firstAttribute="leading" secondItem="0La-sT-wTP" secondAttribute="leading" id="7y6-Uy-z1W"/>
                                             <constraint firstAttribute="bottom" secondItem="uvG-s0-Ig5" secondAttribute="bottom" constant="5" id="NzK-Aw-gsc"/>
                                             <constraint firstItem="0La-sT-wTP" firstAttribute="top" secondItem="CXK-kS-8Gd" secondAttribute="top" constant="10" id="eIz-rn-0Go"/>
-                                            <constraint firstItem="22e-iT-r8f" firstAttribute="leading" secondItem="uvG-s0-Ig5" secondAttribute="leading" id="fbH-YI-R4p"/>
+                                            <constraint firstItem="uvG-s0-Ig5" firstAttribute="centerX" secondItem="CXK-kS-8Gd" secondAttribute="centerX" id="ga7-dp-mGY"/>
+                                            <constraint firstItem="a3G-bB-gRI" firstAttribute="width" secondItem="0La-sT-wTP" secondAttribute="width" id="gg4-OV-eUx"/>
                                             <constraint firstItem="0La-sT-wTP" firstAttribute="leading" secondItem="CXK-kS-8Gd" secondAttribute="leading" constant="10" id="j0L-sf-Kqf"/>
-                                            <constraint firstItem="22e-iT-r8f" firstAttribute="trailing" secondItem="uvG-s0-Ig5" secondAttribute="trailing" id="nZx-mX-v9m"/>
-                                            <constraint firstItem="22e-iT-r8f" firstAttribute="leading" secondItem="0La-sT-wTP" secondAttribute="leading" id="qEd-jj-A7B"/>
-                                            <constraint firstItem="uvG-s0-Ig5" firstAttribute="top" secondItem="22e-iT-r8f" secondAttribute="bottom" constant="13" id="tgm-gM-8mH"/>
-                                            <constraint firstItem="22e-iT-r8f" firstAttribute="centerX" secondItem="CXK-kS-8Gd" secondAttribute="centerX" id="xVk-hE-EPn"/>
+                                            <constraint firstItem="uvG-s0-Ig5" firstAttribute="top" secondItem="a3G-bB-gRI" secondAttribute="bottom" constant="11" id="lIl-Xd-c4d"/>
+                                            <constraint firstItem="a3G-bB-gRI" firstAttribute="top" secondItem="0La-sT-wTP" secondAttribute="bottom" constant="3" id="pbd-Er-EP1"/>
+                                            <constraint firstItem="uvG-s0-Ig5" firstAttribute="width" secondItem="0La-sT-wTP" secondAttribute="width" id="rg5-Ij-jVn"/>
                                         </constraints>
                                     </view>
                                 </subviews>
