@@ -34,6 +34,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQUtils.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+PHColor.h"
+#import "UIFont+WQDynamic.h"
 
 @implementation QAViewController
 
@@ -48,6 +49,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                                                options:NSKeyValueObservingOptionNew
                                                context:NULL];
 
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIContentSizeCategoryDidChangeNotification
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:^(NSNotification *notification) {
+                                                      [self applyFonts];
+                                                  }];
+    
+    [self applyFonts];
 	self.answerIdentifierLabel.text = @"";
 	self.answerTextField.hidden = YES;
 	
@@ -430,6 +439,19 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         [self.correctCountButton setScore:[self.quiz correctCount] of:[self.quiz questionCount]];
         [self.errorCountButton setScore:[self.quiz errorCount] of:[self.quiz questionCount]];
     }
+}
+
+- (void)applyFonts {
+	self.questionIdentifierLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleHeadline];
+	self.questionLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleBody];
+    self.answerIdentifierLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleHeadline];
+    self.answerTextField.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleBody];
+    self.previousQuestionHeaderLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleHeadline];
+    self.previousQuestionLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleBody];
+    self.yourAnswerHeaderLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleHeadline];
+    self.yourAnswerLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleBody];
+    self.correctAnswerHeaderLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleHeadline];
+    self.correctAnswerLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleBody];
 }
 
 @end
