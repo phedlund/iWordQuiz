@@ -63,7 +63,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, strong) IBOutlet UILabel *yourAnswerHeaderLabel;
 @property (nonatomic, strong) IBOutlet UILabel *yourAnswerLabel;
 @property (nonatomic, strong) IBOutlet UILabel *correctAnswerHeaderLabel;
-@property (nonatomic, strong) IBOutlet UILabel *correactAnswerLabel;
+@property (nonatomic, strong) IBOutlet UILabel *correctAnswerLabel;
 
 @property (nonatomic, strong) IBOutlet UIView * questionLine;
 @property (nonatomic, strong) IBOutlet UIView * answerLine;

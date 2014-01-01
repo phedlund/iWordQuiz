@@ -79,7 +79,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	self.yourAnswerHeaderLabel.text = @"";
 	self.yourAnswerLabel.text = @"";
 	self.correctAnswerHeaderLabel.text = @"";
-	self.correactAnswerLabel.text = @"";
+	self.correctAnswerLabel.text = @"";
 	self.previousQuestionLine.hidden =YES;
 	self.yourAnswerLine.hidden = YES;
 	self.correctAnswerLine.hidden = YES;
@@ -184,7 +184,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	self.yourAnswerHeaderLabel.text = @"";
 	self.yourAnswerLabel.text = @"";
 	self.correctAnswerHeaderLabel.text = @"";
-	self.correactAnswerLabel.text = @"";
+	self.correctAnswerLabel.text = @"";
 	self.previousQuestionLine.hidden =YES;
 	self.yourAnswerLine.hidden = YES;
 	self.correctAnswerLine.hidden = YES;
@@ -226,12 +226,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	if (fIsCorrect)	{
 		self.correctAnswerHeaderLabel.text = @"";
-		self.correactAnswerLabel.text = @"";
+		self.correctAnswerLabel.text = @"";
 		self.correctAnswerLine.hidden = YES;
 		[self.quiz countIncrement:1];
 	} else {
 		self.correctAnswerHeaderLabel.text = @"Correct Answer";
-		self.correactAnswerLabel.text = [self.quiz answer];
+		self.correctAnswerLabel.text = [self.quiz answer];
 		self.correctAnswerLine.hidden = NO;
 		[self.quiz countIncrement:-1];
 	}
@@ -440,7 +440,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     self.yourAnswerHeaderLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleHeadline];
     self.yourAnswerLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleBody];
     self.correctAnswerHeaderLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleHeadline];
-    self.correactAnswerLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleBody];
+    self.correctAnswerLabel.font = [UIFont preferredWQFontForTextStyle:UIFontTextStyleBody];
 }
 
 @end
