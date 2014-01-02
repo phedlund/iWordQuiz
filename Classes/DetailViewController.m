@@ -239,8 +239,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	[self activateTab:1];
 }
 
-
-
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.selectedViewController willRotateToInterfaceOrientation:[[UIDevice currentDevice] orientation ] duration:0];
@@ -248,6 +246,24 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         [self configureView];
     }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [self performSelector:@selector(doBounce) withObject:nil afterDelay:0.4];
+    }
+}
+
+- (void)doBounce {
+    NSInteger bounceCount = [[NSUserDefaults standardUserDefaults] integerForKey:@"BounceCount"];
+    if (bounceCount < 3) {
+        self.dynamicsDrawerViewController.bounceMagnitude = 500.0f;
+        self.dynamicsDrawerViewController.bounceElasticity = 0.5f;
+        [self.dynamicsDrawerViewController bouncePaneOpenInDirection:MSDynamicsDrawerDirectionLeft];
+    }
+    bounceCount = bounceCount + 1;
+    [[NSUserDefaults standardUserDefaults] setInteger:bounceCount forKey:@"BounceCount"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)viewDidUnload {
