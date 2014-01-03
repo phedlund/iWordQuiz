@@ -18,6 +18,20 @@
 		D01DC97B121F5981006671A1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC979121F5981006671A1 /* HomeViewController.m */; };
 		D0254D02186F6B970032566D /* UIFont+WQDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D01186F6B970032566D /* UIFont+WQDynamic.m */; };
 		D0254D03186F6F1B0032566D /* UIFont+WQDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D01186F6B970032566D /* UIFont+WQDynamic.m */; };
+		D0254D5B18777D3A0032566D /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D4E18777D3A0032566D /* DDXMLElementAdditions.m */; };
+		D0254D5C18777D3A0032566D /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D4E18777D3A0032566D /* DDXMLElementAdditions.m */; };
+		D0254D5D18777D3A0032566D /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5118777D3A0032566D /* NSString+DDXML.m */; };
+		D0254D5E18777D3A0032566D /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5118777D3A0032566D /* NSString+DDXML.m */; };
+		D0254D5F18777D3A0032566D /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5418777D3A0032566D /* DDXMLDocument.m */; };
+		D0254D6018777D3A0032566D /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5418777D3A0032566D /* DDXMLDocument.m */; };
+		D0254D6118777D3A0032566D /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5618777D3A0032566D /* DDXMLElement.m */; };
+		D0254D6218777D3A0032566D /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5618777D3A0032566D /* DDXMLElement.m */; };
+		D0254D6318777D3A0032566D /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5818777D3A0032566D /* DDXMLNode.m */; };
+		D0254D6418777D3A0032566D /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5818777D3A0032566D /* DDXMLNode.m */; };
+		D0254D6918777DC20032566D /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D6618777DC20032566D /* CHDropboxSync.m */; };
+		D0254D6A18777DC20032566D /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D6618777DC20032566D /* CHDropboxSync.m */; };
+		D0254D6B18777DC20032566D /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D6818777DC20032566D /* SyncTask.m */; };
+		D0254D6C18777DC20032566D /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D6818777DC20032566D /* SyncTask.m */; };
 		D02888C4186927F40094E582 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D02888C3186927F40094E582 /* Settings.bundle */; };
 		D02888C5186927F40094E582 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D02888C3186927F40094E582 /* Settings.bundle */; };
 		D03A5B851536422F00BEA27B /* document-icon-22x29.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B831536422F00BEA27B /* document-icon-22x29.png */; };
@@ -148,14 +162,7 @@
 		D06A093D185D421E00A0A158 /* UIImage+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */; };
 		D06A093E185D421E00A0A158 /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
 		D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CE841B154737C10097D67A /* WQNewFileViewController.m */; };
-		D06A0941185D421E00A0A158 /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074F15E7059800811921 /* CHDropboxSync.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0942185D421E00A0A158 /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075115E7059800811921 /* SyncTask.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0946185D421E00A0A158 /* WYStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08D5185AAB7900A0A158 /* WYStoryboardPopoverSegue.m */; };
-		D06A0948185D421E00A0A158 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076715E7EAAF00811921 /* DDXMLElementAdditions.m */; };
-		D06A0949185D421E00A0A158 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076A15E7EAAF00811921 /* NSString+DDXML.m */; };
-		D06A094A185D421E00A0A158 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076D15E7EAAF00811921 /* DDXMLDocument.m */; };
-		D06A094B185D421E00A0A158 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076F15E7EAAF00811921 /* DDXMLElement.m */; };
-		D06A094C185D421E00A0A158 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC077115E7EAAF00811921 /* DDXMLNode.m */; };
 		D06A094D185D421E00A0A158 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC077A15E7ED7E00811921 /* Reachability.m */; };
 		D06A094E185D421E00A0A158 /* WQQuizItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBB7F016A9FD0000FDAC8C /* WQQuizItem.m */; };
 		D06A094F185D421E00A0A158 /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */; };
@@ -193,13 +200,6 @@
 		D0E8A23B18528A61005F8CAF /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */; };
 		D0E8A2401853EB4F005F8CAF /* UIColor+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */; };
 		D0ED46B1161A6A6300BF31BD /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */; };
-		D0FC075215E7059800811921 /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074F15E7059800811921 /* CHDropboxSync.m */; };
-		D0FC075315E7059800811921 /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075115E7059800811921 /* SyncTask.m */; };
-		D0FC077415E7EAAF00811921 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076715E7EAAF00811921 /* DDXMLElementAdditions.m */; };
-		D0FC077515E7EAAF00811921 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076A15E7EAAF00811921 /* NSString+DDXML.m */; };
-		D0FC077615E7EAAF00811921 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076D15E7EAAF00811921 /* DDXMLDocument.m */; };
-		D0FC077715E7EAAF00811921 /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076F15E7EAAF00811921 /* DDXMLElement.m */; };
-		D0FC077815E7EAAF00811921 /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC077115E7EAAF00811921 /* DDXMLNode.m */; };
 		D0FC077B15E7ED7E00811921 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC077A15E7ED7E00811921 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
@@ -229,6 +229,22 @@
 		D01DC979121F5981006671A1 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		D0254D00186F6B970032566D /* UIFont+WQDynamic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+WQDynamic.h"; path = "iWordQuiz/UIFont+WQDynamic.h"; sourceTree = SOURCE_ROOT; };
 		D0254D01186F6B970032566D /* UIFont+WQDynamic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+WQDynamic.m"; path = "iWordQuiz/UIFont+WQDynamic.m"; sourceTree = SOURCE_ROOT; };
+		D0254D4D18777D3A0032566D /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
+		D0254D4E18777D3A0032566D /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
+		D0254D5018777D3A0032566D /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
+		D0254D5118777D3A0032566D /* NSString+DDXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DDXML.m"; sourceTree = "<group>"; };
+		D0254D5218777D3A0032566D /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
+		D0254D5318777D3A0032566D /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
+		D0254D5418777D3A0032566D /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
+		D0254D5518777D3A0032566D /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
+		D0254D5618777D3A0032566D /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
+		D0254D5718777D3A0032566D /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
+		D0254D5818777D3A0032566D /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
+		D0254D5A18777D3A0032566D /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
+		D0254D6518777DC20032566D /* CHDropboxSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHDropboxSync.h; path = CHDropboxSync/Example/ServiceRecord/MySyncer/CHDropboxSync.h; sourceTree = SOURCE_ROOT; };
+		D0254D6618777DC20032566D /* CHDropboxSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHDropboxSync.m; path = CHDropboxSync/Example/ServiceRecord/MySyncer/CHDropboxSync.m; sourceTree = SOURCE_ROOT; };
+		D0254D6718777DC20032566D /* SyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncTask.h; path = CHDropboxSync/Example/ServiceRecord/MySyncer/SyncTask.h; sourceTree = SOURCE_ROOT; };
+		D0254D6818777DC20032566D /* SyncTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncTask.m; path = CHDropboxSync/Example/ServiceRecord/MySyncer/SyncTask.m; sourceTree = SOURCE_ROOT; };
 		D02888C3186927F40094E582 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = iWordQuiz/Settings.bundle; sourceTree = "<group>"; };
 		D03A5B831536422F00BEA27B /* document-icon-22x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-22x29.png"; path = "Resources/document-icon-22x29.png"; sourceTree = "<group>"; };
 		D03A5B841536422F00BEA27B /* document-icon-44x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-44x58.png"; path = "Resources/document-icon-44x58.png"; sourceTree = "<group>"; };
@@ -331,24 +347,8 @@
 		D0E8A23E1853EB4F005F8CAF /* UIColor+PHColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PHColor.h"; path = "../iWordQuiz/UIColor+PHColor.h"; sourceTree = "<group>"; };
 		D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PHColor.m"; path = "../iWordQuiz/UIColor+PHColor.m"; sourceTree = "<group>"; };
 		D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
-		D0FC074E15E7059800811921 /* CHDropboxSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHDropboxSync.h; path = Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/CHDropboxSync.h; sourceTree = SOURCE_ROOT; };
-		D0FC074F15E7059800811921 /* CHDropboxSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHDropboxSync.m; path = Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/CHDropboxSync.m; sourceTree = SOURCE_ROOT; };
-		D0FC075015E7059800811921 /* SyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncTask.h; path = Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/SyncTask.h; sourceTree = SOURCE_ROOT; };
-		D0FC075115E7059800811921 /* SyncTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncTask.m; path = Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/SyncTask.m; sourceTree = SOURCE_ROOT; };
-		D0FC076615E7EAAF00811921 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
-		D0FC076715E7EAAF00811921 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
-		D0FC076915E7EAAF00811921 /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
-		D0FC076A15E7EAAF00811921 /* NSString+DDXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DDXML.m"; sourceTree = "<group>"; };
-		D0FC076B15E7EAAF00811921 /* DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXML.h; sourceTree = "<group>"; };
-		D0FC076C15E7EAAF00811921 /* DDXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLDocument.h; sourceTree = "<group>"; };
-		D0FC076D15E7EAAF00811921 /* DDXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLDocument.m; sourceTree = "<group>"; };
-		D0FC076E15E7EAAF00811921 /* DDXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElement.h; sourceTree = "<group>"; };
-		D0FC076F15E7EAAF00811921 /* DDXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElement.m; sourceTree = "<group>"; };
-		D0FC077015E7EAAF00811921 /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
-		D0FC077115E7EAAF00811921 /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
-		D0FC077315E7EAAF00811921 /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
-		D0FC077915E7ED7D00811921 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Reachability/Reachability.h; sourceTree = "<group>"; };
-		D0FC077A15E7ED7E00811921 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Reachability/Reachability.m; sourceTree = "<group>"; };
+		D0FC077915E7ED7D00811921 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D0FC077A15E7ED7E00811921 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -388,10 +388,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				D0FC077C15E7ED9300811921 /* Reachability */,
-				D0FC074D15E703A600811921 /* CHDropboxSync */,
-				D0549F51151BC37900BDE78C /* MDSpreadView */,
-				D0FC076415E7EAAF00811921 /* KissXML */,
 				1D3623240D0F684500981E51 /* WordQuizAppDelegate.h */,
 				1D3623250D0F684500981E51 /* WordQuizAppDelegate.m */,
 				28042007108E984D000629CD /* RootViewController.h */,
@@ -448,6 +444,10 @@
 			children = (
 				D0713DB314DE15820053121A /* WordQuiz.entitlements */,
 				D0C791D814F6F1AE000AFF00 /* DBDefines.h */,
+				D0254D4B18777D3A0032566D /* KissXML */,
+				D0549F51151BC37900BDE78C /* MDSpreadView */,
+				D0FC074D15E703A600811921 /* CHDropboxSync */,
+				D0FC077C15E7ED9300811921 /* Reachability */,
 				D0E8A23418528A61005F8CAF /* MSDynamicsDrawerViewController */,
 				D06A08D1185AAB7900A0A158 /* WYPopoverController */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -500,6 +500,50 @@
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0254D4B18777D3A0032566D /* KissXML */ = {
+			isa = PBXGroup;
+			children = (
+				D0254D4C18777D3A0032566D /* Additions */,
+				D0254D4F18777D3A0032566D /* Categories */,
+				D0254D5218777D3A0032566D /* DDXML.h */,
+				D0254D5318777D3A0032566D /* DDXMLDocument.h */,
+				D0254D5418777D3A0032566D /* DDXMLDocument.m */,
+				D0254D5518777D3A0032566D /* DDXMLElement.h */,
+				D0254D5618777D3A0032566D /* DDXMLElement.m */,
+				D0254D5718777D3A0032566D /* DDXMLNode.h */,
+				D0254D5818777D3A0032566D /* DDXMLNode.m */,
+				D0254D5918777D3A0032566D /* Private */,
+			);
+			name = KissXML;
+			path = KissXML/KissXML;
+			sourceTree = "<group>";
+		};
+		D0254D4C18777D3A0032566D /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				D0254D4D18777D3A0032566D /* DDXMLElementAdditions.h */,
+				D0254D4E18777D3A0032566D /* DDXMLElementAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		D0254D4F18777D3A0032566D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D0254D5018777D3A0032566D /* NSString+DDXML.h */,
+				D0254D5118777D3A0032566D /* NSString+DDXML.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		D0254D5918777D3A0032566D /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				D0254D5A18777D3A0032566D /* DDXMLPrivate.h */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 		D0549F51151BC37900BDE78C /* MDSpreadView */ = {
@@ -623,56 +667,13 @@
 		D0FC074D15E703A600811921 /* CHDropboxSync */ = {
 			isa = PBXGroup;
 			children = (
-				D0FC074E15E7059800811921 /* CHDropboxSync.h */,
-				D0FC074F15E7059800811921 /* CHDropboxSync.m */,
-				D0FC075015E7059800811921 /* SyncTask.h */,
-				D0FC075115E7059800811921 /* SyncTask.m */,
+				D0254D6518777DC20032566D /* CHDropboxSync.h */,
+				D0254D6618777DC20032566D /* CHDropboxSync.m */,
+				D0254D6718777DC20032566D /* SyncTask.h */,
+				D0254D6818777DC20032566D /* SyncTask.m */,
 			);
 			name = CHDropboxSync;
-			sourceTree = "<group>";
-		};
-		D0FC076415E7EAAF00811921 /* KissXML */ = {
-			isa = PBXGroup;
-			children = (
-				D0FC076515E7EAAF00811921 /* Additions */,
-				D0FC076815E7EAAF00811921 /* Categories */,
-				D0FC076B15E7EAAF00811921 /* DDXML.h */,
-				D0FC076C15E7EAAF00811921 /* DDXMLDocument.h */,
-				D0FC076D15E7EAAF00811921 /* DDXMLDocument.m */,
-				D0FC076E15E7EAAF00811921 /* DDXMLElement.h */,
-				D0FC076F15E7EAAF00811921 /* DDXMLElement.m */,
-				D0FC077015E7EAAF00811921 /* DDXMLNode.h */,
-				D0FC077115E7EAAF00811921 /* DDXMLNode.m */,
-				D0FC077215E7EAAF00811921 /* Private */,
-			);
-			name = KissXML;
-			path = KissXML/KissXML;
-			sourceTree = "<group>";
-		};
-		D0FC076515E7EAAF00811921 /* Additions */ = {
-			isa = PBXGroup;
-			children = (
-				D0FC076615E7EAAF00811921 /* DDXMLElementAdditions.h */,
-				D0FC076715E7EAAF00811921 /* DDXMLElementAdditions.m */,
-			);
-			path = Additions;
-			sourceTree = "<group>";
-		};
-		D0FC076815E7EAAF00811921 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				D0FC076915E7EAAF00811921 /* NSString+DDXML.h */,
-				D0FC076A15E7EAAF00811921 /* NSString+DDXML.m */,
-			);
-			path = Categories;
-			sourceTree = "<group>";
-		};
-		D0FC077215E7EAAF00811921 /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				D0FC077315E7EAAF00811921 /* DDXMLPrivate.h */,
-			);
-			path = Private;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		D0FC077C15E7ED9300811921 /* Reachability */ = {
@@ -681,7 +682,7 @@
 				D0FC077915E7ED7D00811921 /* Reachability.h */,
 				D0FC077A15E7ED7E00811921 /* Reachability.m */,
 			);
-			name = Reachability;
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -906,14 +907,20 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* WordQuizAppDelegate.m in Sources */,
 				2804200B108E984D000629CD /* RootViewController.m in Sources */,
+				D0254D5D18777D3A0032566D /* NSString+DDXML.m in Sources */,
+				D0254D6118777D3A0032566D /* DDXMLElement.m in Sources */,
 				2804200C108E984D000629CD /* DetailViewController.m in Sources */,
+				D0254D6B18777DC20032566D /* SyncTask.m in Sources */,
+				D0254D5B18777D3A0032566D /* DDXMLElementAdditions.m in Sources */,
 				D01DC970121F57F2006671A1 /* FCViewController.m in Sources */,
+				D0254D6918777DC20032566D /* CHDropboxSync.m in Sources */,
 				D01DC971121F57F2006671A1 /* MCViewController.m in Sources */,
 				D01DC972121F57F2006671A1 /* QAViewController.m in Sources */,
 				D01DC97B121F5981006671A1 /* HomeViewController.m in Sources */,
 				D04CF951122F371300B446E8 /* WQQuiz.m in Sources */,
 				D0130A3E125AB58C0085482E /* ModePickerController.m in Sources */,
 				D0E8A2401853EB4F005F8CAF /* UIColor+PHColor.m in Sources */,
+				D0254D5F18777D3A0032566D /* DDXMLDocument.m in Sources */,
 				D0549F91151BC37900BDE78C /* MDSpreadView.m in Sources */,
 				D0549F93151BC37900BDE78C /* MDSpreadViewCell.m in Sources */,
 				D0549F94151BC37900BDE78C /* MDSpreadViewCellBackground.m in Sources */,
@@ -929,14 +936,8 @@
 				D06A08D0185AA33900A0A158 /* UIImage+PHColor.m in Sources */,
 				D0D11E0E1541CCE800B8ECBD /* WQEditViewController.m in Sources */,
 				D0CE841C154737C10097D67A /* WQNewFileViewController.m in Sources */,
-				D0FC075215E7059800811921 /* CHDropboxSync.m in Sources */,
-				D0FC075315E7059800811921 /* SyncTask.m in Sources */,
+				D0254D6318777D3A0032566D /* DDXMLNode.m in Sources */,
 				D06A08D7185AAB7900A0A158 /* WYStoryboardPopoverSegue.m in Sources */,
-				D0FC077415E7EAAF00811921 /* DDXMLElementAdditions.m in Sources */,
-				D0FC077515E7EAAF00811921 /* NSString+DDXML.m in Sources */,
-				D0FC077615E7EAAF00811921 /* DDXMLDocument.m in Sources */,
-				D0FC077715E7EAAF00811921 /* DDXMLElement.m in Sources */,
-				D0FC077815E7EAAF00811921 /* DDXMLNode.m in Sources */,
 				D0FC077B15E7ED7E00811921 /* Reachability.m in Sources */,
 				D0CBB7F116A9FD0000FDAC8C /* WQQuizItem.m in Sources */,
 				D0E8A23B18528A61005F8CAF /* MSDynamicsDrawerViewController.m in Sources */,
@@ -952,14 +953,20 @@
 				D06A0924185D421E00A0A158 /* main.m in Sources */,
 				D06A0925185D421E00A0A158 /* WordQuizAppDelegate.m in Sources */,
 				D06A0926185D421E00A0A158 /* RootViewController.m in Sources */,
+				D0254D5E18777D3A0032566D /* NSString+DDXML.m in Sources */,
+				D0254D6218777D3A0032566D /* DDXMLElement.m in Sources */,
 				D06A0927185D421E00A0A158 /* DetailViewController.m in Sources */,
+				D0254D6C18777DC20032566D /* SyncTask.m in Sources */,
+				D0254D5C18777D3A0032566D /* DDXMLElementAdditions.m in Sources */,
 				D06A0928185D421E00A0A158 /* FCViewController.m in Sources */,
+				D0254D6A18777DC20032566D /* CHDropboxSync.m in Sources */,
 				D06A0929185D421E00A0A158 /* MCViewController.m in Sources */,
 				D06A092A185D421E00A0A158 /* QAViewController.m in Sources */,
 				D06A092B185D421E00A0A158 /* HomeViewController.m in Sources */,
 				D06A092C185D421E00A0A158 /* WQQuiz.m in Sources */,
 				D06A092D185D421E00A0A158 /* ModePickerController.m in Sources */,
 				D06A092F185D421E00A0A158 /* UIColor+PHColor.m in Sources */,
+				D0254D6018777D3A0032566D /* DDXMLDocument.m in Sources */,
 				D06A0930185D421E00A0A158 /* MDSpreadView.m in Sources */,
 				D06A0931185D421E00A0A158 /* MDSpreadViewCell.m in Sources */,
 				D06A0932185D421E00A0A158 /* MDSpreadViewCellBackground.m in Sources */,
@@ -975,14 +982,8 @@
 				D06A093D185D421E00A0A158 /* UIImage+PHColor.m in Sources */,
 				D06A093E185D421E00A0A158 /* WQEditViewController.m in Sources */,
 				D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */,
-				D06A0941185D421E00A0A158 /* CHDropboxSync.m in Sources */,
-				D06A0942185D421E00A0A158 /* SyncTask.m in Sources */,
+				D0254D6418777D3A0032566D /* DDXMLNode.m in Sources */,
 				D06A0946185D421E00A0A158 /* WYStoryboardPopoverSegue.m in Sources */,
-				D06A0948185D421E00A0A158 /* DDXMLElementAdditions.m in Sources */,
-				D06A0949185D421E00A0A158 /* NSString+DDXML.m in Sources */,
-				D06A094A185D421E00A0A158 /* DDXMLDocument.m in Sources */,
-				D06A094B185D421E00A0A158 /* DDXMLElement.m in Sources */,
-				D06A094C185D421E00A0A158 /* DDXMLNode.m in Sources */,
 				D06A094D185D421E00A0A158 /* Reachability.m in Sources */,
 				D06A094E185D421E00A0A158 /* WQQuizItem.m in Sources */,
 				D06A094F185D421E00A0A158 /* MSDynamicsDrawerViewController.m in Sources */,
