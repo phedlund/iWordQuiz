@@ -150,11 +150,7 @@
 		D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CE841B154737C10097D67A /* WQNewFileViewController.m */; };
 		D06A0941185D421E00A0A158 /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074F15E7059800811921 /* CHDropboxSync.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0942185D421E00A0A158 /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075115E7059800811921 /* SyncTask.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0943185D421E00A0A158 /* ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075915E7100600811921 /* ConciseKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0944185D421E00A0A158 /* NSArray+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075B15E7100600811921 /* NSArray+ConciseKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0945185D421E00A0A158 /* NSDictionary+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075D15E7100600811921 /* NSDictionary+ConciseKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0946185D421E00A0A158 /* WYStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08D5185AAB7900A0A158 /* WYStoryboardPopoverSegue.m */; };
-		D06A0947185D421E00A0A158 /* NSString+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075F15E7100600811921 /* NSString+ConciseKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0948185D421E00A0A158 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076715E7EAAF00811921 /* DDXMLElementAdditions.m */; };
 		D06A0949185D421E00A0A158 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076A15E7EAAF00811921 /* NSString+DDXML.m */; };
 		D06A094A185D421E00A0A158 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076D15E7EAAF00811921 /* DDXMLDocument.m */; };
@@ -197,12 +193,8 @@
 		D0E8A23B18528A61005F8CAF /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */; };
 		D0E8A2401853EB4F005F8CAF /* UIColor+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */; };
 		D0ED46B1161A6A6300BF31BD /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */; };
-		D0FC075215E7059800811921 /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074F15E7059800811921 /* CHDropboxSync.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D0FC075315E7059800811921 /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075115E7059800811921 /* SyncTask.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D0FC076015E7100600811921 /* ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075915E7100600811921 /* ConciseKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D0FC076115E7100600811921 /* NSArray+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075B15E7100600811921 /* NSArray+ConciseKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D0FC076215E7100600811921 /* NSDictionary+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075D15E7100600811921 /* NSDictionary+ConciseKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D0FC076315E7100600811921 /* NSString+ConciseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075F15E7100600811921 /* NSString+ConciseKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D0FC075215E7059800811921 /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC074F15E7059800811921 /* CHDropboxSync.m */; };
+		D0FC075315E7059800811921 /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC075115E7059800811921 /* SyncTask.m */; };
 		D0FC077415E7EAAF00811921 /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076715E7EAAF00811921 /* DDXMLElementAdditions.m */; };
 		D0FC077515E7EAAF00811921 /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076A15E7EAAF00811921 /* NSString+DDXML.m */; };
 		D0FC077615E7EAAF00811921 /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC076D15E7EAAF00811921 /* DDXMLDocument.m */; };
@@ -343,17 +335,6 @@
 		D0FC074F15E7059800811921 /* CHDropboxSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHDropboxSync.m; path = Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/CHDropboxSync.m; sourceTree = SOURCE_ROOT; };
 		D0FC075015E7059800811921 /* SyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncTask.h; path = Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/SyncTask.h; sourceTree = SOURCE_ROOT; };
 		D0FC075115E7059800811921 /* SyncTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncTask.m; path = Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/SyncTask.m; sourceTree = SOURCE_ROOT; };
-		D0FC075515E7100500811921 /* CKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKAdditions.h; sourceTree = "<group>"; };
-		D0FC075615E7100500811921 /* CKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKMacros.h; sourceTree = "<group>"; };
-		D0FC075715E7100500811921 /* CKSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKSingleton.h; sourceTree = "<group>"; };
-		D0FC075815E7100500811921 /* ConciseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConciseKit.h; sourceTree = "<group>"; };
-		D0FC075915E7100600811921 /* ConciseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConciseKit.m; sourceTree = "<group>"; };
-		D0FC075A15E7100600811921 /* NSArray+ConciseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ConciseKit.h"; sourceTree = "<group>"; };
-		D0FC075B15E7100600811921 /* NSArray+ConciseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ConciseKit.m"; sourceTree = "<group>"; };
-		D0FC075C15E7100600811921 /* NSDictionary+ConciseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ConciseKit.h"; sourceTree = "<group>"; };
-		D0FC075D15E7100600811921 /* NSDictionary+ConciseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ConciseKit.m"; sourceTree = "<group>"; };
-		D0FC075E15E7100600811921 /* NSString+ConciseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ConciseKit.h"; sourceTree = "<group>"; };
-		D0FC075F15E7100600811921 /* NSString+ConciseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ConciseKit.m"; sourceTree = "<group>"; };
 		D0FC076615E7EAAF00811921 /* DDXMLElementAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLElementAdditions.h; sourceTree = "<group>"; };
 		D0FC076715E7EAAF00811921 /* DDXMLElementAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLElementAdditions.m; sourceTree = "<group>"; };
 		D0FC076915E7EAAF00811921 /* NSString+DDXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DDXML.h"; sourceTree = "<group>"; };
@@ -409,7 +390,6 @@
 			children = (
 				D0FC077C15E7ED9300811921 /* Reachability */,
 				D0FC074D15E703A600811921 /* CHDropboxSync */,
-				D0FC075415E7100500811921 /* ConciseKit */,
 				D0549F51151BC37900BDE78C /* MDSpreadView */,
 				D0FC076415E7EAAF00811921 /* KissXML */,
 				1D3623240D0F684500981E51 /* WordQuizAppDelegate.h */,
@@ -649,25 +629,6 @@
 				D0FC075115E7059800811921 /* SyncTask.m */,
 			);
 			name = CHDropboxSync;
-			sourceTree = "<group>";
-		};
-		D0FC075415E7100500811921 /* ConciseKit */ = {
-			isa = PBXGroup;
-			children = (
-				D0FC075515E7100500811921 /* CKAdditions.h */,
-				D0FC075615E7100500811921 /* CKMacros.h */,
-				D0FC075715E7100500811921 /* CKSingleton.h */,
-				D0FC075815E7100500811921 /* ConciseKit.h */,
-				D0FC075915E7100600811921 /* ConciseKit.m */,
-				D0FC075A15E7100600811921 /* NSArray+ConciseKit.h */,
-				D0FC075B15E7100600811921 /* NSArray+ConciseKit.m */,
-				D0FC075C15E7100600811921 /* NSDictionary+ConciseKit.h */,
-				D0FC075D15E7100600811921 /* NSDictionary+ConciseKit.m */,
-				D0FC075E15E7100600811921 /* NSString+ConciseKit.h */,
-				D0FC075F15E7100600811921 /* NSString+ConciseKit.m */,
-			);
-			name = ConciseKit;
-			path = ConciseKit/src;
 			sourceTree = "<group>";
 		};
 		D0FC076415E7EAAF00811921 /* KissXML */ = {
@@ -970,11 +931,7 @@
 				D0CE841C154737C10097D67A /* WQNewFileViewController.m in Sources */,
 				D0FC075215E7059800811921 /* CHDropboxSync.m in Sources */,
 				D0FC075315E7059800811921 /* SyncTask.m in Sources */,
-				D0FC076015E7100600811921 /* ConciseKit.m in Sources */,
-				D0FC076115E7100600811921 /* NSArray+ConciseKit.m in Sources */,
-				D0FC076215E7100600811921 /* NSDictionary+ConciseKit.m in Sources */,
 				D06A08D7185AAB7900A0A158 /* WYStoryboardPopoverSegue.m in Sources */,
-				D0FC076315E7100600811921 /* NSString+ConciseKit.m in Sources */,
 				D0FC077415E7EAAF00811921 /* DDXMLElementAdditions.m in Sources */,
 				D0FC077515E7EAAF00811921 /* NSString+DDXML.m in Sources */,
 				D0FC077615E7EAAF00811921 /* DDXMLDocument.m in Sources */,
@@ -1020,11 +977,7 @@
 				D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */,
 				D06A0941185D421E00A0A158 /* CHDropboxSync.m in Sources */,
 				D06A0942185D421E00A0A158 /* SyncTask.m in Sources */,
-				D06A0943185D421E00A0A158 /* ConciseKit.m in Sources */,
-				D06A0944185D421E00A0A158 /* NSArray+ConciseKit.m in Sources */,
-				D06A0945185D421E00A0A158 /* NSDictionary+ConciseKit.m in Sources */,
 				D06A0946185D421E00A0A158 /* WYStoryboardPopoverSegue.m in Sources */,
-				D06A0947185D421E00A0A158 /* NSString+ConciseKit.m in Sources */,
 				D06A0948185D421E00A0A158 /* DDXMLElementAdditions.m in Sources */,
 				D06A0949185D421E00A0A158 /* NSString+DDXML.m in Sources */,
 				D06A094A185D421E00A0A158 /* DDXMLDocument.m in Sources */,
