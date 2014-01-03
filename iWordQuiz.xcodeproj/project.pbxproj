@@ -385,7 +385,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
+		080E96DDFE201D6D7F000001 /* iWordQuiz */ = {
 			isa = PBXGroup;
 			children = (
 				1D3623240D0F684500981E51 /* WordQuizAppDelegate.h */,
@@ -427,7 +427,7 @@
 				D0254D00186F6B970032566D /* UIFont+WQDynamic.h */,
 				D0254D01186F6B970032566D /* UIFont+WQDynamic.m */,
 			);
-			path = Classes;
+			path = iWordQuiz;
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -450,7 +450,7 @@
 				D0FC077C15E7ED9300811921 /* Reachability */,
 				D0E8A23418528A61005F8CAF /* MSDynamicsDrawerViewController */,
 				D06A08D1185AAB7900A0A158 /* WYPopoverController */,
-				080E96DDFE201D6D7F000001 /* Classes */,
+				080E96DDFE201D6D7F000001 /* iWordQuiz */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
