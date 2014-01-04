@@ -55,8 +55,8 @@
 
 - (void)awakeFromNib {
     _newFileName = nil;
-    self.view.backgroundColor = [UIColor backgroundColor];
-    self.navigationController.navigationBar.tintColor = [UIColor iconColor];
+    self.view.backgroundColor = [UIColor phBackgroundColor];
+    self.navigationController.navigationBar.tintColor = [UIColor phIconColor];
     
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor clearColor];
@@ -65,7 +65,7 @@
     
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor iconColor], NSForegroundColorAttributeName,
+      [UIColor phIconColor], NSForegroundColorAttributeName,
       shadow, NSShadowAttributeName, nil]];
 
     self.frontTextField.delegate = self;
@@ -93,7 +93,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    cell.backgroundColor = [UIColor backgroundColor];
+    cell.backgroundColor = [UIColor phBackgroundColor];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -277,7 +277,7 @@
         fixedSpace.width = (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ? 5.0f : 15.0f;
 
         entryToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) ? 320.0f : 400.0f, 44)];
-        entryToolbar.tintColor = [UIColor iconColor];
+        entryToolbar.tintColor = [UIColor phIconColor];
         entryToolbar.barStyle = UIBarStyleDefault;
         entryToolbar.items = @[self.previousEntryButton,
                                self.previousFieldButton,

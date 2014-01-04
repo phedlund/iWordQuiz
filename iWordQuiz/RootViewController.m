@@ -64,8 +64,8 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     }
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        self.navigationController.navigationBar.tintColor = [UIColor iconColor];
-        self.navigationController.navigationBar.barTintColor = [UIColor backgroundColor];
+        self.navigationController.navigationBar.tintColor = [UIColor phIconColor];
+        self.navigationController.navigationBar.barTintColor = [UIColor phBackgroundColor];
         
         NSShadow *shadow = [[NSShadow alloc] init];
         shadow.shadowColor = [UIColor clearColor];
@@ -74,7 +74,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
         
         [self.navigationController.navigationBar setTitleTextAttributes:
          [NSDictionary dictionaryWithObjectsAndKeys:
-          [UIColor iconColor], NSForegroundColorAttributeName,
+          [UIColor phIconColor], NSForegroundColorAttributeName,
           shadow, NSShadowAttributeName, nil]];
         
     }

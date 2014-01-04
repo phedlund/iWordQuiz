@@ -10,14 +10,14 @@
 
 @interface UIColor (PHColor)
 
-+ (UIColor *)backgroundColor;
-+ (UIColor *)cellBackgroundColor;
-+ (UIColor *)iconColor;
-+ (UIColor *)textColor;
-+ (UIColor *)linkColor;
-+ (UIColor *)popoverBackgroundColor;
-+ (UIColor *)popoverButtonColor;
-+ (UIColor *)popoverBorderColor;
-+ (UIColor *)popoverIconColor;
++ (UIColor *)phBackgroundColor;
++ (UIColor *)phCellBackgroundColor;
++ (UIColor *)phIconColor;
++ (UIColor *)phTextColor;
++ (UIColor *)phLinkColor;
++ (UIColor *)phPopoverBackgroundColor;
++ (UIColor *)phPopoverButtonColor;
++ (UIColor *)phPopoverBorderColor;
++ (UIColor *)phPopoverIconColor;
 
 @end

@@ -42,7 +42,7 @@
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
     [[self layer] addSublayer:self.circleLayer];
-    self.titleLabel.textColor = [UIColor iconColor];
+    self.titleLabel.textColor = [UIColor phIconColor];
 }
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event {
@@ -86,12 +86,12 @@
         UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];
         
         circleLayer.path = path.CGPath;
-        circleLayer.strokeColor = [UIColor popoverBorderColor].CGColor;
+        circleLayer.strokeColor = [UIColor phPopoverBorderColor].CGColor;
         circleLayer.lineWidth = 0.3f;
         circleLayer.fillColor = color.CGColor;
         
         // Drop shadow.
-        circleLayer.shadowColor = [UIColor popoverBorderColor].CGColor;
+        circleLayer.shadowColor = [UIColor phPopoverBorderColor].CGColor;
         circleLayer.shadowOpacity = 0.9;
         circleLayer.shadowRadius = 1.0;
         circleLayer.shadowOffset = CGSizeMake(0, 0);

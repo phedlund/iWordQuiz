@@ -63,7 +63,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor backgroundColor];
+    self.view.backgroundColor = [UIColor phBackgroundColor];
 
     self.frontTextField.text = _frontIdentifier;
     self.backTextField.text = _backIdentifier;

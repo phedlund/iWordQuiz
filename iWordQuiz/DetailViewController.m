@@ -175,8 +175,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         self.navigationItem.rightBarButtonItems = @[self.editBarButtonItem, self.modeBarButtonItem];
     }
-    self.navigationController.navigationBar.tintColor = [UIColor iconColor];
-    self.navigationController.navigationBar.barTintColor = [UIColor backgroundColor];
+    self.navigationController.navigationBar.tintColor = [UIColor phIconColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor phBackgroundColor];
 
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor clearColor];
@@ -185,12 +185,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIColor iconColor], NSForegroundColorAttributeName,
+      [UIColor phIconColor], NSForegroundColorAttributeName,
       shadow, NSShadowAttributeName, nil]];
 
-    self.tabBar.tintColor = [UIColor iconColor];
-    self.tabBar.barTintColor = [UIColor backgroundColor];
-    [[UITabBarItem appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIColor iconColor], NSForegroundColorAttributeName, nil]
+    self.tabBar.tintColor = [UIColor phIconColor];
+    self.tabBar.barTintColor = [UIColor phBackgroundColor];
+    [[UITabBarItem appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys: [UIColor phIconColor], NSForegroundColorAttributeName, nil]
                                              forState: UIControlStateSelected];
 
     UIColor *unselectedColor = [UIColor colorWithRed:0.70 green:0.60 blue:0.42 alpha:1.0];
@@ -663,7 +663,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         _modePicker.preferredContentSize = CGSizeMake(290.0, 324.0f);
         modePickerPopover = [[WYPopoverController alloc] initWithContentViewController:_modePicker];
         WYPopoverBackgroundView* appearance = [WYPopoverBackgroundView appearance];
-        [appearance setFillTopColor:[UIColor popoverBackgroundColor]];
+        [appearance setFillTopColor:[UIColor phPopoverBackgroundColor]];
     }
     return modePickerPopover;
 }

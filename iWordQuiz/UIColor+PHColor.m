@@ -20,39 +20,39 @@
 
 @implementation UIColor (PHColor)
 
-+ (UIColor *)backgroundColor {
++ (UIColor *)phBackgroundColor {
     return kPHSepiaBackgroundColor;
 }
 
-+ (UIColor *)cellBackgroundColor {
++ (UIColor *)phCellBackgroundColor {
     return kPHSepiaCellBackgroundColor;
 }
 
-+ (UIColor *)iconColor {
++ (UIColor *)phIconColor {
     return kPHSepiaIconColor;
 }
 
-+ (UIColor *)textColor {
++ (UIColor *)phTextColor {
     return kPHSepiaTextColor;
 }
 
-+ (UIColor *)linkColor {
++ (UIColor *)phLinkColor {
     return kPHSepiaLinkColor;
 }
 
-+ (UIColor *)popoverBackgroundColor {
++ (UIColor *)phPopoverBackgroundColor {
     return kPHSepiaPopoverBackgroundColor;
 }
 
-+ (UIColor *)popoverButtonColor {
++ (UIColor *)phPopoverButtonColor {
     return kPHSepiaPopoverButtonColor;
 }
 
-+ (UIColor *)popoverBorderColor {
++ (UIColor *)phPopoverBorderColor {
     return kPHSepiaPopoverBorderColor;
 }
 
-+ (UIColor *)popoverIconColor {
++ (UIColor *)phPopoverIconColor {
     return kPHSepiaIconColor;
 }
 

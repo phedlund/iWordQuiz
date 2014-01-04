@@ -63,7 +63,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     self.clearsSelectionOnViewWillAppear = YES;
     //self.preferredContentSize = CGSizeMake(290.0, 264.0);
     self.tableView.scrollEnabled = NO;
-    self.tableView.separatorColor = [UIColor popoverBorderColor];
+    self.tableView.separatorColor = [UIColor phPopoverBorderColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -103,9 +103,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.backgroundColor = [UIColor popoverBackgroundColor];
-        cell.textLabel.textColor = [UIColor popoverIconColor];
-        cell.tintColor = [UIColor iconColor];
+        cell.backgroundColor = [UIColor phPopoverBackgroundColor];
+        cell.textLabel.textColor = [UIColor phPopoverIconColor];
+        cell.tintColor = [UIColor phIconColor];
     }
     
 	[cell setAccessoryType:UITableViewCellAccessoryNone];
@@ -155,14 +155,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     UIView *customView = [[UIView alloc] initWithFrame:frame];
     UILabel *headerLabel = [[UILabel alloc] init];
     [customView addSubview:headerLabel];
-    customView.backgroundColor = [UIColor popoverButtonColor];
+    customView.backgroundColor = [UIColor phPopoverButtonColor];
     
     frame.origin.x = 10;
     frame.size.width = frame.size.width - 10;
     
     headerLabel.frame = frame;
-    headerLabel.backgroundColor = [UIColor popoverButtonColor];
-    headerLabel.textColor = [UIColor iconColor];
+    headerLabel.backgroundColor = [UIColor phPopoverButtonColor];
+    headerLabel.textColor = [UIColor phIconColor];
     headerLabel.font = [UIFont systemFontOfSize:14];
     if (section == 0) {
         headerLabel.text = @"MODE";
@@ -177,7 +177,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-    view.backgroundColor = [UIColor popoverBackgroundColor];
+    view.backgroundColor = [UIColor phPopoverBackgroundColor];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

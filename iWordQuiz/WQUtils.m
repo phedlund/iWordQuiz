@@ -54,11 +54,11 @@
     //aView.layer.cornerRadius = 15;
     
     // A thin border.
-    aView.layer.borderColor = [UIColor popoverBorderColor].CGColor;
+    aView.layer.borderColor = [UIColor phPopoverBorderColor].CGColor;
     aView.layer.borderWidth = 0.3;
     
     // Drop shadow.
-    aView.layer.shadowColor = [UIColor popoverBorderColor].CGColor;
+    aView.layer.shadowColor = [UIColor phPopoverBorderColor].CGColor;
     aView.layer.shadowOpacity = 0.9;
     aView.layer.shadowRadius = 1.0;
     aView.layer.shadowOffset = CGSizeMake(0, 0);

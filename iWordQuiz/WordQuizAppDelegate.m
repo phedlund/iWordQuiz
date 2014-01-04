@@ -74,7 +74,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         detailViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
         rootViewController.detailViewController = detailViewController;
     }
-    [self.window setBackgroundColor:[UIColor backgroundColor]];
+    [self.window setBackgroundColor:[UIColor phBackgroundColor]];
 
     return YES;
 }
