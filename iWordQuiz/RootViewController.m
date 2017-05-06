@@ -42,7 +42,7 @@ NSString* DisplayDetailSegue = @"DisplayDetailSegue";
 NSString* WQDocumentsDirectoryName = @"Documents";
 
 @interface RootViewController () {
-    int _currentRow;
+    NSInteger _currentRow;
 }
 
 @end
@@ -112,7 +112,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 
@@ -250,7 +250,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 }
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-	int index = 0;
+	NSInteger index = 0;
     index = [tabBarController.viewControllers indexOfObject:viewController];
     return [(DetailViewController *) tabBarController hasEnoughEntries:index]; //(m_quiz != nil); //YES
 }
@@ -355,7 +355,7 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSLog(@"Button %d", buttonIndex);
+    NSLog(@"Button %ld", (long)buttonIndex);
     
     if (buttonIndex != actionSheet.cancelButtonIndex) {
         NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];

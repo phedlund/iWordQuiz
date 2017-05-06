@@ -44,11 +44,11 @@ typedef enum {
     NSMutableArray * m_errorList;
     NSMutableArray * entries;
 	
-    int m_quizMode;
-    int m_currentQuestion;
-    int m_questionCount;
-	int m_correctCount;
-	int m_errorCount;
+    NSInteger m_quizMode;
+    NSInteger m_currentQuestion;
+    NSInteger m_questionCount;
+	NSInteger m_correctCount;
+	NSInteger m_errorCount;
 
     NSString * m_correctBlank;
     NSString * m_answerBlank;
@@ -68,7 +68,7 @@ typedef enum {
 
 - (NSArray *) multiOptions;
 - (int) questionCount;
-- (void) countIncrement:(int )aValue;
+- (void) countIncrement:(NSInteger)aValue;
 
 - (NSString*) question;
 - (NSString*) answer;
@@ -81,9 +81,9 @@ typedef enum {
 
 @property (nonatomic, strong) NSString *fileName;
 
-@property (nonatomic, assign) int quizMode;
-@property (nonatomic, assign) int correctCount;
-@property (nonatomic, assign) int errorCount;
+@property (nonatomic, assign) NSInteger quizMode;
+@property (nonatomic, assign) NSInteger correctCount;
+@property (nonatomic, assign) NSInteger errorCount;
 
 @property (nonatomic) WQQuizType quizType;
 

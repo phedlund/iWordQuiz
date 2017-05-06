@@ -114,7 +114,7 @@
     self.backIdentifier  = [[identifierNodes objectAtIndex:1] stringValue];
     
     NSArray *textNodes = [xmlDoc nodesForXPath:@"/kvtml/entries/entry/translation/text" error:nil];
-    int colCount = [identifierNodes count];
+    NSInteger colCount = [identifierNodes count];
     int i = 0;
     
     for (DDXMLNode *textNode in textNodes){
@@ -143,8 +143,8 @@
     
     NSString *fileString = [NSString stringWithContentsOfURL:self.fileURL encoding:NSUTF8StringEncoding error:NULL];
     
-    unsigned length = [fileString length];
-    unsigned paraStart = 0, paraEnd = 0, contentsEnd = 0;
+    NSUInteger length = [fileString length];
+    NSUInteger paraStart = 0, paraEnd = 0, contentsEnd = 0;
     NSMutableArray *lines = [[NSMutableArray alloc] init];
     NSRange currentRange;
     while (paraEnd < length) {
@@ -203,7 +203,7 @@
     [self.entries enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         listEntry = (NSArray*)obj;
         DDXMLElement* xmlListEntry =[DDXMLNode elementWithName:@"entry"];
-        [xmlListEntry addAttribute:[DDXMLNode attributeWithName:@"id" stringValue:[NSString stringWithFormat:@"%d", idx]]];
+        [xmlListEntry addAttribute:[DDXMLNode attributeWithName:@"id" stringValue:[NSString stringWithFormat:@"%lu", (unsigned long)idx]]];
         
         DDXMLElement* translation1 =[DDXMLNode elementWithName:@"translation"];
         [translation1 addAttribute:[DDXMLNode attributeWithName:@"id" stringValue:@"0"]];

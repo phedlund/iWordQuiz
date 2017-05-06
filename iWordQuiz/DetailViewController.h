@@ -52,10 +52,10 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (nonatomic, strong, readonly) UIBarButtonItem *modeBarButtonItem;
 @property (nonatomic, strong, readonly) UIBarButtonItem *editBarButtonItem;
 
-- (void) activateTab:(int)index;
+- (void) activateTab:(NSInteger)index;
 
 - (void) quizDidFinish;
-- (BOOL) hasEnoughEntries:(int)index;
+- (BOOL) hasEnoughEntries:(NSInteger)index;
 
 - (IBAction) doMenu:(id)sender;
 - (IBAction) doMode:(id)sender;

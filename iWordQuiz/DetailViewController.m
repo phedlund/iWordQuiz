@@ -42,8 +42,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @interface DetailViewController () {
 	WQQuiz * _quiz;
-    int _currentRow;
-    int _currentColumn;
+    NSInteger _currentRow;
+    NSInteger _currentColumn;
 }
 
 - (void)configureView;
@@ -145,7 +145,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     return YES;
 }
 
-- (NSUInteger)supportedInterfaceOrientations {
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
     return UIInterfaceOrientationMaskAll;
 }
 
@@ -273,7 +273,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 
-- (void)activateTab:(int)index {
+- (void)activateTab:(NSInteger)index {
 	NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
 	
 	// getting an NSInteger
@@ -355,7 +355,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	//self.repeatErrors.enabled = [m_quiz hasErrors];
 }
 
-- (BOOL) hasEnoughEntries:(int)index {
+- (BOOL) hasEnoughEntries:(NSInteger)index {
     BOOL result = true;
     switch (index) {
         case 0:
@@ -462,7 +462,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         cell = [[MDSpreadViewHeaderCell alloc] initWithStyle:MDSpreadViewHeaderCellStyleColumn reuseIdentifier:cellIdentifier];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", rowPath.row + 1];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)rowPath.row + 1];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         cell.textLabel.font = [UIFont systemFontOfSize:[UIFont smallSystemFontSize]];
     }

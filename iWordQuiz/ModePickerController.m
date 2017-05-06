@@ -34,7 +34,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "UIColor+PHColor.h"
 
 @interface ModePickerController () {
-    int _currentMode;
+    NSInteger _currentMode;
 }
 
 @end
@@ -113,7 +113,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
     if (indexPath.section == 0) {
         cell.textLabel.text = [self.modes objectAtIndex:indexPath.row];
-        int r = [self.delegate selectedMode] - 1;
+        NSInteger r = [self.delegate selectedMode] - 1;
         if (r == indexPath.row) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
             _currentMode = r;

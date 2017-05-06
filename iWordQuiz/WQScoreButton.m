@@ -39,6 +39,7 @@
 @synthesize circleLayer;
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     self.opaque = NO;
     self.backgroundColor = [UIColor clearColor];
     [[self layer] addSublayer:self.circleLayer];
@@ -103,7 +104,8 @@
 
 - (void)setScore:(NSInteger)score of:(NSInteger)total {
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"ScoreAsPercent"]) {
-        [self setTitle:[NSString stringWithFormat:@"%d%%", (score * 100) / total] forState:UIControlStateNormal];
+        NSInteger percentage = (score * 100) / total;
+        [self setTitle:[NSString stringWithFormat:@"%ld%%", (long)percentage] forState:UIControlStateNormal];
     } else {
         [self setTitle:[@(score) stringValue] forState:UIControlStateNormal];
     }

@@ -54,6 +54,7 @@
 @synthesize entryToolbar;
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     _newFileName = nil;
     self.view.backgroundColor = [UIColor phBackgroundColor];
     self.navigationController.navigationBar.tintColor = [UIColor phIconColor];
