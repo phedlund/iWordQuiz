@@ -36,7 +36,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "UIColor+PHColor.h"
 #import "UIFont+WQDynamic.h"
 
-@interface MCViewController (){
+@interface MCViewController() <CAAnimationDelegate> {
     NSArray *_optionButtons;
 }
 

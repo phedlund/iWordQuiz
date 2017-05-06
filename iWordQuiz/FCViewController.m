@@ -38,7 +38,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #define kTransitionDuration	0.50
 
-@interface FCViewController () <UIGestureRecognizerDelegate> {
+@interface FCViewController () <UIGestureRecognizerDelegate, CAAnimationDelegate> {
     bool _slideToTheRight;
     CALayer *_animationLayer;
 }

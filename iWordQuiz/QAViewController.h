@@ -35,7 +35,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQQuiz.h"
 #import "WQScoreButton.h"
 
-@interface QAViewController : UIViewController <UITextFieldDelegate>
+@interface QAViewController : UIViewController <UITextFieldDelegate, CAAnimationDelegate>
 
 - (void) start;
 - (void) restart;
