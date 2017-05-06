@@ -175,6 +175,7 @@
 		D06A0957185D421E00A0A158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		D06A0958185D421E00A0A158 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		D06A0959185D421E00A0A158 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */; };
+		D06CB62F1EBE916A00DAA584 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D06CB62E1EBE916A00DAA584 /* libxml2.2.tbd */; };
 		D0C85E8B14F595A300C2A499 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */; };
 		D0C9B16A15179F6F004AC04B /* document-icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16815179F6F004AC04B /* document-icon-128.png */; };
 		D0C9B16B15179F6F004AC04B /* document-icon-640.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16915179F6F004AC04B /* document-icon-640.png */; };
@@ -193,7 +194,6 @@
 		D0D0EC4C14DB712700BE3A81 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		D0D0EC4D14DB712F00BE3A81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		D0D0EC4E14DB713A00BE3A81 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		D0D0EC5014DB719100BE3A81 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */; };
 		D0D11E0E1541CCE800B8ECBD /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
 		D0E8A2331852787D005F8CAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8A2321852787D005F8CAF /* Images.xcassets */; };
 		D0E8A23A18528A61005F8CAF /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23618528A61005F8CAF /* MSDynamicsDrawerStyler.m */; };
@@ -313,6 +313,7 @@
 		D06A08D5185AAB7900A0A158 /* WYStoryboardPopoverSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYStoryboardPopoverSegue.m; sourceTree = "<group>"; };
 		D06A095D185D421E00A0A158 /* iWordQuiz iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iWordQuiz iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06A095E185D421F00A0A158 /* iWordQuiz copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iWordQuiz copy-Info.plist"; path = "/Users/peter/Projects/iWordQuiz/iWordQuiz copy-Info.plist"; sourceTree = "<absolute>"; };
+		D06CB62E1EBE916A00DAA584 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D0713DB314DE15820053121A /* WordQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WordQuiz.entitlements; sourceTree = "<group>"; };
 		D0C791D814F6F1AE000AFF00 /* DBDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDefines.h; sourceTree = "<group>"; };
 		D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -356,10 +357,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06CB62F1EBE916A00DAA584 /* libxml2.2.tbd in Frameworks */,
 				D0549FC2151BCADB00BDE78C /* QuartzCore.framework in Frameworks */,
 				D0C85E8B14F595A300C2A499 /* SystemConfiguration.framework in Frameworks */,
 				D0CB156414EEF3D200FE7CC6 /* Security.framework in Frameworks */,
-				D0D0EC5014DB719100BE3A81 /* libxml2.dylib in Frameworks */,
 				D0D0EC4C14DB712700BE3A81 /* UIKit.framework in Frameworks */,
 				D0D0EC4D14DB712F00BE3A81 /* Foundation.framework in Frameworks */,
 				D0D0EC4E14DB713A00BE3A81 /* CoreGraphics.framework in Frameworks */,
@@ -490,6 +491,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D06CB62E1EBE916A00DAA584 /* libxml2.2.tbd */,
 				D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */,
 				D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */,
 				D0549FC1151BCADB00BDE78C /* QuartzCore.framework */,
