@@ -45,7 +45,7 @@
 }
 
 
-+ (BOOL) isOdd:(int) aNumber {
++ (BOOL) isOdd:(NSInteger) aNumber {
 	return (aNumber % 2);
 }
 

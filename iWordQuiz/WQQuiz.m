@@ -60,18 +60,18 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	return self;
 }
 
-int randomSort(id obj1, id obj2, void *context ) {
+NSInteger randomSort(id obj1, id obj2, void *context ) {
 	// returns random number -1 0 1
 	return (random()%3 - 1);	
 }
 
 
-int rand_lim(int limit) {
+NSInteger rand_lim(NSInteger limit) {
 	/* return a random number between 0 and limit inclusive.
 	 */
 	
-    int divisor = RAND_MAX/(limit+1);
-    int retval;
+    NSInteger divisor = RAND_MAX/(limit+1);
+    NSInteger retval;
 	
     do { 
         retval = rand() / divisor;
@@ -193,7 +193,7 @@ int rand_lim(int limit) {
     return item.back;
 }
 
-- (int) questionCount
+- (NSInteger) questionCount
 {
 	return m_questionCount;
 }
@@ -211,7 +211,7 @@ int rand_lim(int limit) {
 	return item.backIdentifier;
 }
 
-- (void) countIncrement:(int )aValue {
+- (void) countIncrement:(NSInteger)aValue {
 	if (aValue == 1) {
 		m_correctCount++;
 	}
@@ -227,8 +227,8 @@ int rand_lim(int limit) {
 	NSString * mo2;
 	NSString * mo3;
 	
-	int a = -1;
-	int b = -1;
+	NSInteger a = -1;
+	NSInteger b = -1;
 	
 	do
 		a = rand_lim(m_questionCount - 1);

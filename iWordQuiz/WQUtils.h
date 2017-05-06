@@ -37,7 +37,7 @@
 }
 
 + (BOOL) isEmpty: (id) thing;
-+ (BOOL) isOdd: (int )aNumber;
++ (BOOL) isOdd: (NSInteger)aNumber;
 
 + (void) renderCardShadow:(UIView*)aView;
 

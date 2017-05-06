@@ -67,7 +67,7 @@ typedef enum {
 - (bool) hasErrors;
 
 - (NSArray *) multiOptions;
-- (int) questionCount;
+- (NSInteger) questionCount;
 - (void) countIncrement:(NSInteger)aValue;
 
 - (NSString*) question;
