@@ -85,8 +85,6 @@
 		D0549FC0151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F90151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png */; };
 		D0549FC2151BCADB00BDE78C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0549FC1151BCADB00BDE78C /* QuartzCore.framework */; };
 		D06A08D0185AA33900A0A158 /* UIImage+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */; };
-		D06A08D6185AAB7900A0A158 /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08D3185AAB7900A0A158 /* WYPopoverController.m */; };
-		D06A08D7185AAB7900A0A158 /* WYStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08D5185AAB7900A0A158 /* WYStoryboardPopoverSegue.m */; };
 		D06A08DA185D421E00A0A158 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8A2321852787D005F8CAF /* Images.xcassets */; };
 		D06A08E2185D421E00A0A158 /* document-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC112CD0F6800F7BB72 /* document-icon-64.png */; };
 		D06A08E3185D421E00A0A158 /* document-icon-320.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */; };
@@ -150,7 +148,6 @@
 		D06A0930185D421E00A0A158 /* MDSpreadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F54151BC37900BDE78C /* MDSpreadView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0931185D421E00A0A158 /* MDSpreadViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F58151BC37900BDE78C /* MDSpreadViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0932185D421E00A0A158 /* MDSpreadViewCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F5A151BC37900BDE78C /* MDSpreadViewCellBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0933185D421E00A0A158 /* WYPopoverController.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08D3185AAB7900A0A158 /* WYPopoverController.m */; };
 		D06A0934185D421E00A0A158 /* MDSpreadViewCellColumnHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F5C151BC37900BDE78C /* MDSpreadViewCellColumnHeaderBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0935185D421E00A0A158 /* MDSpreadViewCellCornerHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F5E151BC37900BDE78C /* MDSpreadViewCellCornerHeaderBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0936185D421E00A0A158 /* MDSpreadViewCellRowHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F62151BC37900BDE78C /* MDSpreadViewCellRowHeaderBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -162,7 +159,6 @@
 		D06A093D185D421E00A0A158 /* UIImage+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */; };
 		D06A093E185D421E00A0A158 /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
 		D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CE841B154737C10097D67A /* WQNewFileViewController.m */; };
-		D06A0946185D421E00A0A158 /* WYStoryboardPopoverSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08D5185AAB7900A0A158 /* WYStoryboardPopoverSegue.m */; };
 		D06A094D185D421E00A0A158 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC077A15E7ED7E00811921 /* Reachability.m */; };
 		D06A094E185D421E00A0A158 /* WQQuizItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBB7F016A9FD0000FDAC8C /* WQQuizItem.m */; };
 		D06A094F185D421E00A0A158 /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */; };
@@ -309,10 +305,6 @@
 		D0549FC1151BCADB00BDE78C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D06A08CE185AA33900A0A158 /* UIImage+PHColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PHColor.h"; path = "iWordQuiz/UIImage+PHColor.h"; sourceTree = SOURCE_ROOT; };
 		D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PHColor.m"; path = "iWordQuiz/UIImage+PHColor.m"; sourceTree = SOURCE_ROOT; };
-		D06A08D2185AAB7900A0A158 /* WYPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYPopoverController.h; sourceTree = "<group>"; };
-		D06A08D3185AAB7900A0A158 /* WYPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYPopoverController.m; sourceTree = "<group>"; };
-		D06A08D4185AAB7900A0A158 /* WYStoryboardPopoverSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYStoryboardPopoverSegue.h; sourceTree = "<group>"; };
-		D06A08D5185AAB7900A0A158 /* WYStoryboardPopoverSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYStoryboardPopoverSegue.m; sourceTree = "<group>"; };
 		D06A095D185D421E00A0A158 /* iWordQuiz iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iWordQuiz iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06A095E185D421F00A0A158 /* iWordQuiz copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iWordQuiz copy-Info.plist"; path = "/Users/peter/Projects/iWordQuiz/iWordQuiz copy-Info.plist"; sourceTree = "<absolute>"; };
 		D06CB62E1EBE916A00DAA584 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
@@ -453,7 +445,6 @@
 				D0FC074D15E703A600811921 /* CHDropboxSync */,
 				D0FC077C15E7ED9300811921 /* Reachability */,
 				D0E8A23418528A61005F8CAF /* MSDynamicsDrawerViewController */,
-				D06A08D1185AAB7900A0A158 /* WYPopoverController */,
 				080E96DDFE201D6D7F000001 /* iWordQuiz */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -624,18 +615,6 @@
 				D0549F90151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		D06A08D1185AAB7900A0A158 /* WYPopoverController */ = {
-			isa = PBXGroup;
-			children = (
-				D06A08D2185AAB7900A0A158 /* WYPopoverController.h */,
-				D06A08D3185AAB7900A0A158 /* WYPopoverController.m */,
-				D06A08D4185AAB7900A0A158 /* WYStoryboardPopoverSegue.h */,
-				D06A08D5185AAB7900A0A158 /* WYStoryboardPopoverSegue.m */,
-			);
-			name = WYPopoverController;
-			path = WYPopoverController/WYPopoverController;
 			sourceTree = "<group>";
 		};
 		D0CED4B415362F43005ADD4C /* en.lproj */ = {
@@ -938,7 +917,6 @@
 				D0549F91151BC37900BDE78C /* MDSpreadView.m in Sources */,
 				D0549F93151BC37900BDE78C /* MDSpreadViewCell.m in Sources */,
 				D0549F94151BC37900BDE78C /* MDSpreadViewCellBackground.m in Sources */,
-				D06A08D6185AAB7900A0A158 /* WYPopoverController.m in Sources */,
 				D0549F95151BC37900BDE78C /* MDSpreadViewCellColumnHeaderBackground.m in Sources */,
 				D0549F96151BC37900BDE78C /* MDSpreadViewCellCornerHeaderBackground.m in Sources */,
 				D0549F98151BC37900BDE78C /* MDSpreadViewCellRowHeaderBackground.m in Sources */,
@@ -951,7 +929,6 @@
 				D0D11E0E1541CCE800B8ECBD /* WQEditViewController.m in Sources */,
 				D0CE841C154737C10097D67A /* WQNewFileViewController.m in Sources */,
 				D0254D6318777D3A0032566D /* DDXMLNode.m in Sources */,
-				D06A08D7185AAB7900A0A158 /* WYStoryboardPopoverSegue.m in Sources */,
 				D0FC077B15E7ED7E00811921 /* Reachability.m in Sources */,
 				D0CBB7F116A9FD0000FDAC8C /* WQQuizItem.m in Sources */,
 				D0E8A23B18528A61005F8CAF /* MSDynamicsDrawerViewController.m in Sources */,
@@ -984,7 +961,6 @@
 				D06A0930185D421E00A0A158 /* MDSpreadView.m in Sources */,
 				D06A0931185D421E00A0A158 /* MDSpreadViewCell.m in Sources */,
 				D06A0932185D421E00A0A158 /* MDSpreadViewCellBackground.m in Sources */,
-				D06A0933185D421E00A0A158 /* WYPopoverController.m in Sources */,
 				D06A0934185D421E00A0A158 /* MDSpreadViewCellColumnHeaderBackground.m in Sources */,
 				D06A0935185D421E00A0A158 /* MDSpreadViewCellCornerHeaderBackground.m in Sources */,
 				D06A0936185D421E00A0A158 /* MDSpreadViewCellRowHeaderBackground.m in Sources */,
@@ -997,7 +973,6 @@
 				D06A093E185D421E00A0A158 /* WQEditViewController.m in Sources */,
 				D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */,
 				D0254D6418777D3A0032566D /* DDXMLNode.m in Sources */,
-				D06A0946185D421E00A0A158 /* WYStoryboardPopoverSegue.m in Sources */,
 				D06A094D185D421E00A0A158 /* Reachability.m in Sources */,
 				D06A094E185D421E00A0A158 /* WQQuizItem.m in Sources */,
 				D06A094F185D421E00A0A158 /* MSDynamicsDrawerViewController.m in Sources */,

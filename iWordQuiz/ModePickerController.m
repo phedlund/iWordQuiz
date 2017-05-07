@@ -5,7 +5,7 @@
 
 /************************************************************************
 
-Copyright 2012-2013 Peter Hedlund peter.hedlund@me.com
+Copyright 2012-2017 Peter Hedlund peter.hedlund@me.com
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
@@ -110,7 +110,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     
 	[cell setAccessoryType:UITableViewCellAccessoryNone];
 
-    
     if (indexPath.section == 0) {
         cell.textLabel.text = [self.modes objectAtIndex:indexPath.row];
         NSInteger r = [self.delegate selectedMode] - 1;
@@ -127,16 +126,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
     
     return cell;
-}
-
-- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSString *result;
-    if (section == 0) {
-        result = @"Mode";
-    } else {
-        result = @"Score";
-    }
-    return result;
 }
 
 #pragma mark -
@@ -174,10 +163,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (UIView*)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     return [[UIView alloc] initWithFrame:CGRectZero];
-}
-
-- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
-    view.backgroundColor = [UIColor phPopoverBackgroundColor];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

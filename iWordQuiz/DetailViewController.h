@@ -36,15 +36,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "ModePickerController.h"
 #import "WQDocument.h"
 #import "MDSpreadViewClasses.h"
-#import "WYPopoverController.h"
 #import "WQEditViewController.h"
 #import "MSDynamicsDrawerViewController.h"
 
-@interface DetailViewController : UITabBarController <UIPopoverControllerDelegate, ModePickerDelegate,MDSpreadViewDataSource, MDSpreadViewDelegate, WQDocumentDelegate, WQEditViewControllerDelegate>
+@interface DetailViewController : UITabBarController <UIPopoverPresentationControllerDelegate, ModePickerDelegate, MDSpreadViewDataSource, MDSpreadViewDelegate, WQDocumentDelegate, WQEditViewControllerDelegate>
 
 @property (strong, nonatomic) NSURL *detailItem;
 @property (strong, nonatomic) ModePickerController *modePicker;
-@property (strong, nonatomic) WYPopoverController *modePickerPopover;
+@property (strong, nonatomic) UIPopoverPresentationController *modePickerPopover;
 @property (strong, nonatomic) WQDocument *doc;
 @property (weak, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 

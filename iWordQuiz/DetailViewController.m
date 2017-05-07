@@ -54,6 +54,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @synthesize modeBarButtonItem;
 @synthesize editBarButtonItem;
+@synthesize modePicker;
 @synthesize modePickerPopover;
 
 - (void)documentContentsDidChange:(WQDocument *)document {
@@ -319,7 +320,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         _quiz.quizMode = mode + 1;
         [self activateTab:self.selectedIndex];
     }
-    [self.modePickerPopover dismissPopoverAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (NSUInteger)selectedMode {
@@ -336,7 +337,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 - (IBAction) doMode:(id)sender {
-    [self.modePickerPopover presentPopoverFromBarButtonItem:sender permittedArrowDirections:(UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown) animated:YES options:WYPopoverAnimationOptionFadeWithScale];
+    [self presentViewController:self.modePicker animated:YES completion:nil];
 }
 
 - (void) doEdit:(id)sender {
@@ -656,16 +657,18 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #pragma mark - Mode Popover
 
-- (WYPopoverController*)modePickerPopover {
-    if (!modePickerPopover) {
-        _modePicker = [[ModePickerController alloc] initWithStyle:UITableViewStylePlain];
-        _modePicker.delegate = self;
-        _modePicker.preferredContentSize = CGSizeMake(290.0, 324.0f);
-        modePickerPopover = [[WYPopoverController alloc] initWithContentViewController:_modePicker];
-        WYPopoverBackgroundView* appearance = [WYPopoverBackgroundView appearance];
-        [appearance setFillTopColor:[UIColor phPopoverBackgroundColor]];
+- (ModePickerController*)modePicker {
+    if (!modePicker) {
+        modePicker = [[ModePickerController alloc] initWithStyle:UITableViewStylePlain];
+        modePicker.delegate = self;
+        modePicker.preferredContentSize = CGSizeMake(290.0, 324.0f);
+        modePicker.modalPresentationStyle = UIModalPresentationPopover;
     }
-    return modePickerPopover;
+    modePickerPopover = modePicker.popoverPresentationController;
+    modePickerPopover.delegate = self;
+    modePickerPopover.barButtonItem = self.modeBarButtonItem;
+    modePickerPopover.permittedArrowDirections = UIPopoverArrowDirectionLeft | UIPopoverArrowDirectionRight | UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown;
+    return modePicker;
 }
 
 @end
