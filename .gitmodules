@@ -1,6 +1,3 @@
-[submodule "MSDynamicsDrawerViewController"]
-	path = MSDynamicsDrawerViewController
-	url = https://github.com/monospacecollective/MSDynamicsDrawerViewController.git
 [submodule "CHDropboxSync"]
 	path = CHDropboxSync
 	url = git@github.com:phedlund/CHDropboxSync.git

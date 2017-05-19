@@ -55,29 +55,29 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.detailViewController = (DetailViewController *)self.dynamicsDrawerViewController;
+    UINavigationController *detailNavController = (UINavigationController *)self.splitViewController.viewControllers.lastObject;
+    self.detailViewController = (DetailViewController *)detailNavController.topViewController;
     self.detailViewController.delegate = self;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.splitViewController.delegate = self;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
     }
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        self.navigationController.navigationBar.tintColor = [UIColor phIconColor];
-        self.navigationController.navigationBar.barTintColor = [UIColor phBackgroundColor];
-        
-        NSShadow *shadow = [[NSShadow alloc] init];
-        shadow.shadowColor = [UIColor clearColor];
-        shadow.shadowBlurRadius = 0.0;
-        shadow.shadowOffset = CGSizeMake(0.0, 0.0);
-        
-        [self.navigationController.navigationBar setTitleTextAttributes:
-         [NSDictionary dictionaryWithObjectsAndKeys:
-          [UIColor phIconColor], NSForegroundColorAttributeName,
-          shadow, NSShadowAttributeName, nil]];
-        
-    }
+    self.navigationController.navigationBar.tintColor = [UIColor phIconColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor phBackgroundColor];
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor clearColor];
+    shadow.shadowBlurRadius = 0.0;
+    shadow.shadowOffset = CGSizeMake(0.0, 0.0);
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIColor phIconColor], NSForegroundColorAttributeName,
+      shadow, NSShadowAttributeName, nil]];
+    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newFileURL:) name:@"FileURL" object:nil];
     NSError *err;
@@ -210,9 +210,11 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     }
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         [self.detailViewController setDetailItem:[self.vocabularies objectAtIndex: _currentRow]];
-        [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateClosed inDirection:MSDynamicsDrawerDirectionLeft animated:YES allowUserInterruption:YES completion:^{
-            //
-        }];
+        if (self.splitViewController.displayMode == UISplitViewControllerDisplayModeAllVisible || self.splitViewController.displayMode == UISplitViewControllerDisplayModePrimaryOverlay) {
+            [UIView animateWithDuration:0.3 animations:^{
+                self.splitViewController.preferredDisplayMode = UISplitViewControllerDisplayModePrimaryHidden;
+            } completion: nil];
+        }
     }
 }
 
@@ -334,24 +336,55 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 
 
 - (IBAction) doActions:(id)sender {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
-                                        delegate:self
-                               cancelButtonTitle:nil
-                          destructiveButtonTitle:nil
-                               otherButtonTitles:@"New Vocabulary", nil];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *newAction = [UIAlertAction actionWithTitle:@"New Vocabulary" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"newVocabulary"];
+            [(WQNewFileViewController*)navController.topViewController setDelegate:self];
+            [self presentViewController:navController animated:YES completion:nil];
+        } else {
+            WQNewFileViewController *newController = [self.storyboard instantiateViewControllerWithIdentifier:@"newVocabulary"];
+            newController.delegate = self;
+            [self.navigationController pushViewController:newController animated:YES];
+        }
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:newAction];
     if ([[DBSession sharedSession] isLinked]) {
-        [sheet addButtonWithTitle:@"Sync With Dropbox"];
-        [sheet addButtonWithTitle:@"Unlink Dropbox"];
+        UIAlertAction *syncAction = [UIAlertAction actionWithTitle:@"Sync With Dropbox" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            self.syncer = [[CHDropboxSync alloc] init];
+            self.syncer.delegate = self;
+            [self.syncer doSync];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        UIAlertAction *unlinkAction = [UIAlertAction actionWithTitle:@"Unlink Dropbox" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[DBSession sharedSession] unlinkAll];
+            [[[UIAlertView alloc] initWithTitle:@"Account Unlinked!"
+                                        message:@"Your Dropbox account has been unlinked"
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil]
+             show];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        
+        [alertController addAction:syncAction];
+        [alertController addAction:unlinkAction];
     } else {
-        [sheet addButtonWithTitle:@"Link Dropbox"];
+        UIAlertAction *linkAction = [UIAlertAction actionWithTitle:@"Link Dropbox" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[DBSession sharedSession] linkFromController:self];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alertController addAction:linkAction];
     }
-    sheet.cancelButtonIndex = [sheet addButtonWithTitle:@"Cancel"];
-    // Show the sheet
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [sheet showFromBarButtonItem:self.menuButton animated:YES];
-    } else {
-        [sheet showInView:self.view];
-    }
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:cancelAction];
+    alertController.popoverPresentationController.barButtonItem = self.menuButton;
+    alertController.view.backgroundColor = [UIColor phPopoverBackgroundColor];
+    alertController.view.tintColor = [UIColor phPopoverIconColor];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -488,6 +521,18 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     });
     
     return true;
+}
+
+- (UISplitViewControllerDisplayMode)targetDisplayModeForActionInSplitViewController:(UISplitViewController *)svc {
+    if (svc.displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
+        if (svc.traitCollection.horizontalSizeClass == UIUserInterfaceSizeClassRegular) {
+            if (UIDeviceOrientationIsLandscape([UIDevice currentDevice].orientation)) {
+                return UISplitViewControllerDisplayModeAllVisible;
+            }
+        }
+        return UISplitViewControllerDisplayModePrimaryOverlay;
+    }
+    return UISplitViewControllerDisplayModePrimaryHidden;
 }
 
 @end

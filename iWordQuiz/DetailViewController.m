@@ -176,13 +176,17 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         self.navigationItem.rightBarButtonItems = @[self.editBarButtonItem, self.modeBarButtonItem];
     }
+    
+    self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    self.navigationItem.leftItemsSupplementBackButton = YES;
+    
     self.navigationController.navigationBar.tintColor = [UIColor phIconColor];
     self.navigationController.navigationBar.barTintColor = [UIColor phBackgroundColor];
 
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor clearColor];
     shadow.shadowBlurRadius = 0.0;
-    shadow.shadowOffset = CGSizeMake(0.0, 0.0);
+    shadow.shadowOffset = CGSizeZero;
 
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
@@ -249,24 +253,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     }
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        [self performSelector:@selector(doBounce) withObject:nil afterDelay:0.4];
-    }
-}
-
-- (void)doBounce {
-    NSInteger bounceCount = [[NSUserDefaults standardUserDefaults] integerForKey:@"BounceCount"];
-    if (bounceCount < 3) {
-        self.dynamicsDrawerViewController.bounceMagnitude = 500.0f;
-        self.dynamicsDrawerViewController.bounceElasticity = 0.5f;
-        [self.dynamicsDrawerViewController bouncePaneOpenInDirection:MSDynamicsDrawerDirectionLeft];
-    }
-    bounceCount = bounceCount + 1;
-    [[NSUserDefaults standardUserDefaults] setInteger:bounceCount forKey:@"BounceCount"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
 - (void)viewDidUnload {
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -330,10 +316,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 		myMode = 1;
 	}
 	return myMode;
-}
-
-- (IBAction)doMenu:(id)sender {
-    [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateOpen inDirection:MSDynamicsDrawerDirectionLeft animated:YES allowUserInterruption:YES completion:nil];
 }
 
 - (IBAction) doMode:(id)sender {
@@ -501,7 +483,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         }
     } else { //iPad
         if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
-            return (CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 70) / 2;
+            if (self.splitViewController.displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
+                return (CGRectGetWidth([UIScreen mainScreen].applicationFrame) - 65) / 2;
+            } else {
+                return (CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 110) / 2;
+            }
         } else {
             return (CGRectGetWidth([UIScreen mainScreen].applicationFrame) - 70) / 2;
         }

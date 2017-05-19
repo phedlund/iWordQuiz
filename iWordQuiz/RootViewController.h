@@ -28,16 +28,14 @@
 
 #import <UIKit/UIKit.h>
 #import "WQNewFileViewController.h"
-#import "MSDynamicsDrawerViewController.h"
 
 @class DetailViewController;
 @class CHDropboxSync;
 
-@interface RootViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate, UIActionSheetDelegate, WQNewFileViewControllerDelegate>
+@interface RootViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate, UIActionSheetDelegate, WQNewFileViewControllerDelegate, UISplitViewControllerDelegate>
 
 - (void) enumerateVocabularies;
 
-@property (weak, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSMutableArray *vocabularies;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;

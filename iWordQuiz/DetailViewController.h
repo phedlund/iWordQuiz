@@ -37,7 +37,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WQDocument.h"
 #import "MDSpreadViewClasses.h"
 #import "WQEditViewController.h"
-#import "MSDynamicsDrawerViewController.h"
 
 @interface DetailViewController : UITabBarController <UIPopoverPresentationControllerDelegate, ModePickerDelegate, MDSpreadViewDataSource, MDSpreadViewDelegate, WQDocumentDelegate, WQEditViewControllerDelegate>
 
@@ -45,7 +44,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (strong, nonatomic) ModePickerController *modePicker;
 @property (strong, nonatomic) UIPopoverPresentationController *modePickerPopover;
 @property (strong, nonatomic) WQDocument *doc;
-@property (weak, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @property (nonatomic, strong, readonly) UIBarButtonItem *modeBarButtonItem;
@@ -56,7 +54,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (void) quizDidFinish;
 - (BOOL) hasEnoughEntries:(NSInteger)index;
 
-- (IBAction) doMenu:(id)sender;
 - (IBAction) doMode:(id)sender;
 - (IBAction) doEdit:(id)sender;
 

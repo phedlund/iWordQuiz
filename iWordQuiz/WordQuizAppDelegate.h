@@ -34,7 +34,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <DropboxSDK/DropboxSDK.h>
 
-#import "MSDynamicsDrawerViewController.h"
+//#import "MSDynamicsDrawerViewController.h"
 
 @interface iWordQuizAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, DBSessionDelegate> {
     
@@ -42,6 +42,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
+//@property (strong, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @end

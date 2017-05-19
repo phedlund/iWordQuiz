@@ -153,7 +153,6 @@
 		D06A0936185D421E00A0A158 /* MDSpreadViewCellRowHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F62151BC37900BDE78C /* MDSpreadViewCellRowHeaderBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0937185D421E00A0A158 /* MDSpreadViewHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F67151BC37900BDE78C /* MDSpreadViewHeaderCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		D06A0938185D421E00A0A158 /* WQDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0BED151D27A00084ACB0 /* WQDocument.m */; };
-		D06A0939185D421E00A0A158 /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23618528A61005F8CAF /* MSDynamicsDrawerStyler.m */; };
 		D06A093A185D421E00A0A158 /* WQUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0BF0151E38D90084ACB0 /* WQUtils.m */; };
 		D06A093B185D421E00A0A158 /* WQScoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC677715252F2B000D067C /* WQScoreButton.m */; };
 		D06A093D185D421E00A0A158 /* UIImage+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */; };
@@ -161,7 +160,6 @@
 		D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CE841B154737C10097D67A /* WQNewFileViewController.m */; };
 		D06A094D185D421E00A0A158 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC077A15E7ED7E00811921 /* Reachability.m */; };
 		D06A094E185D421E00A0A158 /* WQQuizItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBB7F016A9FD0000FDAC8C /* WQQuizItem.m */; };
-		D06A094F185D421E00A0A158 /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */; };
 		D06A0950185D421E00A0A158 /* TransparentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBB7F716B099C300FDAC8C /* TransparentToolbar.m */; };
 		D06A0952185D421E00A0A158 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0549FC1151BCADB00BDE78C /* QuartzCore.framework */; };
 		D06A0953185D421E00A0A158 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */; };
@@ -194,8 +192,6 @@
 		D0D0EC4E14DB713A00BE3A81 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		D0D11E0E1541CCE800B8ECBD /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
 		D0E8A2331852787D005F8CAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8A2321852787D005F8CAF /* Images.xcassets */; };
-		D0E8A23A18528A61005F8CAF /* MSDynamicsDrawerStyler.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23618528A61005F8CAF /* MSDynamicsDrawerStyler.m */; };
-		D0E8A23B18528A61005F8CAF /* MSDynamicsDrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */; };
 		D0E8A2401853EB4F005F8CAF /* UIColor+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */; };
 		D0ED46B1161A6A6300BF31BD /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */; };
 		D0FC077B15E7ED7E00811921 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC077A15E7ED7E00811921 /* Reachability.m */; };
@@ -336,10 +332,6 @@
 		D0D11E0C1541CCE800B8ECBD /* WQEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQEditViewController.h; sourceTree = "<group>"; };
 		D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQEditViewController.m; sourceTree = "<group>"; };
 		D0E8A2321852787D005F8CAF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iWordQuiz/Images.xcassets; sourceTree = "<group>"; };
-		D0E8A23518528A61005F8CAF /* MSDynamicsDrawerStyler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDynamicsDrawerStyler.h; sourceTree = "<group>"; };
-		D0E8A23618528A61005F8CAF /* MSDynamicsDrawerStyler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDynamicsDrawerStyler.m; sourceTree = "<group>"; };
-		D0E8A23818528A61005F8CAF /* MSDynamicsDrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSDynamicsDrawerViewController.h; sourceTree = "<group>"; };
-		D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSDynamicsDrawerViewController.m; sourceTree = "<group>"; };
 		D0E8A23E1853EB4F005F8CAF /* UIColor+PHColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PHColor.h"; path = "../iWordQuiz/UIColor+PHColor.h"; sourceTree = "<group>"; };
 		D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PHColor.m"; path = "../iWordQuiz/UIColor+PHColor.m"; sourceTree = "<group>"; };
 		D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
@@ -444,7 +436,6 @@
 				D0549F51151BC37900BDE78C /* MDSpreadView */,
 				D0FC074D15E703A600811921 /* CHDropboxSync */,
 				D0FC077C15E7ED9300811921 /* Reachability */,
-				D0E8A23418528A61005F8CAF /* MSDynamicsDrawerViewController */,
 				080E96DDFE201D6D7F000001 /* iWordQuiz */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -635,18 +626,6 @@
 				D04BD0B313C90DDC006A7387 /* US States and Capitals.kvtml */,
 			);
 			name = Examples;
-			sourceTree = "<group>";
-		};
-		D0E8A23418528A61005F8CAF /* MSDynamicsDrawerViewController */ = {
-			isa = PBXGroup;
-			children = (
-				D0E8A23518528A61005F8CAF /* MSDynamicsDrawerStyler.h */,
-				D0E8A23618528A61005F8CAF /* MSDynamicsDrawerStyler.m */,
-				D0E8A23818528A61005F8CAF /* MSDynamicsDrawerViewController.h */,
-				D0E8A23918528A61005F8CAF /* MSDynamicsDrawerViewController.m */,
-			);
-			name = MSDynamicsDrawerViewController;
-			path = MSDynamicsDrawerViewController/MSDynamicsDrawerViewController;
 			sourceTree = "<group>";
 		};
 		D0FC074D15E703A600811921 /* CHDropboxSync */ = {
@@ -922,7 +901,6 @@
 				D0549F98151BC37900BDE78C /* MDSpreadViewCellRowHeaderBackground.m in Sources */,
 				D0549F9A151BC37900BDE78C /* MDSpreadViewHeaderCell.m in Sources */,
 				D0CC0BEE151D27A00084ACB0 /* WQDocument.m in Sources */,
-				D0E8A23A18528A61005F8CAF /* MSDynamicsDrawerStyler.m in Sources */,
 				D0CC0BF1151E38DA0084ACB0 /* WQUtils.m in Sources */,
 				D0CC677815252F2B000D067C /* WQScoreButton.m in Sources */,
 				D06A08D0185AA33900A0A158 /* UIImage+PHColor.m in Sources */,
@@ -931,7 +909,6 @@
 				D0254D6318777D3A0032566D /* DDXMLNode.m in Sources */,
 				D0FC077B15E7ED7E00811921 /* Reachability.m in Sources */,
 				D0CBB7F116A9FD0000FDAC8C /* WQQuizItem.m in Sources */,
-				D0E8A23B18528A61005F8CAF /* MSDynamicsDrawerViewController.m in Sources */,
 				D0CBB7F816B099C300FDAC8C /* TransparentToolbar.m in Sources */,
 				D0254D02186F6B970032566D /* UIFont+WQDynamic.m in Sources */,
 			);
@@ -966,7 +943,6 @@
 				D06A0936185D421E00A0A158 /* MDSpreadViewCellRowHeaderBackground.m in Sources */,
 				D06A0937185D421E00A0A158 /* MDSpreadViewHeaderCell.m in Sources */,
 				D06A0938185D421E00A0A158 /* WQDocument.m in Sources */,
-				D06A0939185D421E00A0A158 /* MSDynamicsDrawerStyler.m in Sources */,
 				D06A093A185D421E00A0A158 /* WQUtils.m in Sources */,
 				D06A093B185D421E00A0A158 /* WQScoreButton.m in Sources */,
 				D06A093D185D421E00A0A158 /* UIImage+PHColor.m in Sources */,
@@ -975,7 +951,6 @@
 				D0254D6418777D3A0032566D /* DDXMLNode.m in Sources */,
 				D06A094D185D421E00A0A158 /* Reachability.m in Sources */,
 				D06A094E185D421E00A0A158 /* WQQuizItem.m in Sources */,
-				D06A094F185D421E00A0A158 /* MSDynamicsDrawerViewController.m in Sources */,
 				D06A0950185D421E00A0A158 /* TransparentToolbar.m in Sources */,
 				D0254D03186F6F1B0032566D /* UIFont+WQDynamic.m in Sources */,
 			);
