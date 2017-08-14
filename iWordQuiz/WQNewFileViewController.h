@@ -45,6 +45,8 @@
 - (IBAction)doDismissView:(id)sender;
 - (IBAction)doCreateNew:(id)sender;
 
+- (void) vocabInfo:(NSNotification *)n;
+
 @end
 
 @protocol WQNewFileViewControllerDelegate <NSObject>

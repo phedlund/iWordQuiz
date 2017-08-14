@@ -39,7 +39,6 @@
     NSString *_fileName;
 }
 
-- (void) vocabInfo:(NSNotification *)n;
 @end
 
 @implementation WQNewFileViewController
