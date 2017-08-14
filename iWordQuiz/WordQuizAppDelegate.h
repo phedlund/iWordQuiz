@@ -32,16 +32,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <UIKit/UIKit.h>
 
-#import <DropboxSDK/DropboxSDK.h>
-
-//#import "MSDynamicsDrawerViewController.h"
-
-@interface iWordQuizAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate, DBSessionDelegate> {
+@interface iWordQuizAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
     
     NSString *relinkUserId;
 }
 
 @property (strong, nonatomic) UIWindow *window;
-//@property (strong, nonatomic) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @end

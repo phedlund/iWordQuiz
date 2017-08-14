@@ -58,6 +58,8 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleURLName</key>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>db-DB_APP_KEY_PLIST</string>
@@ -65,7 +67,12 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>79</string>
+	<string>127</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>dbapi-8-emm</string>
+		<string>dbapi-2</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIFileSharingEnabled</key>

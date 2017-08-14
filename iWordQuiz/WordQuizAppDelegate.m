@@ -30,11 +30,8 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 *************************************************************************/
 
-#import "CHDropboxSync.h"
-
 #import "WordQuizAppDelegate.h"
 #import "RootViewController.h"
-#import "DBDefines.h"
 #import "UIColor+PHColor.h"
 
 @interface iWordQuizAppDelegate ()
@@ -47,14 +44,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
-
-	// Dropbox
-    NSString* appKey = DB_APP_KEY;
-	NSString* appSecret = DB_APP_SECRET;
-	NSString *root = kDBRootAppFolder;
-	DBSession* session = [[DBSession alloc] initWithAppKey:appKey appSecret:appSecret root:root];
-	session.delegate = self;
-	[DBSession setSharedSession:session];
 
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -83,42 +72,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         [rootController enumerateVocabularies];
         
 	}
-	else
-	{
-		// Handle custom URL scheme
-        if ([[DBSession sharedSession] handleOpenURL:url]) {
-            if ([[DBSession sharedSession] isLinked]) {
-                NSLog(@"We have Dropbox link");
-                [CHDropboxSync forgetStatus];
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"Linked" object:nil];
-            }
-            //return YES;
-        }
-	}	
 	return YES;
-}
-
-
-#pragma mark -
-#pragma mark DBSessionDelegate methods
-
-- (void)sessionDidReceiveAuthorizationFailure:(DBSession*)session userId:(NSString *)userId {
-	relinkUserId = userId;
-	[[[UIAlertView alloc] 
-	   initWithTitle:@"Dropbox Session Ended" message:@"Do you want to relink?" delegate:self 
-	   cancelButtonTitle:@"Cancel" otherButtonTitles:@"Relink", nil]
-	 show];
-}
-
-
-#pragma mark -
-#pragma mark UIAlertViewDelegate methods
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)index {
-	if (index != alertView.cancelButtonIndex) {
-		[[DBSession sharedSession] linkUserId:relinkUserId fromController:self.window.rootViewController];
-	}
-	relinkUserId = nil;
 }
 
 @end

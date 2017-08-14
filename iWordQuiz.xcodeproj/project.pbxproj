@@ -17,23 +17,12 @@
 		D01DC972121F57F2006671A1 /* QAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC96F121F57F2006671A1 /* QAViewController.m */; };
 		D01DC97B121F5981006671A1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC979121F5981006671A1 /* HomeViewController.m */; };
 		D0254D02186F6B970032566D /* UIFont+WQDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D01186F6B970032566D /* UIFont+WQDynamic.m */; };
-		D0254D03186F6F1B0032566D /* UIFont+WQDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D01186F6B970032566D /* UIFont+WQDynamic.m */; };
 		D0254D5B18777D3A0032566D /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D4E18777D3A0032566D /* DDXMLElementAdditions.m */; };
-		D0254D5C18777D3A0032566D /* DDXMLElementAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D4E18777D3A0032566D /* DDXMLElementAdditions.m */; };
 		D0254D5D18777D3A0032566D /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5118777D3A0032566D /* NSString+DDXML.m */; };
-		D0254D5E18777D3A0032566D /* NSString+DDXML.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5118777D3A0032566D /* NSString+DDXML.m */; };
 		D0254D5F18777D3A0032566D /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5418777D3A0032566D /* DDXMLDocument.m */; };
-		D0254D6018777D3A0032566D /* DDXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5418777D3A0032566D /* DDXMLDocument.m */; };
 		D0254D6118777D3A0032566D /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5618777D3A0032566D /* DDXMLElement.m */; };
-		D0254D6218777D3A0032566D /* DDXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5618777D3A0032566D /* DDXMLElement.m */; };
 		D0254D6318777D3A0032566D /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5818777D3A0032566D /* DDXMLNode.m */; };
-		D0254D6418777D3A0032566D /* DDXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D5818777D3A0032566D /* DDXMLNode.m */; };
-		D0254D6918777DC20032566D /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D6618777DC20032566D /* CHDropboxSync.m */; };
-		D0254D6A18777DC20032566D /* CHDropboxSync.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D6618777DC20032566D /* CHDropboxSync.m */; };
-		D0254D6B18777DC20032566D /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D6818777DC20032566D /* SyncTask.m */; };
-		D0254D6C18777DC20032566D /* SyncTask.m in Sources */ = {isa = PBXBuildFile; fileRef = D0254D6818777DC20032566D /* SyncTask.m */; };
 		D02888C4186927F40094E582 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D02888C3186927F40094E582 /* Settings.bundle */; };
-		D02888C5186927F40094E582 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D02888C3186927F40094E582 /* Settings.bundle */; };
 		D03A5B851536422F00BEA27B /* document-icon-22x29.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B831536422F00BEA27B /* document-icon-22x29.png */; };
 		D03A5B861536422F00BEA27B /* document-icon-44x58.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B841536422F00BEA27B /* document-icon-44x58.png */; };
 		D04BD0B413C90DDC006A7387 /* Example.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B113C90DDC006A7387 /* Example.kvtml */; };
@@ -85,93 +74,8 @@
 		D0549FC0151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F90151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png */; };
 		D0549FC2151BCADB00BDE78C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0549FC1151BCADB00BDE78C /* QuartzCore.framework */; };
 		D06A08D0185AA33900A0A158 /* UIImage+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */; };
-		D06A08DA185D421E00A0A158 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8A2321852787D005F8CAF /* Images.xcassets */; };
-		D06A08E2185D421E00A0A158 /* document-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC112CD0F6800F7BB72 /* document-icon-64.png */; };
-		D06A08E3185D421E00A0A158 /* document-icon-320.png in Resources */ = {isa = PBXBuildFile; fileRef = D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */; };
-		D06A08E5185D421E00A0A158 /* Example.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B113C90DDC006A7387 /* Example.kvtml */; };
-		D06A08E6185D421E00A0A158 /* French Verbs.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B213C90DDC006A7387 /* French Verbs.kvtml */; };
-		D06A08E7185D421E00A0A158 /* US States and Capitals.kvtml in Resources */ = {isa = PBXBuildFile; fileRef = D04BD0B313C90DDC006A7387 /* US States and Capitals.kvtml */; };
-		D06A08F2185D421E00A0A158 /* document-icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16815179F6F004AC04B /* document-icon-128.png */; };
-		D06A08F3185D421E00A0A158 /* document-icon-640.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16915179F6F004AC04B /* document-icon-640.png */; };
-		D06A08F4185D421E00A0A158 /* MDSpreadViewCell.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F6D151BC37900BDE78C /* MDSpreadViewCell.png */; };
-		D06A08F5185D421E00A0A158 /* MDSpreadViewCell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F6E151BC37900BDE78C /* MDSpreadViewCell@2x.png */; };
-		D06A08F6185D421E00A0A158 /* MDSpreadViewCellSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F6F151BC37900BDE78C /* MDSpreadViewCellSelected.png */; };
-		D06A08F7185D421E00A0A158 /* MDSpreadViewCellSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F70151BC37900BDE78C /* MDSpreadViewCellSelected@2x.png */; };
-		D06A08F8185D421E00A0A158 /* MDSpreadViewColumnHeaderLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F71151BC37900BDE78C /* MDSpreadViewColumnHeaderLeft.png */; };
-		D06A08F9185D421E00A0A158 /* MDSpreadViewColumnHeaderLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F72151BC37900BDE78C /* MDSpreadViewColumnHeaderLeft@2x.png */; };
-		D06A08FA185D421E00A0A158 /* MDSpreadViewColumnHeaderLeftSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F73151BC37900BDE78C /* MDSpreadViewColumnHeaderLeftSelected.png */; };
-		D06A08FB185D421E00A0A158 /* MDSpreadViewColumnHeaderLeftSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F74151BC37900BDE78C /* MDSpreadViewColumnHeaderLeftSelected@2x.png */; };
-		D06A08FC185D421E00A0A158 /* MDSpreadViewColumnHeaderRight.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F75151BC37900BDE78C /* MDSpreadViewColumnHeaderRight.png */; };
-		D06A08FD185D421E00A0A158 /* MDSpreadViewColumnHeaderRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F76151BC37900BDE78C /* MDSpreadViewColumnHeaderRight@2x.png */; };
-		D06A08FE185D421E00A0A158 /* MDSpreadViewColumnHeaderRightSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F77151BC37900BDE78C /* MDSpreadViewColumnHeaderRightSelected.png */; };
-		D06A08FF185D421E00A0A158 /* MDSpreadViewColumnHeaderRightSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F78151BC37900BDE78C /* MDSpreadViewColumnHeaderRightSelected@2x.png */; };
-		D06A0900185D421E00A0A158 /* MDSpreadViewCornerBottomLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F79151BC37900BDE78C /* MDSpreadViewCornerBottomLeft.png */; };
-		D06A0901185D421E00A0A158 /* MDSpreadViewCornerBottomLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F7A151BC37900BDE78C /* MDSpreadViewCornerBottomLeft@2x.png */; };
-		D06A0902185D421E00A0A158 /* MDSpreadViewCornerBottomLeftSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F7B151BC37900BDE78C /* MDSpreadViewCornerBottomLeftSelected.png */; };
-		D06A0903185D421E00A0A158 /* MDSpreadViewCornerBottomLeftSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F7C151BC37900BDE78C /* MDSpreadViewCornerBottomLeftSelected@2x.png */; };
-		D06A0904185D421E00A0A158 /* MDSpreadViewCornerBottomRight.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F7D151BC37900BDE78C /* MDSpreadViewCornerBottomRight.png */; };
-		D06A0905185D421E00A0A158 /* MDSpreadViewCornerBottomRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F7E151BC37900BDE78C /* MDSpreadViewCornerBottomRight@2x.png */; };
-		D06A0906185D421E00A0A158 /* MDSpreadViewCornerBottomRightSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F7F151BC37900BDE78C /* MDSpreadViewCornerBottomRightSelected.png */; };
-		D06A0907185D421E00A0A158 /* MDSpreadViewCornerBottomRightSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F80151BC37900BDE78C /* MDSpreadViewCornerBottomRightSelected@2x.png */; };
-		D06A0908185D421E00A0A158 /* MDSpreadViewCornerTopLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F81151BC37900BDE78C /* MDSpreadViewCornerTopLeft.png */; };
-		D06A0909185D421E00A0A158 /* MDSpreadViewCornerTopLeft@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F82151BC37900BDE78C /* MDSpreadViewCornerTopLeft@2x.png */; };
-		D06A090A185D421E00A0A158 /* MDSpreadViewCornerTopLeftSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F83151BC37900BDE78C /* MDSpreadViewCornerTopLeftSelected.png */; };
-		D06A090B185D421E00A0A158 /* MDSpreadViewCornerTopLeftSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F84151BC37900BDE78C /* MDSpreadViewCornerTopLeftSelected@2x.png */; };
-		D06A090C185D421E00A0A158 /* MDSpreadViewCornerTopRight.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F85151BC37900BDE78C /* MDSpreadViewCornerTopRight.png */; };
-		D06A090D185D421E00A0A158 /* MDSpreadViewCornerTopRight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F86151BC37900BDE78C /* MDSpreadViewCornerTopRight@2x.png */; };
-		D06A090E185D421E00A0A158 /* MDSpreadViewCornerTopRightSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F87151BC37900BDE78C /* MDSpreadViewCornerTopRightSelected.png */; };
-		D06A090F185D421E00A0A158 /* MDSpreadViewCornerTopRightSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F88151BC37900BDE78C /* MDSpreadViewCornerTopRightSelected@2x.png */; };
-		D06A0910185D421E00A0A158 /* MDSpreadViewRowHeaderBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F89151BC37900BDE78C /* MDSpreadViewRowHeaderBottom.png */; };
-		D06A0911185D421E00A0A158 /* MDSpreadViewRowHeaderBottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F8A151BC37900BDE78C /* MDSpreadViewRowHeaderBottom@2x.png */; };
-		D06A0912185D421E00A0A158 /* MDSpreadViewRowHeaderBottomSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F8B151BC37900BDE78C /* MDSpreadViewRowHeaderBottomSelected.png */; };
-		D06A0913185D421E00A0A158 /* MDSpreadViewRowHeaderBottomSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F8C151BC37900BDE78C /* MDSpreadViewRowHeaderBottomSelected@2x.png */; };
-		D06A0914185D421E00A0A158 /* MDSpreadViewRowHeaderTop.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F8D151BC37900BDE78C /* MDSpreadViewRowHeaderTop.png */; };
-		D06A0915185D421E00A0A158 /* MDSpreadViewRowHeaderTop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F8E151BC37900BDE78C /* MDSpreadViewRowHeaderTop@2x.png */; };
-		D06A0916185D421E00A0A158 /* MDSpreadViewRowHeaderTopSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F8F151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected.png */; };
-		D06A0917185D421E00A0A158 /* MDSpreadViewRowHeaderTopSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0549F90151BC37900BDE78C /* MDSpreadViewRowHeaderTopSelected@2x.png */; };
-		D06A091C185D421E00A0A158 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0CED4B515362F43005ADD4C /* InfoPlist.strings */; };
-		D06A091D185D421E00A0A158 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CED4B715362F43005ADD4C /* MainStoryboard_iPad.storyboard */; };
-		D06A091E185D421E00A0A158 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0CED4B915362F43005ADD4C /* MainStoryboard_iPhone.storyboard */; };
-		D06A091F185D421E00A0A158 /* document-icon-22x29.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B831536422F00BEA27B /* document-icon-22x29.png */; };
-		D06A0920185D421E00A0A158 /* document-icon-44x58.png in Resources */ = {isa = PBXBuildFile; fileRef = D03A5B841536422F00BEA27B /* document-icon-44x58.png */; };
-		D06A0924185D421E00A0A158 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		D06A0925185D421E00A0A158 /* WordQuizAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* WordQuizAppDelegate.m */; };
-		D06A0926185D421E00A0A158 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28042008108E984D000629CD /* RootViewController.m */; };
-		D06A0927185D421E00A0A158 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2804200A108E984D000629CD /* DetailViewController.m */; };
-		D06A0928185D421E00A0A158 /* FCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC96B121F57F2006671A1 /* FCViewController.m */; };
-		D06A0929185D421E00A0A158 /* MCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC96D121F57F2006671A1 /* MCViewController.m */; };
-		D06A092A185D421E00A0A158 /* QAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC96F121F57F2006671A1 /* QAViewController.m */; };
-		D06A092B185D421E00A0A158 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D01DC979121F5981006671A1 /* HomeViewController.m */; };
-		D06A092C185D421E00A0A158 /* WQQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = D04CF950122F371300B446E8 /* WQQuiz.m */; };
-		D06A092D185D421E00A0A158 /* ModePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0130A3D125AB58C0085482E /* ModePickerController.m */; };
-		D06A092F185D421E00A0A158 /* UIColor+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */; };
-		D06A0930185D421E00A0A158 /* MDSpreadView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F54151BC37900BDE78C /* MDSpreadView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0931185D421E00A0A158 /* MDSpreadViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F58151BC37900BDE78C /* MDSpreadViewCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0932185D421E00A0A158 /* MDSpreadViewCellBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F5A151BC37900BDE78C /* MDSpreadViewCellBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0934185D421E00A0A158 /* MDSpreadViewCellColumnHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F5C151BC37900BDE78C /* MDSpreadViewCellColumnHeaderBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0935185D421E00A0A158 /* MDSpreadViewCellCornerHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F5E151BC37900BDE78C /* MDSpreadViewCellCornerHeaderBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0936185D421E00A0A158 /* MDSpreadViewCellRowHeaderBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F62151BC37900BDE78C /* MDSpreadViewCellRowHeaderBackground.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0937185D421E00A0A158 /* MDSpreadViewHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0549F67151BC37900BDE78C /* MDSpreadViewHeaderCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		D06A0938185D421E00A0A158 /* WQDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0BED151D27A00084ACB0 /* WQDocument.m */; };
-		D06A093A185D421E00A0A158 /* WQUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC0BF0151E38D90084ACB0 /* WQUtils.m */; };
-		D06A093B185D421E00A0A158 /* WQScoreButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CC677715252F2B000D067C /* WQScoreButton.m */; };
-		D06A093D185D421E00A0A158 /* UIImage+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */; };
-		D06A093E185D421E00A0A158 /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
-		D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CE841B154737C10097D67A /* WQNewFileViewController.m */; };
-		D06A094D185D421E00A0A158 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC077A15E7ED7E00811921 /* Reachability.m */; };
-		D06A094E185D421E00A0A158 /* WQQuizItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBB7F016A9FD0000FDAC8C /* WQQuizItem.m */; };
-		D06A0950185D421E00A0A158 /* TransparentToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = D0CBB7F716B099C300FDAC8C /* TransparentToolbar.m */; };
-		D06A0952185D421E00A0A158 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0549FC1151BCADB00BDE78C /* QuartzCore.framework */; };
-		D06A0953185D421E00A0A158 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */; };
-		D06A0954185D421E00A0A158 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0CB156314EEF3D200FE7CC6 /* Security.framework */; };
-		D06A0955185D421E00A0A158 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */; };
-		D06A0956185D421E00A0A158 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		D06A0957185D421E00A0A158 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		D06A0958185D421E00A0A158 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
-		D06A0959185D421E00A0A158 /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */; };
 		D06CB62F1EBE916A00DAA584 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D06CB62E1EBE916A00DAA584 /* libxml2.2.tbd */; };
 		D06CB6311EBEB12F00DAA584 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06CB6301EBEB12F00DAA584 /* Launch Screen.storyboard */; };
-		D06CB6321EBEB12F00DAA584 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D06CB6301EBEB12F00DAA584 /* Launch Screen.storyboard */; };
 		D0C85E8B14F595A300C2A499 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */; };
 		D0C9B16A15179F6F004AC04B /* document-icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16815179F6F004AC04B /* document-icon-128.png */; };
 		D0C9B16B15179F6F004AC04B /* document-icon-640.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C9B16915179F6F004AC04B /* document-icon-640.png */; };
@@ -193,9 +97,20 @@
 		D0D11E0E1541CCE800B8ECBD /* WQEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */; };
 		D0E8A2331852787D005F8CAF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E8A2321852787D005F8CAF /* Images.xcassets */; };
 		D0E8A2401853EB4F005F8CAF /* UIColor+PHColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */; };
-		D0ED46B1161A6A6300BF31BD /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */; };
 		D0FC077B15E7ED7E00811921 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FC077A15E7ED7E00811921 /* Reachability.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D0A4F2351EDCFF6B00E48661 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -235,10 +150,6 @@
 		D0254D5718777D3A0032566D /* DDXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLNode.h; sourceTree = "<group>"; };
 		D0254D5818777D3A0032566D /* DDXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDXMLNode.m; sourceTree = "<group>"; };
 		D0254D5A18777D3A0032566D /* DDXMLPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDXMLPrivate.h; sourceTree = "<group>"; };
-		D0254D6518777DC20032566D /* CHDropboxSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CHDropboxSync.h; path = CHDropboxSync/Example/ServiceRecord/MySyncer/CHDropboxSync.h; sourceTree = SOURCE_ROOT; };
-		D0254D6618777DC20032566D /* CHDropboxSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CHDropboxSync.m; path = CHDropboxSync/Example/ServiceRecord/MySyncer/CHDropboxSync.m; sourceTree = SOURCE_ROOT; };
-		D0254D6718777DC20032566D /* SyncTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SyncTask.h; path = CHDropboxSync/Example/ServiceRecord/MySyncer/SyncTask.h; sourceTree = SOURCE_ROOT; };
-		D0254D6818777DC20032566D /* SyncTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SyncTask.m; path = CHDropboxSync/Example/ServiceRecord/MySyncer/SyncTask.m; sourceTree = SOURCE_ROOT; };
 		D02888C3186927F40094E582 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = iWordQuiz/Settings.bundle; sourceTree = "<group>"; };
 		D03A5B831536422F00BEA27B /* document-icon-22x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-22x29.png"; path = "Resources/document-icon-22x29.png"; sourceTree = "<group>"; };
 		D03A5B841536422F00BEA27B /* document-icon-44x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-44x58.png"; path = "Resources/document-icon-44x58.png"; sourceTree = "<group>"; };
@@ -301,12 +212,10 @@
 		D0549FC1151BCADB00BDE78C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D06A08CE185AA33900A0A158 /* UIImage+PHColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PHColor.h"; path = "iWordQuiz/UIImage+PHColor.h"; sourceTree = SOURCE_ROOT; };
 		D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PHColor.m"; path = "iWordQuiz/UIImage+PHColor.m"; sourceTree = SOURCE_ROOT; };
-		D06A095D185D421E00A0A158 /* iWordQuiz iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iWordQuiz iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06A095E185D421F00A0A158 /* iWordQuiz copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iWordQuiz copy-Info.plist"; path = "/Users/peter/Projects/iWordQuiz/iWordQuiz copy-Info.plist"; sourceTree = "<absolute>"; };
 		D06CB62E1EBE916A00DAA584 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D06CB6301EBEB12F00DAA584 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D0713DB314DE15820053121A /* WordQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WordQuiz.entitlements; sourceTree = "<group>"; };
-		D0C791D814F6F1AE000AFF00 /* DBDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDefines.h; sourceTree = "<group>"; };
 		D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D0C9B16815179F6F004AC04B /* document-icon-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-128.png"; path = "Resources/document-icon-128.png"; sourceTree = "<group>"; };
 		D0C9B16915179F6F004AC04B /* document-icon-640.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "document-icon-640.png"; path = "Resources/document-icon-640.png"; sourceTree = "<group>"; };
@@ -328,13 +237,11 @@
 		D0CED4B615362F43005ADD4C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		D0CED4B815362F43005ADD4C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		D0CED4BA15362F43005ADD4C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		D0D11E0C1541CCE800B8ECBD /* WQEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WQEditViewController.h; sourceTree = "<group>"; };
 		D0D11E0D1541CCE800B8ECBD /* WQEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WQEditViewController.m; sourceTree = "<group>"; };
 		D0E8A2321852787D005F8CAF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iWordQuiz/Images.xcassets; sourceTree = "<group>"; };
 		D0E8A23E1853EB4F005F8CAF /* UIColor+PHColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+PHColor.h"; path = "../iWordQuiz/UIColor+PHColor.h"; sourceTree = "<group>"; };
 		D0E8A23F1853EB4F005F8CAF /* UIColor+PHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+PHColor.m"; path = "../iWordQuiz/UIColor+PHColor.m"; sourceTree = "<group>"; };
-		D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
 		D0FC077915E7ED7D00811921 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		D0FC077A15E7ED7E00811921 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -351,22 +258,6 @@
 				D0D0EC4C14DB712700BE3A81 /* UIKit.framework in Frameworks */,
 				D0D0EC4D14DB712F00BE3A81 /* Foundation.framework in Frameworks */,
 				D0D0EC4E14DB713A00BE3A81 /* CoreGraphics.framework in Frameworks */,
-				D0ED46B1161A6A6300BF31BD /* DropboxSDK.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D06A0951185D421E00A0A158 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D06A0952185D421E00A0A158 /* QuartzCore.framework in Frameworks */,
-				D06A0953185D421E00A0A158 /* SystemConfiguration.framework in Frameworks */,
-				D06A0954185D421E00A0A158 /* Security.framework in Frameworks */,
-				D06A0955185D421E00A0A158 /* libxml2.dylib in Frameworks */,
-				D06A0956185D421E00A0A158 /* UIKit.framework in Frameworks */,
-				D06A0957185D421E00A0A158 /* Foundation.framework in Frameworks */,
-				D06A0958185D421E00A0A158 /* CoreGraphics.framework in Frameworks */,
-				D06A0959185D421E00A0A158 /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +313,6 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* WordQuiz.app */,
-				D06A095D185D421E00A0A158 /* iWordQuiz iPhone.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -431,10 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				D0713DB314DE15820053121A /* WordQuiz.entitlements */,
-				D0C791D814F6F1AE000AFF00 /* DBDefines.h */,
 				D0254D4B18777D3A0032566D /* KissXML */,
 				D0549F51151BC37900BDE78C /* MDSpreadView */,
-				D0FC074D15E703A600811921 /* CHDropboxSync */,
 				D0FC077C15E7ED9300811921 /* Reachability */,
 				080E96DDFE201D6D7F000001 /* iWordQuiz */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -478,8 +366,6 @@
 			isa = PBXGroup;
 			children = (
 				D06CB62E1EBE916A00DAA584 /* libxml2.2.tbd */,
-				D0D0EC4F14DB719100BE3A81 /* libxml2.dylib */,
-				D0ED46B0161A6A6300BF31BD /* DropboxSDK.framework */,
 				D0549FC1151BCADB00BDE78C /* QuartzCore.framework */,
 				D0C85E8A14F595A300C2A499 /* SystemConfiguration.framework */,
 				D0CB156314EEF3D200FE7CC6 /* Security.framework */,
@@ -628,18 +514,6 @@
 			name = Examples;
 			sourceTree = "<group>";
 		};
-		D0FC074D15E703A600811921 /* CHDropboxSync */ = {
-			isa = PBXGroup;
-			children = (
-				D0254D6518777DC20032566D /* CHDropboxSync.h */,
-				D0254D6618777DC20032566D /* CHDropboxSync.m */,
-				D0254D6718777DC20032566D /* SyncTask.h */,
-				D0254D6818777DC20032566D /* SyncTask.m */,
-			);
-			name = CHDropboxSync;
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		D0FC077C15E7ED9300811921 /* Reachability */ = {
 			isa = PBXGroup;
 			children = (
@@ -660,6 +534,7 @@
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
 				D02888C6186928C50094E582 /* ShellScript */,
+				D0A4F2351EDCFF6B00E48661 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -668,24 +543,6 @@
 			name = iWordQuiz;
 			productName = iWordQuiz;
 			productReference = 1D6058910D05DD3D006BFB54 /* WordQuiz.app */;
-			productType = "com.apple.product-type.application";
-		};
-		D06A08D8185D421E00A0A158 /* iWordQuiz (iPhone) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D06A095A185D421E00A0A158 /* Build configuration list for PBXNativeTarget "iWordQuiz (iPhone)" */;
-			buildPhases = (
-				D06A08D9185D421E00A0A158 /* Resources */,
-				D06A0923185D421E00A0A158 /* Sources */,
-				D06A0951185D421E00A0A158 /* Frameworks */,
-				D02888C7186928FE0094E582 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "iWordQuiz (iPhone)";
-			productName = iWordQuiz;
-			productReference = D06A095D185D421E00A0A158 /* iWordQuiz iPhone.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -718,7 +575,6 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* iWordQuiz */,
-				D06A08D8185D421E00A0A158 /* iWordQuiz (iPhone) */,
 			);
 		};
 /* End PBXProject section */
@@ -782,81 +638,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D06A08D9185D421E00A0A158 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D06A08DA185D421E00A0A158 /* Images.xcassets in Resources */,
-				D06A08E2185D421E00A0A158 /* document-icon-64.png in Resources */,
-				D06A08E3185D421E00A0A158 /* document-icon-320.png in Resources */,
-				D06A08E5185D421E00A0A158 /* Example.kvtml in Resources */,
-				D06A08E6185D421E00A0A158 /* French Verbs.kvtml in Resources */,
-				D06A08E7185D421E00A0A158 /* US States and Capitals.kvtml in Resources */,
-				D06A08F2185D421E00A0A158 /* document-icon-128.png in Resources */,
-				D06A08F3185D421E00A0A158 /* document-icon-640.png in Resources */,
-				D06A08F4185D421E00A0A158 /* MDSpreadViewCell.png in Resources */,
-				D06A08F5185D421E00A0A158 /* MDSpreadViewCell@2x.png in Resources */,
-				D06A08F6185D421E00A0A158 /* MDSpreadViewCellSelected.png in Resources */,
-				D06A08F7185D421E00A0A158 /* MDSpreadViewCellSelected@2x.png in Resources */,
-				D06A08F8185D421E00A0A158 /* MDSpreadViewColumnHeaderLeft.png in Resources */,
-				D06A08F9185D421E00A0A158 /* MDSpreadViewColumnHeaderLeft@2x.png in Resources */,
-				D06A08FA185D421E00A0A158 /* MDSpreadViewColumnHeaderLeftSelected.png in Resources */,
-				D06A08FB185D421E00A0A158 /* MDSpreadViewColumnHeaderLeftSelected@2x.png in Resources */,
-				D06A08FC185D421E00A0A158 /* MDSpreadViewColumnHeaderRight.png in Resources */,
-				D06A08FD185D421E00A0A158 /* MDSpreadViewColumnHeaderRight@2x.png in Resources */,
-				D06A08FE185D421E00A0A158 /* MDSpreadViewColumnHeaderRightSelected.png in Resources */,
-				D06A08FF185D421E00A0A158 /* MDSpreadViewColumnHeaderRightSelected@2x.png in Resources */,
-				D06A0900185D421E00A0A158 /* MDSpreadViewCornerBottomLeft.png in Resources */,
-				D06A0901185D421E00A0A158 /* MDSpreadViewCornerBottomLeft@2x.png in Resources */,
-				D06A0902185D421E00A0A158 /* MDSpreadViewCornerBottomLeftSelected.png in Resources */,
-				D06A0903185D421E00A0A158 /* MDSpreadViewCornerBottomLeftSelected@2x.png in Resources */,
-				D06A0904185D421E00A0A158 /* MDSpreadViewCornerBottomRight.png in Resources */,
-				D06A0905185D421E00A0A158 /* MDSpreadViewCornerBottomRight@2x.png in Resources */,
-				D06A0906185D421E00A0A158 /* MDSpreadViewCornerBottomRightSelected.png in Resources */,
-				D06A0907185D421E00A0A158 /* MDSpreadViewCornerBottomRightSelected@2x.png in Resources */,
-				D06A0908185D421E00A0A158 /* MDSpreadViewCornerTopLeft.png in Resources */,
-				D06A0909185D421E00A0A158 /* MDSpreadViewCornerTopLeft@2x.png in Resources */,
-				D06A090A185D421E00A0A158 /* MDSpreadViewCornerTopLeftSelected.png in Resources */,
-				D06A090B185D421E00A0A158 /* MDSpreadViewCornerTopLeftSelected@2x.png in Resources */,
-				D06A090C185D421E00A0A158 /* MDSpreadViewCornerTopRight.png in Resources */,
-				D06A090D185D421E00A0A158 /* MDSpreadViewCornerTopRight@2x.png in Resources */,
-				D06A090E185D421E00A0A158 /* MDSpreadViewCornerTopRightSelected.png in Resources */,
-				D06A090F185D421E00A0A158 /* MDSpreadViewCornerTopRightSelected@2x.png in Resources */,
-				D06CB6321EBEB12F00DAA584 /* Launch Screen.storyboard in Resources */,
-				D06A0910185D421E00A0A158 /* MDSpreadViewRowHeaderBottom.png in Resources */,
-				D06A0911185D421E00A0A158 /* MDSpreadViewRowHeaderBottom@2x.png in Resources */,
-				D06A0912185D421E00A0A158 /* MDSpreadViewRowHeaderBottomSelected.png in Resources */,
-				D06A0913185D421E00A0A158 /* MDSpreadViewRowHeaderBottomSelected@2x.png in Resources */,
-				D06A0914185D421E00A0A158 /* MDSpreadViewRowHeaderTop.png in Resources */,
-				D06A0915185D421E00A0A158 /* MDSpreadViewRowHeaderTop@2x.png in Resources */,
-				D06A0916185D421E00A0A158 /* MDSpreadViewRowHeaderTopSelected.png in Resources */,
-				D06A0917185D421E00A0A158 /* MDSpreadViewRowHeaderTopSelected@2x.png in Resources */,
-				D06A091C185D421E00A0A158 /* InfoPlist.strings in Resources */,
-				D06A091D185D421E00A0A158 /* MainStoryboard_iPad.storyboard in Resources */,
-				D06A091E185D421E00A0A158 /* MainStoryboard_iPhone.storyboard in Resources */,
-				D06A091F185D421E00A0A158 /* document-icon-22x29.png in Resources */,
-				D02888C5186927F40094E582 /* Settings.bundle in Resources */,
-				D06A0920185D421E00A0A158 /* document-icon-44x58.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		D02888C6186928C50094E582 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\n\n#note: for simplicity, it's assumed that there's already a bundle version (which is an integer) and a version string. set them in the Summary pane!\n\n#get path to the BUILT .plist, NOT the packaged one! this fixes the off-by-one bug\nbuiltInfoPlistPath=${TARGET_BUILD_DIR}/${INFOPLIST_PATH}\necho \"using plist at $builtInfoPlistPath\"\n\nmodifiedFilesExist=false\n#this is the modification date to compare to -- there's a possible bug here, if you edit the built plist directly, for some reason. probably you shouldn't do that anyways.\ncompModDate=$(stat -f \"%m\" \"$builtInfoPlistPath\")\n\nfor filename in *\ndo\nmodDate=$(stat -f \"%m\" \"$filename\")\nif [ \"$modDate\" -gt \"$compModDate\" ]\nthen\nmodifiedFilesExist=true;\necho \"found newly modified file: $filename\"\nbreak\nfi\ndone\n\nif $modifiedFilesExist\nthen\necho \"A file is new, bumping version\"\n\n#increment the build number\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleVersion\" \"$builtInfoPlistPath\")\necho \"retrieved current build number: $buildNumber\"\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$builtInfoPlistPath\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"\n\n#compose the version number string\nversionString=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleShortVersionString\" \"$builtInfoPlistPath\")\nversionString+=\" (\"\nversionString+=$(/usr/libexec/PlistBuddy -c \"Print :CFBundleVersion\" \"$builtInfoPlistPath\")\nversionString+=\")\"\n\n#write the version number string to the settings bundle\n#IMPORTANT: this assumes the version number is the second property in the settings bundle!\n/usr/libexec/PlistBuddy -c \"Set :PreferenceSpecifiers:1:DefaultValue $versionString\" \"$SRCROOT/iWordQuiz/Settings.bundle/Root.plist\"\nelse\necho \"Version not incremented -- no newly modified files\"\nfi\n";
-		};
-		D02888C7186928FE0094E582 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -882,10 +667,8 @@
 				D0254D5D18777D3A0032566D /* NSString+DDXML.m in Sources */,
 				D0254D6118777D3A0032566D /* DDXMLElement.m in Sources */,
 				2804200C108E984D000629CD /* DetailViewController.m in Sources */,
-				D0254D6B18777DC20032566D /* SyncTask.m in Sources */,
 				D0254D5B18777D3A0032566D /* DDXMLElementAdditions.m in Sources */,
 				D01DC970121F57F2006671A1 /* FCViewController.m in Sources */,
-				D0254D6918777DC20032566D /* CHDropboxSync.m in Sources */,
 				D01DC971121F57F2006671A1 /* MCViewController.m in Sources */,
 				D01DC972121F57F2006671A1 /* QAViewController.m in Sources */,
 				D01DC97B121F5981006671A1 /* HomeViewController.m in Sources */,
@@ -911,48 +694,6 @@
 				D0CBB7F116A9FD0000FDAC8C /* WQQuizItem.m in Sources */,
 				D0CBB7F816B099C300FDAC8C /* TransparentToolbar.m in Sources */,
 				D0254D02186F6B970032566D /* UIFont+WQDynamic.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D06A0923185D421E00A0A158 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D06A0924185D421E00A0A158 /* main.m in Sources */,
-				D06A0925185D421E00A0A158 /* WordQuizAppDelegate.m in Sources */,
-				D06A0926185D421E00A0A158 /* RootViewController.m in Sources */,
-				D0254D5E18777D3A0032566D /* NSString+DDXML.m in Sources */,
-				D0254D6218777D3A0032566D /* DDXMLElement.m in Sources */,
-				D06A0927185D421E00A0A158 /* DetailViewController.m in Sources */,
-				D0254D6C18777DC20032566D /* SyncTask.m in Sources */,
-				D0254D5C18777D3A0032566D /* DDXMLElementAdditions.m in Sources */,
-				D06A0928185D421E00A0A158 /* FCViewController.m in Sources */,
-				D0254D6A18777DC20032566D /* CHDropboxSync.m in Sources */,
-				D06A0929185D421E00A0A158 /* MCViewController.m in Sources */,
-				D06A092A185D421E00A0A158 /* QAViewController.m in Sources */,
-				D06A092B185D421E00A0A158 /* HomeViewController.m in Sources */,
-				D06A092C185D421E00A0A158 /* WQQuiz.m in Sources */,
-				D06A092D185D421E00A0A158 /* ModePickerController.m in Sources */,
-				D06A092F185D421E00A0A158 /* UIColor+PHColor.m in Sources */,
-				D0254D6018777D3A0032566D /* DDXMLDocument.m in Sources */,
-				D06A0930185D421E00A0A158 /* MDSpreadView.m in Sources */,
-				D06A0931185D421E00A0A158 /* MDSpreadViewCell.m in Sources */,
-				D06A0932185D421E00A0A158 /* MDSpreadViewCellBackground.m in Sources */,
-				D06A0934185D421E00A0A158 /* MDSpreadViewCellColumnHeaderBackground.m in Sources */,
-				D06A0935185D421E00A0A158 /* MDSpreadViewCellCornerHeaderBackground.m in Sources */,
-				D06A0936185D421E00A0A158 /* MDSpreadViewCellRowHeaderBackground.m in Sources */,
-				D06A0937185D421E00A0A158 /* MDSpreadViewHeaderCell.m in Sources */,
-				D06A0938185D421E00A0A158 /* WQDocument.m in Sources */,
-				D06A093A185D421E00A0A158 /* WQUtils.m in Sources */,
-				D06A093B185D421E00A0A158 /* WQScoreButton.m in Sources */,
-				D06A093D185D421E00A0A158 /* UIImage+PHColor.m in Sources */,
-				D06A093E185D421E00A0A158 /* WQEditViewController.m in Sources */,
-				D06A093F185D421E00A0A158 /* WQNewFileViewController.m in Sources */,
-				D0254D6418777D3A0032566D /* DDXMLNode.m in Sources */,
-				D06A094D185D421E00A0A158 /* Reachability.m in Sources */,
-				D06A094E185D421E00A0A158 /* WQQuizItem.m in Sources */,
-				D06A0950185D421E00A0A158 /* TransparentToolbar.m in Sources */,
-				D0254D03186F6F1B0032566D /* UIFont+WQDynamic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1001,7 +742,8 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)/iWordQuiz/Carthage/Build/iOS",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1012,12 +754,14 @@
 					/usr/include/libxml2,
 					"$(SRCROOT)/Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/",
 					"$(SRCROOT)/DropboxSDK.framework/Headers",
+					"$(PROJECT_DIR)/iWordQuiz/Carthage/Build/iOS/ObjectiveDropboxOfficial.framework/Headers",
 				);
 				INFOPLIST_FILE = "iWordQuiz-Info.plist";
 				INFOPLIST_OUTPUT_FORMAT = binary;
-				INFOPLIST_PREFIX_HEADER = DBDefines.h;
+				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = WordQuiz;
 				PROVISIONING_PROFILE = "";
@@ -1044,7 +788,8 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"$(PROJECT_DIR)/iWordQuiz/Carthage/Build/iOS",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iWordQuiz_Prefix.pch;
@@ -1053,12 +798,14 @@
 					/usr/include/libxml2,
 					"$(SRCROOT)/Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/",
 					"$(SRCROOT)/DropboxSDK.framework/Headers",
+					"$(PROJECT_DIR)/iWordQuiz/Carthage/Build/iOS/ObjectiveDropboxOfficial.framework/Headers",
 				);
 				INFOPLIST_FILE = "iWordQuiz-Info.plist";
 				INFOPLIST_OUTPUT_FORMAT = binary;
-				INFOPLIST_PREFIX_HEADER = DBDefines.h;
+				INFOPLIST_PREFIX_HEADER = "";
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = WordQuiz;
 				PROVISIONING_PROFILE = "";
@@ -1126,85 +873,6 @@
 			};
 			name = Release;
 		};
-		D06A095B185D421E00A0A158 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-				);
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iWordQuiz_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					/usr/include/libxml2,
-					"$(SRCROOT)/Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/",
-					"$(SRCROOT)/DropboxSDK.framework/Headers",
-				);
-				INFOPLIST_FILE = "iWordQuiz copy-Info.plist";
-				INFOPLIST_OUTPUT_FORMAT = binary;
-				INFOPLIST_PREFIX_HEADER = DBDefines.h;
-				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_NAME = "iWordQuiz iPhone";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		D06A095C185D421E00A0A158 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Peter Hedlund";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Hedlund";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos4.2]" = "iPhone Distribution: Peter Hedlund";
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = iWordQuiz_Prefix.pch;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = (
-					/usr/include/libxml2,
-					"$(SRCROOT)/Classes/CHDropboxSync/Example/ServiceRecord/MySyncer/",
-					"$(SRCROOT)/DropboxSDK.framework/Headers",
-				);
-				INFOPLIST_FILE = "iWordQuiz copy-Info.plist";
-				INFOPLIST_OUTPUT_FORMAT = binary;
-				INFOPLIST_PREFIX_HEADER = DBDefines.h;
-				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				OTHER_LDFLAGS = "-lxml2";
-				PRODUCT_NAME = "iWordQuiz iPhone";
-				PROVISIONING_PROFILE = "8D239F6C-DE4B-45FE-B047-20B79B305662";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8D239F6C-DE4B-45FE-B047-20B79B305662";
-				"PROVISIONING_PROFILE[sdk=iphoneos4.2]" = "8D239F6C-DE4B-45FE-B047-20B79B305662";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 1;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1222,15 +890,6 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D06A095A185D421E00A0A158 /* Build configuration list for PBXNativeTarget "iWordQuiz (iPhone)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D06A095B185D421E00A0A158 /* Debug */,
-				D06A095C185D421E00A0A158 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

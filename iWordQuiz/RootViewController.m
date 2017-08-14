@@ -34,7 +34,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "DetailViewController.h"
 #import "WQDocument.h"
 #import "WQUtils.h"
-#import "CHDropboxSync.h"
 #import "UIColor+PHColor.h"
 
 NSString* WQDocmentFileExtension = @"kvtml";
@@ -62,7 +61,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
         self.splitViewController.delegate = self;
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(linked:) name:@"Linked" object:nil];
     }
     
     self.navigationController.navigationBar.tintColor = [UIColor phIconColor];
@@ -262,23 +260,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 	[viewController viewWillAppear:NO];
 }
 
-#pragma mark -
-#pragma mark Memory management
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Relinquish ownership any cached data, images, etc. that aren't in use.
-}
-
-- (void)viewDidUnload {
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
-
-
 
 #pragma mark private methods
 
@@ -322,12 +303,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 
 #pragma mark - Notifications
 
-- (void)linked:(NSNotification*)n {
-    /*if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.menuButton.enabled = [[DBSession sharedSession] isLinked];
-    }*/
-}
-
 - (void)newFileURL:(NSNotification*)n {
     NSURL *newURL = (NSURL*)[n.userInfo valueForKey:@"URL"];
     [self.vocabularies replaceObjectAtIndex:_currentRow withObject:newURL];
@@ -350,77 +325,16 @@ NSString* WQDocumentsDirectoryName = @"Documents";
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
     [alertController addAction:newAction];
-    if ([[DBSession sharedSession] isLinked]) {
-        UIAlertAction *syncAction = [UIAlertAction actionWithTitle:@"Sync With Dropbox" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            self.syncer = [[CHDropboxSync alloc] init];
-            self.syncer.delegate = self;
-            [self.syncer doSync];
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }];
-        UIAlertAction *unlinkAction = [UIAlertAction actionWithTitle:@"Unlink Dropbox" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [[DBSession sharedSession] unlinkAll];
-            [[[UIAlertView alloc] initWithTitle:@"Account Unlinked!"
-                                        message:@"Your Dropbox account has been unlinked"
-                                       delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil]
-             show];
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }];
-        
-        [alertController addAction:syncAction];
-        [alertController addAction:unlinkAction];
-    } else {
-        UIAlertAction *linkAction = [UIAlertAction actionWithTitle:@"Link Dropbox" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [[DBSession sharedSession] linkFromController:self];
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }];
-        [alertController addAction:linkAction];
-    }
+    
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
     [alertController addAction:cancelAction];
+    
     alertController.popoverPresentationController.barButtonItem = self.menuButton;
     alertController.view.backgroundColor = [UIColor phPopoverBackgroundColor];
     alertController.view.tintColor = [UIColor phPopoverIconColor];
     [self presentViewController:alertController animated:YES completion:nil];
-}
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    NSLog(@"Button %ld", (long)buttonIndex);
-    
-    if (buttonIndex != actionSheet.cancelButtonIndex) {
-        NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-        if ([buttonTitle isEqualToString:@"New Vocabulary"]) {
-            if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-                UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"newVocabulary"];
-                [(WQNewFileViewController*)navController.topViewController setDelegate:self];
-                [self presentViewController:navController animated:YES completion:nil];
-            } else {
-                WQNewFileViewController *newController = [self.storyboard instantiateViewControllerWithIdentifier:@"newVocabulary"];
-                newController.delegate = self;
-                [self.navigationController pushViewController:newController animated:YES];
-            }
-        }
-        if ([buttonTitle isEqualToString:@"Sync With Dropbox"]) {
-            self.syncer = [[CHDropboxSync alloc] init];
-            self.syncer.delegate = self;
-            [self.syncer doSync];
-        }
-        if ([buttonTitle isEqualToString:@"Link Dropbox"]) {
-            [[DBSession sharedSession] linkFromController:self];
-        }
-        if ([buttonTitle isEqualToString:@"Unlink Dropbox"]) {
-            [[DBSession sharedSession] unlinkAll];
-            [[[UIAlertView alloc] initWithTitle:@"Account Unlinked!"
-                                        message:@"Your Dropbox account has been unlinked"
-                                       delegate:nil
-                              cancelButtonTitle:@"OK"
-                              otherButtonTitles:nil]
-             show];
-        }
-    }
 }
 
 # pragma mark -
