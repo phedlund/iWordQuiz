@@ -30,7 +30,6 @@
 #import "WQNewFileViewController.h"
 
 @class DetailViewController;
-@class CHDropboxSync;
 
 @interface RootViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITabBarControllerDelegate, UIActionSheetDelegate, WQNewFileViewControllerDelegate, UISplitViewControllerDelegate>
 
@@ -40,8 +39,6 @@
 @property (strong, nonatomic) NSMutableArray *vocabularies;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
-@property(strong) CHDropboxSync* syncer;
 
 - (IBAction) doActions:(id)sender;
 

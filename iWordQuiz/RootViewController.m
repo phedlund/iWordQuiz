@@ -293,14 +293,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
     [self.tableView reloadData];
 }
 
-#pragma mark - Dropbox syncer delegate
-
-// Sync has finished, so you can dealloc it now
-- (void)syncComplete {
-    self.syncer = nil;
-    [self enumerateVocabularies];
-}
-
 #pragma mark - Notifications
 
 - (void)newFileURL:(NSNotification*)n {
