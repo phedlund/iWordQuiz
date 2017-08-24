@@ -306,13 +306,10 @@ NSString* WQDocumentsDirectoryName = @"Documents";
             newController.delegate = self;
             [self.navigationController pushViewController:newController animated:YES];
         }
-        [self dismissViewControllerAnimated:YES completion:nil];
     }];
     [alertController addAction:newAction];
     
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     [alertController addAction:cancelAction];
     
     alertController.popoverPresentationController.barButtonItem = self.menuButton;
