@@ -102,7 +102,15 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    [WQUtils renderCardShadow:self.containerView];
+    if (self.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiomPhone)
+    {
+        [WQUtils renderCardShadow:self.containerView];
+    }
+    else
+    {
+        [WQUtils renderCardShadow:self.frontView];
+        [WQUtils renderCardShadow:self.backView];
+    }
 }
 
 - (void) start {
