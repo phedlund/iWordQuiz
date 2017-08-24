@@ -241,14 +241,6 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 	return YES;
 }
 
-- (void)tabBarController:(UITabBarController *)tabBarController willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-	[tabBarController willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	
-	for (UIViewController *myView in tabBarController.viewControllers) {
-		[myView willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	}
-}
-
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
 	NSInteger index = 0;
     index = [tabBarController.viewControllers indexOfObject:viewController];

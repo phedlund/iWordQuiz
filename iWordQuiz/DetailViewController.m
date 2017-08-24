@@ -477,19 +477,19 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 - (CGFloat)spreadView:(MDSpreadView *)aSpreadView widthForColumnAtIndexPath:(MDIndexPath *)indexPath {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
-            return (CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 54) / 2;
+            return (CGRectGetHeight([UIScreen mainScreen].bounds) - 54) / 2;
         } else {
-            return (CGRectGetWidth([UIScreen mainScreen].applicationFrame) - 54) / 2;
+            return (CGRectGetWidth([UIScreen mainScreen].bounds) - 54) / 2;
         }
     } else { //iPad
         if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
             if (self.splitViewController.displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
-                return (CGRectGetWidth([UIScreen mainScreen].applicationFrame) - 65) / 2;
+                return (CGRectGetWidth([UIScreen mainScreen].bounds) - 65) / 2;
             } else {
-                return (CGRectGetHeight([UIScreen mainScreen].applicationFrame) - 110) / 2;
+                return (CGRectGetHeight([UIScreen mainScreen].bounds) - 110) / 2;
             }
         } else {
-            return (CGRectGetWidth([UIScreen mainScreen].applicationFrame) - 70) / 2;
+            return (CGRectGetWidth([UIScreen mainScreen].bounds) - 70) / 2;
         }
     }
 }

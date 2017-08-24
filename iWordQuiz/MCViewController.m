@@ -85,94 +85,13 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	self.correctAnswerLine.hidden = YES;
 	
 	self.errorCountButton.enabled = NO;
-    [self willRotateToInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation duration:0];
 }
 
-
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return NO;
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [WQUtils renderCardShadow:self.previousView];
+    [WQUtils renderCardShadow:self.questionView];
 }
-
-
- - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-	 [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-         if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-             int width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
-     
-             if (width > 500) {
-                 self.cardXPos.constant = 65;
-                 self.cardYPos.constant = 42;
-                 
-                 self.questionCountXPos.constant = 440;
-                 self.questionCountYPos.constant = 45;
-                 
-                 self.answerCountXPos.constant = 440;
-                 self.answerCountYPos.constant = 95;
-                 
-                 self.correctCountXPos.constant = 440;
-                 self.correctCountYPos.constant = 145;
-                 
-                 self.errorCountXPos.constant = 440;
-                 self.errorCountYPos.constant = 195;
-             } else {
-                 self.cardXPos.constant = 15;
-                 self.cardYPos.constant = 42;
-                 
-                 self.questionCountXPos.constant = 365;
-                 self.questionCountYPos.constant = 45;
-                 
-                 self.answerCountXPos.constant = 365;
-                 self.answerCountYPos.constant = 95;
-                 
-                 self.correctCountXPos.constant = 365;
-                 self.correctCountYPos.constant = 145;
-                 
-                 self.errorCountXPos.constant = 365;
-                 self.errorCountYPos.constant = 195;
-             }
-         } else {
-             int height = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
-             if (height > 500) {
-                 self.cardXPos.constant = 15;
-                 self.cardYPos.constant = 92;
-                 
-                 self.questionCountXPos.constant = 30;
-                 self.questionCountYPos.constant = 387;
-                 
-                 self.answerCountXPos.constant = 107;
-                 self.answerCountYPos.constant = 387;
-                 
-                 self.correctCountXPos.constant = 183;
-                 self.correctCountYPos.constant = 387;
-                 
-                 self.errorCountXPos.constant = 260;
-                 self.errorCountYPos.constant = 387;
-             } else {
-                 self.cardXPos.constant = 15;
-                 self.cardYPos.constant = 62;
-                 
-                 self.questionCountXPos.constant = 30;
-                 self.questionCountYPos.constant = 357;
-                 
-                 self.answerCountXPos.constant = 107;
-                 self.answerCountYPos.constant = 357;
-                 
-                 self.correctCountXPos.constant = 183;
-                 self.correctCountYPos.constant = 357;
-                 
-                 self.errorCountXPos.constant = 260;
-                 self.errorCountYPos.constant = 357;
-             }
-
-         }
-     }
-     
-     [WQUtils renderCardShadow:self.previousView];
-     [WQUtils renderCardShadow:self.questionView];
- }
- 
 
 - (void) start {
 	[self.questionCountButton setTitle:[@([self.quiz questionCount]) stringValue] forState:UIControlStateNormal];

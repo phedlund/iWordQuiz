@@ -85,90 +85,11 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                                              selector:@selector(keyboardWillBeHidden:)
                                                  name:UIKeyboardWillHideNotification object:nil];
     
-    [self willRotateToInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation duration:0];
 }
 
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Overriden to allow any orientation.
-    return NO;
-}
-
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-            int width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
-            
-            if (width > 500) {
-                self.cardXPos.constant = 65;
-                self.cardYPos.constant = 33;
-                
-                self.questionCountXPos.constant = 410;
-                self.questionCountYPos.constant = 45;
-                
-                self.answerCountXPos.constant = 410;
-                self.answerCountYPos.constant = 95;
-                
-                self.correctCountXPos.constant = 470;
-                self.correctCountYPos.constant = 45;
-                
-                self.errorCountXPos.constant = 470;
-                self.errorCountYPos.constant = 95;
-            } else {
-                self.cardXPos.constant = 15;
-                self.cardYPos.constant = 33;
-                
-                self.questionCountXPos.constant = 335;
-                self.questionCountYPos.constant = 45;
-                
-                self.answerCountXPos.constant = 335;
-                self.answerCountYPos.constant = 95;
-                
-                self.correctCountXPos.constant = 395;
-                self.correctCountYPos.constant = 45;
-                
-                self.errorCountXPos.constant = 395;
-                self.errorCountYPos.constant = 95;
-            }
-        } else {
-            int height = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
-            if (height > 500) {
-                self.cardXPos.constant = 15;
-                self.cardYPos.constant = 92;
-                
-                self.questionCountXPos.constant = 30;
-                self.questionCountYPos.constant = 280;
-                
-                self.answerCountXPos.constant = 107;
-                self.answerCountYPos.constant = 280;
-                
-                self.correctCountXPos.constant = 183;
-                self.correctCountYPos.constant = 280;
-                
-                self.errorCountXPos.constant = 260;
-                self.errorCountYPos.constant = 280;
-            } else {
-                self.cardXPos.constant = 15;
-                self.cardYPos.constant = 45;
-                
-                self.questionCountXPos.constant = 30;
-                self.questionCountYPos.constant = 217;
-                
-                self.answerCountXPos.constant = 107;
-                self.answerCountYPos.constant = 217;
-                
-                self.correctCountXPos.constant = 183;
-                self.correctCountYPos.constant = 217;
-                
-                self.errorCountXPos.constant = 260;
-                self.errorCountYPos.constant = 217;
-            }
-            
-        }
-    }    [WQUtils renderCardShadow:self.previousView];
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [WQUtils renderCardShadow:self.previousView];
     [WQUtils renderCardShadow:self.questionView];
 }
 
@@ -176,7 +97,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     //NSDictionary* info = [aNotification userInfo];
     //CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+        if (self.view.frame.size.width < self.view.frame.size.height) {
             self.centerYConstraint.constant = 125;
         }
     }
@@ -187,7 +108,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+        if (self.view.frame.size.width < self.view.frame.size.height) {
             self.centerYConstraint.constant = 35;
         }
     }

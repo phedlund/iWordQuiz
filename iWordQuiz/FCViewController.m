@@ -98,89 +98,12 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     self.dontKnowButton.titleLabel.textColor = [UIColor whiteColor];
     
 	self.errorCountButton.enabled = NO;
-    [self willRotateToInterfaceOrientation:[UIApplication sharedApplication].statusBarOrientation duration:0];
 }
 
-
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    [WQUtils renderCardShadow:self.containerView];
 }
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
-}
-
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        int width;
-        int height;
-        if (UIInterfaceOrientationIsLandscape(toInterfaceOrientation)) {
-            width = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
-            self.scoreYPos.constant = 216;
-            if (width > 500) { //4" screen
-                self.knowButtonXPos.constant = 380;
-                self.dontKnowButtonXPos.constant = 380;
-                
-                self.knowButtonYPos.constant = 56;
-                self.dontKnowButtonYPos.constant = 130;
-                
-                self.cardXPos.constant = 55;
-                self.cardYPos.constant = 32;
-                
-                self.scoreXPos.constant = 80;
-            } else {
-                self.knowButtonXPos.constant = 330;
-                self.dontKnowButtonXPos.constant = 330;
-                
-                self.knowButtonYPos.constant = 56;
-                self.dontKnowButtonYPos.constant = 130;
-                
-                self.cardXPos.constant = 5;
-                self.cardYPos.constant = 32;
-                
-                self.scoreXPos.constant = 30;
-            }
-            
-        } else {
-            height = CGRectGetHeight([UIScreen mainScreen].applicationFrame);
-            if (height > 500) {
-                self.knowButtonXPos.constant = 20;
-                self.dontKnowButtonXPos.constant = 175;
-                
-                self.knowButtonYPos.constant = 307;
-                self.dontKnowButtonYPos.constant = 307;
-                
-                self.cardXPos.constant = 5;
-                self.cardYPos.constant = 82;
-                
-                self.scoreXPos.constant = 30;
-                self.scoreYPos.constant = 387;
-            } else {
-                self.knowButtonXPos.constant = 20;
-                self.dontKnowButtonXPos.constant = 175;
-                
-                self.knowButtonYPos.constant = 277;
-                self.dontKnowButtonYPos.constant = 277;
-                
-                self.cardXPos.constant = 5;
-                self.cardYPos.constant = 52;
-                
-                self.scoreXPos.constant = 30;
-                self.scoreYPos.constant = 357;
-            }
-        }
-    }
-    [WQUtils renderCardShadow:self.frontView];
-    [WQUtils renderCardShadow:self.backView];
-}
-
 
 - (void) start {
 	[self.questionCountButton setTitle:[@([self.quiz questionCount]) stringValue] forState:UIControlStateNormal];
