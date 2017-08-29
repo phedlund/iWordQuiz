@@ -33,6 +33,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #import "WordQuizAppDelegate.h"
 #import "RootViewController.h"
 #import "UIColor+PHColor.h"
+#import "WQUtils.h"
 
 @interface iWordQuizAppDelegate ()
 
@@ -56,10 +57,14 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 }
 
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    
 	//Application launch with attachment
 	if ([url isFileURL]) {
-		//todo test this code[self.rootViewController enumerateVocabularies];
+        NSString *fileName = [url lastPathComponent];
+        NSURL *destinationURL = [[WQUtils documentsDirectoryURL] URLByAppendingPathComponent:fileName];
+        [[NSFileManager defaultManager] copyItemAtURL:url toURL:destinationURL error:nil];    
+        
         RootViewController *rootController;
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
@@ -67,6 +72,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             rootController = (RootViewController*)navController.topViewController;
         } else {
             UINavigationController *navController = (UINavigationController*)self.window.rootViewController;
+            [navController popToRootViewControllerAnimated:YES];
             rootController = (RootViewController*)navController.topViewController;
         }
         [rootController enumerateVocabularies];

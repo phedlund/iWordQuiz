@@ -52,6 +52,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 @implementation DetailViewController
 
+@synthesize exportBarButtonItem;
 @synthesize modeBarButtonItem;
 @synthesize editBarButtonItem;
 @synthesize modePicker;
@@ -103,6 +104,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 [self configureView];
             }
             self.editBarButtonItem.enabled = (_doc != nil);
+            self.exportBarButtonItem.enabled = (_doc != nil);
         }
     //}
 }
@@ -171,10 +173,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     [super viewDidLoad];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
         self.editBarButtonItem.enabled = (_doc != nil);
-        self.navigationItem.rightBarButtonItems = @[self.editBarButtonItem, self.modeBarButtonItem];
-    }
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        self.navigationItem.rightBarButtonItems = @[self.editBarButtonItem, self.modeBarButtonItem];
+        self.exportBarButtonItem.enabled = (_doc != nil);
     }
     
     self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
@@ -318,11 +317,33 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	return myMode;
 }
 
+- (IBAction) onExport:(id)sender {
+    if (!_detailItem) {
+        return;
+    }
+    UIActivityViewController *vc = [[UIActivityViewController alloc] initWithActivityItems:@[_detailItem] applicationActivities:@[]];
+    vc.excludedActivityTypes = @[UIActivityTypeAssignToContact,
+                                 UIActivityTypeSaveToCameraRoll,
+                                 UIActivityTypePostToFlickr,
+                                 UIActivityTypePostToVimeo,
+                                 UIActivityTypePostToTencentWeibo,
+                                 UIActivityTypePostToTwitter,
+                                 UIActivityTypePostToFacebook,
+                                 UIActivityTypeOpenInIBooks];
+    vc.modalPresentationStyle = UIModalPresentationPopover;
+
+    modePickerPopover = vc.popoverPresentationController;
+    modePickerPopover.delegate = self;
+    modePickerPopover.barButtonItem = self.exportBarButtonItem;
+    modePickerPopover.permittedArrowDirections = UIPopoverArrowDirectionLeft | UIPopoverArrowDirectionRight | UIPopoverArrowDirectionUp | UIPopoverArrowDirectionDown;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 - (IBAction) doMode:(id)sender {
     [self presentViewController:self.modePicker animated:YES completion:nil];
 }
 
-- (void) doEdit:(id)sender {
+- (IBAction) doEdit:(id)sender {
     UINavigationController *navController =  [self.storyboard instantiateViewControllerWithIdentifier:@"edit"];
 
     WQEditViewController *editViewController = (WQEditViewController*)navController.topViewController;
@@ -622,23 +643,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         result = _doc.backIdentifier;
     }
     return result;
-}
-
-#pragma mark - Toolbar buttons
-
-- (UIBarButtonItem *)modeBarButtonItem {
-    if (!modeBarButtonItem) {
-        modeBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mode"] style:UIBarButtonItemStylePlain target:self action:@selector(doMode:)];
-        modeBarButtonItem.imageInsets = UIEdgeInsetsMake(2.0f, 0.0f, -2.0f, 0.0f);
-    }
-    return modeBarButtonItem;
-}
-
-- (UIBarButtonItem *)editBarButtonItem {
-    if (!editBarButtonItem) {
-        editBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(doEdit:)];
-    }
-    return editBarButtonItem;
 }
 
 #pragma mark - Mode Popover

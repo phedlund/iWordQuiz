@@ -45,9 +45,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 @property (strong, nonatomic) UIPopoverPresentationController *modePickerPopover;
 @property (strong, nonatomic) WQDocument *doc;
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
-@property (nonatomic, strong, readonly) UIBarButtonItem *modeBarButtonItem;
-@property (nonatomic, strong, readonly) UIBarButtonItem *editBarButtonItem;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *exportBarButtonItem;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *modeBarButtonItem;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *editBarButtonItem;
 
 - (void) activateTab:(NSInteger)index;
 

@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -155,13 +156,34 @@
                 <tabBarController id="d2J-Zu-9To" customClass="DetailViewController" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="VbN-Ct-a05"/>
+                    <navigationItem key="navigationItem" id="VbN-Ct-a05">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="compose" id="dL2-8P-caS">
+                                <connections>
+                                    <action selector="doEdit:" destination="d2J-Zu-9To" id="BD4-EX-bKV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="mode" id="sS7-QZ-Sff">
+                                <connections>
+                                    <action selector="doMode:" destination="d2J-Zu-9To" id="A2l-PW-it7"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="action" id="egi-Hf-3Bt">
+                                <connections>
+                                    <action selector="onExport:" destination="d2J-Zu-9To" id="oc5-tv-fMw"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="oJP-OI-iw4">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
                     <connections>
+                        <outlet property="editBarButtonItem" destination="dL2-8P-caS" id="T5C-2F-RMP"/>
+                        <outlet property="exportBarButtonItem" destination="egi-Hf-3Bt" id="paL-Q2-bfT"/>
+                        <outlet property="modeBarButtonItem" destination="sS7-QZ-Sff" id="h1d-3j-u9e"/>
                         <segue destination="ThK-OU-gjs" kind="relationship" relationship="viewControllers" id="WaS-q1-IPq"/>
                         <segue destination="EVf-I6-MsD" kind="relationship" relationship="viewControllers" id="1cu-CA-ibN"/>
                         <segue destination="mKi-xZ-BpX" kind="relationship" relationship="viewControllers" id="3mJ-3O-64B"/>
@@ -1436,6 +1458,7 @@
         <image name="flashTab.png" width="27" height="27"/>
         <image name="homeTab.png" width="27" height="27"/>
         <image name="menu" width="28" height="44"/>
+        <image name="mode" width="20" height="20"/>
         <image name="multipleTab.png" width="30" height="30"/>
         <image name="qaTab.png" width="30" height="30"/>
     </resources>

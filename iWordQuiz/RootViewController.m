@@ -258,27 +258,18 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 - (void) enumerateVocabularies
 {
 	[self.vocabularies removeAllObjects];
-    NSFileManager *fm = [NSFileManager defaultManager];
-    NSArray *paths = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
-    NSURL *docDir = [paths objectAtIndex:0];
-
-    //Move files out of the Inbox and remove the Inbox folder
-    NSString *inboxPath  = [[docDir path] stringByAppendingPathComponent:@"Inbox/"];
-    NSDirectoryEnumerator *inboxEnum = [[NSFileManager defaultManager] enumeratorAtPath: inboxPath];
-    NSString *file;
-    while (file = [inboxEnum nextObject]) {
-        NSString *origFilePath = [inboxPath stringByAppendingPathComponent:[file lastPathComponent]];
-        NSString *finalFilePath = [[docDir path] stringByAppendingPathComponent:[file lastPathComponent]];
-        [[NSFileManager defaultManager] moveItemAtPath:origFilePath toPath:finalFilePath error:nil];        
-    }
-    [[NSFileManager defaultManager] removeItemAtPath:inboxPath error:nil];
+    NSURL *docDir = [WQUtils documentsDirectoryURL];
+    NSURL *file;
     
-    NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:[docDir path]];
+    NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtURL:docDir
+                                                          includingPropertiesForKeys:@[NSURLNameKey]
+                                                                             options:(NSDirectoryEnumerationSkipsHiddenFiles && NSDirectoryEnumerationSkipsSubdirectoryDescendants)
+                                                                        errorHandler:nil];
     
     while (file = [dirEnum nextObject]) {
         if (([file.pathExtension caseInsensitiveCompare:@"kvtml"] == NSOrderedSame) ||
             ([file.pathExtension caseInsensitiveCompare:@"csv"] == NSOrderedSame)) {
-            [self.vocabularies addObject:[docDir URLByAppendingPathComponent:file isDirectory:NO]];
+            [self.vocabularies addObject:[docDir URLByAppendingPathComponent:file.lastPathComponent isDirectory:NO]];
         }
     }
     

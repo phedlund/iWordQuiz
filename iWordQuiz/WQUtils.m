@@ -66,4 +66,8 @@
     aView.layer.shadowPath = [UIBezierPath bezierPathWithRect:aView.bounds].CGPath;
 }
 
++ (NSURL*) documentsDirectoryURL {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
 @end

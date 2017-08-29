@@ -110,6 +110,9 @@
     DDXMLDocument *xmlDoc = [[DDXMLDocument alloc] initWithXMLString:self.documentText options:0 error:nil];
     NSArray *identifierNodes = [xmlDoc nodesForXPath:@"/kvtml/identifiers/identifier/name" error:nil];
     
+    if (!(identifierNodes.count > 0)) {
+        return;
+    }
     self.frontIdentifier = [[identifierNodes objectAtIndex:0] stringValue];
     self.backIdentifier  = [[identifierNodes objectAtIndex:1] stringValue];
     

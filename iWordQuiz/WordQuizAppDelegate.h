@@ -32,10 +32,7 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <UIKit/UIKit.h>
 
-@interface iWordQuizAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate> {
-    
-    NSString *relinkUserId;
-}
+@interface iWordQuizAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

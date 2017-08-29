@@ -41,4 +41,6 @@
 
 + (void) renderCardShadow:(UIView*)aView;
 
++ (NSURL*) documentsDirectoryURL;
+
 @end
