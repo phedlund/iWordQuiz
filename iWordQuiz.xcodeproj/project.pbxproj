@@ -212,7 +212,6 @@
 		D0549FC1151BCADB00BDE78C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D06A08CE185AA33900A0A158 /* UIImage+PHColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+PHColor.h"; path = "iWordQuiz/UIImage+PHColor.h"; sourceTree = SOURCE_ROOT; };
 		D06A08CF185AA33900A0A158 /* UIImage+PHColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+PHColor.m"; path = "iWordQuiz/UIImage+PHColor.m"; sourceTree = SOURCE_ROOT; };
-		D06A095E185D421F00A0A158 /* iWordQuiz copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iWordQuiz copy-Info.plist"; path = "/Users/peter/Projects/iWordQuiz/iWordQuiz copy-Info.plist"; sourceTree = "<absolute>"; };
 		D06CB62E1EBE916A00DAA584 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		D06CB6301EBEB12F00DAA584 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D0713DB314DE15820053121A /* WordQuiz.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WordQuiz.entitlements; sourceTree = "<group>"; };
@@ -356,7 +355,6 @@
 				D0CA3EC212CD0F6800F7BB72 /* document-icon-320.png */,
 				D0C9B16915179F6F004AC04B /* document-icon-640.png */,
 				8D1107310486CEB800E47090 /* iWordQuiz-Info.plist */,
-				D06A095E185D421F00A0A158 /* iWordQuiz copy-Info.plist */,
 				D06CB6301EBEB12F00DAA584 /* Launch Screen.storyboard */,
 			);
 			name = Resources;
