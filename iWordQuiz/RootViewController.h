@@ -40,7 +40,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-- (IBAction) doActions:(id)sender;
+- (IBAction)onNew:(id)sender;
 
 @end
                 

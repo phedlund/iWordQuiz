@@ -65,9 +65,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Vocabularies" id="36">
-                        <barButtonItem key="rightBarButtonItem" image="menu" id="hA5-YN-deN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="hA5-YN-deN">
                             <connections>
-                                <action selector="doActions:" destination="12" id="7Ii-jX-d5A"/>
+                                <action selector="onNew:" destination="12" id="YDC-hA-XXa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -489,46 +489,46 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Bjp-FR-CPi"/>
-                                <exclude reference="Utz-Zh-fiw"/>
-                                <exclude reference="03N-95-bIR"/>
                                 <exclude reference="76p-yT-BCg"/>
+                                <exclude reference="Bjp-FR-CPi"/>
+                                <exclude reference="03N-95-bIR"/>
                                 <exclude reference="PS8-ix-YCo"/>
                                 <exclude reference="uQw-j2-CVF"/>
+                                <exclude reference="Utz-Zh-fiw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
                                 <exclude reference="YHs-Qj-D4S"/>
+                                <include reference="76p-yT-BCg"/>
                                 <exclude reference="8LO-1K-GE2"/>
                                 <exclude reference="8jW-VQ-9Ve"/>
                                 <include reference="Bjp-FR-CPi"/>
                                 <exclude reference="s2w-PZ-Qhy"/>
-                                <include reference="Utz-Zh-fiw"/>
                                 <include reference="03N-95-bIR"/>
                                 <exclude reference="6cF-sA-7IY"/>
-                                <include reference="76p-yT-BCg"/>
                                 <include reference="PS8-ix-YCo"/>
                                 <exclude reference="W2k-Iw-rgR"/>
                                 <exclude reference="haP-Kn-xd2"/>
                                 <include reference="uQw-j2-CVF"/>
+                                <include reference="Utz-Zh-fiw"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
                                 <exclude reference="YHs-Qj-D4S"/>
+                                <include reference="76p-yT-BCg"/>
                                 <exclude reference="8LO-1K-GE2"/>
                                 <exclude reference="8jW-VQ-9Ve"/>
                                 <include reference="Bjp-FR-CPi"/>
                                 <exclude reference="s2w-PZ-Qhy"/>
-                                <include reference="Utz-Zh-fiw"/>
                                 <include reference="03N-95-bIR"/>
                                 <exclude reference="6cF-sA-7IY"/>
-                                <include reference="76p-yT-BCg"/>
                                 <include reference="PS8-ix-YCo"/>
                                 <exclude reference="W2k-Iw-rgR"/>
                                 <exclude reference="haP-Kn-xd2"/>
                                 <include reference="uQw-j2-CVF"/>
+                                <include reference="Utz-Zh-fiw"/>
                             </mask>
                         </variation>
                     </view>
@@ -855,34 +855,34 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="qzH-ID-6kb"/>
                                 <exclude reference="Iav-ha-qQP"/>
                                 <exclude reference="Tdd-d2-0kX"/>
                                 <exclude reference="kGx-L8-ob2"/>
+                                <exclude reference="qzH-ID-6kb"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
                             <mask key="constraints">
                                 <exclude reference="Vgg-Qy-NBf"/>
-                                <include reference="qzH-ID-6kb"/>
                                 <exclude reference="F33-2J-o2T"/>
                                 <include reference="Iav-ha-qQP"/>
                                 <exclude reference="OMA-Qx-2sk"/>
                                 <include reference="Tdd-d2-0kX"/>
                                 <exclude reference="aaQ-1f-QhC"/>
                                 <include reference="kGx-L8-ob2"/>
+                                <include reference="qzH-ID-6kb"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
                                 <exclude reference="Vgg-Qy-NBf"/>
-                                <include reference="qzH-ID-6kb"/>
                                 <exclude reference="F33-2J-o2T"/>
                                 <include reference="Iav-ha-qQP"/>
                                 <exclude reference="OMA-Qx-2sk"/>
                                 <include reference="Tdd-d2-0kX"/>
                                 <exclude reference="aaQ-1f-QhC"/>
                                 <include reference="kGx-L8-ob2"/>
+                                <include reference="qzH-ID-6kb"/>
                             </mask>
                         </variation>
                     </view>
@@ -1305,7 +1305,6 @@
     <resources>
         <image name="flashTab.png" width="27" height="27"/>
         <image name="homeTab.png" width="27" height="27"/>
-        <image name="menu" width="28" height="44"/>
         <image name="mode" width="20" height="20"/>
         <image name="multipleTab.png" width="30" height="30"/>
         <image name="qaTab.png" width="30" height="30"/>

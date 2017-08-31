@@ -1420,9 +1420,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Vocabularies" id="yLW-8x-bKd">
-                        <barButtonItem key="rightBarButtonItem" image="menu" id="cdt-VA-q8M">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cdt-VA-q8M">
                             <connections>
-                                <action selector="doActions:" destination="8hA-C1-5yX" id="0AD-yv-nzz"/>
+                                <action selector="onNew:" destination="8hA-C1-5yX" id="AYd-s1-FsV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1457,7 +1457,6 @@
     <resources>
         <image name="flashTab.png" width="27" height="27"/>
         <image name="homeTab.png" width="27" height="27"/>
-        <image name="menu" width="28" height="44"/>
         <image name="mode" width="20" height="20"/>
         <image name="multipleTab.png" width="30" height="30"/>
         <image name="qaTab.png" width="30" height="30"/>

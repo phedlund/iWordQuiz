@@ -285,28 +285,16 @@ NSString* WQDocumentsDirectoryName = @"Documents";
 }
 
 
-- (IBAction) doActions:(id)sender {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *newAction = [UIAlertAction actionWithTitle:@"New Vocabulary" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"newVocabulary"];
-            [(WQNewFileViewController*)navController.topViewController setDelegate:self];
-            [self presentViewController:navController animated:YES completion:nil];
-        } else {
-            WQNewFileViewController *newController = [self.storyboard instantiateViewControllerWithIdentifier:@"newVocabulary"];
-            newController.delegate = self;
-            [self.navigationController pushViewController:newController animated:YES];
-        }
-    }];
-    [alertController addAction:newAction];
-    
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
-    [alertController addAction:cancelAction];
-    
-    alertController.popoverPresentationController.barButtonItem = self.menuButton;
-    alertController.view.backgroundColor = [UIColor phPopoverBackgroundColor];
-    alertController.view.tintColor = [UIColor phPopoverIconColor];
-    [self presentViewController:alertController animated:YES completion:nil];
+- (IBAction)onNew:(id)sender {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        UINavigationController *navController = [self.storyboard instantiateViewControllerWithIdentifier:@"newVocabulary"];
+        [(WQNewFileViewController*)navController.topViewController setDelegate:self];
+        [self presentViewController:navController animated:YES completion:nil];
+    } else {
+        WQNewFileViewController *newController = [self.storyboard instantiateViewControllerWithIdentifier:@"newVocabulary"];
+        newController.delegate = self;
+        [self.navigationController pushViewController:newController animated:YES];
+    }
 }
 
 # pragma mark -
