@@ -156,13 +156,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     return YES;
 }
 
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	
-	for (UIViewController *myView in self.viewControllers) {
-		[myView willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
-	}
-}
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -245,7 +238,6 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.selectedViewController willRotateToInterfaceOrientation:[[UIDevice currentDevice] orientation ] duration:0];
     // Update the view.
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         [self configureView];
@@ -497,13 +489,9 @@ THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 - (CGFloat)spreadView:(MDSpreadView *)aSpreadView widthForColumnAtIndexPath:(MDIndexPath *)indexPath {
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
-            return (CGRectGetHeight([UIScreen mainScreen].bounds) - 54) / 2;
-        } else {
-            return (CGRectGetWidth([UIScreen mainScreen].bounds) - 54) / 2;
-        }
+        return (CGRectGetWidth([UIScreen mainScreen].bounds) - 54) / 2;
     } else { //iPad
-        if (UIInterfaceOrientationIsLandscape(self.interfaceOrientation)) {
+        if (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
             if (self.splitViewController.displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
                 return (CGRectGetWidth([UIScreen mainScreen].bounds) - 65) / 2;
             } else {
